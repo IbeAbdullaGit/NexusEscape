@@ -11,6 +11,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
+
+    
+
+
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
@@ -43,6 +47,26 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        //NEW
+        public bool crawl = false;
+        public float crouchSpeed;
+        private float initialHeight;
+
+        public void CrawlChange()
+        {
+            crawl = !crawl;
+            if (crawl)
+            {
+                m_CharacterController.height = 0.3f;
+               // m_WalkSpeed = crouchSpeed;
+            }
+            else
+            {
+                m_CharacterController.height = initialHeight;
+                //m_WalkSpeed
+            }
+        }
+
         // Use this for initialization
         private void Start()
         {
@@ -56,6 +80,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+
+            initialHeight = m_CharacterController.height;
+
+            
         }
 
 
@@ -82,6 +110,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+
         }
 
 
@@ -96,6 +125,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void FixedUpdate()
         {
             float speed;
+
+            
+
             GetInput(out speed);
             // always move along the camera forward as it is the direction that it being aimed at
             Vector3 desiredMove = transform.forward*m_Input.y + transform.right*m_Input.x;
@@ -208,15 +240,32 @@ namespace UnityStandardAssets.Characters.FirstPerson
             float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
             float vertical = CrossPlatformInputManager.GetAxis("Vertical");
 
+            
             bool waswalking = m_IsWalking;
+
+            //CHECK FOR CROUCH
+            if (Input.GetKey(KeyCode.C))
+            {
+                CrawlChange();
+            }
 
 #if !MOBILE_INPUT
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
-            m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+            m_IsWalking = !Input.GetKey(KeyCode.LeftShift); //RUN KEY
 #endif
             // set the desired speed to be walking or running
-            speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+
+            //NEW, CHECK FOR CROUCHING
+            if (crawl)
+            {
+                speed = crouchSpeed;
+            }
+            else{
+                speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+            }
+
+            
             m_Input = new Vector2(horizontal, vertical);
 
             // normalize input if it exceeds 1 in combined length:
