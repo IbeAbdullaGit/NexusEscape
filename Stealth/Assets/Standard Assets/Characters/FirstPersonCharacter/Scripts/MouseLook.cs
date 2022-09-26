@@ -52,8 +52,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 camera.localRotation = m_CameraTargetRot;
             }
 
+
+            //rotate camera for leaning
+            Quaternion leanedRot = Quaternion.Euler(m_CameraTargetRot.eulerAngles.x, m_CameraTargetRot.eulerAngles.y, m_RotateZ);
+            m_CameraTargetRot = Quaternion.Lerp(m_CameraTargetRot, leanedRot, Time.deltaTime*2);
             UpdateCursorLock();
         }
+
+        private float m_RotateZ = 0;
+        public void SetRotateZ(float value)
+        {
+            m_RotateZ = value;
+        }
+
 
         public void SetCursorLock(bool value)
         {

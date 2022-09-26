@@ -90,6 +90,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
+            
+            //CHECK FOR CROUCH
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                CrawlChange();
+                
+            }
             RotateView();
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
@@ -243,12 +250,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             
             bool waswalking = m_IsWalking;
 
-            //CHECK FOR CROUCH
-            if (Input.GetKey(KeyCode.C))
-            {
-                CrawlChange();
-            }
-
+            
+            
 #if !MOBILE_INPUT
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
@@ -305,5 +308,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
         }
+
+        public void SetRotateZ(float value)
+        {
+            m_MouseLook.SetRotateZ(value);
+        }
+
     }
 }
