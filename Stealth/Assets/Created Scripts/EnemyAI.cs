@@ -9,15 +9,69 @@ public class EnemyAI : MonoBehaviour
     NavMeshAgent NavMeshAgent;
     public float alertness= 5f;
 
+
+    private float dirX;
+    private float dirY;
+    private float moveSpeed;
+    private Rigidbody rb;
+    private bool facingRight = false;
+    private Vector3 localScale;
+
+    bool playerInSight = false;
+
     void Start()
     {
         NavMeshAgent = GetComponent<NavMeshAgent>();
+        localScale = transform.localScale;
+        rb = GetComponent<Rigidbody>();
+        moveSpeed = 3f;
+
+        dirX = -1f;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag =="Wall")
+        {
+            dirX *= -1f;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        inSight();
+        playerInSight = inSight();
+        
+    }
+     void FixedUpdate()
+    {
+        if (!playerInSight) //not in sight
+        {
+            rb.velocity = new Vector3(dirX*moveSpeed, rb.velocity.y, rb.velocity.z); 
+        }
+    }
+    void LateUpdate() 
+    {
+        if (!playerInSight)
+        {
+            CheckWhereToFace();   
+        }
+    }
+    void CheckWhereToFace(){
+
+        if (dirX >0)
+        {
+            facingRight = true;
+        }
+        else{
+            facingRight = false;
+        }
+
+        if (((facingRight) && (localScale.x <0)) || ((!facingRight) && (localScale.x >0)))
+        {
+            localScale.x *= -1f;
+        }
+        transform.localScale = localScale;
+
     }
 
     bool inSight()
