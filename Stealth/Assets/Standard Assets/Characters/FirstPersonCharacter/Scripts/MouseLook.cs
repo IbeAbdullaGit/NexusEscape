@@ -14,7 +14,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public float MaximumX = 90F;
         public bool smooth;
         public float smoothTime = 5f;
-        public bool lockCursor = true;
+        public bool lockCursor = false;
 
 
         private Quaternion m_CharacterTargetRot;
@@ -56,7 +56,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             //rotate camera for leaning
             Quaternion leanedRot = Quaternion.Euler(m_CameraTargetRot.eulerAngles.x, m_CameraTargetRot.eulerAngles.y, m_RotateZ);
             m_CameraTargetRot = Quaternion.Lerp(m_CameraTargetRot, leanedRot, Time.deltaTime*2);
-            UpdateCursorLock();
+            //UpdateCursorLock();
         }
 
         private float m_RotateZ = 0;
@@ -79,8 +79,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public void UpdateCursorLock()
         {
             //if the user set "lockCursor" we check & properly lock the cursos
-            if (lockCursor)
-                InternalLockUpdate();
+            //if (lockCursor)
+                //InternalLockUpdate();
         }
 
         private void InternalLockUpdate()
@@ -91,13 +91,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             else if(Input.GetMouseButtonUp(0))
             {
-                m_cursorIsLocked = true;
+                //m_cursorIsLocked = true;
             }
 
             if (m_cursorIsLocked)
             {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+                //Cursor.lockState = CursorLockMode.Locked;
+                //Cursor.visible = false;
             }
             else if (!m_cursorIsLocked)
             {
