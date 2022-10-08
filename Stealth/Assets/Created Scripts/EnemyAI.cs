@@ -31,6 +31,9 @@ public class EnemyAI : MonoBehaviour
         FOV = GetComponent<FieldOfView>();
         localScale = transform.localScale;
         rb = GetComponent<Rigidbody>();
+
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+
         //moveSpeed = 2.5f;
 
        

@@ -36,6 +36,7 @@ public class EditorManager : MonoBehaviour
         
         inputAction = PlayerInputController.controller.inputAction;
         inputAction.Editor.EnableEditor.performed += cntxt => SwitchCamera();
+        inputAction.Editor.AddItem1.performed += cntxt => AddItem(1);
          inputAction.Editor.DropItem.performed += cntxt => DropItem();
 
 
@@ -43,6 +44,27 @@ public class EditorManager : MonoBehaviour
         editorCam.enabled = false;
 
         ui = GetComponent<UIManager>();
+    }
+    private void AddItem(int itemId)
+    {
+        if (editorMode && !instantiated)
+        {
+            switch (itemId)
+            {
+                case 1:
+                    //copy waypoints from existing enemy
+                    Transform[] waypoints = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyAI>().waypoints;
+                    
+                    item = Instantiate(prefab_enemy);
+                    //transfer waypoints
+                    item.GetComponent<EnemyAI>().waypoints = waypoints;
+                    break;
+                default:
+                    break;
+            }
+           
+            instantiated = true;
+        }
     }
 
     private void SwitchCamera()
@@ -59,6 +81,7 @@ public class EditorManager : MonoBehaviour
        { 
             item.GetComponent<Rigidbody>().useGravity = true;
             item.GetComponent<Collider>().enabled = true;
+            
 
             instantiated = false;
 
@@ -87,7 +110,7 @@ public class EditorManager : MonoBehaviour
         if (instantiated)
         {
             mousePos = Mouse.current.position.ReadValue();
-            mousePos = new Vector3(mousePos.x, mousePos.y, 10f);
+            mousePos = new Vector3(mousePos.x, mousePos.y, 5f);
 
             item.transform.position = editorCam.ScreenToWorldPoint(mousePos);
         }
