@@ -62,7 +62,7 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
        playerInSight = inSight();
-
+      
         if (Vector3.Distance(transform.position, targetMain) <1 )
         {
             IterateWaypointIndex();
@@ -92,6 +92,7 @@ public class EnemyAI : MonoBehaviour
 
     bool inSight()
     {
+        //DetectionMeter.instance.Meter();
         if(FOV.canSeePlayer)
         {
             //targetMain = target.position;
