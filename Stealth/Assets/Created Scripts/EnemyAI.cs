@@ -25,6 +25,8 @@ public class EnemyAI : MonoBehaviour
 
     FieldOfView FOV;
 
+    private DetectionMeter detectionMeter;
+
     void Start()
     {
         NavMeshAgent = GetComponent<NavMeshAgent>();
@@ -40,6 +42,8 @@ public class EnemyAI : MonoBehaviour
         dirX = -1f;
 
         UpdateDestination();
+
+        detectionMeter = DetectionMeter.instance;
        
     }
     void UpdateDestination()
@@ -92,7 +96,7 @@ public class EnemyAI : MonoBehaviour
 
     bool inSight()
     {
-        //DetectionMeter.instance.Meter();
+        detectionMeter.Meter();
         if(FOV.canSeePlayer)
         {
             //targetMain = target.position;

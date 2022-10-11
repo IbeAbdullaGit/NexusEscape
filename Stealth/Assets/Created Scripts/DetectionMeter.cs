@@ -11,9 +11,9 @@ public class DetectionMeter : MonoBehaviour
     private FieldOfView test;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        if (!instance)
+        if (instance == null)
         {
             instance = this;
         }
