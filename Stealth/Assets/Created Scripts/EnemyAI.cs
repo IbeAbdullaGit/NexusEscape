@@ -25,7 +25,7 @@ public class EnemyAI : MonoBehaviour
 
     FieldOfView FOV;
 
-    private DetectionMeter detectionMeter;
+    DetectionMeter detectionMeter;
 
     void Start()
     {
@@ -43,7 +43,7 @@ public class EnemyAI : MonoBehaviour
 
         UpdateDestination();
 
-        detectionMeter = DetectionMeter.instance;
+        detectionMeter = GameObject.FindGameObjectWithTag("GameController").GetComponent<DetectionMeter>();
        
     }
     void UpdateDestination()
@@ -96,7 +96,7 @@ public class EnemyAI : MonoBehaviour
 
     bool inSight()
     {
-        detectionMeter.Meter();
+//        detectionMeter.Meter();
         if(FOV.canSeePlayer)
         {
             //targetMain = target.position;

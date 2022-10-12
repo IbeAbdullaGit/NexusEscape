@@ -8,7 +8,7 @@ public class DetectionMeter : MonoBehaviour
     public static DetectionMeter instance;
 
     public GameObject FieldofViewTest;
-    private FieldOfView test;
+    FieldOfView test;
 
     // Start is called before the first frame update
     void Start()
