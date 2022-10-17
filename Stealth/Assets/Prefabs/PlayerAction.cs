@@ -192,9 +192,49 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""a0cecf57-0923-4c9b-b7c9-35abc455007d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""NextCamera"",
+                    ""type"": ""Button"",
+                    ""id"": ""1608c52c-efe7-4835-a9cf-27df79489933"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""99ccdd1c-68cb-47d6-87d8-b9d0cd3c5715"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""68ddb85c-4e7e-4f72-8a4e-08dcce867835"",
+                    ""path"": ""<Keyboard>/rightShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
                 {
                     ""name"": ""2D Vector"",
                     ""id"": ""70136f3b-676a-4eb8-be50-0fcf90de6353"",
@@ -252,12 +292,12 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""99ccdd1c-68cb-47d6-87d8-b9d0cd3c5715"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""id"": ""6124af67-3369-4697-8753-884daf795c3b"",
+                    ""path"": ""<Keyboard>/rightCtrl"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Jump"",
+                    ""action"": ""NextCamera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -371,6 +411,8 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
         m_Player2 = asset.FindActionMap("Player2", throwIfNotFound: true);
         m_Player2_Move = m_Player2.FindAction("Move", throwIfNotFound: true);
         m_Player2_Jump = m_Player2.FindAction("Jump", throwIfNotFound: true);
+        m_Player2_Menu = m_Player2.FindAction("Menu", throwIfNotFound: true);
+        m_Player2_NextCamera = m_Player2.FindAction("NextCamera", throwIfNotFound: true);
         // Player1
         m_Player1 = asset.FindActionMap("Player1", throwIfNotFound: true);
         m_Player1_Move = m_Player1.FindAction("Move", throwIfNotFound: true);
@@ -517,12 +559,16 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
     private IPlayer2Actions m_Player2ActionsCallbackInterface;
     private readonly InputAction m_Player2_Move;
     private readonly InputAction m_Player2_Jump;
+    private readonly InputAction m_Player2_Menu;
+    private readonly InputAction m_Player2_NextCamera;
     public struct Player2Actions
     {
         private @PlayerAction m_Wrapper;
         public Player2Actions(@PlayerAction wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player2_Move;
         public InputAction @Jump => m_Wrapper.m_Player2_Jump;
+        public InputAction @Menu => m_Wrapper.m_Player2_Menu;
+        public InputAction @NextCamera => m_Wrapper.m_Player2_NextCamera;
         public InputActionMap Get() { return m_Wrapper.m_Player2; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -538,6 +584,12 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                 @Jump.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnJump;
+                @Menu.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnMenu;
+                @Menu.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnMenu;
+                @Menu.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnMenu;
+                @NextCamera.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnNextCamera;
+                @NextCamera.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnNextCamera;
+                @NextCamera.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnNextCamera;
             }
             m_Wrapper.m_Player2ActionsCallbackInterface = instance;
             if (instance != null)
@@ -548,6 +600,12 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @Menu.started += instance.OnMenu;
+                @Menu.performed += instance.OnMenu;
+                @Menu.canceled += instance.OnMenu;
+                @NextCamera.started += instance.OnNextCamera;
+                @NextCamera.performed += instance.OnNextCamera;
+                @NextCamera.canceled += instance.OnNextCamera;
             }
         }
     }
@@ -607,6 +665,8 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnMenu(InputAction.CallbackContext context);
+        void OnNextCamera(InputAction.CallbackContext context);
     }
     public interface IPlayer1Actions
     {

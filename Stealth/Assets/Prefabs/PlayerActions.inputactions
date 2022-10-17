@@ -170,9 +170,49 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Menu",
+                    "type": "Button",
+                    "id": "a0cecf57-0923-4c9b-b7c9-35abc455007d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "NextCamera",
+                    "type": "Button",
+                    "id": "1608c52c-efe7-4835-a9cf-27df79489933",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
+                {
+                    "name": "",
+                    "id": "99ccdd1c-68cb-47d6-87d8-b9d0cd3c5715",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "68ddb85c-4e7e-4f72-8a4e-08dcce867835",
+                    "path": "<Keyboard>/rightShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
                 {
                     "name": "2D Vector",
                     "id": "70136f3b-676a-4eb8-be50-0fcf90de6353",
@@ -230,12 +270,12 @@
                 },
                 {
                     "name": "",
-                    "id": "99ccdd1c-68cb-47d6-87d8-b9d0cd3c5715",
-                    "path": "<Keyboard>/space",
+                    "id": "6124af67-3369-4697-8753-884daf795c3b",
+                    "path": "<Keyboard>/rightCtrl",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Jump",
+                    "action": "NextCamera",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
