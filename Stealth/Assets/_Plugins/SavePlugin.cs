@@ -79,14 +79,15 @@ public class SavePlugin : MonoBehaviour
             {
                 //obj.transform.position = LoadFromFile(fn);
                 LoadFromFile(fn);
-                obj.GetComponent<CharacterController>().enabled = false;
+                //obj.GetComponent<CharacterController>().enabled = false;
                 obj.transform.position = GetPosition();
-                obj.GetComponent<CharacterController>().enabled = true;
+               // obj.GetComponent<CharacterController>().enabled = true;
                 
             }
             EndWriting();
+            Debug.Log("Loaded");
         }
-        Debug.Log("Loaded");
+        
     }
 
 }

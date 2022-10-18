@@ -19,7 +19,7 @@ public class ItemPup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pup == true) // if you enter thecollider of the objecct
+        if (pup) // if you enter thecollider of the objecct
         {
             if (Input.GetKeyDown(KeyCode.X))  
             {
@@ -30,7 +30,7 @@ public class ItemPup : MonoBehaviour
                 hasup = true;
             }
         }
-        if (Input.GetKeyDown(KeyCode.X) && hasup == true) 
+        else if (Input.GetKeyDown(KeyCode.X) && hasup) 
         {
             Items D = new Items(ItemtoPup, new Drop());
             subject.AddObserver(D);
@@ -39,6 +39,15 @@ public class ItemPup : MonoBehaviour
         }
     }
     private void OnCollisionEnter(Collision other) // to see when the player enters the collider
+    {
+        if (other.collider.tag == "pickup") 
+        {
+            pup = true;
+            ItemtoPup = other.gameObject;
+            subject.Notify();
+        }
+    }
+    private void OnCollisionStay(Collision other) // to see when the player enters the collider
     {
         if (other.collider.tag == "pickup") 
         {
