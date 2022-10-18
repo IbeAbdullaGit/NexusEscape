@@ -1,40 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
 using System;
-using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
+using UnityEngine.InputSystem;
 
-
-#pragma warning disable 618, 649
-namespace UnityStandardAssets.Characters.FirstPerson
-{
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private MouseLook m_MouseLook;
      private Camera m_Camera;
 
       public PlayerAction inputAction;
       //public static PlayerInputController instance;
 
     Vector2 move;
-    Vector2 rotate;
+    Vector2 look;
+
+    private float lookRotation;
 
     public float walkSpeed = 5.0f;
-    public float speed;
+    public float speed, sensitivity, maxForce;
     public float runSpeed = 8.0f;
 
      //player jump
-    Rigidbody rb;
+    public Rigidbody rb;
     private float distanceToGround;
     private bool isGrounded = true;
     public float jump = 5f;
-
-     private CharacterController m_CharacterController;
-
-    //private CollisionFlags m_CollisionFlags;
 
     //NEW
     public bool crawl = false;
@@ -48,12 +40,12 @@ public class PlayerMovement : MonoBehaviour
             crawl = !crawl;
             if (crawl)
             {
-                m_CharacterController.height = 0.3f;
+               // m_CharacterController.height = 0.3f;
                // m_WalkSpeed = crouchSpeed;
             }
             else
             {
-                m_CharacterController.height = initialHeight;
+               // m_CharacterController.height = initialHeight;
                 //m_WalkSpeed
             }
         }
@@ -62,10 +54,6 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         m_CharacterController = GetComponent<CharacterController>();
-        m_Camera = GetComponentInChildren<Camera>();
-        m_MouseLook.Init(transform , m_Camera.transform);
-
         //using controller from playerinputcontroller
         inputAction = PlayerInputController.controller.inputAction;
 
@@ -77,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         distanceToGround = GetComponent<Collider>().bounds.extents.y;
 
-         initialHeight = m_CharacterController.height;
+      //  initialHeight = m_CharacterController.height;
 
         
     }
@@ -99,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
                 CrawlChange();
                 
             }
-        RotateView();
+       
          m_IsWalking = !Input.GetKey(KeyCode.LeftShift); //RUN KEY
 
         //NEW, CHECK FOR CROUCHING
@@ -117,20 +105,8 @@ public class PlayerMovement : MonoBehaviour
          isGrounded = Physics.Raycast(transform.position, -Vector3.up, distanceToGround);
 
 
-         m_MouseLook.UpdateCursorLock();
+      
     }
-  
-
-    private void RotateView()
-        {
-            m_MouseLook.LookRotation(transform, m_Camera.transform);
-        }
-
-
-        public void SetRotateZ(float value)
-        {
-            m_MouseLook.SetRotateZ(value);
-        }
 
     /*  private void OnControllerColliderHit(ControllerColliderHit hit)
         {
@@ -148,4 +124,4 @@ public class PlayerMovement : MonoBehaviour
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
         } */
 }
-}
+

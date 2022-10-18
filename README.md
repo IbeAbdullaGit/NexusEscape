@@ -6,3 +6,4 @@ References:
 Field of view: https://www.youtube.com/watch?v=j1-OyLo77ss
 Patroling: https://www.youtube.com/watch?v=c8Nq19gkNfs
 Library used for saving with jsons: https://github.com/nlohmann/json#examples
+player controller: https://www.youtube.com/watch?v=1LtePgzeqjQ

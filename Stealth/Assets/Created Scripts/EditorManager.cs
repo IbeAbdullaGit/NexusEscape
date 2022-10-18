@@ -52,12 +52,15 @@ public class EditorManager : MonoBehaviour
             switch (itemId)
             {
                 case 1:
+                    GameObject old =GameObject.FindGameObjectWithTag("Enemy");
                     //copy waypoints from existing enemy
-                    Transform[] waypoints = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyAI>().waypoints;
+                    Transform[] waypoints = old.GetComponent<EnemyAI>().waypoints;
                     
                     item = Instantiate(prefab_enemy);
                     //transfer waypoints
                     item.GetComponent<EnemyAI>().waypoints = waypoints;
+                    item.GetComponent<EnemyAI>().target =old.GetComponent<EnemyAI>().target;
+                    item.GetComponent<FieldOfView>().playerRef = old.GetComponent<FieldOfView>().playerRef; 
                     break;
                 default:
                     break;
@@ -104,7 +107,7 @@ public class EditorManager : MonoBehaviour
         {
             editorMode = false;
             Time.timeScale = 1;
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.lockState = CursorLockMode.Locked;
         }
 
         if (instantiated)

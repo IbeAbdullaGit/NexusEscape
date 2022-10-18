@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] Transform target;
+    [SerializeField] public Transform target;
     NavMeshAgent NavMeshAgent;
     public float alertness= 5f;
 

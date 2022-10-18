@@ -210,6 +210,15 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Look"",
+                    ""type"": ""Value"",
+                    ""id"": ""66a0745f-95bb-46c5-86bd-52b3dd6bd4b7"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -300,6 +309,17 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                     ""action"": ""NextCamera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cff47442-7233-42b0-b70d-42173f8fcc44"",
+                    ""path"": ""<Pointer>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -324,6 +344,15 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Look"",
+                    ""type"": ""Value"",
+                    ""id"": ""f82ed524-373b-442c-a24e-b6f1d7698752"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -392,6 +421,17 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6eab7582-e9d1-451f-a587-f5da47354477"",
+                    ""path"": ""<Pointer>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -413,10 +453,12 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
         m_Player2_Jump = m_Player2.FindAction("Jump", throwIfNotFound: true);
         m_Player2_Menu = m_Player2.FindAction("Menu", throwIfNotFound: true);
         m_Player2_NextCamera = m_Player2.FindAction("NextCamera", throwIfNotFound: true);
+        m_Player2_Look = m_Player2.FindAction("Look", throwIfNotFound: true);
         // Player1
         m_Player1 = asset.FindActionMap("Player1", throwIfNotFound: true);
         m_Player1_Move = m_Player1.FindAction("Move", throwIfNotFound: true);
         m_Player1_Jump = m_Player1.FindAction("Jump", throwIfNotFound: true);
+        m_Player1_Look = m_Player1.FindAction("Look", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -561,6 +603,7 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player2_Jump;
     private readonly InputAction m_Player2_Menu;
     private readonly InputAction m_Player2_NextCamera;
+    private readonly InputAction m_Player2_Look;
     public struct Player2Actions
     {
         private @PlayerAction m_Wrapper;
@@ -569,6 +612,7 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player2_Jump;
         public InputAction @Menu => m_Wrapper.m_Player2_Menu;
         public InputAction @NextCamera => m_Wrapper.m_Player2_NextCamera;
+        public InputAction @Look => m_Wrapper.m_Player2_Look;
         public InputActionMap Get() { return m_Wrapper.m_Player2; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -590,6 +634,9 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                 @NextCamera.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnNextCamera;
                 @NextCamera.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnNextCamera;
                 @NextCamera.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnNextCamera;
+                @Look.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnLook;
+                @Look.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnLook;
+                @Look.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnLook;
             }
             m_Wrapper.m_Player2ActionsCallbackInterface = instance;
             if (instance != null)
@@ -606,6 +653,9 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                 @NextCamera.started += instance.OnNextCamera;
                 @NextCamera.performed += instance.OnNextCamera;
                 @NextCamera.canceled += instance.OnNextCamera;
+                @Look.started += instance.OnLook;
+                @Look.performed += instance.OnLook;
+                @Look.canceled += instance.OnLook;
             }
         }
     }
@@ -616,12 +666,14 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
     private IPlayer1Actions m_Player1ActionsCallbackInterface;
     private readonly InputAction m_Player1_Move;
     private readonly InputAction m_Player1_Jump;
+    private readonly InputAction m_Player1_Look;
     public struct Player1Actions
     {
         private @PlayerAction m_Wrapper;
         public Player1Actions(@PlayerAction wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player1_Move;
         public InputAction @Jump => m_Wrapper.m_Player1_Jump;
+        public InputAction @Look => m_Wrapper.m_Player1_Look;
         public InputActionMap Get() { return m_Wrapper.m_Player1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -637,6 +689,9 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                 @Jump.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnJump;
+                @Look.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnLook;
+                @Look.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnLook;
+                @Look.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnLook;
             }
             m_Wrapper.m_Player1ActionsCallbackInterface = instance;
             if (instance != null)
@@ -647,6 +702,9 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @Look.started += instance.OnLook;
+                @Look.performed += instance.OnLook;
+                @Look.canceled += instance.OnLook;
             }
         }
     }
@@ -667,10 +725,12 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnMenu(InputAction.CallbackContext context);
         void OnNextCamera(InputAction.CallbackContext context);
+        void OnLook(InputAction.CallbackContext context);
     }
     public interface IPlayer1Actions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnLook(InputAction.CallbackContext context);
     }
 }

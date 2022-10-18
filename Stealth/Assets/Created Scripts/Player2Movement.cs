@@ -1,4 +1,4 @@
-using System.Collections;
+/* using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
@@ -83,3 +83,4 @@ public class Player2Movement : MonoBehaviour
         }
 }
 }
+ */
