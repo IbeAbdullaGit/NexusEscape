@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemPup : MonoBehaviour
 {
-    public Transform PickupPos;
+    public GameObject PickupPos;
     bool pup;
     GameObject ItemtoPup;
     bool hasup;
@@ -19,21 +19,24 @@ public class ItemPup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pup) // if you enter thecollider of the objecct
+        if (pup == true) // if you enter thecollider of the objecct
         {
             if (Input.GetKeyDown(KeyCode.X))  
             {
-                Rigidbody monkey = Instantiate(ItemtoPup, PickupPos.position, Quaternion.identity).GetComponent<Rigidbody>();
+                
                 Items pick = new Items(ItemtoPup, new Pickup()); //makes the rigidbody not be acted upon by forces
                 subject.AddObserver(pick);
+                ItemtoPup.transform.position = PickupPos.transform.position; //Moves object to the object position
+                ItemtoPup.transform.parent = PickupPos.transform; //Makes obhect the parent
                 Debug.Log("Picked up");
                 hasup = true;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.X) && hasup) 
+        if (Input.GetKeyDown(KeyCode.L) && hasup) 
         {
             Items D = new Items(ItemtoPup, new Drop());
             subject.AddObserver(D);
+            ItemtoPup.transform.parent = null;
             hasup = false;
 
         }
@@ -53,12 +56,13 @@ public class ItemPup : MonoBehaviour
         {
             pup = true;
             ItemtoPup = other.gameObject;
+            Debug.Log("collided");
             subject.Notify();
         }
     }
     private void OnCollisionExit(Collision other)
     {
-        pup = false; 
-
+        pup = false;
+        subject.Notify();
     }
 }
