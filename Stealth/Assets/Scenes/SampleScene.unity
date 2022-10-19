@@ -3152,6 +3152,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: f82ed524-373b-442c-a24e-b6f1d7698752
     m_ActionName: Player1/Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2851ad01-2c10-4e70-a18a-babbf9a93189
+    m_ActionName: Player1/Toggle SplitScreen[/Keyboard/x]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player2
@@ -5325,6 +5329,7 @@ GameObject:
   - component: {fileID: 1618511195}
   - component: {fileID: 1618511201}
   - component: {fileID: 1618511202}
+  - component: {fileID: 1618511203}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5506,6 +5511,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 66a0745f-95bb-46c5-86bd-52b3dd6bd4b7
     m_ActionName: Player2/Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2851ad01-2c10-4e70-a18a-babbf9a93189
+    m_ActionName: Player1/Toggle SplitScreen[/Keyboard/x]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player1
@@ -5644,6 +5653,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PickupPos: {fileID: 515020469}
+--- !u!114 &1618511203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618511193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acced2e6672bd6e46a33df57e43dc190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1630959839
 GameObject:
   m_ObjectHideFlags: 0

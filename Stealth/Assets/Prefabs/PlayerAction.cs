@@ -353,6 +353,15 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Toggle SplitScreen"",
+                    ""type"": ""Button"",
+                    ""id"": ""2851ad01-2c10-4e70-a18a-babbf9a93189"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -432,6 +441,17 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""77e33881-32a8-4aa9-bd53-47d852b45141"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Toggle SplitScreen"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -459,6 +479,7 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
         m_Player1_Move = m_Player1.FindAction("Move", throwIfNotFound: true);
         m_Player1_Jump = m_Player1.FindAction("Jump", throwIfNotFound: true);
         m_Player1_Look = m_Player1.FindAction("Look", throwIfNotFound: true);
+        m_Player1_ToggleSplitScreen = m_Player1.FindAction("Toggle SplitScreen", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -667,6 +688,7 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player1_Move;
     private readonly InputAction m_Player1_Jump;
     private readonly InputAction m_Player1_Look;
+    private readonly InputAction m_Player1_ToggleSplitScreen;
     public struct Player1Actions
     {
         private @PlayerAction m_Wrapper;
@@ -674,6 +696,7 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player1_Move;
         public InputAction @Jump => m_Wrapper.m_Player1_Jump;
         public InputAction @Look => m_Wrapper.m_Player1_Look;
+        public InputAction @ToggleSplitScreen => m_Wrapper.m_Player1_ToggleSplitScreen;
         public InputActionMap Get() { return m_Wrapper.m_Player1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -692,6 +715,9 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                 @Look.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnLook;
                 @Look.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnLook;
                 @Look.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnLook;
+                @ToggleSplitScreen.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnToggleSplitScreen;
+                @ToggleSplitScreen.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnToggleSplitScreen;
+                @ToggleSplitScreen.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnToggleSplitScreen;
             }
             m_Wrapper.m_Player1ActionsCallbackInterface = instance;
             if (instance != null)
@@ -705,6 +731,9 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
+                @ToggleSplitScreen.started += instance.OnToggleSplitScreen;
+                @ToggleSplitScreen.performed += instance.OnToggleSplitScreen;
+                @ToggleSplitScreen.canceled += instance.OnToggleSplitScreen;
             }
         }
     }
@@ -732,5 +761,6 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
+        void OnToggleSplitScreen(InputAction.CallbackContext context);
     }
 }

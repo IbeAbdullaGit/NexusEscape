@@ -331,6 +331,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Toggle SplitScreen",
+                    "type": "Button",
+                    "id": "2851ad01-2c10-4e70-a18a-babbf9a93189",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -408,6 +417,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "77e33881-32a8-4aa9-bd53-47d852b45141",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle SplitScreen",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
