@@ -69,6 +69,7 @@ public class EnemyAI : MonoBehaviour
       
         if (Vector3.Distance(transform.position, targetMain) <1 )
         {
+            detectionMeter.Meter();
             IterateWaypointIndex();
             UpdateDestination();
         }
@@ -76,8 +77,8 @@ public class EnemyAI : MonoBehaviour
     }
  
     void CheckWhereToFace(){
-
-         if (dirX >0)
+        
+        if (dirX >0)
             {
                 facingRight = true;
             }
@@ -96,9 +97,10 @@ public class EnemyAI : MonoBehaviour
 
     bool inSight()
     {
-//        detectionMeter.Meter();
+       
         if(FOV.canSeePlayer)
         {
+           
             //targetMain = target.position;
             NavMeshAgent.SetDestination(target.position);
             Debug.DrawLine(transform.position, target.position, Color.red);

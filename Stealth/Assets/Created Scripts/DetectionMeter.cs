@@ -30,7 +30,7 @@ public class DetectionMeter : MonoBehaviour
     {
         if (test.canSeePlayer == true)
         {
-            float delay = 1f;
+            float delay = 2.7f;
             WaitForSeconds wait = new WaitForSeconds(delay);
             Debug.Log("1 second rolling");
         }
