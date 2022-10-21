@@ -35,23 +35,13 @@ public class InteractKeypad : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Z)){
                 ChangeUI();
-                //openMenu = false;
-
-                //change code here so it changes back and forth
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true; 
-                //canTurnOff = true;  
                 
-                //break;
             }
         }
         else{
              if (menuUI.enabled && Input.GetKey(KeyCode.Z)){
                 ChangeUI();
-                //canTurnOff = false;
-               Cursor.lockState = CursorLockMode.Locked;
-               Cursor.visible = false; 
-                //Cursor.lockState = CursorLockMode.Locked;
+               
                 
             }
         } 
@@ -86,7 +76,17 @@ public class InteractKeypad : MonoBehaviour
     }
     public void ChangeUI()
     {
-        menuUI.enabled = !menuUI.enabled;  
+        menuUI.enabled = !menuUI.enabled;
+        if (Cursor.lockState == CursorLockMode.Locked)
+        {
+             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true; 
+        }  
+        else
+        {
+             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false; 
+        }
     }
    
 

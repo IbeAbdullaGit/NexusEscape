@@ -17,6 +17,8 @@ public class CameraMenu : MonoBehaviour
     int cameraIndex = 0;
     public Image cameraView;
 
+    PopUpSystem pop;
+
 
     // Start is called before the first frame update
     void Start()
@@ -31,24 +33,50 @@ public class CameraMenu : MonoBehaviour
         inputAction.Player2.NextCamera.performed += cntxt => SwitchCameras();
        
         menuUI.enabled = false;
+
+        pop = GameObject.FindGameObjectWithTag("GameController").GetComponent<PopUpSystem>();
         
     }
     void OpenMenu()
     {
-        menuUI.enabled = !menuUI.enabled;
+        //menuUI.enabled = !menuUI.enabled;
+        menuUI.enabled = true;
+        if (Cursor.lockState == CursorLockMode.Locked)
+        {
+             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true; 
+        }  
+        else
+        {
+             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false; 
+        }
         openMenu = !openMenu;
         if (openMenu)
         {
             //set specifically the camera menu stuff to open, unneeded for now
+            pop.PopUp();
             
         }
+        else{
+            pop.ClosePop();
+        }
     }
-    void SwitchCameras()
+    public void SwitchCameras()
     {
         cameraIndex++;
         if (cameraIndex == cameras.Length)
         {
             cameraIndex = 0;
+        }
+        cameraView.material = cameras[cameraIndex];
+    }
+    public void SwitchCamerasBack()
+    {
+        cameraIndex--;
+        if (cameraIndex <= 0)
+        {
+            cameraIndex = cameras.Length - 1;
         }
         cameraView.material = cameras[cameraIndex];
     }
