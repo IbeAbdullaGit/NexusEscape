@@ -14,6 +14,8 @@ public class InteractKeypad : MonoBehaviour
     Keypad instance;
 
     public string answer;
+    
+    bool canTurnOff = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +27,7 @@ public class InteractKeypad : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         
             
@@ -33,20 +35,26 @@ public class InteractKeypad : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Z)){
                 ChangeUI();
-                openMenu = false;
+                //openMenu = false;
+
+                //change code here so it changes back and forth
                 Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;   
+                Cursor.visible = true; 
+                //canTurnOff = true;  
                 
                 //break;
             }
         }
         else{
-             if (Input.GetKey(KeyCode.Z)){
+             if (menuUI.enabled && Input.GetKey(KeyCode.Z)){
                 ChangeUI();
+                //canTurnOff = false;
+               Cursor.lockState = CursorLockMode.Locked;
+               Cursor.visible = false; 
                 //Cursor.lockState = CursorLockMode.Locked;
                 
             }
-        }
+        } 
         /* if (menuUI.enabled)
         {
             if (Input.GetKey(KeyCode.Z)){
@@ -60,6 +68,20 @@ public class InteractKeypad : MonoBehaviour
         if (collision.collider.tag =="Player2")
         {
             openMenu = true;
+        }
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.collider.tag =="Player2")
+        {
+            openMenu = true;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.tag =="Player2")
+        {
+            openMenu = false;
         }
     }
     public void ChangeUI()
