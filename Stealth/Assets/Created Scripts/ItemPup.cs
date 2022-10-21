@@ -21,7 +21,7 @@ public class ItemPup : MonoBehaviour
     {
         if (pup == true) // if you enter thecollider of the objecct
         {
-            if (Input.GetKeyDown(KeyCode.X))  
+            if (Input.GetKeyDown(KeyCode.M))  
             {
                 
                 Items pick = new Items(ItemtoPup, new Pickup()); //makes the rigidbody not be acted upon by forces
