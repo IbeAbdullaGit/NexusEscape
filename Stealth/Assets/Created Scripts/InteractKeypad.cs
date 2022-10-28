@@ -60,6 +60,9 @@ public class InteractKeypad : MonoBehaviour
             openMenu = true;
         }
     }
+    private void OnTriggerEnter(Collider other) {
+        
+    }
     private void OnCollisionStay(Collision collision)
     {
         if (collision.collider.tag =="Player2")

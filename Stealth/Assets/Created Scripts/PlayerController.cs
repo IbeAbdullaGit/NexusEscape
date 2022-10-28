@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Photon.Pun;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class PlayerController : MonoBehaviour
     private float startYScale;
     bool crawl;
     float speed;
+
+    PhotonView view;
     
     private Vector2 move, look;
      private Vector3 targetVelocityLerp;
@@ -32,35 +35,50 @@ public class PlayerController : MonoBehaviour
 
      public void OnMove(InputAction.CallbackContext context)
     {
-        move = context.ReadValue<Vector2>();
+        if (view.IsMine)
+        {move = context.ReadValue<Vector2>();
+        }
     }
     public void OnLook(InputAction.CallbackContext context)
     {
-        look = context.ReadValue<Vector2>();
+        if (view.IsMine)
+        {look = context.ReadValue<Vector2>();
+        }
     }
      public void OnJump(InputAction.CallbackContext context)
     {
-       Jump();
+       if (view.IsMine)
+       {Jump();
+       }
     }
      void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
          distanceToGround = GetComponent<Collider>().bounds.extents.y;
          startYScale = transform.localScale.y;
+         view = GetComponent<PhotonView>();
+         if (!view.IsMine)
+         {
+            //destroy camera
+         }
     }
     private void Update() {
 
-        
-       StateHandler();
+        if (view.IsMine)
+       { 
+        StateHandler();
         //NEW, CHECK FOR CROUCHING
         if (crawl)
         {
             speed = crouchSpeed;
         }
         grounded = Physics.Raycast(transform.position, -Vector3.up, distanceToGround);
+       }
     }
      private void FixedUpdate() {
-        Move();
+        if (view.IsMine)
+        {Move();
+        }
     }
     private void StateHandler()
     {
@@ -149,7 +167,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
    
     private void LateUpdate() {
-        Look();
+        if (view.IsMine)
+        {Look();
+        }
     }
     public void SetGrounded(bool state)
     {
