@@ -18,18 +18,19 @@ public class InteractKeypad : Interactable
     public override void OnFocus()
     {
         Debug.Log("looking at");
-        throw new System.NotImplementedException();
+        
        
         //perhaps highlight it
     }
     public override void OnInteract()
     {
+        Debug.Log("Changing UI");
         ChangeUI();
     }
     public override void OnLoseFocus()
     {
         Debug.Log("looking away");
-        throw new System.NotImplementedException();
+        
     }
 
     // Start is called before the first frame update

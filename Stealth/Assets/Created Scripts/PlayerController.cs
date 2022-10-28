@@ -31,7 +31,6 @@ public class PlayerController : MonoBehaviour
         crouching
     }
     [Header("Interaction")]
-    [SerializeField] private Vector3 interactionRayPoint = default;
     [SerializeField]private float interactionDistance = default;
     [SerializeField]private LayerMask interactionLayer = default;
     private Interactable currentInteractable;
@@ -86,18 +85,22 @@ public class PlayerController : MonoBehaviour
          {
             HandleInteractionCheck();
             HandleInteractionInput();
-            Debug.DrawLine(playerCam.transform.position, interactionRayPoint, Color.red);
          }
     }
     private void HandleInteractionCheck()
     {
-        if (Physics.Raycast(playerCam.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance))
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, interactionDistance))
         {
+            Debug.Log("Succesful raycast");
             //on the right layer for interactables, and theres not currently anything we're interacting with, OR we're looking at a new object that's not currently looked at
             if (hit.collider.gameObject.layer ==10 && (currentInteractable == null || hit.collider.gameObject.GetInstanceID() != currentInteractable.gameObject.GetInstanceID()))
             {
                 //will infer we want interactable
-                hit.collider.TryGetComponent(out currentInteractable);
+                hit.collider.TryGetComponent<Interactable>(out currentInteractable);
+
+                
 
                 //if we've got an interactable, give it focus
                 if (currentInteractable)
@@ -111,14 +114,19 @@ public class PlayerController : MonoBehaviour
             currentInteractable.OnLoseFocus();
             currentInteractable = null;
         }
+        
     }
     private void HandleInteractionInput()
     {
-        if (Input.GetKeyDown(interactKey) && currentInteractable != null && Physics.Raycast(playerCam.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance, interactionLayer))
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Input.GetKeyDown(interactKey) && currentInteractable != null && Physics.Raycast(ray, out hit, interactionDistance, interactionLayer))
         {
+            Debug.Log("trying to do interaction");
             //do the interaction
             currentInteractable.OnInteract();
         }
+        
     }
      private void FixedUpdate() {
         
