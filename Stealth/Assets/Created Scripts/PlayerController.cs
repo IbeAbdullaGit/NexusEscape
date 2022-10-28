@@ -15,8 +15,6 @@ public class PlayerController : MonoBehaviour
     private float startYScale;
     bool crawl;
     float speed;
-
-    PhotonView view;
     
     private Vector2 move, look;
      private Vector3 targetVelocityLerp;
@@ -32,22 +30,30 @@ public class PlayerController : MonoBehaviour
         sprinting,
         crouching
     }
+    [Header("Interaction")]
+    [SerializeField] private Vector3 interactionRayPoint = default;
+    [SerializeField]private float interactionDistance = default;
+    [SerializeField]private LayerMask interactionLayer = default;
+    private Interactable currentInteractable;
+    [SerializeField] private bool canInteract = true;
+    [SerializeField] private KeyCode interactKey = KeyCode.Mouse0;
+    private Camera playerCam;
 
      public void OnMove(InputAction.CallbackContext context)
     {
-        if (view.IsMine)
+        
         {move = context.ReadValue<Vector2>();
         }
     }
     public void OnLook(InputAction.CallbackContext context)
     {
-        if (view.IsMine)
+       
         {look = context.ReadValue<Vector2>();
         }
     }
      public void OnJump(InputAction.CallbackContext context)
     {
-       if (view.IsMine)
+      
        {Jump();
        }
     }
@@ -56,15 +62,16 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
          distanceToGround = GetComponent<Collider>().bounds.extents.y;
          startYScale = transform.localScale.y;
-         view = GetComponent<PhotonView>();
-         if (!view.IsMine)
+         playerCam = GetComponentInChildren<Camera>();
+         //if (!view.IsMine)
          {
             //destroy camera
          }
+         
     }
     private void Update() {
 
-        if (view.IsMine)
+        
        { 
         StateHandler();
         //NEW, CHECK FOR CROUCHING
@@ -74,9 +81,47 @@ public class PlayerController : MonoBehaviour
         }
         grounded = Physics.Raycast(transform.position, -Vector3.up, distanceToGround);
        }
+
+       if (canInteract)
+         {
+            HandleInteractionCheck();
+            HandleInteractionInput();
+            Debug.DrawLine(playerCam.transform.position, interactionRayPoint, Color.red);
+         }
+    }
+    private void HandleInteractionCheck()
+    {
+        if (Physics.Raycast(playerCam.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance))
+        {
+            //on the right layer for interactables, and theres not currently anything we're interacting with, OR we're looking at a new object that's not currently looked at
+            if (hit.collider.gameObject.layer ==10 && (currentInteractable == null || hit.collider.gameObject.GetInstanceID() != currentInteractable.gameObject.GetInstanceID()))
+            {
+                //will infer we want interactable
+                hit.collider.TryGetComponent(out currentInteractable);
+
+                //if we've got an interactable, give it focus
+                if (currentInteractable)
+                    currentInteractable.OnFocus();
+            }
+        }
+        //raycast doesnt have anything but we have something interacted
+        else if (currentInteractable)
+        {
+            //lose the interactable
+            currentInteractable.OnLoseFocus();
+            currentInteractable = null;
+        }
+    }
+    private void HandleInteractionInput()
+    {
+        if (Input.GetKeyDown(interactKey) && currentInteractable != null && Physics.Raycast(playerCam.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance, interactionLayer))
+        {
+            //do the interaction
+            currentInteractable.OnInteract();
+        }
     }
      private void FixedUpdate() {
-        if (view.IsMine)
+        
         {Move();
         }
     }
@@ -167,7 +212,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
    
     private void LateUpdate() {
-        if (view.IsMine)
+       
         {Look();
         }
     }

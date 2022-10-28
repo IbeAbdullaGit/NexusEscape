@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PhysicsButton : MonoBehaviour
+public class PhysicsButton : Interactable
 {
     public Rigidbody buttonTopRigid;
     public Transform buttonTop;
@@ -20,6 +20,21 @@ public class PhysicsButton : MonoBehaviour
     public Collider[] CollidersToIgnore;
     public UnityEvent onPressed;
     public UnityEvent onReleased;
+
+     public override void OnFocus()
+    {
+        throw new System.NotImplementedException();
+        //perhaps highlight it
+    }
+    public override void OnInteract()
+    {
+       isPressed = true;
+       Pressed();
+    }
+    public override void OnLoseFocus()
+    {
+        isPressed = false;
+    }
 
     // Start is called before the first frame update
     void Start()

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 //using UnityStandardAssets.Characters.FirstPerson;
 
-public class InteractKeypad : MonoBehaviour
+public class InteractKeypad : Interactable
 {
     public bool openMenu = false;
 
@@ -14,8 +14,23 @@ public class InteractKeypad : MonoBehaviour
     Keypad instance;
 
     public string answer;
-    
-    bool canTurnOff = false;
+    GameObject triggeredObject;
+    public override void OnFocus()
+    {
+        Debug.Log("looking at");
+        throw new System.NotImplementedException();
+       
+        //perhaps highlight it
+    }
+    public override void OnInteract()
+    {
+        ChangeUI();
+    }
+    public override void OnLoseFocus()
+    {
+        Debug.Log("looking away");
+        throw new System.NotImplementedException();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -29,57 +44,29 @@ public class InteractKeypad : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-            
         if (openMenu)
         {
-            if (Input.GetKey(KeyCode.Z)){
+            if (Input.GetKeyDown(KeyCode.Z)) //could change this key
+            {
                 ChangeUI();
-                
             }
         }
-        else{
-             if (menuUI.enabled && Input.GetKey(KeyCode.Z)){
-                ChangeUI();
-               
-                
-            }
-        } 
-        /* if (menuUI.enabled)
+        //did we enter the right answer?
+        if (instance.correct)
         {
-            if (Input.GetKey(KeyCode.Z)){
-                menuUI.enabled = !menuUI.enabled;  
-                openMenu = false;  
-            }
-        } */
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.tag =="Player2")
-        {
-            openMenu = true;
+            //reset the keypad
+            instance.correct = false;
+            instance.answer = null;
+
+            //triggeredObject.open();?
         }
+            
     }
-    private void OnTriggerEnter(Collider other) {
-        
-    }
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.collider.tag =="Player2")
-        {
-            openMenu = true;
-        }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.collider.tag =="Player2")
-        {
-            openMenu = false;
-        }
-    }
+    
     public void ChangeUI()
     {
         menuUI.enabled = !menuUI.enabled;
+        openMenu = !openMenu;
         if (Cursor.lockState == CursorLockMode.Locked)
         {
              Cursor.lockState = CursorLockMode.None;

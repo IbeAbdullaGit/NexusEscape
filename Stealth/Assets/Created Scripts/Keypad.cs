@@ -14,6 +14,8 @@ public class Keypad : MonoBehaviour
     //mostly to keep track of resetting the display
    int counter =0;
 
+   public bool correct = false;
+
    public void Number(int number)
    {
     if (counter ==0)
@@ -30,12 +32,14 @@ public class Keypad : MonoBehaviour
             Ans.text = "Correct";
              counter = 0;
             //do something
+            correct = true;
         }
         else
         {
             Ans.text = "INCORRECT";
             counter = 0;
             //do something else, penalty
+            correct = false;
         }
    }
 }
