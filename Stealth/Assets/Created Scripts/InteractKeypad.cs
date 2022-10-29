@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 //using UnityStandardAssets.Characters.FirstPerson;
 
-public class InteractKeypad : MonoBehaviour
+public class InteractKeypad : Interactable
 {
     public bool openMenu = false;
 
@@ -14,8 +14,24 @@ public class InteractKeypad : MonoBehaviour
     Keypad instance;
 
     public string answer;
-    
-    bool canTurnOff = false;
+    GameObject triggeredObject;
+    public override void OnFocus()
+    {
+        Debug.Log("looking at");
+        
+       
+        //perhaps highlight it
+    }
+    public override void OnInteract()
+    {
+        Debug.Log("Changing UI");
+        ChangeUI();
+    }
+    public override void OnLoseFocus()
+    {
+        Debug.Log("looking away");
+        
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -29,64 +45,39 @@ public class InteractKeypad : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-            
         if (openMenu)
         {
-            if (Input.GetKey(KeyCode.Z)){
+            if (Input.GetKeyDown(KeyCode.Z)) //could change this key
+            {
                 ChangeUI();
-                //openMenu = false;
+            }
+        }
+        //did we enter the right answer?
+        if (instance.correct)
+        {
+            //reset the keypad
+            instance.correct = false;
+            instance.answer = null;
 
-                //change code here so it changes back and forth
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true; 
-                //canTurnOff = true;  
-                
-                //break;
-            }
+            //triggeredObject.open();?
         }
-        else{
-             if (menuUI.enabled && Input.GetKey(KeyCode.Z)){
-                ChangeUI();
-                //canTurnOff = false;
-               Cursor.lockState = CursorLockMode.Locked;
-               Cursor.visible = false; 
-                //Cursor.lockState = CursorLockMode.Locked;
-                
-            }
-        } 
-        /* if (menuUI.enabled)
-        {
-            if (Input.GetKey(KeyCode.Z)){
-                menuUI.enabled = !menuUI.enabled;  
-                openMenu = false;  
-            }
-        } */
+            
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.tag =="Player2")
-        {
-            openMenu = true;
-        }
-    }
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.collider.tag =="Player2")
-        {
-            openMenu = true;
-        }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.collider.tag =="Player2")
-        {
-            openMenu = false;
-        }
-    }
+    
     public void ChangeUI()
     {
-        menuUI.enabled = !menuUI.enabled;  
+        menuUI.enabled = !menuUI.enabled;
+        openMenu = !openMenu;
+        if (Cursor.lockState == CursorLockMode.Locked)
+        {
+             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true; 
+        }  
+        else
+        {
+             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false; 
+        }
     }
    
 

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
+  - pickup
+  - Enemy
+  - Player2
   layers:
   - Default
   - TransparentFX
@@ -16,7 +19,7 @@ TagManager:
   - 
   - Target
   - Obstruction
-  - 
+  - Interactable
   - 
   - 
   - 

@@ -89,6 +89,15 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SaveColor"",
+                    ""type"": ""Button"",
+                    ""id"": ""3f6604a7-6b79-4eb0-a316-50128559cd53"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -166,6 +175,17 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Load"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5cb7e830-bcd5-498c-9243-214a3fe3c442"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SaveColor"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -467,6 +487,7 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
         m_Editor_Save = m_Editor.FindAction("Save", throwIfNotFound: true);
         m_Editor_Undo = m_Editor.FindAction("Undo", throwIfNotFound: true);
         m_Editor_Load = m_Editor.FindAction("Load", throwIfNotFound: true);
+        m_Editor_SaveColor = m_Editor.FindAction("SaveColor", throwIfNotFound: true);
         // Player2
         m_Player2 = asset.FindActionMap("Player2", throwIfNotFound: true);
         m_Player2_Move = m_Player2.FindAction("Move", throwIfNotFound: true);
@@ -546,6 +567,7 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
     private readonly InputAction m_Editor_Save;
     private readonly InputAction m_Editor_Undo;
     private readonly InputAction m_Editor_Load;
+    private readonly InputAction m_Editor_SaveColor;
     public struct EditorActions
     {
         private @PlayerAction m_Wrapper;
@@ -557,6 +579,7 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
         public InputAction @Save => m_Wrapper.m_Editor_Save;
         public InputAction @Undo => m_Wrapper.m_Editor_Undo;
         public InputAction @Load => m_Wrapper.m_Editor_Load;
+        public InputAction @SaveColor => m_Wrapper.m_Editor_SaveColor;
         public InputActionMap Get() { return m_Wrapper.m_Editor; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -587,6 +610,9 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                 @Load.started -= m_Wrapper.m_EditorActionsCallbackInterface.OnLoad;
                 @Load.performed -= m_Wrapper.m_EditorActionsCallbackInterface.OnLoad;
                 @Load.canceled -= m_Wrapper.m_EditorActionsCallbackInterface.OnLoad;
+                @SaveColor.started -= m_Wrapper.m_EditorActionsCallbackInterface.OnSaveColor;
+                @SaveColor.performed -= m_Wrapper.m_EditorActionsCallbackInterface.OnSaveColor;
+                @SaveColor.canceled -= m_Wrapper.m_EditorActionsCallbackInterface.OnSaveColor;
             }
             m_Wrapper.m_EditorActionsCallbackInterface = instance;
             if (instance != null)
@@ -612,6 +638,9 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                 @Load.started += instance.OnLoad;
                 @Load.performed += instance.OnLoad;
                 @Load.canceled += instance.OnLoad;
+                @SaveColor.started += instance.OnSaveColor;
+                @SaveColor.performed += instance.OnSaveColor;
+                @SaveColor.canceled += instance.OnSaveColor;
             }
         }
     }
@@ -747,6 +776,7 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
         void OnSave(InputAction.CallbackContext context);
         void OnUndo(InputAction.CallbackContext context);
         void OnLoad(InputAction.CallbackContext context);
+        void OnSaveColor(InputAction.CallbackContext context);
     }
     public interface IPlayer2Actions
     {

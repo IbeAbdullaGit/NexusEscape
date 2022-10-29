@@ -11,11 +11,21 @@ public class PopUpSystem : MonoBehaviour
     public Animator animator;
     public TMP_Text popUpText;
 
-    public void PopUp(string text)
+
+
+    public void PopUp()
         {
             popUpBox.SetActive(true);
-            popUpText.text = text;
-            //animator.SetTrigger("pop");
+            //popUpText.text = text;
+            animator.SetTrigger("pop");
         }
+
+    public void ClosePop()
+    {
+        
+            //popUpText.text = text;
+        animator.SetTrigger("close");
+        //popUpBox.SetActive(false);
+    }
     
 }

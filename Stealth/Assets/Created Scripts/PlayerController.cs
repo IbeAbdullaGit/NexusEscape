@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Photon.Pun;
 
 public class PlayerController : MonoBehaviour
 {
@@ -29,38 +30,108 @@ public class PlayerController : MonoBehaviour
         sprinting,
         crouching
     }
+    [Header("Interaction")]
+    [SerializeField]private float interactionDistance = default;
+    [SerializeField]private LayerMask interactionLayer = default;
+    private Interactable currentInteractable;
+    [SerializeField] private bool canInteract = true;
+    [SerializeField] private KeyCode interactKey = KeyCode.Mouse0;
+    private Camera playerCam;
 
      public void OnMove(InputAction.CallbackContext context)
     {
-        move = context.ReadValue<Vector2>();
+        
+        {move = context.ReadValue<Vector2>();
+        }
     }
     public void OnLook(InputAction.CallbackContext context)
     {
-        look = context.ReadValue<Vector2>();
+       
+        {look = context.ReadValue<Vector2>();
+        }
     }
      public void OnJump(InputAction.CallbackContext context)
     {
-       Jump();
+      
+       {Jump();
+       }
     }
      void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
          distanceToGround = GetComponent<Collider>().bounds.extents.y;
          startYScale = transform.localScale.y;
+         playerCam = GetComponentInChildren<Camera>();
+         //if (!view.IsMine)
+         {
+            //destroy camera
+         }
+         
     }
     private void Update() {
 
         
-       StateHandler();
+       { 
+        StateHandler();
         //NEW, CHECK FOR CROUCHING
         if (crawl)
         {
             speed = crouchSpeed;
         }
         grounded = Physics.Raycast(transform.position, -Vector3.up, distanceToGround);
+       }
+
+       if (canInteract)
+         {
+            HandleInteractionCheck();
+            HandleInteractionInput();
+         }
+    }
+    private void HandleInteractionCheck()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, interactionDistance))
+        {
+            Debug.Log("Succesful raycast");
+            //on the right layer for interactables, and theres not currently anything we're interacting with, OR we're looking at a new object that's not currently looked at
+            if (hit.collider.gameObject.layer ==10 && (currentInteractable == null || hit.collider.gameObject.GetInstanceID() != currentInteractable.gameObject.GetInstanceID()))
+            {
+                //will infer we want interactable
+                hit.collider.TryGetComponent<Interactable>(out currentInteractable);
+
+                
+
+                //if we've got an interactable, give it focus
+                if (currentInteractable)
+                    currentInteractable.OnFocus();
+            }
+        }
+        //raycast doesnt have anything but we have something interacted
+        else if (currentInteractable)
+        {
+            //lose the interactable
+            currentInteractable.OnLoseFocus();
+            currentInteractable = null;
+        }
+        
+    }
+    private void HandleInteractionInput()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Input.GetKeyDown(interactKey) && currentInteractable != null && Physics.Raycast(ray, out hit, interactionDistance, interactionLayer))
+        {
+            Debug.Log("trying to do interaction");
+            //do the interaction
+            currentInteractable.OnInteract();
+        }
+        
     }
      private void FixedUpdate() {
-        Move();
+        
+        {Move();
+        }
     }
     private void StateHandler()
     {
@@ -149,7 +220,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
    
     private void LateUpdate() {
-        Look();
+       
+        {Look();
+        }
     }
     public void SetGrounded(bool state)
     {
