@@ -23,7 +23,7 @@ public class PhysicsButton : Interactable
 
      public override void OnFocus()
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
         //perhaps highlight it
     }
     public override void OnInteract()
