@@ -16,7 +16,7 @@ public class InteractKeypad : Interactable
     public string answer;
     GameObject triggeredObject;
 
-    public Door _door;
+    public Door _otherdoor;
     DoorInvoker _doorInvoker;
 
     public override void OnFocus()
@@ -44,7 +44,6 @@ public class InteractKeypad : Interactable
         //change answer depending on need
         instance.answer = answer;
         menuUI.enabled = false;
-
         _doorInvoker = new DoorInvoker();
     }
 
@@ -64,14 +63,12 @@ public class InteractKeypad : Interactable
             //reset the keypad
             instance.correct = false;
             instance.answer = null;
-
+            print("door toggled");
             //triggeredObject.open();?
-             ICommand toggleDoorCommand = new ToggleDoorCommand(_door);
-            _doorInvoker.AddCommand(toggleDoorCommand);
+            TriggerDoor();
         }
             
     }
-    
     public void ChangeUI()
     {
         menuUI.enabled = !menuUI.enabled;
@@ -87,6 +84,10 @@ public class InteractKeypad : Interactable
             Cursor.visible = false; 
         }
     }
-   
 
+    void TriggerDoor()
+    {
+        ICommand openDoor = new ToggleDoorCommand(_otherdoor);
+        _doorInvoker.AddCommand(openDoor);
+    }
 }
