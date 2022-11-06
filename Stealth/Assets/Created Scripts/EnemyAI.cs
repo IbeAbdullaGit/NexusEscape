@@ -27,6 +27,8 @@ public class EnemyAI : MonoBehaviour
 
     DetectionMeter detectionMeter;
 
+    WaitForSeconds delay = new WaitForSeconds(2f);
+
     void Start()
     {
         NavMeshAgent = GetComponent<NavMeshAgent>();
@@ -51,6 +53,11 @@ public class EnemyAI : MonoBehaviour
         targetMain = waypoints[waypointIndex].position;
         NavMeshAgent.SetDestination(targetMain);
         //going to a new place now, should turn
+        // //add pause when switching between points
+        // NavMeshAgent.isStopped = true;
+       
+        // NavMeshAgent.isStopped = false;
+        StartCoroutine(WalkPause());
     }
     void IterateWaypointIndex()
     {
@@ -59,6 +66,17 @@ public class EnemyAI : MonoBehaviour
         {
             waypointIndex = 0;
         }
+        
+    }
+   
+    private IEnumerator WalkPause()
+    {
+        NavMeshAgent.isStopped = true;
+        //wait
+        yield return delay;
+        //after waiting
+        NavMeshAgent.isStopped = false;      
+          
     }
   
 
@@ -100,7 +118,11 @@ public class EnemyAI : MonoBehaviour
        
         if(FOV.canSeePlayer)
         {
-           
+           //stop coroutine, so enemy can move
+           StopCoroutine(WalkPause());
+           //make sure enemy can move
+           NavMeshAgent.isStopped = false; 
+
             //targetMain = target.position;
             NavMeshAgent.SetDestination(target.position);
             Debug.DrawLine(transform.position, target.position, Color.red);
