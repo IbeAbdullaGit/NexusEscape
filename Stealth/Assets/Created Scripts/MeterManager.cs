@@ -8,11 +8,10 @@ public class MeterManager : MonoBehaviour
     
     public Slider[] sliders;
     [Range(0, 10)]
-    public int[] targetValues;
+    public int[] targetValues =new int[4];
 
     public bool correct = false;
 
-    public GameObject linkedObject;
     
     // Start is called before the first frame update
     void Start()
@@ -25,9 +24,7 @@ public class MeterManager : MonoBehaviour
     {
         if (CheckAnswer())
         {
-            //activate whatever effect
             correct = true;
-            //linkedObject.activate();
         }
         else{
             correct = false;

@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         if (Input.GetKeyDown(interactKey) && currentInteractable != null && Physics.Raycast(ray, out hit, interactionDistance, interactionLayer))
         {
-            Debug.Log("trying to do interaction");
+            //Debug.Log("trying to do interaction");
             //do the interaction
             currentInteractable.OnInteract();
         }

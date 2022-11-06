@@ -15,21 +15,25 @@ public class InteractKeypad : Interactable
 
     public string answer;
     GameObject triggeredObject;
+
+    public Door _door;
+    DoorInvoker _doorInvoker;
+
     public override void OnFocus()
     {
-        Debug.Log("looking at");
+        //Debug.Log("looking at");
         
        
         //perhaps highlight it
     }
     public override void OnInteract()
     {
-        Debug.Log("Changing UI");
+        //Debug.Log("Changing UI");
         ChangeUI();
     }
     public override void OnLoseFocus()
     {
-        Debug.Log("looking away");
+        //Debug.Log("looking away");
         
     }
 
@@ -40,6 +44,8 @@ public class InteractKeypad : Interactable
         //change answer depending on need
         instance.answer = answer;
         menuUI.enabled = false;
+
+        _doorInvoker = new DoorInvoker();
     }
 
     // Update is called once per frame
@@ -60,6 +66,8 @@ public class InteractKeypad : Interactable
             instance.answer = null;
 
             //triggeredObject.open();?
+             ICommand toggleDoorCommand = new ToggleDoorCommand(_door);
+            _doorInvoker.AddCommand(toggleDoorCommand);
         }
             
     }

@@ -15,9 +15,9 @@ public class ButtonPressOrder : MonoBehaviour
 
     public Button[] buttons;
 
-    public GameObject linkedObject;
-
     public TMP_Text text;
+
+    public bool correct = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,10 +33,11 @@ public class ButtonPressOrder : MonoBehaviour
             if (AnswerCheck())
             {
                 text.text = "Correct!";
-                //do something with the linked object
+                correct=true;
             }
             else{
                 text.text = "Incorrect!";
+                correct = false;
             }
             //reset buttons
             for (int i=0; i< buttons.Length; i++)

@@ -6,6 +6,12 @@ public class InteractButtons : Interactable
 {
      public bool openMenu = false;
      public Canvas menuUI;
+
+     ButtonPressOrder instance;
+
+     //the answer
+     [Range(1,3)]
+    public int[] buttonOrder = new int[3];
      public override void OnFocus()
     {
         Debug.Log("looking at");
@@ -25,6 +31,11 @@ public class InteractButtons : Interactable
     // Start is called before the first frame update
     void Start()
     {
+         //get the manager
+        instance = GameObject.FindGameObjectWithTag("GameController").GetComponent<ButtonPressOrder>();
+        //set the answer
+        instance.buttonOrder = this.buttonOrder;
+        
          menuUI.enabled = false;
     }
 
@@ -37,6 +48,12 @@ public class InteractButtons : Interactable
             {
                 ChangeUI();
             }
+        }
+        //correct answer
+        if (instance.correct)
+        {
+            instance.correct = false;
+            //do something, activate object
         }
     }
     public void ChangeUI()
