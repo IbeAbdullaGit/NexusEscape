@@ -10,13 +10,23 @@ public class InteractButtonMeter : Interactable
 
     MeterManager instance;
 
-    [Range(0, 10)]
-    public int[] targetValues = new int[4];
+    //[Range(0, 10)]
+    //public int[] targetValues = new int[4];
+
+    //this buttons value for the answer
+    [Range(0,10)]
+    public int ownValue;
+
+    //which button is this
+    public int number;
+
+
     private void Start() {
         //get the manager
         instance = GameObject.FindGameObjectWithTag("GameController").GetComponent<MeterManager>();
         //set the answer
-        instance.targetValues = this.targetValues;
+        //instance.targetValues = this.targetValues;
+        instance.targetValues[number-1] = this.ownValue;
         menuUI.enabled = false;
     }
     private void Update() {
@@ -30,12 +40,13 @@ public class InteractButtonMeter : Interactable
             }
         }
         
-        if (instance.correct)
+        //checking for right answer, this will check ALL BUTTONS for an OVERALL answer
+        if (instance.correct[number-1])
         {
-            //do something, activate object
+            //do something, activate object, reset
             
             //make incorrect
-            instance.correct = false;
+            //instance.correct[number-1] = false;
         }
     }
    public override void OnFocus()

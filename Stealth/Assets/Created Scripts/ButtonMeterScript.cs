@@ -32,7 +32,9 @@ public class ButtonMeterScript : MonoBehaviour
                 power = maxPower;
             }
         }
-        meter.value = power;
+        
+        //use an int to make calculating target ranges easier
+        meter.value = (int)power;
     }
     public void HoldButton()
     {

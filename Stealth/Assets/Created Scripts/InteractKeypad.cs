@@ -10,7 +10,6 @@ public class InteractKeypad : Interactable
     public Canvas menuUI;
 
     //keypad reference
-    public GameObject keypad;
     Keypad instance;
 
     public string answer;
@@ -40,7 +39,7 @@ public class InteractKeypad : Interactable
     // Start is called before the first frame update
     void Start()
     {
-        instance = keypad.GetComponent<Keypad>();
+        instance = GameObject.FindGameObjectWithTag("GameController").GetComponent<Keypad>();
         //change answer depending on need
         instance.answer = answer;
         menuUI.enabled = false;
