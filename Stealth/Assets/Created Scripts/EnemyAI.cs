@@ -28,6 +28,9 @@ public class EnemyAI : MonoBehaviour
     DetectionMeter detectionMeter;
 
     WaitForSeconds delay = new WaitForSeconds(2f);
+    WaitForSeconds distract = new WaitForSeconds(5f);
+
+    public bool distracted = false;
 
     void Start()
     {
@@ -78,19 +81,49 @@ public class EnemyAI : MonoBehaviour
         NavMeshAgent.isStopped = false;      
           
     }
+    public IEnumerator Distracted(GameObject distraction)
+    {
+        Debug.Log("Starting Distraction");
+
+        //flag to indicate distraction
+        distracted = true;
+        
+        //stop any coroutine that might be conflicting with this one, we want enemy to immediately walk over
+        //StopCoroutine(WalkPause());
+        //make sure they can walk
+         NavMeshAgent.isStopped=false;
+         //give them destination to go to
+        NavMeshAgent.SetDestination(distraction.transform.position);
+       
+        //enemy should not do anything else but just move, rest of AI is turned off
+        
+        yield return distract;
+
+        //afterwards, destroy the distraction
+        Destroy(distraction);
+
+        //set destination back to normal
+        //targetMain = waypoints[waypointIndex].position;
+        //NavMeshAgent.SetDestination(targetMain);
+
+        distracted = false;
+    }
   
 
     // Update is called once per frame
     void Update()
     {
-       playerInSight = inSight();
+       if (!distracted)
+       {
+            playerInSight = inSight();
       
-        if (Vector3.Distance(transform.position, targetMain) <1 )
-        {
-            detectionMeter.Meter();
-            IterateWaypointIndex();
-            UpdateDestination();
-        }
+            if (Vector3.Distance(transform.position, targetMain) <1 )
+            {
+                detectionMeter.Meter();
+                IterateWaypointIndex();
+                UpdateDestination();
+            }
+       }
         
     }
  
