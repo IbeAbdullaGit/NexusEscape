@@ -5,6 +5,7 @@ using UnityEngine;
 public class FieldOfView : MonoBehaviour
 {
     public float radius;
+    
     [Range(0, 360)]
     public float angle;
 
@@ -18,7 +19,7 @@ public class FieldOfView : MonoBehaviour
     void Start()
     {
         playerRef = GameObject.FindGameObjectWithTag("Player");
-        StartCoroutine(FOVRoutine());
+        //StartCoroutine(FOVRoutine());
     }
 
     private IEnumerator FOVRoutine()
@@ -31,12 +32,17 @@ public class FieldOfView : MonoBehaviour
             FieldOfViewCheck();
         }
     }
+
     private void FieldOfViewCheck()
     {
+        //Debug.Log("Doing Check");
+        
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
 
         if(rangeChecks.Length != 0)
         {
+            Debug.Log("Range checks: " + rangeChecks.Length);
+            
             Transform target = rangeChecks[0].transform;
             Vector3 directionToTarget = (target.position-transform.position).normalized;
 
@@ -66,6 +72,7 @@ public class FieldOfView : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //tryi doing this in update instead
+        FieldOfViewCheck();
     }
 }

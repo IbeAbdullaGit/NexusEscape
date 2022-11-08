@@ -26,7 +26,7 @@ public class SliderChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(slider.value);
+        //Debug.Log(slider.value);
     }
     public void ChangeColor()
     {

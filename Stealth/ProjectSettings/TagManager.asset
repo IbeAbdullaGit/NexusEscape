@@ -8,6 +8,7 @@ TagManager:
   - pickup
   - Enemy
   - Player2
+  - ButtonMeter
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - Target
   - Obstruction
   - Interactable
-  - 
-  - 
+  - Enemy
+  - Hazard
   - 
   - 
   - 

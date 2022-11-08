@@ -239,6 +239,15 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Hazard"",
+                    ""type"": ""Button"",
+                    ""id"": ""a344ddcf-739e-4603-ac36-158ca225e237"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -338,6 +347,17 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b507ddbf-c35a-40ce-b2c8-3d5af7f98fea"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Hazard"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -495,6 +515,7 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
         m_Player2_Menu = m_Player2.FindAction("Menu", throwIfNotFound: true);
         m_Player2_NextCamera = m_Player2.FindAction("NextCamera", throwIfNotFound: true);
         m_Player2_Look = m_Player2.FindAction("Look", throwIfNotFound: true);
+        m_Player2_Hazard = m_Player2.FindAction("Hazard", throwIfNotFound: true);
         // Player1
         m_Player1 = asset.FindActionMap("Player1", throwIfNotFound: true);
         m_Player1_Move = m_Player1.FindAction("Move", throwIfNotFound: true);
@@ -654,6 +675,7 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player2_Menu;
     private readonly InputAction m_Player2_NextCamera;
     private readonly InputAction m_Player2_Look;
+    private readonly InputAction m_Player2_Hazard;
     public struct Player2Actions
     {
         private @PlayerAction m_Wrapper;
@@ -663,6 +685,7 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
         public InputAction @Menu => m_Wrapper.m_Player2_Menu;
         public InputAction @NextCamera => m_Wrapper.m_Player2_NextCamera;
         public InputAction @Look => m_Wrapper.m_Player2_Look;
+        public InputAction @Hazard => m_Wrapper.m_Player2_Hazard;
         public InputActionMap Get() { return m_Wrapper.m_Player2; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -687,6 +710,9 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                 @Look.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnLook;
                 @Look.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnLook;
                 @Look.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnLook;
+                @Hazard.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnHazard;
+                @Hazard.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnHazard;
+                @Hazard.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnHazard;
             }
             m_Wrapper.m_Player2ActionsCallbackInterface = instance;
             if (instance != null)
@@ -706,6 +732,9 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
+                @Hazard.started += instance.OnHazard;
+                @Hazard.performed += instance.OnHazard;
+                @Hazard.canceled += instance.OnHazard;
             }
         }
     }
@@ -785,6 +814,7 @@ public partial class @PlayerAction : IInputActionCollection2, IDisposable
         void OnMenu(InputAction.CallbackContext context);
         void OnNextCamera(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
+        void OnHazard(InputAction.CallbackContext context);
     }
     public interface IPlayer1Actions
     {
