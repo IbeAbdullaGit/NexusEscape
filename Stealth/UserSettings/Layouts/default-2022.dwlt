@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 105
+  controlID: 52
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 56
+  controlID: 53
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 57
+  controlID: 22
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -460,22 +460,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\abdul\OneDrive\Documents\GDW-Stealth\Stealth\Stealth
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 117.400024}
-    m_SelectedIDs: 1c660000
-    m_LastClickedID: 26140
-    m_ExpandedIDs: 000000001c6600001e660000206600002266000024660000266600003266000052660000d2790000f8790000
+    scrollPos: {x: 0, y: 31}
+    m_SelectedIDs: 94600000
+    m_LastClickedID: 24724
+    m_ExpandedIDs: 0000000036600000386000003a6000003c6000003e6000004060000042600000446000004660000094600000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -503,7 +503,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001c6600001e66000020660000226600002466000026660000
+    m_ExpandedIDs: 0000000036600000386000003a6000003c6000003e60000040600000426000004460000046600000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300001863000000000000967b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -630,10 +630,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 258.8}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 48dbfeff80e0feff4ef3feffaef3feff2ef8feff045fffff74b3ffff66ddffff5edeffff2ce8ffff5aebfffffeebffffb8ecffff44edffff9eeeffff10effffff2faffffc46000000c62000064880000528d0000748f0000129000000e930000
+      m_ExpandedIDs: 90deffffa0ecffff74f2ffff9ef7ffff28fbffff2afbffff845e00008e5e0000ac5e0000ee5e0000865f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -915,9 +915,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.4268494, y: -1.5797424, z: 14.751862}
+    m_Target: {x: 38.975407, y: 14.046686, z: -43.61571}
     speed: 2
-    m_Value: {x: 2.4268517, y: -1.5797423, z: 14.751864}
+    m_Value: {x: 38.975407, y: 14.046686, z: -43.61571}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -963,20 +963,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.13601574, y: -0.7596651, z: 0.16796628, w: -0.6136515}
+    m_Target: {x: -0.044529624, y: -0.7237478, z: 0.047055747, w: -0.6874237}
     speed: 2
-    m_Value: {x: -0.1362422, y: -0.7586026, z: 0.16773085, w: -0.61467594}
+    m_Value: {x: -0.045547366, y: -0.723474, z: 0.048128434, w: -0.687164}
   m_Size:
-    m_Target: 97.475395
+    m_Target: 7.0118017
     speed: 2
-    m_Value: 97.47539
+    m_Value: 6.709858
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1.7001501
-    m_SpeedNormalized: 0.8500001
+    m_Speed: 1.7601202
+    m_SpeedNormalized: 0.88000005
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -987,7 +987,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 0
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.23310408, y: -0.6988476, z: 0.26082474, w: -0.6241407}
+  m_LastSceneViewRotation: {x: -0.33802232, y: -0.21195082, z: 0.078543104, w: -0.9138496}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
