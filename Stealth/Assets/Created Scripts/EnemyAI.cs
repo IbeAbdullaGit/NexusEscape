@@ -84,6 +84,8 @@ public class EnemyAI : MonoBehaviour
     public IEnumerator Distracted(GameObject distraction)
     {
         Debug.Log("Starting Distraction");
+        //stop current coroutines
+        StopCoroutine(WalkPause());
 
         //flag to indicate distraction
         distracted = true;

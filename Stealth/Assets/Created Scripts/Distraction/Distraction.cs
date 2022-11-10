@@ -34,6 +34,8 @@ public class Distraction : MonoBehaviour
             {
                 //should only run this once per hazard, since after this will be destroyed
                 //sending in this game object to run the enemy ref's distracted function
+                //stop any coroutines that might be conflicting
+                //StopCoroutine(enemyRef.GetComponent<EnemyAI>().WalkPause());
                 StartCoroutine(enemyRef.GetComponent<EnemyAI>().Distracted(gameObject));
                 //enemyRef.GetComponent<EnemyAI>().StartCoroutine(enemyRef.GetComponent<EnemyAI>().Distracted(gameObject));
             }

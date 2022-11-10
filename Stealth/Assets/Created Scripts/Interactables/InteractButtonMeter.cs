@@ -36,7 +36,8 @@ public class InteractButtonMeter : Interactable
         {
             if (Input.GetKeyDown(KeyCode.Z)) //could change this key
             {
-                ChangeUI();
+                //will always be close
+                ChangeUI();   
             }
         }
         

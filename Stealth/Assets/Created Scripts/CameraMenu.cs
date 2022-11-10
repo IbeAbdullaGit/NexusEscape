@@ -30,7 +30,7 @@ public class CameraMenu : MonoBehaviour
         
         inputAction = PlayerInputController.controller.inputAction;
         inputAction.Player2.Menu.performed += cntxt => OpenMenu();
-        inputAction.Player2.NextCamera.performed += cntxt => SwitchCameras();
+        //inputAction.Player2.NextCamera.performed += cntxt => SwitchCameras();
        
         menuUI.enabled = false;
 
@@ -39,8 +39,8 @@ public class CameraMenu : MonoBehaviour
     }
     void OpenMenu()
     {
-        //menuUI.enabled = !menuUI.enabled;
-        menuUI.enabled = true;
+       
+        //menuUI.enabled = true;
         if (Cursor.lockState == CursorLockMode.Locked)
         {
              Cursor.lockState = CursorLockMode.None;
@@ -61,6 +61,7 @@ public class CameraMenu : MonoBehaviour
         else{
             pop.ClosePop();
         }
+        menuUI.enabled = !menuUI.enabled;
     }
     public void SwitchCameras()
     {
