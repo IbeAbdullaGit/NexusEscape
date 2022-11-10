@@ -38,6 +38,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private KeyCode interactKey = KeyCode.Mouse0;
     private Camera playerCam;
 
+    [Header("Slope Handling")]
+    public float maxSlopeAngle;
+    private RaycastHit slopeHit;
+
      public void OnMove(InputAction.CallbackContext context)
     {
         
@@ -165,16 +169,6 @@ public class PlayerController : MonoBehaviour
     public void CrawlChange()
         {
             crawl = !crawl;
-            if (crawl)
-            {
-               // m_CharacterController.height = 0.3f;
-              
-            }
-            else
-            {
-               // m_CharacterController.height = initialHeight;
-            
-            }
         }
     void Jump()
     {
@@ -228,5 +222,19 @@ public class PlayerController : MonoBehaviour
     {
         grounded = state;
     }
-
+    private bool OnSlope()
+    {
+        if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, transform.localScale.y * 0.5f + 0.3f))
+        {
+            float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+            //true if the angle is smaller than our maximum slope angle it's not 0
+            return angle < maxSlopeAngle && angle!=0;
+        }
+        return false;
+    }
+    /* private Vector3 GetSlopeMoveDirection()
+    {
+        return Vector3.ProjectOnPlane(transform.)
+    }
+ */
 }

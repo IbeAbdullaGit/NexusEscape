@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 52
+  controlID: 55
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 342.40002
     height: 730.8
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 53
+  controlID: 56
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 22
+  controlID: 57
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -460,22 +460,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Materials
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Materials
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\abdul\OneDrive\Documents\GDW-Stealth\Stealth\Stealth
+  m_LastProjectPath: D:\source\Stealth\Stealth
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 31}
-    m_SelectedIDs: 94600000
-    m_LastClickedID: 24724
-    m_ExpandedIDs: 0000000036600000386000003a6000003c6000003e6000004060000042600000446000004660000094600000
+    m_SelectedIDs: 32660000
+    m_LastClickedID: 26162
+    m_ExpandedIDs: 000000001c6600001e660000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -503,7 +503,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000036600000386000003a6000003c6000003e60000040600000426000004460000046600000
+    m_ExpandedIDs: 000000001c6600001e660000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -547,7 +547,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 5}
+      m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -630,24 +630,24 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 90deffffa0ecffff74f2ffff9ef7ffff28fbffff2afbffff845e00008e5e0000ac5e0000ee5e0000865f0000
+      scrollPos: {x: 0, y: 66.79999}
+      m_SelectedIDs: beebffff
+      m_LastClickedID: -5186
+      m_ExpandedIDs: b2edffffcef6fffff8faffff06620000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: ElectricParticle
+        m_OriginalName: ElectricParticle
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -5186
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -876,7 +876,7 @@ MonoBehaviour:
       containerId: overlay-container--right
       floating: 0
       collapsed: 0
-      displayed: 0
+      displayed: 1
       snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
@@ -915,9 +915,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 38.975407, y: 14.046686, z: -43.61571}
+    m_Target: {x: -10.993668, y: 3.4393044, z: -35.51997}
     speed: 2
-    m_Value: {x: 38.975407, y: 14.046686, z: -43.61571}
+    m_Value: {x: -10.993668, y: 3.4393044, z: -35.51997}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -955,7 +955,7 @@ MonoBehaviour:
       m_Fade:
         m_Target: 0
         speed: 2
-        m_Value: 1
+        m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -963,13 +963,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.044529624, y: -0.7237478, z: 0.047055747, w: -0.6874237}
+    m_Target: {x: 0.13221438, y: -0.61886096, z: 0.10667329, w: 0.7669709}
     speed: 2
-    m_Value: {x: -0.045547366, y: -0.723474, z: 0.048128434, w: -0.687164}
+    m_Value: {x: 0.13236809, y: -0.6176811, z: 0.10646991, w: 0.7678626}
   m_Size:
-    m_Target: 7.0118017
+    m_Target: 9.328681
     speed: 2
-    m_Value: 6.709858
+    m_Value: 8.926968
   m_Ortho:
     m_Target: 0
     speed: 2
