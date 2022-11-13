@@ -6,7 +6,7 @@ using UnityEngine.ParticleSystemJobs;
 namespace FlyweightPattern{
     public class FlyWeightParticles : MonoBehaviour
     {
-        ParticleSystem.NoiseModule  noise;
+        ParticleSystem ps;
         public float strength = 9.23f;
         public float freq = 2.5f;
 
@@ -16,8 +16,9 @@ namespace FlyweightPattern{
         // Start is called before the first frame update
         void Start()
         {
-            noise = GetComponent<ParticleSystem.NoiseModule>();
+            ps = prefab.GetComponent<ParticleSystem>();
             
+           
           
             ParticleAdjustment();
         }
@@ -25,11 +26,13 @@ namespace FlyweightPattern{
         // Update is called once per frame
         void ParticleAdjustment()
         {
-            for(int i = 0; i < 8; i++)
+            var noise = ps.noise;
+            //noise.enabled = true; 
+            for (int i = 0; i < 8; i++)
             {
 
                 newParticle = Instantiate(prefab);
-                noise = newParticle.GetComponent<ParticleSystem.NoiseModule>();
+                ps = newParticle.GetComponent<ParticleSystem>();
 
 
                 //Without flyweight
@@ -40,7 +43,7 @@ namespace FlyweightPattern{
                 //With flyweight
                 noise.strength = strength;
                 noise.frequency = freq;
-                newParticle.transform.position = newParticle.transform.position + new Vector3(Random.Range(0f, 100f), Random.Range(0f, 50f), 0);
+                newParticle.transform.position = newParticle.transform.position + new Vector3(Random.Range(0f, 5f), Random.Range(0f, 10f), 0);
 
             }
         }
