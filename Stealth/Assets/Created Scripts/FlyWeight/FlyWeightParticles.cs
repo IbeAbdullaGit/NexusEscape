@@ -43,7 +43,7 @@ namespace FlyweightPattern{
                 //With flyweight
                 noise.strength = strength;
                 noise.frequency = freq;
-                newParticle.transform.position = newParticle.transform.position + new Vector3(Random.Range(0f, 5f), Random.Range(0f, 10f), 0);
+                newParticle.transform.position = newParticle.transform.position + new Vector3(0, Random.Range(-0.5f, 1f), Random.Range(-1,1f));
 
             }
         }
