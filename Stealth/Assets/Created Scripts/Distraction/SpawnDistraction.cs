@@ -8,6 +8,9 @@ public class SpawnDistraction : MonoBehaviour
     public GameObject prefab;
 
     public Vector3 position;
+
+    public bool UsePooling = true;
+
     public void OnFocus()
     {
         //Debug.Log("looking at");
@@ -18,12 +21,20 @@ public class SpawnDistraction : MonoBehaviour
     public  void OnInteract()
     {
         //Debug.Log("Changing UI");
-        
-        //spawn the hazard
-        currentHazard = Instantiate(prefab);
-        
-        //set the location
-        currentHazard.transform.position = this.position;
+
+
+        if (UsePooling)
+        {
+            currentHazard = ObjectPooler.instance.SpawnFromPool("Distraction", this.position, new Quaternion(0f, 0f, 0f, 0f));
+        }
+        else
+        {
+            //spawn the hazard
+            currentHazard = Instantiate(prefab);
+
+            //set the location
+            currentHazard.transform.position = this.position;
+        }
 
 
     }

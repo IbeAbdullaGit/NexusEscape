@@ -7590,7 +7590,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &906905641
 GameObject:
@@ -7907,6 +7907,7 @@ GameObject:
   - component: {fileID: 939785483}
   - component: {fileID: 939785484}
   - component: {fileID: 939785485}
+  - component: {fileID: 939785486}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: GameController
@@ -8018,7 +8019,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &939785480
 MonoBehaviour:
@@ -8110,6 +8111,22 @@ MonoBehaviour:
   Ans: {fileID: 171289264}
   answer: 
   correct: 0
+--- !u!114 &939785486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939785472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1277f9992e347314bb5553d19b038c1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: Distraction
+    Prefab: {fileID: 5330309084312893233, guid: c94c02709c728c04592d5e3d8c33f1c4, type: 3}
+    size: 10
 --- !u!1 &981167747
 GameObject:
   m_ObjectHideFlags: 0
@@ -10863,7 +10880,7 @@ Transform:
   - {fileID: 254121682}
   - {fileID: 141596270}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1295456779
 GameObject:
@@ -17030,7 +17047,7 @@ Transform:
   m_Children:
   - {fileID: 1560713958}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 86.091, z: 0}
 --- !u!1 &1986651254
 GameObject:
@@ -17322,7 +17339,7 @@ Transform:
   - {fileID: 40947171}
   - {fileID: 1664820819}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2014617051
 MonoBehaviour:
@@ -17660,6 +17677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 5330309084312893233, guid: c94c02709c728c04592d5e3d8c33f1c4, type: 3}
   position: {x: 12.45, y: 4.43, z: -9.35}
+  UsePooling: 1
 --- !u!1 &2022854339
 GameObject:
   m_ObjectHideFlags: 0
@@ -18790,7 +18808,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &2132661639
 GameObject:

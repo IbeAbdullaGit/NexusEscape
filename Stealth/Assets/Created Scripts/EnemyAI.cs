@@ -102,7 +102,8 @@ public class EnemyAI : MonoBehaviour
         yield return distract;
 
         //afterwards, destroy the distraction
-        Destroy(distraction);
+        //Destroy(distraction); //Disable if objectpooling
+        distraction.SetActive(false); //Used for object pooling, a bit buggy. Prefer if we use this and fix. Enable object pooling under Player's script.
 
         //set destination back to normal
         //targetMain = waypoints[waypointIndex].position;
