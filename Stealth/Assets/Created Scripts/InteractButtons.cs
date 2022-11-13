@@ -34,6 +34,7 @@ public class InteractButtons : Interactable
          //get the manager
         instance = GameObject.FindGameObjectWithTag("GameController").GetComponent<ButtonPressOrder>();
         //set the answer
+        //will need to change this eventually as well for multiple instance
         instance.buttonOrder = this.buttonOrder;
         
          menuUI.enabled = false;

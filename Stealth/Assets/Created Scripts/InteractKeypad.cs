@@ -41,6 +41,7 @@ public class InteractKeypad : Interactable
     {
         instance = GameObject.FindGameObjectWithTag("GameController").GetComponent<Keypad>();
         //change answer depending on need
+        //will need to change when having multiple instances (all answers will be set at once instead of individually)
         instance.answer = answer;
         menuUI.enabled = false;
         _doorInvoker = new DoorInvoker();

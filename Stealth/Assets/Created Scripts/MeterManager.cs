@@ -26,13 +26,6 @@ public class MeterManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /* if (CheckAnswer())
-        {
-            correct = true;
-        }
-        else{
-            correct = false;
-        } */
         
         for (int i=0; i<sliders.Length; i++)
         {
@@ -47,15 +40,6 @@ public class MeterManager : MonoBehaviour
 
     bool CheckAnswer(int n) //n is the button number we're checking
     {
-        /* //compare the values in the sliders to the values we want - note that the ordering must match
-        for (int i=0; i < sliders.Length; i++)
-        {
-            if (sliders[i].value != targetValues[i])
-            {
-                //if any of the values don't match, return false
-                return false;
-            }
-        } */
 
         //compare specific values
         if (sliders[n].value != targetValues[n])
