@@ -2900,7 +2900,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     separateAxes: 0
-    frequency: 2.39
+    frequency: 2.5
     damping: 1
     octaves: 1
     octaveMultiplier: 0.5
