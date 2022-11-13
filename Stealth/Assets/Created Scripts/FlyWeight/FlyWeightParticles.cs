@@ -40,7 +40,7 @@ namespace FlyweightPattern{
                 //With flyweight
                 noise.strength = strength;
                 noise.frequency = freq;
-                newParticle.transform.position = ObjectWParts.transform.position + new Vector3(0, 1, 0);
+                newParticle.transform.position = newParticle.transform.position + new Vector3(Random.Range(0f, 100f), Random.Range(0f, 50f), 0);
 
             }
         }
