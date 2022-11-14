@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ab887ede29f8440b9cd91849ebdea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 8
+  radius: 10
   angle: 360
   enemyRef: {fileID: 0}
   targetMask:
