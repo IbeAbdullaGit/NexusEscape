@@ -2,7 +2,7 @@
  
 A co-op stealth game, where the players must communicate with eachother to help one of the escape from a Place (Place to be determined), made for GDW
 
-Controls:
+## Controls
 WASD to move Player 1
 X to toggle split screen, arrow keys to move player 2
 Click on interactable objects with mouse left click
@@ -11,7 +11,7 @@ press Z when UI elements are open, from the puzzles, to close them, or click on 
 NOTE: When running the EXE, a development log console may pop up showing some errors.
 This can be disregarded since the build still works despite it, so just clear this log if it shows up.
 
-FOR GED GROUP A2:
+## FOR GED GROUP A2
 In some parts of the video, there are some meter UI elements on the right side of the screen. This is meant to be visible only to the 2nd player of the game,
 and we have a split screen toggle implemented for multiplayer testing. For the purposes of showcasing and testing specific parts, we have disabled the split
 screen for now, which is why that UI is on the first players screen and is visible.
@@ -23,6 +23,8 @@ during puzzle A, we access the manager and set the answer to X, and then once pu
 on the parameters within B's interface script.
 And as well, we can easily change one part of the puzzle without having to change other parts or edit the main script, due to having multiple scripts 
 which interact with the main managers.
+
+Press Q to spawn the distractable object for Object Pooling. It will only spawn in one area as of now.
 
 References:
 Field of view: https://www.youtube.com/watch?v=j1-OyLo77ss
