@@ -3,10 +3,15 @@
 A co-op stealth game, where the players must communicate with eachother to help one of the escape from a Place (Place to be determined), made for GDW
 
 Controls:
-WASD to move Player 1
-X to toggle split screen, arrow keys to move player 2
-Click on interactable objects with mouse left click
-press Z when UI elements are open, from the puzzles, to close them, or click on the interactable again
+-WASD to move Player 1
+
+-X to toggle split screen, arrow keys to move player 2
+
+-Click on interactable objects with mouse left click
+
+-press Z when UI elements are open, from the puzzles, to close them, or click on the interactable again (the meters cant be closed for now)
+
+-Q to toggle distraction (it is also a lean button, and will only spawn in a specific location for now)
 
 NOTE: When running the EXE, a development log console may pop up showing some errors.
 This can be disregarded since the build still works despite it, so just clear this log if it shows up.
