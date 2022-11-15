@@ -20,15 +20,15 @@ public class EnemyAI : MonoBehaviour
     bool playerInSight = false;
 
     public Transform[] waypoints;
-    int waypointIndex;
+    int waypointIndex = 0;
     Vector3 targetMain;
 
     FieldOfView FOV;
 
     DetectionMeter detectionMeter;
 
-    WaitForSeconds delay = new WaitForSeconds(2f);
-    WaitForSeconds distract = new WaitForSeconds(5f);
+    public WaitForSeconds delay = new WaitForSeconds(1f);
+    public WaitForSeconds distract = new WaitForSeconds(5f);
 
     public bool distracted = false;
 
@@ -48,7 +48,7 @@ public class EnemyAI : MonoBehaviour
 
         UpdateDestination();
 
-        detectionMeter = GameObject.FindGameObjectWithTag("GameController").GetComponent<DetectionMeter>();
+        //detectionMeter = GameObject.FindGameObjectWithTag("GameController").GetComponent<DetectionMeter>();
        
     }
     void UpdateDestination()
@@ -122,11 +122,20 @@ public class EnemyAI : MonoBehaviour
       
             if (Vector3.Distance(transform.position, targetMain) <1 )
             {
-                detectionMeter.Meter();
+                //detectionMeter.Meter();
                 IterateWaypointIndex();
                 UpdateDestination();
+                Debug.Log("Switching path");
             }
        }
+       //get unstuck
+       if (!NavMeshAgent.hasPath && NavMeshAgent.pathStatus == NavMeshPathStatus.PathComplete) {
+             Debug.Log("Character stuck");
+             NavMeshAgent.enabled = false;
+             NavMeshAgent.enabled = true;
+             Debug.Log("navmesh re enabled");
+             // navmesh agent will start moving again
+        }  
         
     }
  

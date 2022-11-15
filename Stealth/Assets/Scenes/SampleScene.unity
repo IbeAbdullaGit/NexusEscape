@@ -1318,6 +1318,7 @@ MonoBehaviour:
   - {fileID: 1241824711}
   - {fileID: 1225311155}
   - {fileID: 1630959840}
+  distracted: 0
 --- !u!195 &414125338
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2978,6 +2979,13 @@ MonoBehaviour:
   crouchYScale: 0.5
   grounded: 0
   state: 0
+  interactionDistance: 0
+  interactionLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  canInteract: 1
+  interactKey: 323
+  maxSlopeAngle: 0
 --- !u!54 &1027642069
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3410,8 +3418,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openMenu: 0
   menuUI: {fileID: 1598737304}
-  keypad: {fileID: 2083009492}
   answer: 123
+  _otherdoor: {fileID: 0}
 --- !u!65 &1137925887
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5544,6 +5552,13 @@ MonoBehaviour:
   crouchYScale: 0.5
   grounded: 0
   state: 0
+  interactionDistance: 0
+  interactionLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  canInteract: 1
+  interactKey: 323
+  maxSlopeAngle: 0
 --- !u!54 &1618511197
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7019,6 +7034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ans: {fileID: 149567229}
   answer: 
+  correct: 0
 --- !u!114 &2083009495
 MonoBehaviour:
   m_ObjectHideFlags: 0

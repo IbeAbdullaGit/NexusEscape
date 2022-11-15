@@ -41,6 +41,8 @@ public class CameraMenu : MonoBehaviour
     {
        
         //menuUI.enabled = true;
+        menuUI.enabled = !menuUI.enabled;
+
         if (Cursor.lockState == CursorLockMode.Locked)
         {
              Cursor.lockState = CursorLockMode.None;
@@ -61,7 +63,7 @@ public class CameraMenu : MonoBehaviour
         else{
             pop.ClosePop();
         }
-        menuUI.enabled = !menuUI.enabled;
+        
     }
     public void SwitchCameras()
     {
