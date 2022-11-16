@@ -125,7 +125,7 @@ public class EnemyAI : MonoBehaviour
                 //detectionMeter.Meter();
                 IterateWaypointIndex();
                 UpdateDestination();
-                Debug.Log("Switching path");
+                //Debug.Log("Switching path");
             }
        }
        //get unstuck

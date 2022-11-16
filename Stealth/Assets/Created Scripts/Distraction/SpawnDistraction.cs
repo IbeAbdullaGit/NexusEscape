@@ -11,6 +11,14 @@ public class SpawnDistraction : MonoBehaviour
 
     public bool UsePooling = true;
 
+    CameraMenu cameras;
+
+    public float distance = 10.0f;
+
+    WaitForSeconds cooldown = new WaitForSeconds(10.0f);
+
+    bool spawning = false;
+
     public void OnFocus()
     {
         //Debug.Log("looking at");
@@ -20,12 +28,23 @@ public class SpawnDistraction : MonoBehaviour
     }
     public  void OnInteract()
     {
-        //Debug.Log("Changing UI");
-
-
+        if (!spawning)
+            StartCoroutine(Spawn());
+    }
+    IEnumerator Spawn()
+    {
+        //we are spawning rn
+        spawning = true;
+        //current camera
+        position = cameras.GetCurrentCamera().transform.position;
+        //the actual position should be offset a bit
+        position += cameras.GetCurrentCamera().transform.forward * distance;
+        //move the y so it's not floating in the air, could change
+        position.y = 5.0f;
+        
         if (UsePooling)
         {
-            currentHazard = ObjectPooler.instance.SpawnFromPool("Distraction", this.position, new Quaternion(0f, 0f, 0f, 0f));
+            currentHazard = ObjectPooler.instance.SpawnFromPool("Distraction", position, new Quaternion(0f, 0f, 0f, 0f));
         }
         else
         {
@@ -33,10 +52,14 @@ public class SpawnDistraction : MonoBehaviour
             currentHazard = Instantiate(prefab);
 
             //set the location
-            currentHazard.transform.position = this.position;
+            currentHazard.transform.position = position;
         }
 
-
+        //now, start the cooldown
+        yield return cooldown;
+        
+        //after cooldown, allow spawning again
+        spawning = false;
     }
     public void OnLoseFocus()
     {
@@ -46,7 +69,7 @@ public class SpawnDistraction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        cameras = GameObject.FindGameObjectWithTag("GameController").GetComponent<CameraMenu>();
     }
 
     // Update is called once per frame

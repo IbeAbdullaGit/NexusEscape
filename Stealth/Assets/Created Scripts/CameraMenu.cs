@@ -14,6 +14,8 @@ public class CameraMenu : MonoBehaviour
     public Canvas menuUI;
 
     public Material[] cameras;
+
+    public Camera[] cams;
     int cameraIndex = 0;
     public Image cameraView;
 
@@ -36,6 +38,11 @@ public class CameraMenu : MonoBehaviour
 
         pop = GameObject.FindGameObjectWithTag("GameController").GetComponent<PopUpSystem>();
         
+    }
+
+    public Camera GetCurrentCamera()
+    {
+        return cams[cameraIndex];
     }
     void OpenMenu()
     {

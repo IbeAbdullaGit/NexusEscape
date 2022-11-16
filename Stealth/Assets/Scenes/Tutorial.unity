@@ -3362,6 +3362,9 @@ MonoBehaviour:
   cameras:
   - {fileID: 2100000, guid: 8a907bb5dc2568c4798d3f23a99699c0, type: 2}
   - {fileID: 2100000, guid: eff381c985778fb44af16c7a30029416, type: 2}
+  cams:
+  - {fileID: 1714771383}
+  - {fileID: 852530571}
   cameraView: {fileID: 101435137}
 --- !u!114 &375820736
 MonoBehaviour:
@@ -6759,6 +6762,7 @@ GameObject:
   - component: {fileID: 872308315}
   - component: {fileID: 872308314}
   - component: {fileID: 872308313}
+  - component: {fileID: 872308324}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -6781,6 +6785,7 @@ MonoBehaviour:
   prefab: {fileID: 5330309084312893233, guid: c94c02709c728c04592d5e3d8c33f1c4, type: 3}
   position: {x: 12.45, y: 4.43, z: -9.35}
   UsePooling: 1
+  distance: 5
 --- !u!114 &872308314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7119,6 +7124,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0.37, y: -87.322, z: 0.017}
+--- !u!114 &872308324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872308312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86801addbb81fa34c9ff597098da3ab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5330309084312893233, guid: c94c02709c728c04592d5e3d8c33f1c4, type: 3}
+  position: {x: 0, y: 0, z: 0}
+  UsePooling: 1
+  distance: 5
 --- !u!1 &877321350
 GameObject:
   m_ObjectHideFlags: 0
