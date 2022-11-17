@@ -128,14 +128,14 @@ public class EnemyAI : MonoBehaviour
                 //Debug.Log("Switching path");
             }
        }
-       //get unstuck
+       /* //get unstuck
        if (!NavMeshAgent.hasPath && NavMeshAgent.pathStatus == NavMeshPathStatus.PathComplete) {
              Debug.Log("Character stuck");
              NavMeshAgent.enabled = false;
              NavMeshAgent.enabled = true;
              Debug.Log("navmesh re enabled");
              // navmesh agent will start moving again
-        }  
+        }   */
         
     }
  
@@ -163,12 +163,13 @@ public class EnemyAI : MonoBehaviour
        
         if(FOV.canSeePlayer)
         {
+            Debug.Log("Enemy AI sees player");
            //stop coroutine, so enemy can move
            StopCoroutine(WalkPause());
            //make sure enemy can move
            NavMeshAgent.isStopped = false; 
 
-            //targetMain = target.position;
+            targetMain = target.position;
             NavMeshAgent.SetDestination(target.position);
             Debug.DrawLine(transform.position, target.position, Color.red);
             return true;

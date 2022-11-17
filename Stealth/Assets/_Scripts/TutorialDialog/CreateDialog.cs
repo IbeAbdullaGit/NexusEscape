@@ -20,6 +20,8 @@ public class CreateDialog : MonoBehaviour
         ui.enabled = false;
         //ChangeUI();
         ChangeText("This is a test");
+        run_once = false;
+        Debug.Log("Starting");
     }
     
     public void ChangeUI()
