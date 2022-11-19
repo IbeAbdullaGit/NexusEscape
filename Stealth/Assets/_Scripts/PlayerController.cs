@@ -82,6 +82,7 @@ public class PlayerController : MonoBehaviour
         {
             speed = crouchSpeed;
         }
+        //REDO HOW WE DO GROUNDING
         grounded = Physics.Raycast(transform.position, -Vector3.up, distanceToGround);
        }
 

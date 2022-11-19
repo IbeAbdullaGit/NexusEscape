@@ -163,7 +163,7 @@ public class EnemyAI : MonoBehaviour
        
         if(FOV.canSeePlayer)
         {
-            Debug.Log("Enemy AI sees player");
+            //Debug.Log("Enemy AI sees player");
            //stop coroutine, so enemy can move
            StopCoroutine(WalkPause());
            //make sure enemy can move
