@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    bool isOpen = false;
+    public bool isOpen = false;
     public Vector3 openPosition;
     public Vector3 closedPosition;
 

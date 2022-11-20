@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Photon.Pun;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController2 : MonoBehaviour
 {
     public Rigidbody rb;
     public GameObject cam;
@@ -35,11 +35,13 @@ public class PlayerController : MonoBehaviour
     private Interactable currentInteractable;
     [SerializeField] private bool canInteract = true;
     [SerializeField] private KeyCode interactKey = KeyCode.Mouse0;
-    private Camera playerCam;
+    
 
     [Header("Slope Handling")]
     public float maxSlopeAngle;
     private RaycastHit slopeHit;
+
+    float distanceToGround;
 
      public void OnMove(InputAction.CallbackContext context)
     {
@@ -61,10 +63,9 @@ public class PlayerController : MonoBehaviour
     }
      void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-         //distanceToGround = GetComponent<Collider>().bounds.extents.y;
+        //Cursor.lockState = CursorLockMode.Locked;
+         distanceToGround = GetComponent<Collider>().bounds.extents.y;
          startYScale = transform.localScale.y;
-         playerCam = GetComponentInChildren<Camera>();
          //if (!view.IsMine)
          {
             //destroy camera
@@ -82,7 +83,7 @@ public class PlayerController : MonoBehaviour
             speed = crouchSpeed;
         }
         //REDO HOW WE DO GROUNDING
-        //grounded = Physics.Raycast(transform.position, -Vector3.up, distanceToGround);
+        grounded = Physics.Raycast(transform.position, -Vector3.up, distanceToGround);
        }
 
        if (canInteract)
@@ -93,7 +94,8 @@ public class PlayerController : MonoBehaviour
     }
     private void HandleInteractionCheck()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //adjust for not main camera
+        Ray ray = cam.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, interactionDistance))
         {
@@ -122,7 +124,7 @@ public class PlayerController : MonoBehaviour
     }
     private void HandleInteractionInput()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = cam.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Input.GetKeyDown(interactKey) && currentInteractable != null && Physics.Raycast(ray, out hit, interactionDistance, interactionLayer))
         {

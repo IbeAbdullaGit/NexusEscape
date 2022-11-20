@@ -59,7 +59,7 @@ public class TileSubmit : Interactable
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(occupied[0] + ", " + occupied[1] + ", " + occupied[2]);
+        //Debug.Log(occupied[0] + ", " + occupied[1] + ", " + occupied[2]);
         //check if our references are in place; should have at least 1, and is anything being held
         if (currRefs.Count >=1 && inventory.currentTile)
         {

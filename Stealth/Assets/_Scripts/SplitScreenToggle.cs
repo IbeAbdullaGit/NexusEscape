@@ -21,7 +21,21 @@ public class SplitScreenToggle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //for enabling second player
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            splitscreen = !splitscreen;
+            if (splitscreen)
+            {
+                 screen.rect = new Rect(0,0,0.5f,1);
+                screen2.rect = new Rect (0.5f, 0, 0.5f, 1);
+            }
+            else{
+                //player 2 is the main
+                screen2.rect = new Rect(0,0,1.0f,1);
+                screen.rect = new Rect (0.0f, 0, 0.0f, 1);
+            }
+        }
     }
     void SplitScreen()
     {
