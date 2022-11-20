@@ -12,6 +12,12 @@ public class TileSubmit : Interactable
      //hold our references
      List<TilePickUp> currRefs = new List<TilePickUp>();
 
+     //answer
+     public int[] answer = new int[3];
+     private int[] currAnswer = new int[3];
+
+     public Door activateDoor;
+
      //hold reference to whatever is occupied
      bool[] occupied = {false, false, false};
     public override void OnInteract()
@@ -55,6 +61,39 @@ public class TileSubmit : Interactable
         inventory = GameObject.FindGameObjectWithTag("GameController").GetComponent<Inventory>();
         //Debug.Log("Is this being started?");
     }
+    void ArrangeAnswer()
+    {
+        //the current references may not be in order, so ansemble in order for checking the answer
+        for (int i=0; i< currRefs.Count; i++)
+        {
+            //right now, manually doing it for each one since we only have 3.
+            if (currRefs[i].tile_pos == 0)
+            {
+                currAnswer[0] = currRefs[i].id;
+            }
+            else if (currRefs[i].tile_pos == 1)
+            {
+                currAnswer[1] = currRefs[i].id;
+            }
+             else if (currRefs[i].tile_pos == 2)
+            {
+                currAnswer[2] = currRefs[i].id;
+            }
+        }
+
+    }
+    bool AnswerCheck()
+    {
+        for (int i=0; i< answer.Length; i++)
+        {
+            //does the id match, if not we know answer isnt right
+            if (currAnswer[i] != answer[i])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 
     // Update is called once per frame
     void Update()
@@ -75,6 +114,16 @@ public class TileSubmit : Interactable
                     //decrease counter
                     counter -=1;
                 }
+            }
+        }
+        //check for answer, when we are holding 3 references
+        if (currRefs.Count >=3)
+        {
+            ArrangeAnswer();
+            if (AnswerCheck())
+            {
+                //do something
+                activateDoor.OpenDoor();
             }
         }
         

@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnDistraction : MonoBehaviour
+public class SpawnDistraction : Interactable
 {
      GameObject currentHazard;
     public GameObject prefab;
 
-    public Vector3 position;
+    Vector3 position;
 
     public bool UsePooling = true;
 
@@ -19,14 +19,7 @@ public class SpawnDistraction : MonoBehaviour
 
     bool spawning = false;
 
-    public void OnFocus()
-    {
-        //Debug.Log("looking at");
-        
-       
-        //perhaps highlight it
-    }
-    public  void OnInteract()
+    public override void OnInteract()
     {
         if (!spawning)
             StartCoroutine(Spawn());
@@ -61,18 +54,13 @@ public class SpawnDistraction : MonoBehaviour
         //after cooldown, allow spawning again
         spawning = false;
     }
-    public void OnLoseFocus()
-    {
-        //Debug.Log("looking away");
-        
-    }
     // Start is called before the first frame update
     void Start()
     {
         cameras = GameObject.FindGameObjectWithTag("GameController").GetComponent<CameraMenu>();
     }
 
-    // Update is called once per frame
+   /*  // Update is called once per frame
     void Update()
     {
         //for testing purposes
@@ -80,5 +68,5 @@ public class SpawnDistraction : MonoBehaviour
             {
                 OnInteract();
             }
-    }
+    } */
 }

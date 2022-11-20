@@ -5,7 +5,7 @@ using UnityEngine;
 public class SplitScreenToggle : MonoBehaviour
 {
     PlayerAction inputAction;
-    bool splitscreen = false;
+    bool splitscreen = true;
     Camera screen;
     Camera screen2;
     // Start is called before the first frame update

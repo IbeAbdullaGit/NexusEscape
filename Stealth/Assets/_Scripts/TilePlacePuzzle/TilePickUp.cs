@@ -16,6 +16,8 @@ public class TilePickUp : Interactable
 
    public int tile_pos = 0;
 
+   public int id;
+
    public override void OnInteract()
     {
        //only add if we don't already have a tile we're holding
@@ -27,10 +29,10 @@ public class TilePickUp : Interactable
          //add to player "hand"
          this.transform.parent = player.transform;
          //move it to the player
-         this.transform.position = player.transform.position + offset;
-         //this.transform.position = player.transform.position;
+         //this.transform.position = player.transform.position + offset;
+         this.transform.position = player.transform.position;
          //give offset, increase float value for further distance
-         //this.transform.position += player.transform.forward * 2.0f;
+         this.transform.position += player.transform.forward * 2.0f;
          //it is not in place anywhere
          inPlace = false;
        }
