@@ -12,6 +12,8 @@ public class MeterManager : MonoBehaviour
 
     public bool[] correct = new bool[4];
 
+    public RevealAnswer connectedAnswer;
+
     
     // Start is called before the first frame update
     void Start()
@@ -36,6 +38,10 @@ public class MeterManager : MonoBehaviour
         }
 
         //what do we do if correct?
+        if (CheckIfCorrect())
+        {
+            connectedAnswer.Reveal();
+        }
     }
 
     bool CheckAnswer(int n) //n is the button number we're checking
@@ -46,6 +52,17 @@ public class MeterManager : MonoBehaviour
             return false;
 
         //all values matched
+        return true;
+    }
+    bool CheckIfCorrect()
+    {
+        for (int i=0; i< correct.Length; i++)
+        {
+            if (correct[i] == false)
+            {
+                return false;
+            }
+        }
         return true;
     }
 }

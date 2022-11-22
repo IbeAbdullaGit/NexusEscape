@@ -16,7 +16,8 @@ public class ViewMeters : Interactable
     {
         menuUI.enabled = !menuUI.enabled;
         openMenu = !openMenu;
-        if (Cursor.lockState == CursorLockMode.Locked)
+        //for this one, we don't need to see the cursor
+        /* if (Cursor.lockState == CursorLockMode.Locked)
         {
              Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true; 
@@ -25,12 +26,13 @@ public class ViewMeters : Interactable
         {
              Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false; 
-        }
+        } */
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        //disable at start
+        menuUI.enabled = false;
     }
 
     // Update is called once per frame

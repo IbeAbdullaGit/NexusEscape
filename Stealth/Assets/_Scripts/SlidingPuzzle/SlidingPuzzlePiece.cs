@@ -7,11 +7,14 @@ public class SlidingPuzzlePiece : Interactable
     public int id;
     public int place;
     SlidingPuzzle manager;
+    bool canMove = true;
     public override void OnInteract()
     {
-       //time for some jank
+       if (canMove)
       //tell the manager that we hit something, and send in what we hit
-        manager.CheckHit(name);
+        {
+            manager.CheckHit(name);
+        }
         
     }
     // Start is called before the first frame update
@@ -19,7 +22,10 @@ public class SlidingPuzzlePiece : Interactable
     {
         manager = gameObject.GetComponentInParent<SlidingPuzzle>();
     }
-
+    public void Interactable(bool val)
+    {
+        canMove = val;
+    }
     // Update is called once per frame
     void Update()
     {

@@ -66,9 +66,17 @@ public class SlidingPuzzle : MonoBehaviour
     // Check for completion.
     //doesn't need to be every frame, check for after moving a piece TO DO
     if (!shuffling && CheckCompletion()) {
-      shuffling = true;
-      StartCoroutine(WaitShuffle(0.5f));
-      //win condition here?
+      //we don't need to actually do anything here for now
+      //make last piece visible
+      pieces[pieces.Count-1].gameObject.SetActive(true);
+      //make it not possible to interact anymore
+      for (int i=0; i < pieces.Count; i++)
+      {
+        pieces[i].GetComponent<SlidingPuzzlePiece>().Interactable(false);
+      }
+      //we can also disable this part
+      gameObject.GetComponent<SlidingPuzzle>().enabled = false;
+
     }
   }
   public void CheckHit(string name)
