@@ -73,38 +73,11 @@ public class Distraction : MonoBehaviour
                 canSeeEnemy = false;
             }
         }
-        else if (canSeeEnemy) //if previously in view of enemy, but not anymore
+        /* else if (canSeeEnemy) //if previously in view of enemy, but not anymore
         {
             canSeeEnemy = false;
-        }
+        } */
 
        
     }
-
-  /*   private IEnumerator DistractEnemy()
-    {
-        //save a copy of the player variables
-        playerRef = enemyRef.GetComponent<EnemyAI>().target;
-        playerMask = enemyRef.GetComponent<FieldOfView>().targetMask;
-        //change enemy target to this object
-        enemyRef.GetComponent<EnemyAI>().target = transform;
-        //set destination to this
-        enemyRef.GetComponent<EnemyAI>().GetComponent<NavMeshAgent>().SetDestination(transform.position);
-        //make enemy move to this target, to do this we just say it "can see" the player
-        enemyRef.GetComponent<FieldOfView>().canSeePlayer = true;
-        //set the target layer mask to this layer, this will prevent enemy from moving away
-        enemyRef.GetComponent<FieldOfView>().targetMask = gameObject.layer;
-
-        //now do this for a set amount of time
-        yield return delay;
-
-        //after the time is over, set all the variables back
-        enemyRef.GetComponent<EnemyAI>().target = playerRef;
-        enemyRef.GetComponent<FieldOfView>().canSeePlayer = false;
-        enemyRef.GetComponent<FieldOfView>().targetMask = playerMask;
-
-        //destroy this gameobject so the hazard is gone
-        Destroy(gameObject);
-
-    } */
 }

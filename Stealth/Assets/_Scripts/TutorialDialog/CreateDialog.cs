@@ -8,20 +8,27 @@ public class CreateDialog : MonoBehaviour
 {
     public Canvas ui;
     public TMP_Text text;
+    public TMP_Text text2;
 
-    public bool run_once = false;
     public void ChangeText(string s)
     {
         text.text = s;
+        //ChangeUI();
     }
+    public void ChangeTextPlayer2(string s)
+    {
+        text2.text = s;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        ui.enabled = false;
+        //ui.enabled = false;
         //ChangeUI();
-        ChangeText("This is a test");
-        run_once = false;
-        Debug.Log("Starting");
+        ChangeText("Use WASD to move around. Use [Space] to jump, [Left Ctrl] to crouch");
+        //manually change player2 text for this case
+        ChangeTextPlayer2("Press [Shift] to view the cameras, and use the arrows to toggle between them");
+        Cursor.lockState = CursorLockMode.None;
     }
     
     public void ChangeUI()
@@ -40,14 +47,5 @@ public class CreateDialog : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (!run_once)
-        {
-            //used to enable ui at the start right away
-            ChangeUI();
-            run_once = true;
-        }
-    }
+    
 }

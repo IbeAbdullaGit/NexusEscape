@@ -33,10 +33,10 @@ public class SlidingPuzzle : MonoBehaviour
         piece.localScale = ((2 * width) - gapThickness) * Vector3.one;
         piece.name = $"{(row * size) + col}";
         // We want an empty space in the bottom right.
-        if ((row == size - 1) && (col == size - 1)) {
+       /*  if ((row == size - 1) && (col == size - 1)) {
           emptyLocation = (size * size) - 1;
           piece.gameObject.SetActive(false);
-        } else {
+        } else  */{
           // We want to map the UV coordinates appropriately, they are 0->1.
           float gap = gapThickness / 2;
           Mesh mesh = piece.GetComponent<MeshFilter>().mesh;
@@ -48,6 +48,13 @@ public class SlidingPuzzle : MonoBehaviour
           uv[3] = new Vector2((width * (col + 1)) - gap, 1 - ((width * row) + gap));
           // Assign our new UVs to the mesh.
           mesh.uv = uv;
+
+          //setup last piece
+          if ((row == size - 1) && (col == size - 1)) 
+          {
+            emptyLocation = (size * size) - 1;
+            piece.gameObject.SetActive(false);
+          }
         }
       }
     }
@@ -59,6 +66,7 @@ public class SlidingPuzzle : MonoBehaviour
     size = 3;
     CreateGamePieces(0.01f);
     player2Cam = GameObject.FindGameObjectWithTag("Player2").GetComponentInChildren<Camera>();
+    Shuffle();
   }
 
   // Update is called once per frame

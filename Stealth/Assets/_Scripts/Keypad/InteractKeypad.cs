@@ -29,6 +29,10 @@ public class InteractKeypad : Interactable
     {
         //Debug.Log("Changing UI");
         ChangeUI();
+        //will need to change when having multiple instances (all answers will be set at once instead of individually)
+        //set the answer for when this is opened, more elegant solution later
+        instance.answer = answer;
+        
     }
     public override void OnLoseFocus()
     {
@@ -41,8 +45,7 @@ public class InteractKeypad : Interactable
     {
         instance = GameObject.FindGameObjectWithTag("GameController").GetComponent<Keypad>();
         //change answer depending on need
-        //will need to change when having multiple instances (all answers will be set at once instead of individually)
-        instance.answer = answer;
+        
         menuUI.enabled = false;
         _doorInvoker = new DoorInvoker();
     }
@@ -62,15 +65,18 @@ public class InteractKeypad : Interactable
         {
             //reset the keypad
             instance.correct = false;
-            instance.answer = null;
+            //instance.answer = null;
             print("door toggled");
             //triggeredObject.open();?
             TriggerDoor();
+            _otherdoor.OpenDoor();
         }
+       
             
     }
     public void ChangeUI()
     {
+        
         menuUI.enabled = !menuUI.enabled;
         openMenu = !openMenu;
         if (Cursor.lockState == CursorLockMode.Locked)

@@ -9,7 +9,7 @@ public class SpawnDistraction : Interactable
 
     Vector3 position;
 
-    public bool UsePooling = true;
+    public bool UsePooling;
 
     CameraMenu cameras;
 
@@ -38,6 +38,8 @@ public class SpawnDistraction : Interactable
         if (UsePooling)
         {
             currentHazard = ObjectPooler.instance.SpawnFromPool("Distraction", position, new Quaternion(0f, 0f, 0f, 0f));
+            //set the location
+            currentHazard.transform.position = position;
         }
         else
         {
@@ -60,7 +62,7 @@ public class SpawnDistraction : Interactable
         cameras = GameObject.FindGameObjectWithTag("GameController").GetComponent<CameraMenu>();
     }
 
-   /*  // Update is called once per frame
+     // Update is called once per frame
     void Update()
     {
         //for testing purposes
@@ -68,5 +70,5 @@ public class SpawnDistraction : Interactable
             {
                 OnInteract();
             }
-    } */
+    } 
 }

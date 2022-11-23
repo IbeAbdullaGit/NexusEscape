@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -61,7 +62,7 @@ public class PlayerController : MonoBehaviour
     }
      void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
          //distanceToGround = GetComponent<Collider>().bounds.extents.y;
          startYScale = transform.localScale.y;
          playerCam = GetComponentInChildren<Camera>();
@@ -237,4 +238,15 @@ public class PlayerController : MonoBehaviour
         return Vector3.ProjectOnPlane(transform.)
     }
  */
+    private void OnCollisionEnter(Collision other) {
+        
+        if (other.collider.tag =="Enemy")
+        {
+            //this is the end
+            //unload this scene
+        //SceneManager.UnloadSceneAsync("Tutorial");
+        //load the next scene, or loading scene
+        SceneManager.LoadScene("Menu");
+        }
+    }
 }

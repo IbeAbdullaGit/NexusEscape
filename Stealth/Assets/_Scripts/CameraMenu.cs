@@ -74,6 +74,7 @@ public class CameraMenu : MonoBehaviour
     }
     public void SwitchCameras()
     {
+        //Debug.Log("Switching cameras");
         cameraIndex++;
         if (cameraIndex == cameras.Length)
         {
@@ -83,6 +84,7 @@ public class CameraMenu : MonoBehaviour
     }
     public void SwitchCamerasBack()
     {
+         //Debug.Log("Switching cameras");
         cameraIndex--;
         if (cameraIndex <= 0)
         {
