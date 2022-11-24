@@ -20,6 +20,8 @@ public class InteractButtonMeter : Interactable
     //which button is this
     public int number;
 
+    Animator anim;
+
 
     private void Start() {
         //get the manager
@@ -28,6 +30,7 @@ public class InteractButtonMeter : Interactable
         //instance.targetValues = this.targetValues;
         instance.targetValues[number-1] = this.ownValue;
         menuUI.enabled = false;
+         anim = GetComponent<Animator>();
     }
     private void Update() {
         
@@ -61,6 +64,8 @@ public class InteractButtonMeter : Interactable
     {
         //Debug.Log("Changing UI");
         ChangeUI();
+        anim.Play("Armature|Press");
+        anim.SetTrigger("press");
     }
     public override void OnLoseFocus()
     {
