@@ -41,6 +41,8 @@ public class TileSubmit : Interactable
                     //currRef.SubmitTile();
                     //change position, based on what is available rn
                     currRefs[currRefs.Count-1].transform.position = positions[i].position;
+                    //change rotation so it looks nice
+                    currRefs[currRefs.Count-1].transform.rotation = Quaternion.Euler(90.0f, 180.0f, 0.0f);
                     //now set this position to be occupied
                     occupied[i] = true;
                     //save what this position is for this tile

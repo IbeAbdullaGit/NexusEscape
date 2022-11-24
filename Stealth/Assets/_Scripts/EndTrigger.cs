@@ -10,6 +10,7 @@ public class EndTrigger : MonoBehaviour
     if (other.tag == "Player") //if the player comes in
     {
         //trigger change here
+        Debug.Log("Switching Scene");
         GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Section 1");
     }
    }

@@ -15,8 +15,10 @@ public class InteractKeypad : Interactable
     public string answer;
     GameObject triggeredObject;
 
-    public Door _otherdoor;
+    public GameObject _otherdoor;
     DoorInvoker _doorInvoker;
+
+    public bool correct=false;
 
     public override void OnFocus()
     {
@@ -32,6 +34,8 @@ public class InteractKeypad : Interactable
         //will need to change when having multiple instances (all answers will be set at once instead of individually)
         //set the answer for when this is opened, more elegant solution later
         instance.answer = answer;
+        //let manager know this is the current instance
+        instance.currentInstance = this;
         
     }
     public override void OnLoseFocus()
@@ -61,15 +65,16 @@ public class InteractKeypad : Interactable
             }
         }
         //did we enter the right answer?
-        if (instance.correct)
+        if (correct)
         {
             //reset the keypad
-            instance.correct = false;
-            //instance.answer = null;
+            correct = false;
+            instance.answer = null;
             print("door toggled");
             //triggeredObject.open();?
             TriggerDoor();
-            _otherdoor.OpenDoor();
+            _otherdoor.GetComponent<Door>().isOpen = false;
+            _otherdoor.GetComponent<Door>().OpenDoor();
         }
        
             
@@ -93,7 +98,7 @@ public class InteractKeypad : Interactable
 
     void TriggerDoor()
     {
-        ICommand openDoor = new ToggleDoorCommand(_otherdoor);
+        ICommand openDoor = new ToggleDoorCommand(_otherdoor.GetComponent<Door>());
         _doorInvoker.AddCommand(openDoor);
     }
 }
