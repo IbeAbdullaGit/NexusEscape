@@ -14,6 +14,7 @@ public class MeterManager : MonoBehaviour
 
     public RevealAnswer connectedAnswer;
 
+    public Door door;
     
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,11 @@ public class MeterManager : MonoBehaviour
         if (CheckIfCorrect())
         {
             connectedAnswer.Reveal();
+
+            if(door != null)
+            {
+                door.OpenDoor();
+            }
         }
     }
 
