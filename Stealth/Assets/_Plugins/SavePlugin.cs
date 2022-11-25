@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.InteropServices;
+using UnityEngine.SceneManagement;
 
 public class SavePlugin : MonoBehaviour
 {
@@ -12,12 +13,12 @@ public class SavePlugin : MonoBehaviour
     private static extern void SetID(int id);
 
      [DllImport("Plugin")]
-     private static extern Vector3 GetPosition();
+     private static extern string GetPosition();
       [DllImport("Plugin")]
       private static extern void SetPosition(float x, float y, float z);
 
        [DllImport("Plugin")]
-       private static extern void SaveToFile(int id, float x, float y, float z);
+       private static extern void SaveToFile(string s);
 
         [DllImport("Plugin")]
         private static extern void StartWriting(string fileName);
@@ -53,16 +54,13 @@ public class SavePlugin : MonoBehaviour
     public void SaveItems()
     {
         Debug.Log("Start Saving");
-        if (editor.editorMode)
+        //if (editor.editorMode)
         {
             StartWriting(fn);
-            //for now, only position is important for saving
-            //also we only need to save the player for now
-            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Player"))
-            {
-                SaveToFile(1, obj.transform.position.x, obj.transform.position.y, obj.transform.position.z);
-                
-            }
+            //we are only saving the last level
+            var player = GameObject.FindGameObjectWithTag("Player");
+            
+            SaveToFile(SceneManager.GetActiveScene().name);
             EndWriting();
 
             Debug.Log("Saved");
@@ -72,15 +70,20 @@ public class SavePlugin : MonoBehaviour
     public void LoadFile()
     {
         Debug.Log("Start loading");
-        if (editor.editorMode)
+        //if (editor.editorMode)
         {
             StartWriting(fn);
-            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Player"))
+            //we are only saving the last level
+            var player = GameObject.FindGameObjectWithTag("Player");
             {
                 //obj.transform.position = LoadFromFile(fn);
                 LoadFromFile(fn);
                 //obj.GetComponent<CharacterController>().enabled = false;
-                obj.transform.position = GetPosition();
+                //player.transform.position = GetPosition();
+
+                //access game manaer
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene(GetPosition());
+                //SceneManager.LoadScene(GetPosition());
                // obj.GetComponent<CharacterController>().enabled = true;
                 
             }

@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Photon.Pun;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -42,6 +44,8 @@ public class PlayerController : MonoBehaviour
     public float maxSlopeAngle;
     private RaycastHit slopeHit;
 
+    public Canvas GameOverScreen;
+
      public void OnMove(InputAction.CallbackContext context)
     {
         
@@ -66,10 +70,10 @@ public class PlayerController : MonoBehaviour
          //distanceToGround = GetComponent<Collider>().bounds.extents.y;
          startYScale = transform.localScale.y;
          playerCam = GetComponentInChildren<Camera>();
-         //if (!view.IsMine)
-         {
-            //destroy camera
-         }
+         //save at the start of the level
+         GameObject.FindGameObjectWithTag("GameController").GetComponent<SavePlugin>().SaveItems();
+
+         GameOverScreen.enabled = false;
          
     }
     private void Update() {
@@ -243,10 +247,11 @@ public class PlayerController : MonoBehaviour
         if (other.collider.tag =="Enemy")
         {
             //this is the end
-            //unload this scene
-        //SceneManager.UnloadSceneAsync("Tutorial");
-        //load the next scene, or loading scene
-        SceneManager.LoadScene("Menu");
+           GameOverScreen.enabled = true;
+           Debug.Log("Game over!");
+           //pause game
+           Time.timeScale =0;
+        
         }
     }
 }

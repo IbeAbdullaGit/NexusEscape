@@ -9,6 +9,11 @@ public class SwitchScene : MonoBehaviour
     public GameObject LoadingScreen;
    public Image LoadingBarFill;
 
+   public void LoadScene()
+   {
+      GetComponent<SavePlugin>().LoadFile();
+   }
+
    public void ChangeScene(string title)
    {
         //SceneManager.LoadScene(title);
