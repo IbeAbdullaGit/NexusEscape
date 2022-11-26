@@ -3694,6 +3694,7 @@ MonoBehaviour:
   prefab: {fileID: 5330309084312893233, guid: c94c02709c728c04592d5e3d8c33f1c4, type: 3}
   UsePooling: 1
   distance: 10
+  isButton: 0
 --- !u!65 &359314348
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7447,6 +7448,8 @@ GameObject:
   - component: {fileID: 555086539}
   - component: {fileID: 555086538}
   - component: {fileID: 555086537}
+  - component: {fileID: 555086546}
+  - component: {fileID: 555086545}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: GameController
@@ -7461,7 +7464,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555086535}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f88a84c551c1794d94c851be312ff23, type: 3}
   m_Name: 
@@ -7527,6 +7530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ans: {fileID: 1950316202}
   answer: 3753
+  currentInstance: {fileID: 0}
   correct: 0
 --- !u!114 &555086541
 MonoBehaviour:
@@ -7591,6 +7595,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &555086545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555086535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ba2fcdaaf6ea24f8627c4b79a04de0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoadingScreen: {fileID: 0}
+  LoadingBarFill: {fileID: 0}
+--- !u!114 &555086546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555086535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ea7e25d23f70c43b7e4833c6cc663d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &561245813
 GameObject:
   m_ObjectHideFlags: 0
@@ -18412,8 +18442,6 @@ GameObject:
   - component: {fileID: 1459563857}
   - component: {fileID: 1459563856}
   - component: {fileID: 1459563855}
-  - component: {fileID: 1459563854}
-  - component: {fileID: 1459563853}
   - component: {fileID: 1459563852}
   m_Layer: 8
   m_Name: Player
@@ -18434,35 +18462,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acced2e6672bd6e46a33df57e43dc190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1459563853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1459563851}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0920648335526204399327a6321cbb2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PickupPos: {fileID: 0}
---- !u!114 &1459563854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1459563851}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54536075e5eff9d499bf1c63986aac9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leanLeftKey: 113
-  leanRightKey: 101
-  m_Amount: 10
-  m_LeaningSpeed: 2
 --- !u!114 &1459563855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18664,6 +18663,7 @@ MonoBehaviour:
   canInteract: 1
   interactKey: 323
   maxSlopeAngle: 0
+  GameOverScreen: {fileID: 0}
 --- !u!54 &1459563857
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19847,7 +19847,8 @@ MonoBehaviour:
   openMenu: 0
   menuUI: {fileID: 294434982}
   answer: 3753
-  _otherdoor: {fileID: 1313906905}
+  _otherdoor: {fileID: 0}
+  correct: 0
 --- !u!65 &1519512891
 BoxCollider:
   m_ObjectHideFlags: 0
