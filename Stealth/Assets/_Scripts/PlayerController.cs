@@ -24,8 +24,11 @@ public class PlayerController : MonoBehaviour
     private float lookRotation;
 
     public bool grounded;
+
+    bool runOnce = false;
     
     public MovementState state;
+    bool paused = false;
     public enum MovementState
     {
         walking,
@@ -70,15 +73,17 @@ public class PlayerController : MonoBehaviour
          //distanceToGround = GetComponent<Collider>().bounds.extents.y;
          startYScale = transform.localScale.y;
          playerCam = GetComponentInChildren<Camera>();
-         //save at the start of the level
-         GameObject.FindGameObjectWithTag("GameController").GetComponent<SavePlugin>().SaveItems();
-
          GameOverScreen.enabled = false;
          
     }
     private void Update() {
 
-        
+        if (!runOnce)
+        {
+            runOnce = true;
+             //save at the start of the level
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<SavePlugin>().SaveItems();
+        }
        { 
         StateHandler();
         //NEW, CHECK FOR CROUCHING
@@ -95,6 +100,13 @@ public class PlayerController : MonoBehaviour
             HandleInteractionCheck();
             HandleInteractionInput();
          }
+
+        if (paused)
+        {
+            //enabled cursor
+           Cursor.lockState = CursorLockMode.None;
+           Cursor.visible = true;
+        }
     }
     private void HandleInteractionCheck()
     {
@@ -249,8 +261,14 @@ public class PlayerController : MonoBehaviour
             //this is the end
            GameOverScreen.enabled = true;
            Debug.Log("Game over!");
+           //enabled cursor
+           Cursor.lockState = CursorLockMode.None;
+           Cursor.visible = true;
+           //disable any other menus
+           GameObject.FindGameObjectWithTag("GameController").GetComponent<CreateDialog>().enabled = false;
            //pause game
            Time.timeScale =0;
+           paused = true;
         
         }
     }

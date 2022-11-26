@@ -8550,8 +8550,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060c5cc1b0c27744dbe822fb9f61dde5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 7
-  angle: 47
+  radius: 9
+  angle: 95
   playerRef: {fileID: 872308312}
   targetMask:
     serializedVersion: 2
@@ -9544,11 +9544,11 @@ GameObject:
   - component: {fileID: 872308321}
   - component: {fileID: 872308320}
   - component: {fileID: 872308319}
-  - component: {fileID: 872308318}
   - component: {fileID: 872308317}
   - component: {fileID: 872308316}
   - component: {fileID: 872308315}
   - component: {fileID: 872308314}
+  - component: {fileID: 872308318}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -12891,8 +12891,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060c5cc1b0c27744dbe822fb9f61dde5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 7
-  angle: 47
+  radius: 9
+  angle: 95
   playerRef: {fileID: 872308312}
   targetMask:
     serializedVersion: 2
@@ -15215,8 +15215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060c5cc1b0c27744dbe822fb9f61dde5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 7
-  angle: 47
+  radius: 9
+  angle: 95
   playerRef: {fileID: 872308312}
   targetMask:
     serializedVersion: 2
@@ -16715,7 +16715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060c5cc1b0c27744dbe822fb9f61dde5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 7
+  radius: 9
   angle: 120
   playerRef: {fileID: 872308312}
   targetMask:

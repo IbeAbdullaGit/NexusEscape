@@ -6,6 +6,9 @@ using UnityEngine.UIElements;
 public class MenuPopUp : MonoBehaviour
 {
     public Canvas subMenu;
+    private void Start() {
+        subMenu.enabled = false;
+    }
 
     public void ChangeMenu()
     {
