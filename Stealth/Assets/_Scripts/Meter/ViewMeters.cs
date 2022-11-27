@@ -8,6 +8,8 @@ public class ViewMeters : Interactable
       Animator anim;
 
     public Canvas menuUI;
+
+    SoundManager soundInstance;
      public override void OnInteract()
     {
         //Debug.Log("Changing UI");
@@ -15,6 +17,8 @@ public class ViewMeters : Interactable
         //play animation
         anim.Play("Armature|Press");
         anim.SetTrigger("press");
+        //play sound
+        soundInstance.PlaySound(SoundManager.Sound.ButtonPress);
 
     }
     public void ChangeUI()
@@ -39,6 +43,7 @@ public class ViewMeters : Interactable
         //disable at start
         menuUI.enabled = false;
         anim = GetComponent<Animator>();
+        soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
     }
 
     // Update is called once per frame

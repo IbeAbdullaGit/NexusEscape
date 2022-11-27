@@ -49,10 +49,17 @@ public class PlayerController : MonoBehaviour
 
     public Canvas GameOverScreen;
 
+    SoundManager soundInstance;
+
+    Vector3 lastPosition;   
+
      public void OnMove(InputAction.CallbackContext context)
     {
         
-        {move = context.ReadValue<Vector2>();
+        {
+            move = context.ReadValue<Vector2>();
+            //play moving sound on input
+            //soundInstance.PlaySound(SoundManager.Sound.PlayerMove, transform.position);
         }
     }
     public void OnLook(InputAction.CallbackContext context)
@@ -64,7 +71,10 @@ public class PlayerController : MonoBehaviour
      public void OnJump(InputAction.CallbackContext context)
     {
       
-       {Jump();
+       {
+            Jump();
+            //play moving sound on input
+            //soundInstance.PlaySound(SoundManager.Sound.PlayerMove, transform.position);
        }
     }
      void Start()
@@ -74,6 +84,9 @@ public class PlayerController : MonoBehaviour
          startYScale = transform.localScale.y;
          playerCam = GetComponentInChildren<Camera>();
          GameOverScreen.enabled = false;
+
+         soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
+         lastPosition = transform.position;
          
     }
     private void Update() {
@@ -107,6 +120,7 @@ public class PlayerController : MonoBehaviour
            Cursor.lockState = CursorLockMode.None;
            Cursor.visible = true;
         }
+        
     }
     private void HandleInteractionCheck()
     {
@@ -151,7 +165,14 @@ public class PlayerController : MonoBehaviour
     }
      private void FixedUpdate() {
         
-        {Move();
+        {
+            Move();
+            if (lastPosition != transform.position)
+            {
+            //means we've moved
+                soundInstance.PlaySound(SoundManager.Sound.PlayerMove, transform.position);
+            }
+            lastPosition = transform.position;
         }
     }
     private void StateHandler()
@@ -161,11 +182,15 @@ public class PlayerController : MonoBehaviour
         {
             state = MovementState.sprinting;
             speed = runSpeed;
+
+            //play running sound
         }
         else if (grounded)
         {
             state = MovementState.walking;
             speed = walkSpeed;
+
+            //play walking sound, pass in position
         }
         //crouching
         if (Input.GetKeyDown(KeyCode.C))
@@ -175,6 +200,8 @@ public class PlayerController : MonoBehaviour
            
            transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
            rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+
+           //play crouching sound
                 
         }
         if (Input.GetKeyUp(KeyCode.C))
@@ -269,6 +296,7 @@ public class PlayerController : MonoBehaviour
            //pause game
            Time.timeScale =0;
            paused = true;
+           soundInstance.PlaySound(SoundManager.Sound.PlayerDie, transform.position);
         
         }
     }

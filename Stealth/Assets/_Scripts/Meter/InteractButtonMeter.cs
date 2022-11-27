@@ -22,6 +22,7 @@ public class InteractButtonMeter : Interactable
 
     Animator anim;
 
+    SoundManager soundInstance;
 
     private void Start() {
         //get the manager
@@ -31,6 +32,7 @@ public class InteractButtonMeter : Interactable
         instance.targetValues[number-1] = this.ownValue;
         menuUI.enabled = false;
          anim = GetComponent<Animator>();
+         soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
     }
     private void Update() {
         
@@ -66,6 +68,8 @@ public class InteractButtonMeter : Interactable
         ChangeUI();
         anim.Play("Armature|Press");
         anim.SetTrigger("press");
+        //play sound
+        soundInstance.PlaySound(SoundManager.Sound.ButtonPress);
     }
     public override void OnLoseFocus()
     {

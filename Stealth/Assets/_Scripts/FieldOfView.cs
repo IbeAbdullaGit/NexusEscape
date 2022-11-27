@@ -14,6 +14,8 @@ public class FieldOfView : MonoBehaviour
     public LayerMask obstructionMask;
 
     public bool canSeePlayer;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +49,7 @@ public class FieldOfView : MonoBehaviour
                 if (!Physics.Raycast(transform.position, directionToTarget, distanceToTagret, obstructionMask))
                 {
                     canSeePlayer = true;
-                    //Debug.Log("Can see player!");
+                    //Debug.Log("Can see player!");                    
                 }
                 else{
                     canSeePlayer = false;

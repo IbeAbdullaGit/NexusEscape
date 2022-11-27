@@ -42,6 +42,9 @@ public class PlayerController2 : MonoBehaviour
     private RaycastHit slopeHit;
 
     float distanceToGround;
+     SoundManager soundInstance;
+
+    Vector3 lastPosition;   
 
      public void OnMove(InputAction.CallbackContext context)
     {
@@ -66,6 +69,8 @@ public class PlayerController2 : MonoBehaviour
         //Cursor.lockState = CursorLockMode.Locked;
          distanceToGround = GetComponent<Collider>().bounds.extents.y;
          startYScale = transform.localScale.y;
+         soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
+         lastPosition = transform.position;
          //if (!view.IsMine)
          {
             //destroy camera
@@ -136,7 +141,14 @@ public class PlayerController2 : MonoBehaviour
     }
      private void FixedUpdate() {
         
-        {Move();
+        {
+            Move();
+            if (lastPosition != transform.position)
+            {
+            //means we've moved
+                soundInstance.PlaySound(SoundManager.Sound.PlayerMove, transform.position);
+            }
+            lastPosition = transform.position;
         }
     }
     private void StateHandler()
