@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.InteropServices;
-
+using UnityEngine.SceneManagement;
+using System.IO;
 public class SavePlugin : MonoBehaviour
 {
     [DllImport("Plugin")]
@@ -11,13 +12,13 @@ public class SavePlugin : MonoBehaviour
     [DllImport("Plugin")]
     private static extern void SetID(int id);
 
-     [DllImport("Plugin")]
-     private static extern Vector3 GetPosition();
       [DllImport("Plugin")]
       private static extern void SetPosition(float x, float y, float z);
 
        [DllImport("Plugin")]
-       private static extern void SaveToFile(int id, float x, float y, float z);
+       private static extern void SaveToFile(string s);
+       [DllImport("Plugin")]
+        private static extern void SaveIdToFile(int id);
 
         [DllImport("Plugin")]
         private static extern void StartWriting(string fileName);
@@ -33,36 +34,42 @@ public class SavePlugin : MonoBehaviour
 
     PlayerAction inputAction;
     string m_Path;
-    string fn;
+    private string fn;
 
     EditorManager editor;
 
     void Start() {
-        inputAction = PlayerInputController.controller.inputAction;
+        //m_Path = Application.persistentDataPath;
+         m_Path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments).Replace("\\", "/");
 
-        inputAction.Editor.Save.performed += ContextMenu =>SaveItems();
-        inputAction.Editor.Load.performed += ContextMenu =>LoadFile();
-
-        m_Path = Application.dataPath;
-        fn = m_Path +"/save_data.json";
+        //Directory.CreateDirectory(m_Path+"/Celbreak");
+        //m_Path = "Saves";
+        fn = m_Path +"/My Games/celbreak_save_data.json";
+        //fn = Path.Combine(Application.persistentDataPath, "save_data.json");
+        //fn = "save_data.json";
+        /* if (!Directory.Exists(fn))
+        {
+            Directory.CreateDirectory(fn);
+        } */
         Debug.Log(fn);
+        //if (!File.Exists(fn))
+           // File.Create(fn);
+        
 
-        editor = GetComponent<EditorManager>();
     }
 
     public void SaveItems()
     {
         Debug.Log("Start Saving");
-        if (editor.editorMode)
+        //if (editor.editorMode)
         {
             StartWriting(fn);
-            //for now, only position is important for saving
-            //also we only need to save the player for now
-            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Player"))
-            {
-                SaveToFile(1, obj.transform.position.x, obj.transform.position.y, obj.transform.position.z);
-                
-            }
+            //we are only saving the last level
+            //var player = GameObject.FindGameObjectWithTag("Player");
+
+            //Debug.Log(SceneManager.GetActiveScene().name);
+            
+            SaveIdToFile(SceneManager.GetActiveScene().buildIndex);
             EndWriting();
 
             Debug.Log("Saved");
@@ -72,21 +79,34 @@ public class SavePlugin : MonoBehaviour
     public void LoadFile()
     {
         Debug.Log("Start loading");
-        if (editor.editorMode)
+        //check if data path exists
+        if (File.Exists(fn))
         {
             StartWriting(fn);
-            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Player"))
+            //we are only saving the last level
+            //var player = GameObject.FindGameObjectWithTag("Player");
+           //do we have anything saved to start with?
             {
-                //obj.transform.position = LoadFromFile(fn);
                 LoadFromFile(fn);
-                //obj.GetComponent<CharacterController>().enabled = false;
-                obj.transform.position = GetPosition();
-               // obj.GetComponent<CharacterController>().enabled = true;
+                 int id = GetID();
+                if (id !=0)
+                //access game manaer
+                {
+                    GetComponent<SwitchScene>().ChangeScene(id);
+                    //Debug.Log(id);
+                    Debug.Log("Loaded");
+                }
+                else{
+                    Debug.Log("Can't load right now");
+                }
                 
             }
             EndWriting();
-            Debug.Log("Loaded");
+           
         }
+          else{
+            Debug.Log("Can't load");
+        }  
         
     }
 

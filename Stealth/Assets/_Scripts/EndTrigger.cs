@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class EndTrigger : MonoBehaviour
 {
+    public string nextLevel;
    private void OnTriggerEnter(Collider other) {
     
     if (other.tag == "Player") //if the player comes in
     {
         //trigger change here
         Debug.Log("Switching Scene");
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Section 1");
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene(nextLevel);
     }
    }
 }

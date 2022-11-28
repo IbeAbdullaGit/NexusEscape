@@ -32,6 +32,11 @@ public class EnemyAI : MonoBehaviour
 
     public bool distracted = false;
 
+    SoundManager soundInstance;
+    bool playSoundOnce = false;
+ 
+    Vector3 lastPosition;
+
     void Start()
     {
         NavMeshAgent = GetComponent<NavMeshAgent>();
@@ -40,6 +45,8 @@ public class EnemyAI : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         target = GameObject.FindGameObjectWithTag("Player").transform;
+      
+        lastPosition = transform.position;
 
         //moveSpeed = 2.5f;
 
@@ -49,6 +56,7 @@ public class EnemyAI : MonoBehaviour
         UpdateDestination();
 
         //detectionMeter = GameObject.FindGameObjectWithTag("GameController").GetComponent<DetectionMeter>();
+        soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
        
     }
     void UpdateDestination()
@@ -128,6 +136,15 @@ public class EnemyAI : MonoBehaviour
                 //Debug.Log("Switching path");
             }
        }
+       /* //check for moving
+        if (transform.position != lastPosition)
+        {
+            //dont play for now
+            //soundInstance.PlaySound(SoundManager.Sound.EnemyMove, transform.position);
+        }
+        else
+            
+        lastPosition = transform.position; */
        /* //get unstuck
        if (!NavMeshAgent.hasPath && NavMeshAgent.pathStatus == NavMeshPathStatus.PathComplete) {
              Debug.Log("Character stuck");
@@ -172,7 +189,18 @@ public class EnemyAI : MonoBehaviour
             targetMain = target.position;
             NavMeshAgent.SetDestination(target.position);
             Debug.DrawLine(transform.position, target.position, Color.red);
+
+            //play sound
+            if (!playSoundOnce)
+            {
+                soundInstance.PlaySound(SoundManager.Sound.EnemyDetect, transform.position);
+                playSoundOnce = true;
+            }
             return true;
+        }
+        else{
+            //reset sound
+            playSoundOnce = false;
         }
         targetMain = waypoints[waypointIndex].position;
         NavMeshAgent.SetDestination(targetMain);

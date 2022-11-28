@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Photon.Pun;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,8 +24,11 @@ public class PlayerController : MonoBehaviour
     private float lookRotation;
 
     public bool grounded;
+
+    bool runOnce = false;
     
     public MovementState state;
+    bool paused = false;
     public enum MovementState
     {
         walking,
@@ -42,10 +47,19 @@ public class PlayerController : MonoBehaviour
     public float maxSlopeAngle;
     private RaycastHit slopeHit;
 
+    public Canvas GameOverScreen;
+
+    SoundManager soundInstance;
+
+    Vector3 lastPosition;   
+
      public void OnMove(InputAction.CallbackContext context)
     {
         
-        {move = context.ReadValue<Vector2>();
+        {
+            move = context.ReadValue<Vector2>();
+            //play moving sound on input
+            //soundInstance.PlaySound(SoundManager.Sound.PlayerMove, transform.position);
         }
     }
     public void OnLook(InputAction.CallbackContext context)
@@ -57,7 +71,10 @@ public class PlayerController : MonoBehaviour
      public void OnJump(InputAction.CallbackContext context)
     {
       
-       {Jump();
+       {
+            Jump();
+            //play moving sound on input
+            //soundInstance.PlaySound(SoundManager.Sound.PlayerMove, transform.position);
        }
     }
      void Start()
@@ -66,15 +83,20 @@ public class PlayerController : MonoBehaviour
          //distanceToGround = GetComponent<Collider>().bounds.extents.y;
          startYScale = transform.localScale.y;
          playerCam = GetComponentInChildren<Camera>();
-         //if (!view.IsMine)
-         {
-            //destroy camera
-         }
+         GameOverScreen.enabled = false;
+
+         soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
+         lastPosition = transform.position;
          
     }
     private void Update() {
 
-        
+        if (!runOnce)
+        {
+            runOnce = true;
+             //save at the start of the level
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<SavePlugin>().SaveItems();
+        }
        { 
         StateHandler();
         //NEW, CHECK FOR CROUCHING
@@ -91,6 +113,14 @@ public class PlayerController : MonoBehaviour
             HandleInteractionCheck();
             HandleInteractionInput();
          }
+
+        if (paused)
+        {
+            //enabled cursor
+           Cursor.lockState = CursorLockMode.None;
+           Cursor.visible = true;
+        }
+        
     }
     private void HandleInteractionCheck()
     {
@@ -135,7 +165,14 @@ public class PlayerController : MonoBehaviour
     }
      private void FixedUpdate() {
         
-        {Move();
+        {
+            Move();
+            if (lastPosition != transform.position)
+            {
+            //means we've moved
+                soundInstance.PlaySound(SoundManager.Sound.PlayerMove, transform.position);
+            }
+            lastPosition = transform.position;
         }
     }
     private void StateHandler()
@@ -145,11 +182,15 @@ public class PlayerController : MonoBehaviour
         {
             state = MovementState.sprinting;
             speed = runSpeed;
+
+            //play running sound
         }
         else if (grounded)
         {
             state = MovementState.walking;
             speed = walkSpeed;
+
+            //play walking sound, pass in position
         }
         //crouching
         if (Input.GetKeyDown(KeyCode.C))
@@ -159,6 +200,8 @@ public class PlayerController : MonoBehaviour
            
            transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
            rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+
+           //play crouching sound
                 
         }
         if (Input.GetKeyUp(KeyCode.C))
@@ -243,10 +286,18 @@ public class PlayerController : MonoBehaviour
         if (other.collider.tag =="Enemy")
         {
             //this is the end
-            //unload this scene
-        //SceneManager.UnloadSceneAsync("Tutorial");
-        //load the next scene, or loading scene
-        SceneManager.LoadScene("Menu");
+           GameOverScreen.enabled = true;
+           Debug.Log("Game over!");
+           //enabled cursor
+           Cursor.lockState = CursorLockMode.None;
+           Cursor.visible = true;
+           //disable any other menus
+           GameObject.FindGameObjectWithTag("GameController").GetComponent<CreateDialog>().enabled = false;
+           //pause game
+           Time.timeScale =0;
+           paused = true;
+           soundInstance.PlaySound(SoundManager.Sound.PlayerDie, transform.position);
+        
         }
     }
 }

@@ -19,9 +19,18 @@ public class SpawnDistraction : Interactable
 
     bool spawning = false;
 
+    Animator anim;
+    public bool isButton;
+
     public override void OnInteract()
-    {
+    { 
         if (!spawning)
+             //play animation
+            if (isButton)
+            {
+                anim.Play("Armature|Press");
+                anim.SetTrigger("press");
+            }
             StartCoroutine(Spawn());
     }
     IEnumerator Spawn()
@@ -60,6 +69,10 @@ public class SpawnDistraction : Interactable
     void Start()
     {
         cameras = GameObject.FindGameObjectWithTag("GameController").GetComponent<CameraMenu>();
+        if (isButton)
+        {
+            anim = GetComponent<Animator>();
+        }
     }
 
      // Update is called once per frame

@@ -5,12 +5,21 @@ using UnityEngine;
 public class ViewMeters : Interactable
 {
       public bool openMenu = false;
+      Animator anim;
 
     public Canvas menuUI;
+
+    SoundManager soundInstance;
      public override void OnInteract()
     {
         //Debug.Log("Changing UI");
         ChangeUI();
+        //play animation
+        anim.Play("Armature|Press");
+        anim.SetTrigger("press");
+        //play sound
+        soundInstance.PlaySound(SoundManager.Sound.ButtonPress);
+
     }
     public void ChangeUI()
     {
@@ -33,6 +42,8 @@ public class ViewMeters : Interactable
     {
         //disable at start
         menuUI.enabled = false;
+        anim = GetComponent<Animator>();
+        soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
     }
 
     // Update is called once per frame

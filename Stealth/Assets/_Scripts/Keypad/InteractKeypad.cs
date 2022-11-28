@@ -30,6 +30,8 @@ public class InteractKeypad : Interactable
     public override void OnInteract()
     {
         //Debug.Log("Changing UI");
+        //reset whats shown
+         instance.Ans.text = null;
         ChangeUI();
         //will need to change when having multiple instances (all answers will be set at once instead of individually)
         //set the answer for when this is opened, more elegant solution later
