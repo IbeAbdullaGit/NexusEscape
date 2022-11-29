@@ -82,7 +82,7 @@ public class InteractButtonMeter : Interactable
         openMenu = !openMenu;
         if (Cursor.lockState == CursorLockMode.Locked)
         {
-             Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true; 
         }  
         else

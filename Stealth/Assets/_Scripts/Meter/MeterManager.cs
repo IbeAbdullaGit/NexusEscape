@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MeterManager : MonoBehaviour
+public class MeterManager : Subject
 {
     
     public Slider[] sliders;
@@ -12,17 +12,20 @@ public class MeterManager : MonoBehaviour
 
     public bool[] correct = new bool[4];
 
-    public RevealAnswer connectedAnswer;
+    public Observer[] ObjectsToTrigger;
 
-    public Door door;
-    
     // Start is called before the first frame update
     void Start()
     {
         //initialize all to false
-        for (int i=0; i< correct.Length; i++)
+        for (int i = 0; i < correct.Length; i++)
         {
             correct[i] = false;
+        }
+
+        foreach (var observer in ObjectsToTrigger) //Register the observer class in each object we want to activate
+        {
+            AddObserver(observer);
         }
     }
 
@@ -41,12 +44,7 @@ public class MeterManager : MonoBehaviour
         //what do we do if correct?
         if (CheckIfCorrect())
         {
-            connectedAnswer.Reveal();
-
-            if(door != null)
-            {
-                door.OpenDoor();
-            }
+            Notify(); //Use Observer to notify all game objects after the players solve the puzzle
         }
     }
 

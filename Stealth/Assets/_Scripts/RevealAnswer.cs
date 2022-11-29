@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-public class RevealAnswer : MonoBehaviour
+public class RevealAnswer : Observer
 {
     TMP_Text text;
     
@@ -15,7 +15,7 @@ public class RevealAnswer : MonoBehaviour
 
     }
 
-    public void Reveal()
+    public override void OnNotify()
     {
         text.enabled = true;
     }

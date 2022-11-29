@@ -4494,8 +4494,8 @@ MonoBehaviour:
   - {fileID: 1881910408}
   targetValues: 0a0000000a0000000a0000000a000000
   correct: 00000000
-  connectedAnswer: {fileID: 1867570196}
-  door: {fileID: 0}
+  ObjectsToTrigger:
+  - {fileID: 1867570196}
 --- !u!114 &375820731
 MonoBehaviour:
   m_ObjectHideFlags: 0

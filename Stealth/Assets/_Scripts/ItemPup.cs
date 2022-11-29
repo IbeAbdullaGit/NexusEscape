@@ -8,7 +8,6 @@ public class ItemPup : MonoBehaviour
     bool pup;
     GameObject ItemtoPup;
     bool hasup;
-    Subject subject = new Subject();
    
     void Start()
     {
@@ -23,9 +22,8 @@ public class ItemPup : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.M))  
             {
-                
-                Items pick = new Items(ItemtoPup, new Pickup()); //makes the rigidbody not be acted upon by forces
-                subject.AddObserver(pick);
+
+                ItemtoPup.GetComponent<Rigidbody>().isKinematic = true;
                 ItemtoPup.transform.position = PickupPos.transform.position; //Moves object to the object position
                 ItemtoPup.transform.parent = PickupPos.transform; //Makes obhect the parent
                 Debug.Log("Picked up");
@@ -34,8 +32,7 @@ public class ItemPup : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.L) && hasup) 
         {
-            Items D = new Items(ItemtoPup, new Drop());
-            subject.AddObserver(D);
+            ItemtoPup.GetComponent<Rigidbody>().isKinematic = false;
             ItemtoPup.transform.parent = null;
             hasup = false;
 
@@ -47,7 +44,7 @@ public class ItemPup : MonoBehaviour
         {
             pup = true;
             ItemtoPup = other.gameObject;
-            subject.Notify();
+            
         }
     }
     private void OnCollisionStay(Collision other) // to see when the player enters the collider
@@ -56,13 +53,12 @@ public class ItemPup : MonoBehaviour
         {
             pup = true;
             ItemtoPup = other.gameObject;
-            Debug.Log("collided");
-            subject.Notify();
+            
         }
     }
     private void OnCollisionExit(Collision other)
     {
         pup = false;
-        subject.Notify();
+        
     }
 }
