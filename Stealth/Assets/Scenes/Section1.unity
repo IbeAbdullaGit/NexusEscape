@@ -5702,8 +5702,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8824,6 +8824,7 @@ GameObject:
   - component: {fileID: 555086546}
   - component: {fileID: 555086545}
   - component: {fileID: 555086547}
+  - component: {fileID: 555086548}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: GameController
@@ -8917,8 +8918,9 @@ MonoBehaviour:
   - {fileID: 395752663}
   targetValues: 0a0000000a0000000a0000000a000000
   correct: 00000000
-  connectedAnswer: {fileID: 401372758}
-  door: {fileID: 1565645387}
+  ObjectsToTrigger:
+  - {fileID: 401372758}
+  - {fileID: 1565645387}
 --- !u!114 &555086542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8973,8 +8975,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ba2fcdaaf6ea24f8627c4b79a04de0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LoadingScreen: {fileID: 0}
-  LoadingBarFill: {fileID: 0}
+  LoadingScreen: {fileID: 893925009}
+  LoadingBarFill: {fileID: 1845296258}
 --- !u!114 &555086546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9011,6 +9013,18 @@ MonoBehaviour:
   - sound: 4
     audioClip: {fileID: 8300000, guid: 9c46d51637e534442abd180345f84948, type: 3}
   instance: {fileID: 0}
+--- !u!114 &555086548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555086535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e13a74cfd6c564e8a4effea426a669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &561245813
 GameObject:
   m_ObjectHideFlags: 0
@@ -20346,7 +20360,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362719142}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.28, y: 0.22, z: 0}
   m_LocalScale: {x: 1.86811, y: 0.93862, z: 3.792053}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27173,11 +27187,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7037461163439945670, guid: 88f5b4fa4b00f1947a0d9f5d15108fc9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13382511
+      value: 0.016059013
       objectReference: {fileID: 0}
     - target: {fileID: 7037461163439945670, guid: 88f5b4fa4b00f1947a0d9f5d15108fc9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3178252
+      value: -1.5522119
       objectReference: {fileID: 0}
     - target: {fileID: 7037461163439945670, guid: 88f5b4fa4b00f1947a0d9f5d15108fc9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -28643,23 +28657,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 123295880582536265, guid: e963f1350fd408f49a30bc3bfb4a615b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3372119
+      value: 0.33721188
       objectReference: {fileID: 0}
     - target: {fileID: 123295880582536265, guid: e963f1350fd408f49a30bc3bfb4a615b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.16942997
+      value: 0.16942994
       objectReference: {fileID: 0}
     - target: {fileID: 123295880582536265, guid: e963f1350fd408f49a30bc3bfb4a615b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.083467685
+      value: 0.08346771
       objectReference: {fileID: 0}
     - target: {fileID: 123295880582536265, guid: e963f1350fd408f49a30bc3bfb4a615b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.33402777
+      value: -0.18414365
       objectReference: {fileID: 0}
     - target: {fileID: 123295880582536265, guid: e963f1350fd408f49a30bc3bfb4a615b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0403784
+      value: -0.27476507
       objectReference: {fileID: 0}
     - target: {fileID: 123295880582536265, guid: e963f1350fd408f49a30bc3bfb4a615b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -29544,7 +29558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openMenu: 0
-  menuUI: {fileID: 785258056}
+  menuUI: {fileID: 2109983355}
 --- !u!65 &1876528558
 BoxCollider:
   m_ObjectHideFlags: 0

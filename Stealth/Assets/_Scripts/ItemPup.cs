@@ -8,7 +8,6 @@ public class ItemPup : MonoBehaviour
     bool pup;
     GameObject ItemtoPup;
     bool hasup;
-    Subject subject = new Subject();
    
     void Start()
     {
