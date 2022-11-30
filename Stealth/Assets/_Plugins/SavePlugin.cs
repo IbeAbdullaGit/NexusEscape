@@ -32,11 +32,9 @@ public class SavePlugin : MonoBehaviour
         //[DllImport("Plugin.dll", EntryPoint = "?LoadFromFile@GameObject@@QEAA?AUVector3@@PEBD@Z")]
        
 
-    PlayerAction inputAction;
     string m_Path;
     private string fn;
 
-    EditorManager editor;
 
     void Start() {
         //m_Path = Application.persistentDataPath;
