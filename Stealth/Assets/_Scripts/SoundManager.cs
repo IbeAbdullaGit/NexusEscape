@@ -20,6 +20,7 @@ public class SoundManager : MonoBehaviour
         EnemyDetect,
         EnemyMove,
         ButtonPress,
+        InteractPress,
 
     }
     private  Dictionary<Sound, float> soundTimerDictionary;

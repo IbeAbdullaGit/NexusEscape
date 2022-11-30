@@ -17,6 +17,7 @@ public class TilePickUp : Interactable
    public int tile_pos = 0;
 
    public int id;
+    SoundManager soundInstance;
 
    public override void OnInteract()
     {
@@ -35,6 +36,9 @@ public class TilePickUp : Interactable
          this.transform.position += player.transform.forward * 2.0f;
          //it is not in place anywhere
          inPlace = false;
+
+          //play sound
+        soundInstance.PlaySound(SoundManager.Sound.InteractPress);
        }
 
     }
@@ -64,6 +68,7 @@ public class TilePickUp : Interactable
         inventory = GameObject.FindGameObjectWithTag("GameController").GetComponent<Inventory>();
         player = GameObject.FindGameObjectWithTag("Player");
         originalPlace = this.transform.position;
+         soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
     }
 
     // Update is called once per frame
