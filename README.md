@@ -39,3 +39,4 @@ interaction: https://www.youtube.com/watch?v=AQc-NM2Up3M
 slope movement/sprint and crouch: https://www.youtube.com/watch?v=xCxSjgYTw9c&t=246s
 sliding puzzle: https://www.youtube.com/watch?v=IgBjJ-bexeo
 Sound manager: https://www.youtube.com/watch?v=QL29aTa7J5Q
+options menu: https://www.youtube.com/watch?v=iT49pNcu1jk
