@@ -13,6 +13,16 @@ public class SwitchScene : MonoBehaviour
    {
       GetComponent<SavePlugin>().LoadFile();
    }
+   public void LoadNextScene()
+   {
+      //plus 1 for next scene
+      //WE ALREADY SAVED PLUS 1 PREVIOUSLY
+      int id = GetComponent<SavePlugin>().GetCurrentID();
+      //dont load what we dont have
+      //scene count starts at 1, id starts at 0, scene count should always be bigger
+      if (SceneManager.sceneCountInBuildSettings > id)
+         ChangeScene(id);
+   }
 
    public void ChangeScene(string title)
    {

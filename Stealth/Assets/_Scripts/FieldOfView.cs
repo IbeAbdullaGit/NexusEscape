@@ -15,12 +15,28 @@ public class FieldOfView : MonoBehaviour
 
     public bool canSeePlayer;
 
+    Light spotlight;
+
+private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)  
+   {
+        angleInDegrees += eulerY;
+
+        return new Vector3(Mathf.Sin(angleInDegrees*Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees*Mathf.Deg2Rad));
+   }
 
     // Start is called before the first frame update
     void Start()
     {
         playerRef = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(FOVRoutine());
+        //get the light
+        spotlight = GetComponentInChildren<Light>();
+        //set the angle of the light to be the same as this angle
+        spotlight.spotAngle = angle;
+        //get the viewing angle
+        Vector3 viewAngle01 = DirectionFromAngle(transform.eulerAngles.y, -angle / 2);
+        //set the range of the spotlight to be the length of how far we can see
+        spotlight.range = Vector3.Magnitude((transform.position + viewAngle01 * radius) - (transform.position) );
     }
 
     private IEnumerator FOVRoutine()

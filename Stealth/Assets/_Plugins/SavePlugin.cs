@@ -74,6 +74,30 @@ public class SavePlugin : MonoBehaviour
 
         }
     }
+    //FOR SAVING THE NEXT SCENE
+    public void SaveProgress()
+    {
+        Debug.Log("Start Saving");
+        //if (editor.editorMode)
+        {
+            StartWriting(fn);
+            //we are only saving the last level
+            //var player = GameObject.FindGameObjectWithTag("Player");
+
+            //Debug.Log(SceneManager.GetActiveScene().name);
+            //shouldn't save over limit
+            if (SceneManager.sceneCountInBuildSettings > SceneManager.GetActiveScene().buildIndex +1)
+            {   
+                SaveIdToFile(SceneManager.GetActiveScene().buildIndex +1);
+                EndWriting();
+
+                Debug.Log("Saved");
+            }
+            else
+                Debug.Log("Can't save, there are no more scenes");
+
+        }
+    }
     public void LoadFile()
     {
         Debug.Log("Start loading");
@@ -87,7 +111,8 @@ public class SavePlugin : MonoBehaviour
             {
                 LoadFromFile(fn);
                  int id = GetID();
-                if (id !=0)
+                 //no menu or transition menu
+                if (id !=0 && id != 1)
                 //access game manaer
                 {
                     GetComponent<SwitchScene>().ChangeScene(id);
@@ -106,6 +131,20 @@ public class SavePlugin : MonoBehaviour
             Debug.Log("Can't load");
         }  
         
+    }
+    public int GetCurrentID()
+    {
+         if (File.Exists(fn))
+         {
+            //so that we know what the last played level was
+            StartWriting(fn);
+            LoadFromFile(fn);
+            int id =  GetID();
+            EndWriting();
+            return id;
+         }
+         else
+            return 0;
     }
 
 }

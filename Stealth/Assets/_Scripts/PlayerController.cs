@@ -193,7 +193,7 @@ public class PlayerController : MonoBehaviour
             //play walking sound, pass in position
         }
         //crouching
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
            state = MovementState.crouching;
            speed = crouchSpeed;

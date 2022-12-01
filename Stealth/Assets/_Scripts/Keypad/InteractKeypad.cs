@@ -46,6 +46,16 @@ public class InteractKeypad : Interactable
     public override void OnLoseFocus()
     {
         //Debug.Log("looking away");
+        //disable ui so it doesnt just stay there
+        
+       /*  menuUI.enabled = false;
+        openMenu = false;
+        //turn off cursor
+        if (Cursor.lockState == CursorLockMode.None)
+        {
+             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false; 
+        } */
         
     }
 
@@ -106,5 +116,9 @@ public class InteractKeypad : Interactable
     {
         ICommand openDoor = new ToggleDoorCommand(_otherdoor.GetComponent<Door>());
         _doorInvoker.AddCommand(openDoor);
+    }
+    //call when player exits trigger around keypad, implement later
+    private void OnTriggerExit(Collider other) {
+        
     }
 }

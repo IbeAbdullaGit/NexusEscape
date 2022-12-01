@@ -12,6 +12,8 @@ public class EndTrigger : MonoBehaviour
     {
         //trigger change here
         Debug.Log("Switching Scene");
+        //save
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<SavePlugin>().SaveProgress();
         GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene(nextLevel);
     }
    }

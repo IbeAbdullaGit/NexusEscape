@@ -75,13 +75,4 @@ public class SpawnDistraction : Interactable
         }
     }
 
-     // Update is called once per frame
-    void Update()
-    {
-        //for testing purposes
-        if (Input.GetKeyDown(KeyCode.Q)) //could change this key
-            {
-                OnInteract();
-            }
-    } 
 }

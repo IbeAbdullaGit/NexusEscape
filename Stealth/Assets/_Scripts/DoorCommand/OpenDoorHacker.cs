@@ -7,6 +7,7 @@ public class OpenDoorHacker : Interactable
     public Door connectedDoor;
      Animator anim;
 
+SoundManager soundInstance;
 
     public override void OnInteract()
     {
@@ -26,12 +27,15 @@ public class OpenDoorHacker : Interactable
         anim.Play("Armature|Press");
         anim.SetTrigger("press");
        }
+       //play sound
+        soundInstance.PlaySound(SoundManager.Sound.InteractPress);
     }
     
     // Start is called before the first frame update
     void Start()
     {
          anim = GetComponent<Animator>();
+         soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
     }
 
     // Update is called once per frame
