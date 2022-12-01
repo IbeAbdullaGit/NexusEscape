@@ -64,6 +64,7 @@ public class Distraction : MonoBehaviour
                 {
                     canSeeEnemy = true;
                     Debug.Log("Can see enemy!");
+                    StartCoroutine(enemyRef.GetComponent<EnemyAI>().Distracted(gameObject));
                 }
                 else{
                     canSeeEnemy = false;

@@ -145,14 +145,14 @@ public class EnemyAI : MonoBehaviour
         else
             
         lastPosition = transform.position; */
-       /* //get unstuck
+        //get unstuck
        if (!NavMeshAgent.hasPath && NavMeshAgent.pathStatus == NavMeshPathStatus.PathComplete) {
              Debug.Log("Character stuck");
              NavMeshAgent.enabled = false;
              NavMeshAgent.enabled = true;
              Debug.Log("navmesh re enabled");
              // navmesh agent will start moving again
-        }   */
+        }   
         
     }
  
