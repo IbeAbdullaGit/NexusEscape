@@ -84,9 +84,11 @@ public class EnemyAI : MonoBehaviour
     {
         NavMeshAgent.isStopped = true;
         //wait
+        //Debug.Log("Waiting");
         yield return delay;
         //after waiting
-        NavMeshAgent.isStopped = false;      
+        NavMeshAgent.isStopped = false;    
+        //Debug.Log("Done waiting");  
           
     }
     public IEnumerator Distracted(GameObject distraction)
@@ -114,8 +116,8 @@ public class EnemyAI : MonoBehaviour
         distraction.SetActive(false); //Used for object pooling, a bit buggy. Prefer if we use this and fix. Enable object pooling under Player's script.
 
         //set destination back to normal
-        //targetMain = waypoints[waypointIndex].position;
-        //NavMeshAgent.SetDestination(targetMain);
+        targetMain = waypoints[waypointIndex].position;
+        NavMeshAgent.SetDestination(targetMain);
 
         distracted = false;
     }
@@ -127,14 +129,26 @@ public class EnemyAI : MonoBehaviour
        if (!distracted)
        {
             playerInSight = inSight();
-      
-            if (Vector3.Distance(transform.position, targetMain) <1 )
+           // Debug.Log(Vector3.Distance(transform.position, targetMain));
+           //need more leniency here
+            if (Vector3.Distance(transform.position, targetMain) <1.5f )
             {
                 //detectionMeter.Meter();
                 IterateWaypointIndex();
                 UpdateDestination();
+                
                 //Debug.Log("Switching path");
             }
+            //Debug.Log(NavMeshAgent.pathStatus);
+            
+            //reset path
+            /* if (NavMeshAgent.isStopped)
+            {
+                NavMeshAgent.enabled = false;
+                NavMeshAgent.enabled = true;
+                IterateWaypointIndex();
+                UpdateDestination();
+            }  */
        }
        /* //check for moving
         if (transform.position != lastPosition)
@@ -146,13 +160,13 @@ public class EnemyAI : MonoBehaviour
             
         lastPosition = transform.position; */
         //get unstuck
-       if (!NavMeshAgent.hasPath && NavMeshAgent.pathStatus == NavMeshPathStatus.PathComplete) {
+       /* if (!NavMeshAgent.hasPath && NavMeshAgent.pathStatus == NavMeshPathStatus.PathComplete) {
              Debug.Log("Character stuck");
              NavMeshAgent.enabled = false;
              NavMeshAgent.enabled = true;
              Debug.Log("navmesh re enabled");
              // navmesh agent will start moving again
-        }   
+        }    */
         
     }
  

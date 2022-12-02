@@ -34,6 +34,17 @@ public class InteractButtonMeter : Interactable
          anim = GetComponent<Animator>();
          soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
     }
+    public void TurnOff()
+    {
+        menuUI.enabled = false;
+        openMenu = false;
+        //turn off cursor
+        if (Cursor.lockState == CursorLockMode.None)
+        {
+             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false; 
+        } 
+    }
     private void Update() {
         
         //close menu
