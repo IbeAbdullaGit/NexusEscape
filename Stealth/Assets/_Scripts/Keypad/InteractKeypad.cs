@@ -48,15 +48,19 @@ public class InteractKeypad : Interactable
         //Debug.Log("looking away");
         //disable ui so it doesnt just stay there
         
-       /*  menuUI.enabled = false;
+       
+        
+    }
+    public void TurnOff()
+    {
+        menuUI.enabled = false;
         openMenu = false;
         //turn off cursor
         if (Cursor.lockState == CursorLockMode.None)
         {
              Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false; 
-        } */
-        
+        } 
     }
 
     // Start is called before the first frame update

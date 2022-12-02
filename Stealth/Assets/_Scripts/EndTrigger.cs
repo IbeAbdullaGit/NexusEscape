@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class EndTrigger : MonoBehaviour
 {
-    public string nextLevel;
    private void OnTriggerEnter(Collider other) {
     
     if (other.tag == "Player") //if the player comes in
@@ -14,7 +13,7 @@ public class EndTrigger : MonoBehaviour
         Debug.Log("Switching Scene");
         //save
         GameObject.FindGameObjectWithTag("GameController").GetComponent<SavePlugin>().SaveProgress();
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene(nextLevel);
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("InbetweenScene");
     }
    }
 }
