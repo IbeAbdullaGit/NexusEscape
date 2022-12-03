@@ -167,7 +167,7 @@ public class PlayerController : MonoBehaviour
         
         {
             Move();
-            if (lastPosition != transform.position)
+            if (lastPosition != transform.position && grounded)
             {
             //means we've moved
                 soundInstance.PlaySound(SoundManager.Sound.PlayerMove, transform.position);
@@ -204,7 +204,7 @@ public class PlayerController : MonoBehaviour
            //play crouching sound
                 
         }
-        if (Input.GetKeyUp(KeyCode.C))
+        if (Input.GetKeyUp(KeyCode.LeftControl))
         {
            transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
 
