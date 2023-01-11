@@ -7,7 +7,7 @@ public class OpenDoorHacker : Interactable
     public Door connectedDoor;
      Animator anim;
 
-SoundManager soundInstance;
+     SoundManager soundInstance;
 
     public override void OnInteract()
     {
@@ -19,7 +19,10 @@ SoundManager soundInstance;
             Debug.Log("Opened door!");
        }
        else
-        connectedDoor.CloseDoor();
+        {
+          connectedDoor.CloseDoor();
+          Debug.Log("already open");
+        }
 
         if (anim != null)
          //play animation

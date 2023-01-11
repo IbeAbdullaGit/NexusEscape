@@ -37,6 +37,9 @@ public class EnemyAI : MonoBehaviour
  
     Vector3 lastPosition;
 
+     float hearRadius;
+     bool canHear;
+
     void Start()
     {
         NavMeshAgent = GetComponent<NavMeshAgent>();
@@ -57,6 +60,9 @@ public class EnemyAI : MonoBehaviour
 
         //detectionMeter = GameObject.FindGameObjectWithTag("GameController").GetComponent<DetectionMeter>();
         soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
+
+        //make hear radius same as view radius?
+        hearRadius = GetComponent<FieldOfView>().radius;
        
     }
     void UpdateDestination()
@@ -128,7 +134,9 @@ public class EnemyAI : MonoBehaviour
     {
        if (!distracted)
        {
+            //vision test then hearing test
             playerInSight = inSight();
+            HearingCheck();
            // Debug.Log(Vector3.Distance(transform.position, targetMain));
            //need more leniency here
             if (Vector3.Distance(transform.position, targetMain) <1.5f )
@@ -189,10 +197,26 @@ public class EnemyAI : MonoBehaviour
 
     }
 
+      private void HearingCheck()
+    {
+        float hearDistance = Vector3.Distance(transform.position, target.position);
+        //check if player is moving
+        if (target.GetComponent<PlayerController>().state != PlayerController.MovementState.idle && hearDistance < hearRadius)
+        {
+            Debug.Log("Can hear you");
+            //use this for now, can hear
+            canHear = true;
+
+        }
+        else{
+            //dont want to get stuck "hearing"
+            canHear = false;
+        }
+    }
     bool inSight()
     {
-       
-        if(FOV.canSeePlayer)
+       //if we can see the player or hear the player
+        if(FOV.canSeePlayer || canHear)
         {
             //Debug.Log("Enemy AI sees player");
            //stop coroutine, so enemy can move

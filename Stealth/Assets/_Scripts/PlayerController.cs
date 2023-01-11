@@ -33,7 +33,8 @@ public class PlayerController : MonoBehaviour
     {
         walking,
         sprinting,
-        crouching
+        crouching,
+        idle
     }
     [Header("Interaction")]
     [SerializeField]private float interactionDistance = default;
@@ -185,12 +186,17 @@ public class PlayerController : MonoBehaviour
 
             //play running sound
         }
-        else if (grounded)
+        //moving
+        else if (grounded && lastPosition != transform.position)
         {
             state = MovementState.walking;
             speed = walkSpeed;
 
             //play walking sound, pass in position
+        }
+        else //not moving
+        {
+            state = MovementState.idle;
         }
         //crouching
         if (Input.GetKeyDown(KeyCode.LeftControl))

@@ -80,10 +80,5 @@ private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)
             canSeePlayer = false;
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 }

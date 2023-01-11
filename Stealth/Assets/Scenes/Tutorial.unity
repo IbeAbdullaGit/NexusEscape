@@ -29184,6 +29184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1590039289891630612}
+  - component: {fileID: 1590039289891630613}
   m_Layer: 0
   m_Name: Armature
   m_TagString: Untagged
@@ -29201,7 +29202,6 @@ GameObject:
   m_Component:
   - component: {fileID: 545999466813930276}
   - component: {fileID: 925515234730271136}
-  - component: {fileID: 925515234730271135}
   m_Layer: 0
   m_Name: camera
   m_TagString: Untagged
@@ -29209,21 +29209,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &925515234730271135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925515234730271134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9921cfdc4a8a8d41852e937b0f866c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 20
-  speed: 2
-  axis: y
 --- !u!65 &925515234730271136
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29323,7 +29308,6 @@ GameObject:
   m_Component:
   - component: {fileID: 486142665014280844}
   - component: {fileID: 1005693053667039288}
-  - component: {fileID: 1005693053667039287}
   m_Layer: 0
   m_Name: camera
   m_TagString: Untagged
@@ -29331,21 +29315,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1005693053667039287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1005693053667039286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9921cfdc4a8a8d41852e937b0f866c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 30
-  speed: 2
-  axis: y
 --- !u!65 &1005693053667039288
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29747,6 +29716,21 @@ Transform:
   m_Father: {fileID: 7683177375857409674}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1590039289891630613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905010348519646302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9921cfdc4a8a8d41852e937b0f866c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 10
+  speed: 2
+  axis: y
 --- !u!1 &1675514747751467648
 GameObject:
   m_ObjectHideFlags: 0
@@ -31671,7 +31655,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2747806065543286848}
   - component: {fileID: 3272423279527152380}
-  - component: {fileID: 3272423279527152379}
   m_Layer: 0
   m_Name: camera
   m_TagString: Untagged
@@ -31679,21 +31662,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &3272423279527152379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3272423279527152378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9921cfdc4a8a8d41852e937b0f866c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 20
-  speed: 2
-  axis: y
 --- !u!65 &3272423279527152380
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31717,7 +31685,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2669823988016983915}
   - component: {fileID: 3334579524617762259}
-  - component: {fileID: 3334579524617762258}
   m_Layer: 0
   m_Name: camera
   m_TagString: Untagged
@@ -31725,21 +31692,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &3334579524617762258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3334579524617762257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9921cfdc4a8a8d41852e937b0f866c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 20
-  speed: 2
-  axis: y
 --- !u!65 &3334579524617762259
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31914,6 +31866,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2952264690556356651}
+  - component: {fileID: 3631950010251018850}
   m_Layer: 0
   m_Name: Armature
   m_TagString: Untagged
@@ -31921,6 +31874,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3631950010251018850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3631950010251018849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9921cfdc4a8a8d41852e937b0f866c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 20
+  speed: 2
+  axis: y
 --- !u!4 &3661011704506718697
 Transform:
   m_ObjectHideFlags: 0
@@ -33138,6 +33106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6526558481488855262}
+  - component: {fileID: 6526558481488855263}
   m_Layer: 0
   m_Name: Armature
   m_TagString: Untagged
@@ -33305,6 +33274,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6466548491055955957}
+  - component: {fileID: 6466548491055955958}
   m_Layer: 0
   m_Name: Armature
   m_TagString: Untagged
@@ -34419,6 +34389,21 @@ Transform:
   m_Father: {fileID: 2669823988016983915}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6466548491055955958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4837430899082343871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9921cfdc4a8a8d41852e937b0f866c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 20
+  speed: 2
+  axis: y
 --- !u!1 &6467469785112352354
 GameObject:
   m_ObjectHideFlags: 0
@@ -34490,6 +34475,21 @@ Transform:
   m_Father: {fileID: 2747806065543286848}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6526558481488855263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4615402430803446420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9921cfdc4a8a8d41852e937b0f866c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 20
+  speed: 2
+  axis: y
 --- !u!1 &6579148489254244497
 GameObject:
   m_ObjectHideFlags: 0
@@ -34674,7 +34674,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6073201175935686837}
   - component: {fileID: 6846466381292093969}
-  - component: {fileID: 6846466381292093968}
   m_Layer: 0
   m_Name: camera
   m_TagString: Untagged
@@ -34682,21 +34681,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &6846466381292093968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6846466381292093967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9921cfdc4a8a8d41852e937b0f866c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 20
-  speed: 2
-  axis: y
 --- !u!65 &6846466381292093969
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34765,6 +34749,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8795518524916060690}
+  - component: {fileID: 8795518524916060691}
   m_Layer: 0
   m_Name: Armature
   m_TagString: Untagged
@@ -34872,6 +34857,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8872956365687286714}
+  - component: {fileID: 8872956365687286715}
   m_Layer: 0
   m_Name: Armature
   m_TagString: Untagged
@@ -34889,7 +34875,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7683177375857409674}
   - component: {fileID: 7683177375857409676}
-  - component: {fileID: 7683177375857409675}
   m_Layer: 0
   m_Name: camera
   m_TagString: Untagged
@@ -35301,21 +35286,6 @@ Transform:
   m_Father: {fileID: 1855344296}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &7683177375857409675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7055998984270914608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9921cfdc4a8a8d41852e937b0f866c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 10
-  speed: 2
-  axis: y
 --- !u!65 &7683177375857409676
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36600,6 +36570,21 @@ Transform:
   m_Father: {fileID: 486142665014280844}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8795518524916060691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6958130890376091736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9921cfdc4a8a8d41852e937b0f866c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 30
+  speed: 2
+  axis: y
 --- !u!1 &8839135857521161702
 GameObject:
   m_ObjectHideFlags: 0
@@ -36634,6 +36619,21 @@ Transform:
   m_Father: {fileID: 545999466813930276}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8872956365687286715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7042742094798234096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9921cfdc4a8a8d41852e937b0f866c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 20
+  speed: 2
+  axis: y
 --- !u!137 &8883601598979544900
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
