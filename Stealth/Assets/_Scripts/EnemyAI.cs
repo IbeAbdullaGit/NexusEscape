@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 public class EnemyAI : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -35,10 +36,14 @@ public class EnemyAI : MonoBehaviour
     SoundManager soundInstance;
     bool playSoundOnce = false;
  
+    //hearing
     Vector3 lastPosition;
 
      float hearRadius;
      bool canHear;
+
+    //ui
+    [SerializeField]private Slider slider;
 
     void Start()
     {
@@ -62,7 +67,7 @@ public class EnemyAI : MonoBehaviour
         soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
 
         //make hear radius same as view radius?
-        hearRadius = GetComponent<FieldOfView>().radius;
+        hearRadius = (GetComponent<FieldOfView>().radius)/2;
        
     }
     void UpdateDestination()
@@ -132,6 +137,12 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       //detection meter
+       if (slider != null)
+       {
+            DetectionMeterUpdate();
+       }
+       
        if (!distracted)
        {
             //vision test then hearing test
@@ -243,6 +254,29 @@ public class EnemyAI : MonoBehaviour
         targetMain = waypoints[waypointIndex].position;
         NavMeshAgent.SetDestination(targetMain);
         return false;
+    }
+
+    void DetectionMeterUpdate()
+    {
+         //distance between player and the AI
+         float distanceToTagret = Vector3.Distance(transform.position, target.position);
+         //Debug.Log(distanceToTagret);
+        
+        //this is the perent of how close the player is
+        float sliderValue = (hearRadius/distanceToTagret);
+         //float sliderValue = ((hearRadius/2)/distanceToTagret);
+
+
+        //this means it should be full 100%, is seen/heard
+        if (distanceToTagret < hearRadius)
+        {
+            slider.value = 1;
+        }
+        else //need to fill in some percentage
+        {
+            slider.value = sliderValue;
+        }
+        //Debug.Log(sliderValue);
     }
 
    
