@@ -11,6 +11,8 @@ public class PipeManager : MonoBehaviour
     [SerializeField]
     int totalPipes = 0;
 
+    int correctPipes = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +29,18 @@ public class PipeManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void correctposition()
     {
-        
+        correctPipes += 1;
+
+        if(correctPipes == totalPipes)
+        {
+            //Open Door
+        }
+    }
+
+    public void wrongposition()
+    {
+        correctPipes -= 1;
     }
 }
