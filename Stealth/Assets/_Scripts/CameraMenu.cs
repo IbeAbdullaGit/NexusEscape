@@ -92,10 +92,4 @@ public class CameraMenu : MonoBehaviour
         }
         cameraView.material = cameras[cameraIndex];
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

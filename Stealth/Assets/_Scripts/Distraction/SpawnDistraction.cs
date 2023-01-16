@@ -22,46 +22,43 @@ public class SpawnDistraction : Interactable
     Animator anim;
     public bool isButton;
 
+    Distraction currentDistraction;
+
+    bool hasDistraction = false;
+
+    //change color
+    public Renderer render;
+    Color original;
+
     public override void OnInteract()
     { 
         if (!spawning)
-             //play animation
+        {     //play animation
             if (isButton)
             {
                 anim.Play("Armature|Press");
                 anim.SetTrigger("press");
             }
             StartCoroutine(Spawn());
+        }
     }
     IEnumerator Spawn()
     {
         //we are spawning rn
         spawning = true;
-        //current camera
-        position = cameras.GetCurrentCamera().transform.position;
-        //the actual position should be offset a bit
-        position += cameras.GetCurrentCamera().transform.forward * distance;
-        //move the y so it's not floating in the air, could change
-        position.y = 5.0f;
-        
-        if (UsePooling)
-        {
-            currentHazard = ObjectPooler.instance.SpawnFromPool("Distraction", position, new Quaternion(0f, 0f, 0f, 0f));
-            //set the location
-            currentHazard.transform.position = position;
-        }
-        else
-        {
-            //spawn the hazard
-            currentHazard = Instantiate(prefab);
 
-            //set the location
-            currentHazard.transform.position = position;
-        }
+        if (hasDistraction)
+        {
+            currentDistraction = cameras.GetCurrentCamera().GetComponent<CameraSettings>().distraction;
+            //check if the distraction is enabled
+            if (!currentDistraction.gameObject.activeSelf)
+                
+                currentDistraction.gameObject.SetActive(true);
 
-        //now, start the cooldown
-        yield return cooldown;
-        
+            //now, start the cooldown
+            yield return cooldown;
+        }
+        //otherwise do nothing
         //after cooldown, allow spawning again
         spawning = false;
     }
@@ -72,7 +69,25 @@ public class SpawnDistraction : Interactable
         if (isButton)
         {
             anim = GetComponent<Animator>();
+            original = render.material.color;
         }
+    }
+    private void Update() {
+        
+        if (cameras.GetCurrentCamera().GetComponent<CameraSettings>().hasDistraction)
+        {
+            hasDistraction = true;
+            if (isButton)
+                render.material.color = Color.green;
+        }
+        else
+        {
+            hasDistraction = false;
+            if (isButton)
+                render.material.color = original;
+        }
+
+        Debug.Log(hasDistraction);
     }
 
 }
