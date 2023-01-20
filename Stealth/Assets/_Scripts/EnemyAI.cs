@@ -211,8 +211,18 @@ public class EnemyAI : MonoBehaviour
       private void HearingCheck()
     {
         float hearDistance = Vector3.Distance(transform.position, target.position);
+        float currentHearRadius;
+        //check if player is crouching first; the hearing should be reduced if this is the case
+        if (target.GetComponent<PlayerController>().state != PlayerController.MovementState.crouching)
+        {
+            currentHearRadius = hearRadius;
+        }
+        else //is crouching
+        {
+            currentHearRadius = hearRadius/3; //decrease the radius, making enemy "hear less"
+        }
         //check if player is moving
-        if (target.GetComponent<PlayerController>().state != PlayerController.MovementState.idle && hearDistance < hearRadius)
+        if (target.GetComponent<PlayerController>().state != PlayerController.MovementState.idle && hearDistance < currentHearRadius)
         {
             Debug.Log("Can hear you");
             //use this for now, can hear
