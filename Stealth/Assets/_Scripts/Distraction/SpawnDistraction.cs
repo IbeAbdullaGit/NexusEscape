@@ -87,7 +87,6 @@ public class SpawnDistraction : Interactable
                 render.material.color = original;
         }
 
-        Debug.Log(hasDistraction);
     }
 
 }

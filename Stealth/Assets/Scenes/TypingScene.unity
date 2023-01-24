@@ -365,6 +365,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7772776420633295205, guid: c97f16e75fdea0d40965c7269b534aa6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772776420633295205, guid: c97f16e75fdea0d40965c7269b534aa6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772776420633295205, guid: c97f16e75fdea0d40965c7269b534aa6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772776420633295205, guid: c97f16e75fdea0d40965c7269b534aa6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -415,6 +427,14 @@ PrefabInstance:
     - target: {fileID: 7772776420633295206, guid: c97f16e75fdea0d40965c7269b534aa6, type: 3}
       propertyPath: m_Name
       value: Typing
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772776420633295210, guid: c97f16e75fdea0d40965c7269b534aa6, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772776420633295211, guid: c97f16e75fdea0d40965c7269b534aa6, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

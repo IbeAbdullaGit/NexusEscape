@@ -18,7 +18,7 @@ public class Typer : MonoBehaviour
     //int wrongCount = 0;
     int rightCount = 0;
 
-    bool iscorrect = false;
+    
 
     Timer currentTimer;
     
@@ -49,7 +49,7 @@ public class Typer : MonoBehaviour
         correctText.text = rightCount.ToString();
         if (rightCount == 3) //typed 3 correct words, within time limit
         {
-            iscorrect = true;
+           
             //hide interface, reset everything
             typingCanvas.enabled = false;
             wordBank.ResetBank();
@@ -61,7 +61,7 @@ public class Typer : MonoBehaviour
         if (currentTimer.hitLimit)
         {
             //reset
-            iscorrect = false;
+           
             wordBank.ResetBank();
             SetCurrentWord();
             typingCanvas.enabled = false;

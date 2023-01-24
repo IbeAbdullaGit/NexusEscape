@@ -19,7 +19,7 @@ public class Distraction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(FOVRoutine());
+        //StartCoroutine(FOVRoutine());
     }
 
     private IEnumerator FOVRoutine()
@@ -41,6 +41,20 @@ public class Distraction : MonoBehaviour
             }
             
         }
+    }
+    
+    //update function is more reliable
+    private void Update() {
+        FieldOfViewCheck();
+        if (canSeeEnemy)
+            {
+                //should only run this once per hazard, since after this will be destroyed
+                //sending in this game object to run the enemy ref's distracted function
+                //stop any coroutines that might be conflicting
+                //StopCoroutine(enemyRef.GetComponent<EnemyAI>().WalkPause());
+                StartCoroutine(enemyRef.GetComponent<EnemyAI>().Distracted(gameObject));
+                //enemyRef.GetComponent<EnemyAI>().StartCoroutine(enemyRef.GetComponent<EnemyAI>().Distracted(gameObject));
+            }
     }
     private void FieldOfViewCheck()
     {

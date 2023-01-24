@@ -7661,6 +7661,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 2037925343}
     m_Modifications:
+    - target: {fileID: -8410109752225095188, guid: c94c02709c728c04592d5e3d8c33f1c4, type: 3}
+      propertyPath: radius
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5330309084312893233, guid: c94c02709c728c04592d5e3d8c33f1c4, type: 3}
       propertyPath: m_Name
       value: Distraction
