@@ -65,19 +65,27 @@ private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)
                 if (!Physics.Raycast(transform.position, directionToTarget, distanceToTagret, obstructionMask))
                 {
                     canSeePlayer = true;
-                    //Debug.Log("Can see player!");                    
+                    //Debug.Log("Can see player!");   
+                    //change light color
+                    spotlight.color = Color.red;
                 }
                 else{
                     canSeePlayer = false;
+                    //change light color
+                    spotlight.color = Color.white;
                 }
             }
             else{
                 canSeePlayer = false;
+                //change light color
+                spotlight.color = Color.white;
             }
         }
         else if (canSeePlayer) //if previously in view of enemy, but not anymore
         {
             canSeePlayer = false;
+            //change light color
+            spotlight.color = Color.white;
         }
     }
   

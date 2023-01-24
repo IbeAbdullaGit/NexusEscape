@@ -138,7 +138,7 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
        //detection meter
-       if (slider != null)
+       if (slider != null && !distracted)
        {
             DetectionMeterUpdate();
        }
