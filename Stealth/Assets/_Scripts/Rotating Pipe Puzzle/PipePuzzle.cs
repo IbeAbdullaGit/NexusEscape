@@ -1,23 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PipePuzzle : MonoBehaviour
 {
-    float[] rotations = { 0, 90, 180, 270 }; //The random rotations the pipes can start off
+    float[] rotations = {0, 90, 180, 270 }; //The random rotations the pipes can start off
 
+    RectTransform rotateimage;
 
+    [SerializeField] private Button pipe = null;
+    [SerializeField] PipeManager PipeManagers;
     //checks if correctly solved
     public float [] solution; //Make an array to make sure straight pipes have the correct solution in both rotations
     [SerializeField]
     bool isPlaced = false;
     int PossSolutions = 1;
-
+    bool solved = false;
     PipeManager pipeManager;
 
     private void Awake()
     {
         pipeManager = GameObject.Find("PipeManager").GetComponent<PipeManager>();
+        pipe.onClick.AddListener(ParameterOnClick);
+        if (!isPlaced)
+        {
+            int startposition = Random.Range(0, rotations.Length); //Picks between the range of rotations
+            transform.eulerAngles = new Vector3(0, 0, rotations[startposition]);//Rotates them from the picked rotation randomly
+        }
     }
 
     private void Start()
@@ -25,10 +34,7 @@ public class PipePuzzle : MonoBehaviour
         //Allows change the size of possible solutions of each pipe
         PossSolutions = solution.Length;
 
-        
-        int startposition = Random.Range(0, rotations.Length); //Picks between the range of rotations
-        transform.eulerAngles = new Vector3(0, 0, rotations[startposition]);//Rotates them from the picked rotation randomly
-
+      
         //If Possible solutions are more than 1... only 2, checks the array of solutions if they match then the pipe is correctly placed 
         if (PossSolutions > 1)
         {
@@ -49,10 +55,11 @@ public class PipePuzzle : MonoBehaviour
 
     }
 
-    private void OnMouseDown()
+  
+    private void ParameterOnClick()
     {
         transform.Rotate(new Vector3(0, 0, 90)); //When click on a pipe, would rotate it in 90 degrees
-
+            
 
         //If Possible solutions are more than 1... only 2, checks the array of solutions if they match then the pipe is correctly placed, if not then it will be counted as false
         if (PossSolutions > 1)
@@ -80,6 +87,22 @@ public class PipePuzzle : MonoBehaviour
                 isPlaced = false;
                 pipeManager.wrongposition();
             }
+        }
+        
+    }
+
+    private void RemoveButtons()
+    {
+        pipe.onClick.RemoveAllListeners();
+        Button.Destroy(pipe);
+    }
+
+    private void Update()
+    {
+        if (pipeManager.totalPipes == pipeManager.correctPipes && !solved)
+        {
+            solved = true;
+            RemoveButtons();
         }
     }
 }

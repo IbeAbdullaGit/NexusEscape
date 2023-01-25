@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PipeManager : MonoBehaviour
 {
     //Pipes and where they are stored
     public GameObject PipeHolder; 
     public GameObject[] Pipes;
-   
-    [SerializeField]
-    int totalPipes = 0;
 
-    int correctPipes = 0;
+    [SerializeField]
+    public int totalPipes = 0;
+    [SerializeField]
+    public int correctPipes = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class PipeManager : MonoBehaviour
         for(int i = 0; i < Pipes.Length; i++)
         {
             Pipes[i] = PipeHolder.transform.GetChild(i).gameObject;
+          
         }
     }
 
@@ -35,8 +37,9 @@ public class PipeManager : MonoBehaviour
 
         if(correctPipes == totalPipes)
         {
+            Debug.LogError("You did it!");
             //Open Door
-        }
+        }   
     }
 
     public void wrongposition()
