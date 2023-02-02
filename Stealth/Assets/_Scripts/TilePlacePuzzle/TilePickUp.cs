@@ -22,7 +22,7 @@ public class TilePickUp : Interactable
    public override void OnInteract()
     {
        //only add if we don't already have a tile we're holding
-       if (inventory.currentTile == null)
+       if (inventory.currentTile == null && inventory.keycard == null)
        {
          
          //add to inventory

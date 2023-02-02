@@ -5,7 +5,9 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     
-    public List<KeyPickUp> keys;
+     List<KeyPickUp> keys;
+
+    public KeycardPickup keycard;
 
     public TilePickUp currentTile;
     // Start is called before the first frame update
@@ -18,6 +20,11 @@ public class Inventory : MonoBehaviour
         keys.Add(key);
     }
 
+    public void AddCard(KeycardPickup key)
+    {
+        keycard = key;
+    }
+
     public void AddTile(TilePickUp tile)
     {
         currentTile = tile;
@@ -26,10 +33,9 @@ public class Inventory : MonoBehaviour
     {
         currentTile = null;
     }
-
-    // Update is called once per frame
-    void Update()
+    public void RemoveKeyCard()
     {
-        
+        keycard = null;
     }
+
 }
