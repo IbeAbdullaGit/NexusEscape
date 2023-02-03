@@ -11,6 +11,8 @@ public class KeycardSwiper : Interactable
     public GameObject _otherdoor;
     DoorInvoker _doorInvoker;
 
+    public bool for_hacker = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,10 +32,17 @@ public class KeycardSwiper : Interactable
         {
             if (inventory.keycard.id == needed_id)
             {
-                //open door/do something, command
+                //this is what will normally happen
+                if (!for_hacker)
+                {//open door/do something, command
                 TriggerDoor();
                 _otherdoor.GetComponent<Door>().isOpen = false;
                 _otherdoor.GetComponent<Door>().OpenDoor();
+                }
+                else //this is what will happen when we want keycard being inserted to effect something on hacker screen
+                {
+                    //turn on pipe puzzle
+                }
             }
             else
             {
