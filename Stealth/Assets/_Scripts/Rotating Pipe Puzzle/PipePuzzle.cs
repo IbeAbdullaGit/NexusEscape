@@ -17,7 +17,6 @@ public class PipePuzzle : MonoBehaviour
     int PossSolutions = 1;
     bool solved = false;
     PipeManager pipeManager;
-    KeycardSwiper keycardSwiper;
     Canvas canvas;
 
     private void Awake()
@@ -54,6 +53,8 @@ public class PipePuzzle : MonoBehaviour
                 pipeManager.correctposition();
             }
         }
+
+        
 
     }
 
@@ -102,6 +103,7 @@ public class PipePuzzle : MonoBehaviour
     {
         pipe.onClick.RemoveAllListeners();
         Button.Destroy(pipe);
+        
     }
 
     private void Update()
@@ -113,8 +115,7 @@ public class PipePuzzle : MonoBehaviour
            pipeManager.TriggerDoor();
            pipeManager._otherdoor.GetComponent<Door>().isOpen = false;
            pipeManager._otherdoor.GetComponent<Door>().OpenDoor();
-          //  canvas.GetComponentInParent<Canvas>();
-           // canvas.enabled = false;
+           Destroy(transform.gameObject.GetComponentInParent<Canvas>().gameObject);
  
 
 

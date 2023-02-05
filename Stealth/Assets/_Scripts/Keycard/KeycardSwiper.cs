@@ -54,7 +54,6 @@ public class KeycardSwiper : Interactable
 
                     }
                     //turn on pipe puzzle
-                    
 
                 }
             }
