@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class KeycardSwiper : Interactable
 {
      Inventory inventory;
@@ -13,11 +13,17 @@ public class KeycardSwiper : Interactable
 
     public bool for_hacker = false;
 
+    bool revealed = false;
+   public Canvas pipepuzzle;
+
     // Start is called before the first frame update
     void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("GameController").GetComponent<Inventory>();
         _doorInvoker = new DoorInvoker();
+        pipepuzzle = GetComponentInChildren<Canvas>();
+        pipepuzzle.enabled = false;
+
     }
     void TriggerDoor()
     {
@@ -41,6 +47,12 @@ public class KeycardSwiper : Interactable
                 }
                 else //this is what will happen when we want keycard being inserted to effect something on hacker screen
                 {
+                    if (!revealed)
+                    {
+                        revealed = true;
+                        pipepuzzle.enabled = true;
+
+                    }
                     //turn on pipe puzzle
                 }
             }
