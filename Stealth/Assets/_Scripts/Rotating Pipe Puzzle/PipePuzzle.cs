@@ -17,6 +17,7 @@ public class PipePuzzle : MonoBehaviour
     int PossSolutions = 1;
     bool solved = false;
     PipeManager pipeManager;
+    Canvas canvas;
 
     private void Awake()
     {
@@ -33,8 +34,8 @@ public class PipePuzzle : MonoBehaviour
     {
         //Allows change the size of possible solutions of each pipe
         PossSolutions = solution.Length;
+       
 
-      
         //If Possible solutions are more than 1... only 2, checks the array of solutions if they match then the pipe is correctly placed 
         if (PossSolutions > 1)
         {
@@ -53,9 +54,12 @@ public class PipePuzzle : MonoBehaviour
             }
         }
 
+        
+
     }
 
-  
+ 
+
     private void ParameterOnClick()
     {
         transform.Rotate(new Vector3(0, 0, 90)); //When click on a pipe, would rotate it in 90 degrees
@@ -88,13 +92,18 @@ public class PipePuzzle : MonoBehaviour
                 pipeManager.wrongposition();
             }
         }
+
         
+        
+           
+
     }
 
     private void RemoveButtons()
     {
         pipe.onClick.RemoveAllListeners();
         Button.Destroy(pipe);
+        
     }
 
     private void Update()
@@ -103,6 +112,14 @@ public class PipePuzzle : MonoBehaviour
         {
             solved = true;
             RemoveButtons();
+           pipeManager.TriggerDoor();
+           pipeManager._otherdoor.GetComponent<Door>().isOpen = false;
+           pipeManager._otherdoor.GetComponent<Door>().OpenDoor();
+           Destroy(transform.gameObject.GetComponentInParent<Canvas>().gameObject);
+ 
+
+
+
         }
     }
 }

@@ -14,6 +14,9 @@ public class PipeManager : MonoBehaviour
     [SerializeField]
     public int correctPipes = 0;
 
+    public GameObject _otherdoor;
+    DoorInvoker _doorInvoker;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,14 @@ public class PipeManager : MonoBehaviour
             Pipes[i] = PipeHolder.transform.GetChild(i).gameObject;
           
         }
+
+        _doorInvoker = new DoorInvoker();
+    }
+
+    public void TriggerDoor()
+    {
+        ICommand openDoor = new ToggleDoorCommand(_otherdoor.GetComponent<Door>());
+        _doorInvoker.AddCommand(openDoor);
     }
 
     // Update is called once per frame
