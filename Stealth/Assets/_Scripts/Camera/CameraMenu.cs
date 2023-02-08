@@ -17,7 +17,7 @@ public class CameraMenu : MonoBehaviour
 
     public Camera[] cams;
     int cameraIndex = 0;
-    public Image cameraView;
+    public GameObject cameraView;
 
     PopUpSystem pop;
 
@@ -80,7 +80,12 @@ public class CameraMenu : MonoBehaviour
         {
             cameraIndex = 0;
         }
-        cameraView.material = cameras[cameraIndex];
+        //cameraView.material = cameras[cameraIndex];
+       
+
+        var materialsCopy = cameraView.GetComponent<MeshRenderer>().materials;
+        materialsCopy[1] = cameras[cameraIndex]; //2ND MATERIAL FOR THIS CONTEXT
+        cameraView.GetComponent<MeshRenderer>().materials = materialsCopy;
     }
     public void SwitchCamerasBack()
     {
@@ -90,6 +95,10 @@ public class CameraMenu : MonoBehaviour
         {
             cameraIndex = cameras.Length - 1;
         }
-        cameraView.material = cameras[cameraIndex];
+        //cameraView.material = cameras[cameraIndex];
+
+        var materialsCopy = cameraView.GetComponent<MeshRenderer>().materials;
+        materialsCopy[1] = cameras[cameraIndex]; //2ND MATERIAL FOR THIS CONTEXT
+        cameraView.GetComponent<MeshRenderer>().materials = materialsCopy;
     }
 }

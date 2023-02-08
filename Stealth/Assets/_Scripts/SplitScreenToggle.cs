@@ -29,11 +29,17 @@ public class SplitScreenToggle : MonoBehaviour
             {
                  screen.rect = new Rect(0,0,0.5f,1);
                 screen2.rect = new Rect (0.5f, 0, 0.5f, 1);
+
+                screen.orthographicSize =1;
+                screen2.orthographicSize = 1;
             }
             else{
                 //player 2 is the main
                 screen2.rect = new Rect(0,0,1.0f,1);
                 screen.rect = new Rect (0.0f, 0, 0.0f, 1);
+
+                screen.orthographicSize =1;
+                screen2.orthographicSize = 1;
             }
         }
     }
