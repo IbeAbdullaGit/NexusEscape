@@ -28,6 +28,8 @@ public class Typer : MonoBehaviour
         SetCurrentWord();
         //get the timer
         currentTimer = GetComponent<Timer>();
+        //disable
+        typingCanvas.enabled = false;
     }
     private void SetCurrentWord()
     {
@@ -55,27 +57,45 @@ public class Typer : MonoBehaviour
             wordBank.ResetBank();
             SetCurrentWord();
 
+            var possibles = GetComponent<LinkedPuzzle>().amount_linked;
+
             //DO SOMETHING HERE
+            for (int i=0; i< possibles.Length; i++)
+            {
+                if (possibles[i])
+                {
+                    if (i==0) //first one
+                    {
+                        GetComponent<LinkedPuzzle>().ActivateText();
+                    }
+                    else if (i ==1) //second one
+                    {
+                        GetComponent<LinkedPuzzle>().ActivateDoor();
+                    }
+
+                    break;
+                }
+                
+            }
         }
         //losing condition
         if (currentTimer.hitLimit)
         {
             //reset
-           
-            wordBank.ResetBank();
-            SetCurrentWord();
-            typingCanvas.enabled = false;
+            //typingCanvas.enabled = false;
+            //reset puzzle so hacker can keep trying
+            ResetTyping();
             
         }
 
         //reset everything
         //replace later
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+       /*  if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             ResetTyping();
-        }
+        } */
     }
-    void ResetTyping()
+    public void ResetTyping()
     {
         rightCount = 0;
         wordBank.ResetBank();
