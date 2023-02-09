@@ -32931,6 +32931,10 @@ PrefabInstance:
       value: 8192
       objectReference: {fileID: 0}
     - target: {fileID: 3718926265070624238, guid: 933c6722d52e8ea4b957d41aa26352db, type: 3}
+      propertyPath: playerOffset
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3718926265070624238, guid: 933c6722d52e8ea4b957d41aa26352db, type: 3}
       propertyPath: playerReference
       value: 
       objectReference: {fileID: 872308323}
