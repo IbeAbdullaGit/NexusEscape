@@ -11,7 +11,7 @@ public class ButtonPressPuzzle : MonoBehaviour
 
     ButtonPressOrder buttonOrder;
 
-    [Range(1,3)]
+    [Range(1,8)] //was 3
     public int id;
     // Start is called before the first frame update
     void Start()

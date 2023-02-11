@@ -7,10 +7,10 @@ using TMPro;
 public class ButtonPressOrder : MonoBehaviour
 {
     
-    [Range(1,3)]
-    public int[] buttonOrder = new int[3];
+    [Range(1,8)] // was 3
+    public int[] buttonOrder = new int[8]; // was 3
 
-    [Range(1, 3)]
+    [Range(1, 8)]
     public List<int> enteredOrder;
 
     public Button[] buttons;
@@ -28,7 +28,7 @@ public class ButtonPressOrder : MonoBehaviour
     void Update()
     {
         //means we have an answer entered
-        if (enteredOrder.Count ==3)
+        if (enteredOrder.Count ==8) //was 3
         {
             if (AnswerCheck())
             {
