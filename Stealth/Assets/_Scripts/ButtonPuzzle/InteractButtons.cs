@@ -11,7 +11,7 @@ public class InteractButtons : Interactable
 
      //the answer
      [Range(1,8)]
-    public int[] buttonOrder = new int[8];
+    public List<int> buttonOrder;
      public override void OnFocus()
     {
         Debug.Log("looking at");

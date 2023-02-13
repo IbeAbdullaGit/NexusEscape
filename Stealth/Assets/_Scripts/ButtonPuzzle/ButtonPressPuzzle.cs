@@ -21,11 +21,6 @@ public class ButtonPressPuzzle : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void isPressed()
     {
         if (canPress)
