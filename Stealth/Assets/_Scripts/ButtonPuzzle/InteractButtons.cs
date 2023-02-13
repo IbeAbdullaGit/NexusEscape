@@ -10,8 +10,8 @@ public class InteractButtons : Interactable
      ButtonPressOrder instance;
 
      //the answer
-     [Range(1,3)]
-    public int[] buttonOrder = new int[3];
+     [Range(1,8)]
+    public int[] buttonOrder = new int[8];
      public override void OnFocus()
     {
         Debug.Log("looking at");
