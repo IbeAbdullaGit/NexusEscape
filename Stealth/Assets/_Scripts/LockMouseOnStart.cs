@@ -8,6 +8,6 @@ public class LockMouseOnStart : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.visible = false;
     }
 }

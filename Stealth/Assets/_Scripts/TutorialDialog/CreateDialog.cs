@@ -28,7 +28,7 @@ public class CreateDialog : MonoBehaviour
         ChangeText("Use WASD to move around. Use [Space] to jump, [Left Ctrl] to crouch");
         //manually change player2 text for this case
         ChangeTextPlayer2("Move with arrow keys. Press [Shift] to view the cameras, and use the arrows to toggle between them");
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Locked;
     }
     
     public void ChangeUI()
