@@ -9,6 +9,7 @@ public class MinimapCamera : MonoBehaviour
     [Header("Minimap rotations")]
     public Transform playerReference;
     public float playerOffset = 10f;
+    public float playerOffsetX = 5f;
 
 
     /**/
@@ -18,7 +19,7 @@ public class MinimapCamera : MonoBehaviour
     {
         if (playerReference != null)
         {
-            transform.position = new Vector3(playerReference.position.x, playerReference.position.y + playerOffset, playerReference.position.z);
+            transform.position = new Vector3(playerReference.position.x, playerReference.position.y + playerOffset, playerReference.position.z + playerOffsetX);
             transform.rotation = Quaternion.Euler(90f, playerReference.eulerAngles.y, 0f);
         }
     }
