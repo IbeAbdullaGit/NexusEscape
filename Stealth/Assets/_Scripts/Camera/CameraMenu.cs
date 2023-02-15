@@ -11,7 +11,7 @@ public class CameraMenu : MonoBehaviour
     PlayerAction inputAction;
     public bool openMenu = false;
 
-    public Canvas menuUI;
+    //public Canvas menuUI;
 
     public Material[] cameras;
 
@@ -34,9 +34,11 @@ public class CameraMenu : MonoBehaviour
         inputAction.Player2.Menu.performed += cntxt => OpenMenu();
         //inputAction.Player2.NextCamera.performed += cntxt => SwitchCameras();
        
-        menuUI.enabled = false;
+        //menuUI.enabled = false;
 
         pop = GameObject.FindGameObjectWithTag("GameController").GetComponent<PopUpSystem>();
+
+        cameraIndex = 0;
         
     }
 
@@ -48,7 +50,7 @@ public class CameraMenu : MonoBehaviour
     {
        
         //menuUI.enabled = true;
-        menuUI.enabled = !menuUI.enabled;
+        //menuUI.enabled = !menuUI.enabled;
 
         if (Cursor.lockState == CursorLockMode.Locked)
         {

@@ -57,4 +57,24 @@ public class PipeManager : MonoBehaviour
     {
         correctPipes -= 1;
     }
+    public void TurnOff()
+    {
+       
+        //turn off cursor
+        if (Cursor.lockState == CursorLockMode.None)
+        {
+             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false; 
+        } 
+    }
+     public void TurnOn()
+    {
+       
+        //turn off cursor
+        if (Cursor.lockState == CursorLockMode.Locked)
+        {
+             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true; 
+        } 
+    }
 }

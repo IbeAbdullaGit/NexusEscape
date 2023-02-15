@@ -84,6 +84,8 @@ public class PlayerController : MonoBehaviour
          //distanceToGround = GetComponent<Collider>().bounds.extents.y;
          startYScale = transform.localScale.y;
          playerCam = GetComponentInChildren<Camera>();
+
+         //ASSIGN LATER
          GameOverScreen.enabled = false;
 
          soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
