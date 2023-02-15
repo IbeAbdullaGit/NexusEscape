@@ -35,6 +35,7 @@ public class Inventory : MonoBehaviour
     }
     public void RemoveKeyCard()
     {
+        keycard.transform.parent = null;
         keycard = null;
     }
 

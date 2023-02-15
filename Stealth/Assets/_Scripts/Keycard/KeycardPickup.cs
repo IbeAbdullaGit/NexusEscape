@@ -35,7 +35,7 @@ public class KeycardPickup : Interactable
       //remove tile
       inventory.RemoveKeyCard();
       //remove parent so we can move it
-      this.transform.parent = null;
+      //this.transform.parent = null;
       //set position to the original one
       //this.transform.position = position;
 
