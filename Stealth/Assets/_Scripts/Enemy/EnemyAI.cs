@@ -64,10 +64,10 @@ public class EnemyAI : MonoBehaviour
         UpdateDestination();
 
         //detectionMeter = GameObject.FindGameObjectWithTag("GameController").GetComponent<DetectionMeter>();
-        soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
+        //soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
 
         //make hear radius same as view radius?
-        hearRadius = (GetComponent<FieldOfView>().radius)/2;
+        hearRadius = (GetComponent<FieldOfView>().radius);
        
     }
     void UpdateDestination()
@@ -221,8 +221,8 @@ public class EnemyAI : MonoBehaviour
         {
             currentHearRadius = hearRadius/3; //decrease the radius, making enemy "hear less"
         }
-        //check if player is moving
-        if (target.GetComponent<PlayerController>().state != PlayerController.MovementState.idle && hearDistance < currentHearRadius)
+      /*   //check if player is moving
+        if (target.GetComponent<PlayerController>().state != PlayerController.MovementState.idle && hearDistance <= currentHearRadius)
         {
             Debug.Log("Can hear you");
             //use this for now, can hear
@@ -232,7 +232,32 @@ public class EnemyAI : MonoBehaviour
         else{
             //dont want to get stuck "hearing"
             canHear = false;
+        } */
+
+        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, currentHearRadius, GetComponent<FieldOfView>().targetMask);
+
+        if(rangeChecks.Length != 0)
+        {
+            Transform target = rangeChecks[0].transform; //will always be the player
+            Vector3 directionToTarget = (target.position-transform.position).normalized;
+
+            if (Vector3.Angle(transform.forward, directionToTarget) < 360) //hearing is 360 degrees
+            {
+                //could be heard?
+                if (!Physics.Raycast(transform.position, directionToTarget, hearDistance, GetComponent<FieldOfView>().obstructionMask) && ((target.GetComponent<PlayerController>().state != PlayerController.MovementState.idle)))
+                {
+                     Debug.Log("Can hear you");
+                    //use this for now, can hear
+                    canHear = true;
+                }
+                else
+                    canHear = false;
+            }
+            else
+                canHear = false;
         }
+        else if (canHear)
+             canHear = false; //this is so it doesn't get stuck hearing
     }
     bool inSight()
     {
@@ -252,7 +277,7 @@ public class EnemyAI : MonoBehaviour
             //play sound
             if (!playSoundOnce)
             {
-                soundInstance.PlaySound(SoundManager.Sound.EnemyDetect, transform.position);
+                //soundInstance.PlaySound(SoundManager.Sound.EnemyDetect, transform.position);
                 playSoundOnce = true;
             }
             return true;

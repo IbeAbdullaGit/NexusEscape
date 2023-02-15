@@ -75,6 +75,7 @@ private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)
                     spotlight.color = Color.white;
                 }
             }
+            
             else{
                 canSeePlayer = false;
                 //change light color

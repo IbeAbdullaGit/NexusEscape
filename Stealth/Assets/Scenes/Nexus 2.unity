@@ -6173,7 +6173,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: angle
-      value: 60
+      value: 92
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
+      propertyPath: radius
+      value: 17.4
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: playerRef
@@ -6185,7 +6189,7 @@ PrefabInstance:
       objectReference: {fileID: 148940389}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: moveSpeed
-      value: 2.8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: waypoints.Array.size
@@ -9855,7 +9859,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: angle
-      value: 60
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
+      propertyPath: radius
+      value: 20.5
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: playerRef
@@ -9867,7 +9875,7 @@ PrefabInstance:
       objectReference: {fileID: 148940389}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: moveSpeed
-      value: 2.3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: waypoints.Array.size
@@ -28721,7 +28729,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: angle
-      value: 60
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
+      propertyPath: radius
+      value: 18.53
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: playerRef
@@ -28731,6 +28743,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 148940389}
+    - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
+      propertyPath: moveSpeed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: waypoints.Array.size
       value: 4
