@@ -173,7 +173,7 @@ public class PlayerController : MonoBehaviour
             if (lastPosition != transform.position && grounded)
             {
             //means we've moved
-                soundInstance.PlaySound(SoundManager.Sound.PlayerMove, transform.position);
+                //soundInstance.PlaySound(SoundManager.Sound.PlayerMove, transform.position);
             }
             lastPosition = transform.position;
         }

@@ -6,13 +6,6 @@ using UnityEngine;
 public abstract class Interactable : MonoBehaviour
 {
   
-  private void OnMouseEnter() {
-        MouseControl.instance.Clickable();
-    }
-
-    private void OnMouseExit() {
-        MouseControl.instance.Default();
-    }
   public virtual void Awake()
   {
     gameObject.layer = 10;

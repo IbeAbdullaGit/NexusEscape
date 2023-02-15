@@ -22,6 +22,12 @@ public class InteractButtons : Interactable
         Debug.Log("Changing UI");
         ChangeUI();
        
+       
+        //will need to change when having multiple instances (all answers will be set at once instead of individually)
+        //set the answer for when this is opened, more elegant solution later
+        instance.buttonOrder = buttonOrder;
+       
+       
     }
     public override void OnLoseFocus()
     {
@@ -35,7 +41,7 @@ public class InteractButtons : Interactable
         instance = GameObject.FindGameObjectWithTag("GameController").GetComponent<ButtonPressOrder>();
         //set the answer
         //will need to change this eventually as well for multiple instance
-        instance.buttonOrder = this.buttonOrder;
+        //instance.buttonOrder = this.buttonOrder;
         
          menuUI.enabled = false;
     }
@@ -43,13 +49,7 @@ public class InteractButtons : Interactable
     // Update is called once per frame
     void Update()
     {
-        if (openMenu)
-        {
-            if (Input.GetKeyDown(KeyCode.Z)) //could change this key
-            {
-                ChangeUI();
-            }
-        }
+        
         //correct answer
         if (instance.correct)
         {
