@@ -10,10 +10,21 @@ public class ProximityTrigger : MonoBehaviour
         if (other.tag == "Player")
         {
             //turn off/switch keypad, or other interactables
-            if (GetComponentInParent<InteractKeypad>() != null)
+            if (GetComponentInParent<InteractKeypad>() != null) //keypad
                 GetComponentInParent<InteractKeypad>().TurnOff();
-            if (GetComponentInParent<InteractButtonMeter>() !=null)
+            if (GetComponentInParent<InteractButtonMeter>() !=null) //buttons
                 GetComponentInParent<InteractButtonMeter>().TurnOff();
+            if (GetComponentInParent<PipeManager>() !=null) //pipe
+                GetComponentInParent<PipeManager>().TurnOff();
         }
+   }
+
+   private void OnTriggerEnter(Collider other) {
+    
+    if (other.tag == "Player")
+    {
+        if (GetComponentInParent<PipeManager>() !=null) //pipe
+                GetComponentInParent<PipeManager>().TurnOn();
+    }
    }
 }

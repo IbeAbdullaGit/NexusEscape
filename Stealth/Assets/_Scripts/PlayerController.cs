@@ -84,6 +84,8 @@ public class PlayerController : MonoBehaviour
          //distanceToGround = GetComponent<Collider>().bounds.extents.y;
          startYScale = transform.localScale.y;
          playerCam = GetComponentInChildren<Camera>();
+
+         //ASSIGN LATER
          GameOverScreen.enabled = false;
 
          soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
@@ -171,7 +173,7 @@ public class PlayerController : MonoBehaviour
             if (lastPosition != transform.position && grounded)
             {
             //means we've moved
-                soundInstance.PlaySound(SoundManager.Sound.PlayerMove, transform.position);
+                //soundInstance.PlaySound(SoundManager.Sound.PlayerMove, transform.position);
             }
             lastPosition = transform.position;
         }
