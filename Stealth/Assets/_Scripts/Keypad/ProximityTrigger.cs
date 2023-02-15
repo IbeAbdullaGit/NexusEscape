@@ -17,6 +17,12 @@ public class ProximityTrigger : MonoBehaviour
             if (GetComponentInParent<PipeManager>() !=null) //pipe
                 GetComponentInParent<PipeManager>().TurnOff();
         }
+
+        if(other.tag == "Player2")
+        {
+            if (GetComponentInParent<ShowCursor>() != null)
+                GetComponentInParent<ShowCursor>().TurnOff();
+        }
    }
 
    private void OnTriggerEnter(Collider other) {

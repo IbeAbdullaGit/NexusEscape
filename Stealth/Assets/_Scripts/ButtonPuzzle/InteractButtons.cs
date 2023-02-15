@@ -8,9 +8,12 @@ public class InteractButtons : Interactable
      public Canvas menuUI;
 
      ButtonPressOrder instance;
+    public GameObject _otherdoor;
+    DoorInvoker _doorInvoker;
 
-     //the answer
-     [Range(1,8)]
+
+    //the answer
+    [Range(1,8)]
     public List<int> buttonOrder;
      public override void OnFocus()
     {
@@ -42,8 +45,8 @@ public class InteractButtons : Interactable
         //set the answer
         //will need to change this eventually as well for multiple instance
         //instance.buttonOrder = this.buttonOrder;
-        
-         menuUI.enabled = false;
+       _doorInvoker = new DoorInvoker();
+        menuUI.enabled = false;
     }
 
     // Update is called once per frame
@@ -54,6 +57,11 @@ public class InteractButtons : Interactable
         if (instance.correct)
         {
             instance.correct = false;
+            instance.buttonOrder = null;
+            TriggerDoor();
+            _otherdoor.GetComponent<Door>().isOpen = false;
+            _otherdoor.GetComponent<Door>().OpenDoor();
+
             //do something, activate object
         }
     }
@@ -72,4 +80,11 @@ public class InteractButtons : Interactable
             Cursor.visible = false; 
         }
     }
+
+    void TriggerDoor()
+    {
+        ICommand openDoor = new ToggleDoorCommand(_otherdoor.GetComponent<Door>());
+        _doorInvoker.AddCommand(openDoor);
+    }
+
 }
