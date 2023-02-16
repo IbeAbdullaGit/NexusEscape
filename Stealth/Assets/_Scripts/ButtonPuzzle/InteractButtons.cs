@@ -29,6 +29,7 @@ public class InteractButtons : Interactable
         //will need to change when having multiple instances (all answers will be set at once instead of individually)
         //set the answer for when this is opened, more elegant solution later
         instance.buttonOrder = buttonOrder;
+        instance.text.text = "";
        
        
     }
@@ -64,6 +65,17 @@ public class InteractButtons : Interactable
 
             //do something, activate object
         }
+    }
+    public void TurnOff()
+    {
+        menuUI.enabled = false;
+        openMenu = false;
+        //turn off cursor
+        if (Cursor.lockState == CursorLockMode.None)
+        {
+             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false; 
+        } 
     }
     public void ChangeUI()
     {

@@ -42,7 +42,12 @@ public class KeycardPickup : Interactable
       //maybe rely on gravity here for it to drop? or maybe throw
       Vector3 direction = Camera.main.transform.forward;
       
+      //GetComponent<Rigidbody>().isKinematic = false;
+      //Debug.Log("We are setting");
       GetComponent<Rigidbody>().AddForce(direction *100);
+      //Debug.Log(GetComponent<Rigidbody>().isKinematic);
+      
+      
     }
     // Start is called before the first frame update
     void Start()
@@ -57,7 +62,7 @@ public class KeycardPickup : Interactable
         //want to make sure we're holding something before we put it down
         if (Input.GetKeyDown(KeyCode.Mouse1) && inventory.keycard != null) //right click
         {
-            
+            GetComponent<Rigidbody>().isKinematic = false;
             PutDown();
         }
     }

@@ -16,6 +16,9 @@ public class ProximityTrigger : MonoBehaviour
                 GetComponentInParent<InteractButtonMeter>().TurnOff();
             if (GetComponentInParent<PipeManager>() !=null) //pipe
                 GetComponentInParent<PipeManager>().TurnOff();
+
+            if (GetComponentInParent<InteractButtons>() != null)
+                GetComponentInParent<InteractButtons>().TurnOff();
         }
 
         if(other.tag == "Player2")
@@ -33,4 +36,5 @@ public class ProximityTrigger : MonoBehaviour
                 GetComponentInParent<PipeManager>().TurnOn();
     }
    }
+   
 }
