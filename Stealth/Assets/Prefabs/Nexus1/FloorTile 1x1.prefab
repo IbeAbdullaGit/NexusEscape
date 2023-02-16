@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2422573880606654885
+--- !u!1001 &2074175660097902435
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,13 +8,17 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5236506671720768807, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_RootOrder
-      value: 35
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalScale.x
-      value: 21.721167
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalScale.y
@@ -22,19 +26,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalScale.z
-      value: 14.780219
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.85
+      value: -145
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.08000183
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 72.94
+      value: -405
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalRotation.w
@@ -66,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
-      value: floortile_01
+      value: FloorTile 1x1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
