@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    
-     List<KeyPickUp> keys;
+
+    public static Inventory instance;
+
+    List<KeyPickUp> keys;
 
     public KeycardPickup keycard;
 
@@ -13,7 +15,10 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(instance == null)
+        {
+            instance = this;
+        }
     }
     public void AddKey(KeyPickUp key)
     {
@@ -35,8 +40,14 @@ public class Inventory : MonoBehaviour
     }
     public void RemoveKeyCard()
     {
-        keycard.transform.parent = null;
+        //keycard.transform.parent = null; //Drop Keycard (not delete)
+
         keycard = null;
+    }
+    
+    public void DestroyKeycard()
+    {
+        Destroy(keycard.gameObject);
     }
 
 }

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class KeycardSwiper : Interactable
+public class KeycardSwiper : Interactable 
 {
-     Inventory inventory;
+    //Inventory inventory;
     //answer
     public int needed_id;
 
@@ -19,7 +19,7 @@ public class KeycardSwiper : Interactable
     // Start is called before the first frame update
     void Start()
     {
-        inventory = GameObject.FindGameObjectWithTag("GameController").GetComponent<Inventory>();
+        //inventory = GameObject.FindGameObjectWithTag("GameController").GetComponent<Inventory>();
         _doorInvoker = new DoorInvoker();
         pipepuzzle = GetComponentInChildren<Canvas>();
         pipepuzzle.enabled = false;
@@ -34,10 +34,12 @@ public class KeycardSwiper : Interactable
     public override void OnInteract()
     {
         //make sure we have a tile we're holding
-        if (inventory.keycard != null)
+        if (Inventory.instance.keycard != null)
         {
-            if (inventory.keycard.id == needed_id)
+            if (Inventory.instance.keycard.id == needed_id)
             {
+                Inventory.instance.DestroyKeycard(); //Delete the Keycard on usage.
+
                 //this is what will normally happen
                 if (!for_hacker)
                 {//open door/do something, command

@@ -6,8 +6,6 @@ public class KeycardPickup : Interactable
 {
     GameObject player;
 
-   Inventory inventory;
-
    Vector3 offset = new Vector3(1, 0, 1);
 
    public int id;
@@ -15,10 +13,10 @@ public class KeycardPickup : Interactable
     public override void OnInteract()
     {
          //only add if we don't already have a keycard we're holding, and not holding anything else
-       if (inventory.keycard == null && inventory.currentTile == null)
+       if (Inventory.instance.keycard == null && Inventory.instance.currentTile == null)
        {
-        //add to inventory
-         inventory.AddCard(this);
+            //add to inventory
+            Inventory.instance.AddCard(this);
          //add to player "hand"
          this.transform.parent = player.transform;
          //move it to the player
@@ -32,8 +30,8 @@ public class KeycardPickup : Interactable
     //put down the keycard
      public void PutDown()
     {
-      //remove tile
-      inventory.RemoveKeyCard();
+        //remove tile
+        Inventory.instance.RemoveKeyCard(); //Using this function to remove/delete keycards (If you use "this" in PutDown() to delete, there's a bug where it has problems detecting)
       //remove parent so we can move it
       //this.transform.parent = null;
       //set position to the original one
@@ -52,7 +50,7 @@ public class KeycardPickup : Interactable
     // Start is called before the first frame update
     void Start()
     {
-        inventory = GameObject.FindGameObjectWithTag("GameController").GetComponent<Inventory>();
+        //inventory = GameObject.FindGameObjectWithTag("GameController").GetComponent<Inventory>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -60,10 +58,12 @@ public class KeycardPickup : Interactable
     void Update()
     {
         //want to make sure we're holding something before we put it down
+        /* //Drop keycard with Right Click
         if (Input.GetKeyDown(KeyCode.Mouse1) && inventory.keycard != null) //right click
         {
             GetComponent<Rigidbody>().isKinematic = false;
             PutDown();
         }
+        */
     }
 }
