@@ -28,16 +28,17 @@ public class KeycardMultipleSwiper : Interactable
     public override void OnInteract()
     {
         //make sure we have a key we're holding
-        if (inventory.keycard != null)
+        if (inventory.keycardNum  >=2)
         {
             //check if held card is needed for any of the answers
             for (int i=0; i< needed_id.Count; i++)
             {
-                if (inventory.keycard.id == needed_id[i])
+                if (inventory.ids[i] == needed_id[i])
                 {
                 
                    //for now just acknowledge we got one of them right, perhaps show some visual indication
                    Debug.Log("That one was correct");
+                   Inventory.instance.RemoveKeyCard(); //keycard is already deleted, so just remove from UI
                     correct_count +=1;
                      //don't need to keep iterating
                     break;

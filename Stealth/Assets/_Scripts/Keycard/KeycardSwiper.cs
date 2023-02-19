@@ -33,12 +33,14 @@ public class KeycardSwiper : Interactable
 
     public override void OnInteract()
     {
-        //make sure we have a tile we're holding
-        if (Inventory.instance.keycard != null)
+        //make sure we have a key we're holding
+        if (Inventory.instance.keycardNum != 0)
         {
-            if (Inventory.instance.keycard.id == needed_id)
+            if (Inventory.instance.ids[0] == needed_id)
             {
-                Inventory.instance.DestroyKeycard(); //Delete the Keycard on usage.
+                //Inventory.instance.DestroyKeycard(); //Delete the Keycard on usage.
+
+                Inventory.instance.RemoveKeyCard(); //keycard is already deleted, so just remove from UI
 
                 //this is what will normally happen
                 if (!for_hacker)

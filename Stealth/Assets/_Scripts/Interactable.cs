@@ -14,10 +14,12 @@ public abstract class Interactable : MonoBehaviour
    public abstract void OnInteract();
    public virtual void OnFocus()
    {
-
+      //can interact, change cursor
+      CrosshairControl.instance.SetHighlighted();
    }
    public virtual void OnLoseFocus()
    {
-
+      //change back to normal
+      CrosshairControl.instance.SetNormal();
    }
 }

@@ -13,17 +13,19 @@ public class KeycardPickup : Interactable
     public override void OnInteract()
     {
          //only add if we don't already have a keycard we're holding, and not holding anything else
-       if (Inventory.instance.keycard == null && Inventory.instance.currentTile == null)
+       //if (Inventory.instance.keycard == null && Inventory.instance.currentTile == null)
        {
-            //add to inventory
-            Inventory.instance.AddCard(this);
-         //add to player "hand"
+        //add to inventory
+        Inventory.instance.AddCard(1, id);
+        /*  //add to player "hand"
          this.transform.parent = player.transform;
          //move it to the player
          //this.transform.position = player.transform.position + offset;
          this.transform.position = player.transform.position;
          //give offset, increase float value for further distance
-         this.transform.position += player.transform.forward * 2.0f;
+         this.transform.position += player.transform.forward * 2.0f; */
+
+         Destroy(gameObject);
        }
     }
 
@@ -54,16 +56,5 @@ public class KeycardPickup : Interactable
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //want to make sure we're holding something before we put it down
-        /* //Drop keycard with Right Click
-        if (Input.GetKeyDown(KeyCode.Mouse1) && inventory.keycard != null) //right click
-        {
-            GetComponent<Rigidbody>().isKinematic = false;
-            PutDown();
-        }
-        */
-    }
+
 }
