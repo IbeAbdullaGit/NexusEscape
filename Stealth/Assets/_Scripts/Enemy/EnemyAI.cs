@@ -12,8 +12,8 @@ public class EnemyAI : MonoBehaviour
 
 
     private float dirX;
-   
-    public float moveSpeed = 2.5f;
+
+    public float moveSpeed;
     private Rigidbody rb;
     private bool facingRight = false;
     private Vector3 localScale;
@@ -74,6 +74,7 @@ public class EnemyAI : MonoBehaviour
     {
         targetMain = waypoints[waypointIndex].position;
         NavMeshAgent.SetDestination(targetMain);
+        NavMeshAgent.speed = moveSpeed;
         //going to a new place now, should turn
         // //add pause when switching between points
         // NavMeshAgent.isStopped = true;

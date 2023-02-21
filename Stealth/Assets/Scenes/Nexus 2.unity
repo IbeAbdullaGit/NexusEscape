@@ -113,11 +113,11 @@ NavMeshSettings:
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
-    manualCellSize: 0
+    manualCellSize: 1
     cellSize: 0.083333336
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    accuratePlacement: 1
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -709,6 +709,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -1174,6 +1178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (148)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -1283,7 +1291,7 @@ PrefabInstance:
       objectReference: {fileID: 148940389}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: moveSpeed
-      value: 2.3
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: waypoints.Array.size
@@ -1497,6 +1505,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (128)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -1572,6 +1584,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (119)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2140,6 +2156,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -2433,7 +2453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 57.7
+      value: 57.32
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2470,6 +2490,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (124)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2754,6 +2778,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (149)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -2994,6 +3022,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -3134,6 +3166,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (136)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -3210,6 +3246,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (81)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -3262,7 +3302,7 @@ Transform:
   - {fileID: 1774456880}
   - {fileID: 1807705970}
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &97850191
 PrefabInstance:
@@ -3331,6 +3371,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (73)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -3552,6 +3596,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (141)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -3627,6 +3675,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -3935,7 +3987,7 @@ Transform:
   - {fileID: 394994916}
   - {fileID: 369895345}
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &124269540
 PrefabInstance:
@@ -3950,8 +4002,12 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.17346473
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.386454
+      value: -3.373
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4069,6 +4125,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (140)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -4150,7 +4210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 57.09
+      value: 57.32
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4187,6 +4247,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (85)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -4475,6 +4539,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -5238,14 +5306,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 148940379}
   m_LocalRotation: {x: -0.0022121374, y: 0.68403053, z: 0.00235901, w: 0.7294462}
-  m_LocalPosition: {x: -149.2, y: 12.1, z: -29.6}
+  m_LocalPosition: {x: -167.9, y: 4, z: -29.6}
   m_LocalScale: {x: 2.989096, y: 2.989096, z: 2.989096}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 931167649}
   - {fileID: 1489453217}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: -0.37, y: 86.319, z: 0.024}
 --- !u!1001 &149920340
 PrefabInstance:
@@ -5810,6 +5878,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (91)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -6117,7 +6189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 56.89
+      value: 57.32
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6154,6 +6226,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (88)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -6225,7 +6301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: angle
-      value: 92
+      value: 93
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: radius
@@ -6241,7 +6317,7 @@ PrefabInstance:
       objectReference: {fileID: 148940389}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: moveSpeed
-      value: 4
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: waypoints.Array.size
@@ -6446,6 +6522,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -6833,6 +6913,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (61)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -7445,6 +7529,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -7521,6 +7609,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (146)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -7596,6 +7688,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -7736,6 +7832,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (101)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -8397,6 +8497,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (69)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -8671,6 +8775,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (65)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -9517,7 +9625,7 @@ Transform:
   - {fileID: 512531339}
   - {fileID: 1590349984}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &248982746
 PrefabInstance:
@@ -9721,6 +9829,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (117)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -10499,7 +10611,7 @@ PrefabInstance:
       objectReference: {fileID: 148940389}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: moveSpeed
-      value: 2.3
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: waypoints.Array.size
@@ -10710,6 +10822,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (122)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -10890,7 +11006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.115
+      value: 2.198
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11037,7 +11153,7 @@ Transform:
   - {fileID: 1281567708}
   - {fileID: 911722446}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &289851399
 GameObject:
@@ -11220,6 +11336,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (138)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -11381,7 +11501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1813186261456232526, guid: b83ae464fb386e84fb3ba2eb8714ae4d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 234.09857
+      value: 167.55371
       objectReference: {fileID: 0}
     - target: {fileID: 1813186261456232526, guid: b83ae464fb386e84fb3ba2eb8714ae4d, type: 3}
       propertyPath: m_LocalScale.z
@@ -11389,7 +11509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1813186261456232526, guid: b83ae464fb386e84fb3ba2eb8714ae4d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -37.79
+      value: -34.82
       objectReference: {fileID: 0}
     - target: {fileID: 1813186261456232526, guid: b83ae464fb386e84fb3ba2eb8714ae4d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11755,7 +11875,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &317487735
 GameObject:
@@ -12228,6 +12348,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (62)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -12598,6 +12722,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -12896,6 +13024,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -13012,7 +13144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 347831474}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.4}
+  m_LocalPosition: {x: 0, y: 0.07, z: 0.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13086,6 +13218,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (98)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -13162,6 +13298,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (99)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -13619,6 +13759,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (103)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -13828,7 +13972,7 @@ Transform:
   m_Children:
   - {fileID: 1120490759}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &379431489
 PrefabInstance:
@@ -14235,6 +14379,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -14644,6 +14792,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -15475,7 +15627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: angle
-      value: 60
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: playerRef
@@ -15487,7 +15639,7 @@ PrefabInstance:
       objectReference: {fileID: 148940389}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: moveSpeed
-      value: 2.3
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: waypoints.Array.size
@@ -15657,7 +15809,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424547400}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -26.1324, y: 14.03, z: -28.070692}
+  m_LocalPosition: {x: -26.16, y: 14.03, z: -29.34}
   m_LocalScale: {x: 2.7904978, y: 2.7904975, z: 2.7904978}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15853,6 +16005,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (107)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -16145,6 +16301,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (59)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -16452,6 +16612,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (97)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -16656,6 +16820,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (55)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -16732,6 +16900,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (144)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -16807,6 +16979,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (96)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -17464,7 +17640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: angle
-      value: 60
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: playerRef
@@ -17476,7 +17652,7 @@ PrefabInstance:
       objectReference: {fileID: 148940389}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: moveSpeed
-      value: 2.3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: waypoints.Array.size
@@ -18261,8 +18437,12 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2100212
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.255
+      value: 4.271
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18503,6 +18683,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (110)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -18833,6 +19017,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -19179,7 +19367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: angle
-      value: 60
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: playerRef
@@ -19191,7 +19379,7 @@ PrefabInstance:
       objectReference: {fileID: 148940389}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: moveSpeed
-      value: 2.3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: waypoints.Array.size
@@ -19718,6 +19906,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -19888,6 +20080,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (74)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -19966,7 +20162,7 @@ PrefabInstance:
       objectReference: {fileID: 148940389}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: moveSpeed
-      value: 2.3
+      value: 3.7
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: waypoints.Array.size
@@ -20183,6 +20379,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (134)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -20581,7 +20781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 56.992
+      value: 57.32
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20618,6 +20818,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (70)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -20908,6 +21112,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -21212,7 +21420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1813186261456232526, guid: b83ae464fb386e84fb3ba2eb8714ae4d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 97.33999
+      value: 98.4
       objectReference: {fileID: 0}
     - target: {fileID: 1813186261456232526, guid: b83ae464fb386e84fb3ba2eb8714ae4d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22432,7 +22640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 57.53
+      value: 57.32
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22469,6 +22677,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (126)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -22642,6 +22854,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -22745,7 +22961,7 @@ Transform:
   - {fileID: 1890456657}
   - {fileID: 583313398}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &620441897
 PrefabInstance:
@@ -23983,7 +24199,7 @@ Transform:
   - {fileID: 849677834}
   - {fileID: 1009689788}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &650114036
 PrefabInstance:
@@ -24047,7 +24263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: angle
-      value: 60
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: playerRef
@@ -24059,7 +24275,7 @@ PrefabInstance:
       objectReference: {fileID: 148940389}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: moveSpeed
-      value: 2.3
+      value: 7.7
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: waypoints.Array.size
@@ -24394,6 +24610,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (131)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -24738,6 +24958,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (78)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -24781,7 +25005,7 @@ Transform:
   - {fileID: 1950012006}
   - {fileID: 1075183898}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &661647052
 PrefabInstance:
@@ -24914,6 +25138,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (106)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -25189,6 +25417,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (139)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -25463,7 +25695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: angle
-      value: 60
+      value: 105
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: playerRef
@@ -25475,7 +25707,7 @@ PrefabInstance:
       objectReference: {fileID: 148940389}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: moveSpeed
-      value: 2.3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: waypoints.Array.size
@@ -25817,6 +26049,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (121)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -26091,6 +26327,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (115)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -26415,6 +26655,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (102)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -26589,6 +26833,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -27266,6 +27514,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (45)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -28228,6 +28480,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -28662,6 +28918,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (68)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -28861,7 +29121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 57.53
+      value: 57.32
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -28898,6 +29158,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (125)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -28937,7 +29201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 57.09
+      value: 57.32
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -28974,6 +29238,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (84)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -29082,6 +29350,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (145)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -29158,6 +29430,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (104)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -29228,7 +29504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: angle
-      value: 90
+      value: 165
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: radius
@@ -29243,8 +29519,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 148940389}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
-      propertyPath: moveSpeed
+      propertyPath: alertness
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
+      propertyPath: moveSpeed
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: waypoints.Array.size
@@ -29253,19 +29533,19 @@ PrefabInstance:
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
-      objectReference: {fileID: 1022861570}
+      objectReference: {fileID: 1665672284}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: waypoints.Array.data[1]
       value: 
-      objectReference: {fileID: 1665672284}
+      objectReference: {fileID: 713257389}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: waypoints.Array.data[2]
       value: 
-      objectReference: {fileID: 713257389}
+      objectReference: {fileID: 589491968}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: waypoints.Array.data[3]
       value: 
-      objectReference: {fileID: 589491968}
+      objectReference: {fileID: 1022861570}
     - target: {fileID: 1960461894658266118, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -29300,7 +29580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266139, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.726852
+      value: -12.46
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266139, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -29308,7 +29588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266139, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 32.031563
+      value: 28.63
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266139, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -29607,6 +29887,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (93)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -29747,6 +30031,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (76)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -29822,6 +30110,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (86)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -30286,6 +30578,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -30630,6 +30926,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (63)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -30916,6 +31216,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (67)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -31985,6 +32289,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (90)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -32089,7 +32397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: angle
-      value: 60
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: playerRef
@@ -32101,7 +32409,7 @@ PrefabInstance:
       objectReference: {fileID: 148940389}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: moveSpeed
-      value: 2.3
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: waypoints.Array.size
@@ -32915,6 +33223,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (80)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -32990,6 +33302,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (143)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -33796,6 +34112,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (113)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -34710,7 +35030,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3718926265070624144, guid: 933c6722d52e8ea4b957d41aa26352db, type: 3}
       propertyPath: m_RootOrder
-      value: 31
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 3718926265070624144, guid: 933c6722d52e8ea4b957d41aa26352db, type: 3}
       propertyPath: m_LocalPosition.x
@@ -35026,6 +35346,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (82)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -35688,6 +36012,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -36093,6 +36421,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (79)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -36961,6 +37293,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (89)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -37783,6 +38119,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (42)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -37858,6 +38198,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -38048,7 +38392,7 @@ Transform:
   - {fileID: 432045322}
   - {fileID: 310992115}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1045994636
 GameObject:
@@ -38401,6 +38745,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (54)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -38423,7 +38771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.187251
+      value: 3.35
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -38647,6 +38995,10 @@ PrefabInstance:
     - target: {fileID: 6480478535937441510, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_Name
       value: WallTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480478535937441510, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -38889,6 +39241,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -38964,6 +39320,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (108)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -39294,6 +39654,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (48)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -39369,6 +39733,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -39446,6 +39814,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (53)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -39492,7 +39864,7 @@ Transform:
   - {fileID: 410409562}
   - {fileID: 1353384385}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1081661992
 PrefabInstance:
@@ -39690,6 +40062,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (135)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -39765,6 +40141,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (130)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -39972,6 +40352,104 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
   m_PrefabInstance: {fileID: 1091226422}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1096870257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1096870258}
+  - component: {fileID: 1096870261}
+  - component: {fileID: 1096870260}
+  - component: {fileID: 1096870259}
+  m_Layer: 0
+  m_Name: Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1096870258
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096870257}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
+  m_LocalPosition: {x: -48, y: -82.9, z: 0}
+  m_LocalScale: {x: 33.62245, y: 33.62245, z: 33.62245}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1127625120}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+--- !u!64 &1096870259
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096870257}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1096870260
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096870257}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1096870261
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096870257}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1097339896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40232,6 +40710,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (46)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -40449,7 +40931,7 @@ Transform:
   - {fileID: 38204185}
   - {fileID: 78911574}
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1115721389 stripped
 GameObject:
@@ -40813,6 +41295,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124822723}
   m_CullTransparentMesh: 1
+--- !u!1 &1127625119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1127625120}
+  m_Layer: 0
+  m_Name: Lights
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1127625120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127625119}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.7542586, y: 97.1, z: -0.78968906}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1096870258}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1127812000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41109,6 +41623,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -41280,7 +41798,7 @@ Transform:
   - {fileID: 1786936859}
   - {fileID: 652573037}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1142481399
 GameObject:
@@ -41461,7 +41979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.4528553
+      value: -3.446
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -41469,7 +41987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.58100927
+      value: -0.511
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -41737,6 +42255,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -42644,6 +43166,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -42712,6 +43238,10 @@ PrefabInstance:
     - target: {fileID: 6480478535937441510, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_Name
       value: WallTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480478535937441510, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -42788,6 +43318,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -42909,7 +43443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 56.78
+      value: 57.32
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -42946,6 +43480,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (120)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -43229,7 +43767,7 @@ Transform:
   - {fileID: 1369299667}
   - {fileID: 612628524}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1238488705
 PrefabInstance:
@@ -43781,6 +44319,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -43803,7 +44345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.7550147
+      value: 3.661
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -44069,7 +44611,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1276840361}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -3.4476814, y: -3.7761993, z: 132.11522}
+  m_LocalPosition: {x: -3.4476814, y: -3.2, z: 132.3}
   m_LocalScale: {x: 2.790497, y: 2.7904975, z: 2.790497}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44107,7 +44649,7 @@ Transform:
   - {fileID: 216813537}
   - {fileID: 1660325031}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1281567707
 PrefabInstance:
@@ -45155,6 +45697,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (105)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -45230,6 +45776,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -45533,6 +46083,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (56)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -45646,6 +46200,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (123)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -45684,7 +46242,7 @@ Transform:
   m_Children:
   - {fileID: 12842721}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1328819760
 PrefabInstance:
@@ -45818,6 +46376,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (127)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -45894,6 +46456,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (114)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -45969,6 +46535,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -46180,6 +46750,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -46422,7 +46996,7 @@ Transform:
   - {fileID: 830364476}
   - {fileID: 1170537463}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1352377047
 GameObject:
@@ -46801,6 +47375,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -47663,6 +48241,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -48035,7 +48617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 57.648
+      value: 57.32
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -48072,6 +48654,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (66)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -48454,7 +49040,7 @@ Transform:
   - {fileID: 2091879163}
   - {fileID: 813819915}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1418834977
 GameObject:
@@ -49611,7 +50197,7 @@ Transform:
   - {fileID: 652866934}
   - {fileID: 416147547}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 178.617, z: 0}
 --- !u!1 &1451891993
 GameObject:
@@ -49742,6 +50328,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (118)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -50132,6 +50722,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (52)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -51432,6 +52026,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -51603,6 +52201,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (51)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -51704,7 +52306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: angle
-      value: 60
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: playerRef
@@ -51716,7 +52318,7 @@ PrefabInstance:
       objectReference: {fileID: 148940389}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: moveSpeed
-      value: 2.3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: waypoints.Array.size
@@ -51993,6 +52595,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -52527,6 +53133,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (71)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -52697,6 +53307,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (77)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -53234,7 +53848,7 @@ RectTransform:
   m_Children:
   - {fileID: 2032607991}
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -54073,7 +54687,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: -90.258, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -54211,6 +54825,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (100)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -54479,6 +55097,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (75)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -55022,6 +55644,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -55545,6 +56171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (58)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -55583,7 +56213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 56.85
+      value: 57.32
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -55620,6 +56250,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (137)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -56577,7 +57211,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665672283}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.5006504, y: 0, z: 5.1322794}
+  m_LocalPosition: {x: -7.13, y: 0, z: 4.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56719,6 +57353,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -57049,7 +57687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4385864570978861933, guid: 6f1294cd989e1fa4cae2c9a48e908803, type: 3}
       propertyPath: m_RootOrder
-      value: 32
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 4385864570978861933, guid: 6f1294cd989e1fa4cae2c9a48e908803, type: 3}
       propertyPath: m_AnchorMax.x
@@ -57204,7 +57842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.696
+      value: -2.589
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -57556,6 +58194,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (83)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -58346,6 +58988,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (38)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -58734,6 +59380,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (60)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -58772,7 +59422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 56.973
+      value: 57.32
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -58809,6 +59459,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (87)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -59425,6 +60079,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (49)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -59604,7 +60262,7 @@ Transform:
   - {fileID: 632526134}
   - {fileID: 243944307}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1774550599
 PrefabInstance:
@@ -59738,6 +60396,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (41)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -59808,7 +60470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: angle
-      value: 60
+      value: 101
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: playerRef
@@ -59820,7 +60482,7 @@ PrefabInstance:
       objectReference: {fileID: 148940389}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: moveSpeed
-      value: 2.3
+      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: waypoints.Array.size
@@ -60002,7 +60664,7 @@ Transform:
   - {fileID: 187368962}
   - {fileID: 1711474956}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1780316378
 PrefabInstance:
@@ -60673,6 +61335,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -61094,6 +61760,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (50)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -61206,7 +61876,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: angle
-      value: 60
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: playerRef
@@ -61218,7 +61888,7 @@ PrefabInstance:
       objectReference: {fileID: 148940389}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: moveSpeed
-      value: 2.3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: waypoints.Array.size
@@ -61633,6 +62303,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (116)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -62017,6 +62691,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (95)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -62285,6 +62963,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (64)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -62496,6 +63178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -62571,6 +63257,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (142)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -63065,7 +63755,7 @@ Transform:
   m_Children:
   - {fileID: 1623941836}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0.37, y: -87.322, z: 0.017}
 --- !u!114 &1857578340
 MonoBehaviour:
@@ -63894,7 +64584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: angle
-      value: 60
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266116, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: playerRef
@@ -63906,7 +64596,7 @@ PrefabInstance:
       objectReference: {fileID: 148940389}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: moveSpeed
-      value: 2.3
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 1960461894658266117, guid: ba4a8030adf8ea84b8e420cdee1524e3, type: 3}
       propertyPath: waypoints.Array.size
@@ -64566,7 +65256,7 @@ Transform:
   - {fileID: 482835819}
   - {fileID: 1780316379}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1913204966
 PrefabInstance:
@@ -64635,6 +65325,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (94)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -64860,7 +65554,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924221413}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.756758, y: 14.03, z: -28.433447}
+  m_LocalPosition: {x: -10.77, y: 14.03, z: -29.14}
   m_LocalScale: {x: 2.7904978, y: 2.7904975, z: 2.7904978}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -65655,6 +66349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (92)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -65730,6 +66428,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -66083,7 +66785,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 56.819
+      value: 57.32
       objectReference: {fileID: 0}
     - target: {fileID: 6052056217903608018, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -66120,6 +66822,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (57)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -66196,6 +66902,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (133)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -66323,7 +67033,7 @@ Transform:
   - {fileID: 232164381}
   - {fileID: 373933659}
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: -90}
 --- !u!1001 &2012835439
 PrefabInstance:
@@ -66476,6 +67186,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (132)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -67718,6 +68432,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (47)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -68049,6 +68767,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (147)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -68556,6 +69278,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (39)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -68696,6 +69422,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (111)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -68771,6 +69501,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (129)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -68982,6 +69716,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -69722,6 +70460,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floortile_01 (109)
       objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
@@ -69797,6 +70539,10 @@ PrefabInstance:
     - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
       propertyPath: m_Name
       value: floortile_01 (112)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757717610914343785, guid: 9a46813a9316ebf4d9008fef5448abec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
