@@ -11,10 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InbetweenScene.unity
     guid: 3d9634606c3babd43915c817bc1e1ad5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tutorial.unity
     guid: 50ef91b06d5cf9147b44c0c4b736672d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Section1.unity
     guid: dd6d6c855fb55d8469d51a6aceb30dd3
+  - enabled: 1
+    path: Assets/Scenes/Nexus 1.unity
+    guid: ad4709963e7b8da4c82f929de0323eff
+  - enabled: 1
+    path: Assets/Scenes/Nexus 2.unity
+    guid: 321793f65e6fe5546979df03d6d84c7d
   m_configObjects: {}

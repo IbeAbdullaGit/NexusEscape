@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
          playerCam = GetComponentInChildren<Camera>();
 
          //ASSIGN LATER
-         GameOverScreen.enabled = false;
+         //GameOverScreen.enabled = false;
 
          soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
          lastPosition = transform.position;
@@ -300,11 +300,11 @@ public class PlayerController : MonoBehaviour
            Cursor.lockState = CursorLockMode.None;
            Cursor.visible = true;
            //disable any other menus
-           GameObject.FindGameObjectWithTag("GameController").GetComponent<CreateDialog>().enabled = false;
+           //GameObject.FindGameObjectWithTag("GameController").GetComponent<CreateDialog>().enabled = false;
            //pause game
            Time.timeScale =0;
            paused = true;
-           soundInstance.PlaySound(SoundManager.Sound.PlayerDie, transform.position);
+           //soundInstance.PlaySound(SoundManager.Sound.PlayerDie, transform.position);
         
         }
     }
