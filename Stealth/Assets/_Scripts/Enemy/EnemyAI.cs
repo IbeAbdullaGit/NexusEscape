@@ -31,6 +31,10 @@ public class EnemyAI : MonoBehaviour
     public WaitForSeconds delay = new WaitForSeconds(1f);
     public WaitForSeconds distract = new WaitForSeconds(5f);
 
+    public bool opendoor = true;
+    public bool hasdoor = false;
+    public GameObject _otherdoor;
+
     public bool distracted = false;
 
     SoundManager soundInstance;
@@ -44,6 +48,12 @@ public class EnemyAI : MonoBehaviour
 
     //ui
     [SerializeField]private Slider slider;
+
+
+    public void Move()
+    {
+
+    }
 
     void Start()
     {
@@ -72,14 +82,25 @@ public class EnemyAI : MonoBehaviour
     }
     void UpdateDestination()
     {
-        targetMain = waypoints[waypointIndex].position;
-        NavMeshAgent.SetDestination(targetMain);
-        NavMeshAgent.speed = moveSpeed;
-        //going to a new place now, should turn
-        // //add pause when switching between points
-        // NavMeshAgent.isStopped = true;
+        
+            targetMain = waypoints[waypointIndex].position;
+            NavMeshAgent.SetDestination(targetMain);
+            NavMeshAgent.speed = moveSpeed;
+            //going to a new place now, should turn
+            // //add pause when switching between points
+            // NavMeshAgent.isStopped = true;
+
+            // NavMeshAgent.isStopped = false;
+        
+
+        if(opendoor == false)
+        {
+            NavMeshAgent.speed = 0;
+        }
+
+        
+
        
-        // NavMeshAgent.isStopped = false;
         StartCoroutine(WalkPause());
     }
     void IterateWaypointIndex()
@@ -138,8 +159,16 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       //detection meter
-       if (slider != null && !distracted)
+        if (hasdoor)
+        {
+            if (_otherdoor.GetComponent<Door>().isOpen == true)
+            {
+                opendoor = true;
+                NavMeshAgent.speed = moveSpeed;
+            }
+        }
+        //detection meter
+        if (slider != null && !distracted && opendoor)
        {
             DetectionMeterUpdate();
        }
