@@ -20,6 +20,7 @@ public class CameraSwivel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        this.transform.rotation = Quaternion.Euler(transform.eulerAngles + new Vector3 (0, -amount / 2, 0));
         initial = this.transform;
     }
 
@@ -35,13 +36,13 @@ public class CameraSwivel : MonoBehaviour
         switch (axis)
         {
             case "x":
-                newRot = transform.eulerAngles + new Vector3(0, currOffset, 0);
+                newRot = transform.eulerAngles + new Vector3(currOffset, 0, 0);
                 break;
             case "y":
                 newRot = transform.eulerAngles + new Vector3(0, currOffset, 0);
                 break;
             case "z":
-                newRot = transform.eulerAngles + new Vector3(0, currOffset, 0);
+                newRot = transform.eulerAngles + new Vector3(0, 0, currOffset);
                 break;
             default:
                 newRot = Vector3.zero;
