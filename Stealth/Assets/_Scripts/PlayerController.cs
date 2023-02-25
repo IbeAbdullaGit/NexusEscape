@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Photon.Pun;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -98,7 +97,7 @@ public class PlayerController : MonoBehaviour
         {
             runOnce = true;
              //save at the start of the level
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<SavePlugin>().SaveItems();
+            //GameObject.FindGameObjectWithTag("GameController").GetComponent<SavePlugin>().SaveItems();
         }
        { 
         StateHandler();

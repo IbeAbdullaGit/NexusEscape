@@ -17,11 +17,16 @@ public class Inventory : MonoBehaviour
 
     public List<Image> images;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         if(instance == null)
         {
             instance = this;
+            //DontDestroyOnLoad(instance);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
         for (int i=0; i< images.Count; i++)
         {
@@ -53,7 +58,20 @@ public class Inventory : MonoBehaviour
     {
         //keycard.transform.parent = null; //Drop Keycard (not delete)
         images[keycardNum-1].enabled = false;
+        ids.RemoveAt(keycardNum-1);
         keycardNum -=1;
+        //remove id
+    
+    }
+    public void ResetCards()
+    {
+        keycardNum = 0;
+        for (int i=0; i< images.Count; i++)
+        {
+            images[i].enabled = false;
+        }
+        currentTile = null;
+        ids.Clear();
     }
     
    

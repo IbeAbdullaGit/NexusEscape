@@ -75,6 +75,7 @@ public class InteractButtons : Interactable
         {
              Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false; 
+            CrosshairControl.instance.SetNormal();
         } 
     }
     public void ChangeUI()
@@ -90,6 +91,8 @@ public class InteractButtons : Interactable
         {
              Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false; 
+            CrosshairControl.instance.SetNormal();
+            
         }
     }
 
