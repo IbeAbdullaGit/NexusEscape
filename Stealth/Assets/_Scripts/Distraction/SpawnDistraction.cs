@@ -11,7 +11,7 @@ public class SpawnDistraction : Interactable
 
     public bool UsePooling;
 
-    CameraMenu cameras;
+    //CameraMenu cameras;
 
     public float distance = 10.0f;
 
@@ -29,6 +29,8 @@ public class SpawnDistraction : Interactable
     //change color
     public Renderer render;
     Color original;
+
+    public CameraMenu cameras;
 
     public override void OnInteract()
     { 
@@ -65,15 +67,18 @@ public class SpawnDistraction : Interactable
     // Start is called before the first frame update
     void Start()
     {
-        cameras = GameObject.FindGameObjectWithTag("GameController").GetComponent<CameraMenu>();
+        //Debug.Log("Camera menu: " + cameras.name);
+        //cameras = GameObject.FindGameObjectWithTag("GameController").GetComponent<CameraMenu>();
         if (isButton)
         {
             anim = GetComponent<Animator>();
             original = render.material.color;
         }
+        //Debug.Log("Camera menu: " + cameras.name);
     }
     private void Update() {
         
+        Debug.Log(cameras.GetCurrentCamera().name);
         if (cameras.GetCurrentCamera().GetComponent<CameraSettings>().hasDistraction)
         {
             hasDistraction = true;

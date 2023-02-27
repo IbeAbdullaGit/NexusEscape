@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - Player2
   - ButtonMeter
+  - CheckpointManager
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -25,7 +27,7 @@ TagManager:
   - Board
   - MinimapTile
   - PostProcessing
-  - 
+  - Ground
   - 
   - 
   - 

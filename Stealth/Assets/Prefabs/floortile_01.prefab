@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4062337884339429006}
   - component: {fileID: 7144495796781004164}
   - component: {fileID: 5236506671720768807}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: floortile_01
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,8 +96,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 4.432682, z: 1}
+  m_Center: {x: 0, y: -1.716342, z: 0}
 --- !u!1 &6767344718825857513
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +160,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8530f87cee12b3c469366ed933683437, type: 2}
+  - {fileID: 2100000, guid: a58921ffd45901f4eb5188599ae69056, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -36,9 +36,11 @@ public class CameraMenu : MonoBehaviour
        
         //menuUI.enabled = false;
 
-        pop = GameObject.FindGameObjectWithTag("GameController").GetComponent<PopUpSystem>();
+        //pop = GameObject.FindGameObjectWithTag("GameController").GetComponent<PopUpSystem>();
 
         cameraIndex = 0;
+        //let first camera change colour
+        GetCurrentCamera().GetComponentInChildren<ChangeMinimapColour>().ChangeColour();
         
     }
 
@@ -77,6 +79,9 @@ public class CameraMenu : MonoBehaviour
     public void SwitchCameras()
     {
         //Debug.Log("Switching cameras");
+        //swap current camera material back
+        GetCurrentCamera().GetComponentInChildren<ChangeMinimapColour>().OriginalColour();
+
         cameraIndex++;
         if (cameraIndex == cameras.Length)
         {
@@ -84,6 +89,8 @@ public class CameraMenu : MonoBehaviour
         }
         //cameraView.material = cameras[cameraIndex];
        
+       //swap new camera plane texture
+       GetCurrentCamera().GetComponentInChildren<ChangeMinimapColour>().ChangeColour();
 
         var materialsCopy = cameraView.GetComponent<MeshRenderer>().materials;
         materialsCopy[1] = cameras[cameraIndex]; //2ND MATERIAL FOR THIS CONTEXT
