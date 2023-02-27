@@ -20,7 +20,7 @@ public class CameraSwivel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.transform.rotation = Quaternion.Euler(transform.eulerAngles + new Vector3 (0, -amount / 2, 0));
+        this.transform.rotation = Quaternion.Euler(transform.eulerAngles + new Vector3 (0, -amount, 0));
         initial = this.transform;
     }
 
