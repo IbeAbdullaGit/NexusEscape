@@ -48,7 +48,7 @@ public class PipeManager : MonoBehaviour
 
         if(correctPipes == totalPipes)
         {
-            Debug.LogError("You did it!");
+           // Debug.LogError("You did it!");
             //Open Door
         }   
     }

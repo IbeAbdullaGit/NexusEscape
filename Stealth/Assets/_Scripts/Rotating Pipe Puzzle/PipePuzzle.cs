@@ -19,6 +19,12 @@ public class PipePuzzle : MonoBehaviour
     PipeManager pipeManager;
     Canvas canvas;
 
+    //For Sprite chaniging
+    public Image original;
+    public Sprite newcolor;
+    public Sprite wrongcolor;
+    public GameObject[] PipeConnected;
+
     private void Awake()
     {
         pipeManager = GameObject.Find("PipeManager").GetComponent<PipeManager>();
@@ -117,9 +123,6 @@ public class PipePuzzle : MonoBehaviour
            pipeManager._otherdoor.GetComponent<Door>().OpenDoor();
            Destroy(transform.gameObject.GetComponentInParent<Canvas>().gameObject);
  
-
-
-
         }
     }
 }
