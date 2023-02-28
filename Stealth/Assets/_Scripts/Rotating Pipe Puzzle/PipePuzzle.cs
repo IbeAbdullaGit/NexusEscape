@@ -23,7 +23,10 @@ public class PipePuzzle : MonoBehaviour
     public Image original;
     public Sprite newcolor;
     public Sprite wrongcolor;
+    public Sprite theogsprite;
     public GameObject[] PipeConnected;
+   
+
 
     private void Awake()
     {
@@ -40,7 +43,7 @@ public class PipePuzzle : MonoBehaviour
     {
         //Allows change the size of possible solutions of each pipe
         PossSolutions = solution.Length;
-       
+        
 
         //If Possible solutions are more than 1... only 2, checks the array of solutions if they match then the pipe is correctly placed 
         if (PossSolutions > 1)
@@ -49,6 +52,8 @@ public class PipePuzzle : MonoBehaviour
             {
                 isPlaced = true;
                 pipeManager.correctposition();
+
+               
             }
         }
         else
@@ -57,6 +62,7 @@ public class PipePuzzle : MonoBehaviour
             {
                 isPlaced = true;
                 pipeManager.correctposition();
+                
             }
         }
 
@@ -69,39 +75,75 @@ public class PipePuzzle : MonoBehaviour
     private void ParameterOnClick()
     {
         transform.Rotate(new Vector3(0, 0, 90)); //When click on a pipe, would rotate it in 90 degrees
-            
+
 
         //If Possible solutions are more than 1... only 2, checks the array of solutions if they match then the pipe is correctly placed, if not then it will be counted as false
-        if (PossSolutions > 1)
+        if (PossSolutions > 2)
+        {
+            if (Mathf.Round(transform.eulerAngles.z) == solution[0] || Mathf.Round(transform.eulerAngles.z) == solution[1] || Mathf.Round(transform.eulerAngles.z) == solution[2])
+            {
+                isPlaced = true;
+                pipeManager.correctposition();
+
+
+
+            }
+            else if (isPlaced == true)
+            {
+
+                isPlaced = false;
+                pipeManager.wrongposition();
+
+            }
+        }
+
+        else if (PossSolutions > 1 && PossSolutions <= 3)
         {
             if (Mathf.Round(transform.eulerAngles.z) == solution[0] || Mathf.Round(transform.eulerAngles.z) == solution[1])
             {
                 isPlaced = true;
                 pipeManager.correctposition();
+                
+
+
             }
             else if (isPlaced == true)
             {
+               
                 isPlaced = false;
                 pipeManager.wrongposition();
+              
             }
         }
         else
         {
             if (Mathf.Round(transform.eulerAngles.z) == solution[0])
             {
+               
                 isPlaced = true;
                 pipeManager.correctposition();
+               
+
+
             }
             else if (isPlaced == true)
             {
+              
                 isPlaced = false;
                 pipeManager.wrongposition();
+               
             }
         }
 
-        
-        
-           
+
+
+      
+
+
+        //if (PipeConnected[0].GetComponent<GameObject>isPlaced())
+        //{
+        //    original.sprite = newcolor;
+        //}
 
     }
 
@@ -118,11 +160,32 @@ public class PipePuzzle : MonoBehaviour
         {
             solved = true;
             RemoveButtons();
-           pipeManager.TriggerDoor();
-           pipeManager._otherdoor.GetComponent<Door>().isOpen = false;
-           pipeManager._otherdoor.GetComponent<Door>().OpenDoor();
-           Destroy(transform.gameObject.GetComponentInParent<Canvas>().gameObject);
- 
+            pipeManager.TriggerDoor();
+            pipeManager._otherdoor.GetComponent<Door>().isOpen = false;
+            pipeManager._otherdoor.GetComponent<Door>().OpenDoor();
+            Destroy(transform.gameObject.GetComponentInParent<Canvas>().gameObject);
+
+        }
+
+       
+        if (!isPlaced && PipeConnected[0].GetComponent<PipePuzzle>().isPlaced == false)
+        {
+            original.sprite = theogsprite;
+        }
+
+        if(PipeConnected[0].GetComponent<PipePuzzle>().isPlaced == false && isPlaced == true)
+        {
+            original.sprite = theogsprite;
+        }
+
+        if (PipeConnected[0].GetComponent<PipePuzzle>().isPlaced == true && isPlaced == true)
+        {
+            original.sprite = newcolor;
+        }
+
+        if (!isPlaced)
+        {
+            original.sprite = theogsprite;
         }
     }
 }
