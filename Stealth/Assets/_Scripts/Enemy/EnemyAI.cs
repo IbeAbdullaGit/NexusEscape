@@ -124,6 +124,15 @@ public class EnemyAI : MonoBehaviour
         //Debug.Log("Done waiting");  
           
     }
+    public IEnumerator DistractionDelay()
+    {
+        //wait for delay time
+        yield return delay;
+
+        //set destination back to normal
+        targetMain = waypoints[waypointIndex].position;
+        NavMeshAgent.SetDestination(targetMain);
+    }
     public IEnumerator Distracted(GameObject distraction)
     {
         Debug.Log("Starting Distraction");
@@ -149,10 +158,12 @@ public class EnemyAI : MonoBehaviour
         distraction.SetActive(false); //Used for object pooling, a bit buggy. Prefer if we use this and fix. Enable object pooling under Player's script.
 
         //set destination back to normal
-        targetMain = waypoints[waypointIndex].position;
-        NavMeshAgent.SetDestination(targetMain);
+        //targetMain = waypoints[waypointIndex].position;
+        //NavMeshAgent.SetDestination(targetMain);
 
         distracted = false;
+
+        StartCoroutine(DistractionDelay());
     }
   
 
