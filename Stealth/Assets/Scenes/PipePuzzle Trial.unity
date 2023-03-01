@@ -186,8 +186,6 @@ MonoBehaviour:
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
   theogsprite: {fileID: 0}
-  isConnectedwrong: 0
-  isConnectedcorrect: 0
   PipeConnected: []
 --- !u!114 &118709759
 MonoBehaviour:
@@ -371,8 +369,6 @@ MonoBehaviour:
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
   theogsprite: {fileID: 0}
-  isConnectedwrong: 0
-  isConnectedcorrect: 0
   PipeConnected: []
 --- !u!114 &151039295
 MonoBehaviour:
@@ -638,8 +634,6 @@ MonoBehaviour:
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
   theogsprite: {fileID: 0}
-  isConnectedwrong: 0
-  isConnectedcorrect: 0
   PipeConnected: []
 --- !u!1 &421520730
 GameObject:
@@ -823,8 +817,6 @@ MonoBehaviour:
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
   theogsprite: {fileID: 0}
-  isConnectedwrong: 0
-  isConnectedcorrect: 0
   PipeConnected: []
 --- !u!1 &501590267
 GameObject:
@@ -926,8 +918,6 @@ MonoBehaviour:
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
   theogsprite: {fileID: 0}
-  isConnectedwrong: 0
-  isConnectedcorrect: 0
   PipeConnected: []
 --- !u!114 &501590272
 MonoBehaviour:
@@ -1207,8 +1197,6 @@ MonoBehaviour:
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
   theogsprite: {fileID: 0}
-  isConnectedwrong: 0
-  isConnectedcorrect: 0
   PipeConnected: []
 --- !u!114 &518409331
 MonoBehaviour:
@@ -1353,8 +1341,6 @@ MonoBehaviour:
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
   theogsprite: {fileID: 0}
-  isConnectedwrong: 0
-  isConnectedcorrect: 0
   PipeConnected: []
 --- !u!114 &529284017
 MonoBehaviour:
@@ -1762,8 +1748,6 @@ MonoBehaviour:
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
   theogsprite: {fileID: 0}
-  isConnectedwrong: 0
-  isConnectedcorrect: 0
   PipeConnected: []
 --- !u!1 &1183064801
 GameObject:
@@ -1951,8 +1935,6 @@ MonoBehaviour:
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
   theogsprite: {fileID: 0}
-  isConnectedwrong: 0
-  isConnectedcorrect: 0
   PipeConnected: []
 --- !u!1 &1428089733
 GameObject:
@@ -2016,10 +1998,9 @@ MonoBehaviour:
   newcolor: {fileID: 21300000, guid: ce8d4a297f0442d4f87dab0de99fd2d2, type: 3}
   wrongcolor: {fileID: 21300000, guid: 38ead286ba18c074a87e898f0df17861, type: 3}
   theogsprite: {fileID: 21300000, guid: 68864339284de7843b32c02916a24e7d, type: 3}
-  isConnectedwrong: 0
-  isConnectedcorrect: 0
   PipeConnected:
   - {fileID: 118709756}
+  - {fileID: 0}
   - {fileID: 0}
 --- !u!114 &1428089736
 MonoBehaviour:
@@ -2390,8 +2371,6 @@ MonoBehaviour:
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
   theogsprite: {fileID: 0}
-  isConnectedwrong: 0
-  isConnectedcorrect: 0
   PipeConnected: []
 --- !u!114 &1683660770
 MonoBehaviour:
