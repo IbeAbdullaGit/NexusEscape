@@ -167,25 +167,16 @@ public class PipePuzzle : MonoBehaviour
 
         }
 
-       
-        if (!isPlaced && PipeConnected[0].GetComponent<PipePuzzle>().isPlaced == false)
-        {
-            original.sprite = theogsprite;
-        }
 
-        if(PipeConnected[0].GetComponent<PipePuzzle>().isPlaced == false && isPlaced == true)
-        {
-            original.sprite = theogsprite;
-        }
 
         if (PipeConnected[0].GetComponent<PipePuzzle>().isPlaced == true && isPlaced == true)
         {
             original.sprite = newcolor;
         }
-
-        if (!isPlaced)
+        else
         {
             original.sprite = theogsprite;
         }
+
     }
 }
