@@ -1231,6 +1231,7 @@ MonoBehaviour:
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
   PipeConnected: []
 --- !u!114 &32244005
 MonoBehaviour:
@@ -3963,6 +3964,7 @@ MonoBehaviour:
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
   PipeConnected: []
 --- !u!114 &103879998
 MonoBehaviour:
@@ -6220,6 +6222,7 @@ MonoBehaviour:
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
   PipeConnected: []
 --- !u!114 &157384739
 MonoBehaviour:
@@ -11566,6 +11569,7 @@ MonoBehaviour:
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
   PipeConnected: []
 --- !u!114 &277546099
 MonoBehaviour:
@@ -15517,6 +15521,7 @@ MonoBehaviour:
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
   PipeConnected: []
 --- !u!114 &386411899
 MonoBehaviour:
@@ -21293,6 +21298,7 @@ MonoBehaviour:
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
   PipeConnected: []
 --- !u!114 &525899152
 MonoBehaviour:
@@ -22383,6 +22389,7 @@ MonoBehaviour:
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
   PipeConnected: []
 --- !u!114 &555209707
 MonoBehaviour:
@@ -25110,6 +25117,7 @@ MonoBehaviour:
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
   PipeConnected: []
 --- !u!114 &628139367
 MonoBehaviour:
@@ -27835,6 +27843,7 @@ MonoBehaviour:
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
   PipeConnected: []
 --- !u!114 &669799980
 MonoBehaviour:
@@ -30186,6 +30195,7 @@ MonoBehaviour:
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
   PipeConnected: []
 --- !u!114 &754944282
 MonoBehaviour:
@@ -43209,6 +43219,7 @@ MonoBehaviour:
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
   PipeConnected: []
 --- !u!114 &1089263962
 MonoBehaviour:
@@ -47193,6 +47204,7 @@ MonoBehaviour:
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
   PipeConnected: []
 --- !u!114 &1258149794
 MonoBehaviour:
@@ -67888,6 +67900,7 @@ MonoBehaviour:
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
   PipeConnected: []
 --- !u!114 &1844934500
 MonoBehaviour:
@@ -68254,6 +68267,7 @@ MonoBehaviour:
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
   PipeConnected: []
 --- !u!114 &1851882630
 MonoBehaviour:
@@ -69933,6 +69947,7 @@ MonoBehaviour:
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
   PipeConnected: []
 --- !u!114 &1899517341
 MonoBehaviour:
@@ -70061,6 +70076,7 @@ MonoBehaviour:
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
   PipeConnected: []
 --- !u!114 &1903585748
 MonoBehaviour:
@@ -73378,6 +73394,7 @@ MonoBehaviour:
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
   PipeConnected: []
 --- !u!114 &2051672270
 MonoBehaviour:
@@ -75876,6 +75893,7 @@ MonoBehaviour:
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
   PipeConnected: []
 --- !u!114 &2133728844
 MonoBehaviour:

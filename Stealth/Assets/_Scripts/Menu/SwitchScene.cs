@@ -9,6 +9,10 @@ public class SwitchScene : MonoBehaviour
     public GameObject LoadingScreen;
    public Image LoadingBarFill;
 
+   private void Start() {
+      Application.runInBackground = true;
+   }
+
    public void LoadScene()
    {
       GetComponent<SavePlugin>().LoadFile();
