@@ -40,3 +40,4 @@ slope movement/sprint and crouch: https://www.youtube.com/watch?v=xCxSjgYTw9c&t=
 sliding puzzle: https://www.youtube.com/watch?v=IgBjJ-bexeo
 Sound manager: https://www.youtube.com/watch?v=QL29aTa7J5Q
 options menu: https://www.youtube.com/watch?v=iT49pNcu1jk
+Networking: https://github.com/RiptideNetworking/Riptide
