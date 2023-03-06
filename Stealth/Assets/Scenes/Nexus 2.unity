@@ -41060,7 +41060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4873863284610506982, guid: c887f73026cf6034ea2f13a6ed11211e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.9499855
+      value: 5.759
       objectReference: {fileID: 0}
     - target: {fileID: 4873863284610506982, guid: c887f73026cf6034ea2f13a6ed11211e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -41068,23 +41068,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4873863284610506982, guid: c887f73026cf6034ea2f13a6ed11211e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.500778
+      value: -11.247
       objectReference: {fileID: 0}
     - target: {fileID: 4873863284610506982, guid: c887f73026cf6034ea2f13a6ed11211e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.043960992
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4873863284610506982, guid: c887f73026cf6034ea2f13a6ed11211e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.04396101
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4873863284610506982, guid: c887f73026cf6034ea2f13a6ed11211e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.70573896
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4873863284610506982, guid: c887f73026cf6034ea2f13a6ed11211e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.7057389
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4873863284610506982, guid: c887f73026cf6034ea2f13a6ed11211e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -41096,7 +41096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4873863284610506982, guid: c887f73026cf6034ea2f13a6ed11211e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 172.871
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5253625407847496284, guid: c887f73026cf6034ea2f13a6ed11211e, type: 3}
       propertyPath: m_Name
@@ -41122,7 +41122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2955529d2a6fd84ab38c69d5d9987b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needed_id: 03000000
+  needed_id: 0200000003000000
   _otherdoor: {fileID: 768510921}
 --- !u!1001 &1021485020
 PrefabInstance:
@@ -55824,7 +55824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2955529d2a6fd84ab38c69d5d9987b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needed_id: 02000000
+  needed_id: 0200000003000000
   _otherdoor: {fileID: 768510921}
 --- !u!1001 &1513109013
 PrefabInstance:
