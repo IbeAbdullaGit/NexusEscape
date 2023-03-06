@@ -10,7 +10,7 @@ public class PlayerClient : MonoBehaviour
     public bool IsLocal { get; private set; }
 
     private string username;
-
+   //public C_PlayerPrediction clientprediction;
     private void OnDestroy()
     {
         list.Remove(Id);
@@ -38,10 +38,19 @@ public class PlayerClient : MonoBehaviour
 
         list.Add(id, player);
     }
-
+    #region Messages    
     [MessageHandler((ushort)ServerToClientId.playerSpawned)]
     private static void SpawnPlayer(Message message)
     {
         Spawn(message.GetUShort(), message.GetString(), message.GetVector3());
     }
+    [MessageHandler((ushort)ServerToClientId.playerMovement)]
+    private static void PlayerMovement(Message message)
+    {
+        //if (list.TryGetValue(message.GetUShort(), out PlayerClient player))
+            //player.Move(message.GetVector3(), message.GetVector3());
+    }
+     #endregion
+  
 }
+

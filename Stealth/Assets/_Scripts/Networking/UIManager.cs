@@ -48,6 +48,10 @@ public class UIManager : MonoBehaviour
         GameObject.Destroy(connectUI);
 
         NetworkManagerClient.Singleton.Connect();
+
+        //mouse stuff
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void BackToMain()
