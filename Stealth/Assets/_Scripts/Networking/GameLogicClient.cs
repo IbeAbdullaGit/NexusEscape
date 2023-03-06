@@ -18,12 +18,12 @@ public class GameLogicClient : MonoBehaviour
         }
     }
 
-    public GameObject LocalPlayerPrefab => localPlayerPrefab;
-    public GameObject PlayerPrefab => playerPrefab;
+    public GameObject Player2Prefab => player2Prefab;
+    public GameObject Player1Prefab => player1Prefab;
 
     [Header("Prefabs")]
-    [SerializeField] private GameObject localPlayerPrefab;
-    [SerializeField] private GameObject playerPrefab;
+    [SerializeField] private GameObject player2Prefab;
+    [SerializeField] private GameObject player1Prefab;
 
     private void Awake()
     {

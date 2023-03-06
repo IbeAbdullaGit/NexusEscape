@@ -9,6 +9,8 @@ public class PlayerServer : MonoBehaviour
     public ushort Id { get; private set; }
     public string Username { get; private set; }
 
+    private string username;
+
     private void OnDestroy()
     {
         list.Remove(Id);
@@ -27,6 +29,24 @@ public class PlayerServer : MonoBehaviour
 
         player.SendSpawned();
         list.Add(id, player);
+
+        PlayerServer player2;
+        //if (id == NetworkManagerClient.Singleton.Client.Id) //"client" is player 2
+        {
+            player2 = Instantiate(GameLogicClient.Singleton.Player2Prefab, GameLogicClient.Singleton.Player2Prefab.transform.position, Quaternion.identity).GetComponent<PlayerServer>();
+            //player2.IsLocal = true;
+        }
+        /* else
+        {
+            player2 = Instantiate(GameLogicClient.Singleton.Player1Prefab, position, Quaternion.identity).GetComponent<PlayerClient>();
+            player2.IsLocal = false;
+        } */
+
+        player2.name = $"Player hacker";
+        player2.Id = id;
+        player2.username = "hacker";
+
+        list.Add(id, player2);
     }
 
     #region Messages

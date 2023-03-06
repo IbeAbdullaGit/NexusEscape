@@ -78,7 +78,7 @@ public class SpawnDistraction : Interactable
     }
     private void Update() {
         
-        Debug.Log(cameras.GetCurrentCamera().name);
+        //Debug.Log(cameras.GetCurrentCamera().name);
         if (cameras.GetCurrentCamera().GetComponent<CameraSettings>().hasDistraction)
         {
             hasDistraction = true;

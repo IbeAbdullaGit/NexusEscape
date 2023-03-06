@@ -19,14 +19,16 @@ public class PlayerClient : MonoBehaviour
     public static void Spawn(ushort id, string username, Vector3 position)
     {
         PlayerClient player;
-        if (id == NetworkManagerClient.Singleton.Client.Id)
+        if (id == NetworkManagerClient.Singleton.Client.Id) //"client" is player 2
         {
-            player = Instantiate(GameLogicClient.Singleton.LocalPlayerPrefab, position, Quaternion.identity).GetComponent<PlayerClient>();
+            //position needs to be predetermined
+            //position = GameLogicClient.Singleton.Player2Prefab.transform.position;
+            player = Instantiate(GameLogicClient.Singleton.Player2Prefab, position, Quaternion.identity).GetComponent<PlayerClient>();
             player.IsLocal = true;
         }
         else
         {
-            player = Instantiate(GameLogic.Singleton.PlayerPrefab, position, Quaternion.identity).GetComponent<PlayerClient>();
+            player = Instantiate(GameLogicClient.Singleton.Player1Prefab, position, Quaternion.identity).GetComponent<PlayerClient>();
             player.IsLocal = false;
         }
 

@@ -33,11 +33,19 @@ public class UIManager : MonoBehaviour
     {
         Singleton = this;
     }
+    
+    private void Start() {
+        
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+    
 
     public void ConnectClicked()
     {
         usernameField.interactable = false;
         connectUI.SetActive(false);
+        GameObject.Destroy(connectUI);
 
         NetworkManagerClient.Singleton.Connect();
     }
