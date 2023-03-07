@@ -3,11 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControlleClient : MonoBehaviour
+public class PlayerControllerClient : MonoBehaviour
 {
     [SerializeField] private Transform camTransform;
 
     private bool[] inputs;
+
+    private Vector2 move;
+    private Vector2 look;
+    private bool jump, run = false;
 
     private void Start()
     {
@@ -18,7 +22,7 @@ public class PlayerControlleClient : MonoBehaviour
     {
         //possibly adjust this
         
-        if (Input.GetKey(KeyCode.W))
+       /*  if (Input.GetKey(KeyCode.W))
             inputs[0] = true;
 
         if (Input.GetKey(KeyCode.S))
@@ -34,23 +38,50 @@ public class PlayerControlleClient : MonoBehaviour
             inputs[4] = true;
 
         if (Input.GetKey(KeyCode.LeftShift))
-            inputs[5] = true;
+            inputs[5] = true; */
+
+        //get inputs from player controller class
+        move = GetComponent<PlayerController2>().move; //describes normal moving
+        look = GetComponent<PlayerController2>().look;
+        //for jump we can simply see if they pressed the jump key
+        if (Input.GetKey(KeyCode.Space))
+            jump = true;
+        //detect run
+         if (Input.GetKey(KeyCode.LeftShift))
+            run = true;
+
+
+        //do this every frame for smoother results
+        SendUpdate();
+
+
     }
 
-    private void FixedUpdate()
+    private void SendUpdate()
     {
         SendInput();
 
-        for (int i = 0; i < inputs.Length; i++)
-            inputs[i] = false;
+        //reset inputs
+        jump = false;
+        run = false;
+        move.Set(0, 0);
     }
 
     #region Messages
     private void SendInput()
     {
-        Message message = Message.Create(MessageSendMode.Unreliable, ClientToServerId.input);
-        message.AddBools(inputs, false);
-        message.AddVector3(camTransform.forward);
+        Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.input);
+
+        //we need to send position and forward, when we need it. For now more important to send when we've moved
+        //put bools into an array, send jump and run state
+        bool[] input = {jump, run};
+        message.AddBools(input, false);
+        //send movement state
+        message.AddVector2(move);
+        //send where the player is facing
+        //use "look" value
+        message.AddVector2(look);
+        //send message
         NetworkManagerClient.Singleton.Client.Send(message);
     }
     #endregion

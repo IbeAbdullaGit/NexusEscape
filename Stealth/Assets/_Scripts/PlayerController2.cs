@@ -16,7 +16,8 @@ public class PlayerController2 : MonoBehaviour
     bool crawl;
     float speed;
     
-    private Vector2 move, look;
+    public Vector2 move; 
+    public Vector2 look;
      private Vector3 targetVelocityLerp;
     private float lookRotation;
 
@@ -49,7 +50,8 @@ public class PlayerController2 : MonoBehaviour
      public void OnMove(InputAction.CallbackContext context)
     {
         
-        {move = context.ReadValue<Vector2>();
+        {
+            move = context.ReadValue<Vector2>();
         }
     }
     public void OnLook(InputAction.CallbackContext context)
@@ -214,6 +216,9 @@ public class PlayerController2 : MonoBehaviour
         Vector3.ClampMagnitude(velocityChange, maxForce);
 
         rb.AddForce(velocityChange, ForceMode.VelocityChange);
+
+       /*  if (id != NetworkManager.Singleton.Client.Id) // Don't overwrite local player's forward direction to avoid noticeable rotational snapping
+            transform.forward = forward; */
     }
     void Look()
     {

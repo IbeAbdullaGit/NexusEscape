@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 4460447127191851591}
   - component: {fileID: 4460447127191851590}
   - component: {fileID: 6765514793268690316}
+  - component: {fileID: -6373837570608780580}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player2
@@ -259,6 +260,7 @@ MonoBehaviour:
   runSpeed: 8
   crouchSpeed: 3
   crouchYScale: 0.5
+  move: {x: 0, y: 0}
   grounded: 0
   state: 0
   interactionDistance: 5
@@ -414,3 +416,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df15f9cb8adb9f49bfe87970fc75575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ping: 0
+  clientstate:
+    PlayerDirection: {x: 0, y: 0}
+    Grounded: 0
+    Sprinting: 0
+    PlayerStance: 0
+    ViewAngles: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &-6373837570608780580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4460447127191851584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c305eaaacc1aba4f97be208d0e32e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 4460447127094269422}

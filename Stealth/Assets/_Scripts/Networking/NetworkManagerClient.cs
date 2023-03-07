@@ -18,6 +18,7 @@ public enum ClientToServerId : ushort
 public class NetworkManagerClient : MonoBehaviour
 {
     private static NetworkManagerClient _singleton;
+
     public static NetworkManagerClient Singleton
     {
         get => _singleton;
@@ -58,6 +59,16 @@ public class NetworkManagerClient : MonoBehaviour
     private void FixedUpdate()
     {
         Client.Update();
+       /*  if (receivedServerStartTick)
+        {
+            serverEstimatedTick++;
+            clientPredictedTick++;
+            DelayTick = serverEstimatedTick - 5 - ((Client.RTT / 2) / 20);
+            if (DelayTick < 0)
+            {
+                DelayTick = 0;
+            }
+        } */
     }
 
     private void OnApplicationQuit()
@@ -82,11 +93,41 @@ public class NetworkManagerClient : MonoBehaviour
 
     private void PlayerLeft(object sender, ClientDisconnectedEventArgs e)
     {
-        //Destroy(Player.list[e.Id].gameObject);
+        if (PlayerClient.list.TryGetValue(e.Id, out PlayerClient player))
+            Destroy(player.gameObject);
     }
 
     private void DidDisconnect(object sender, EventArgs e)
     {
         UIManager.Singleton.BackToMain();
+        foreach (PlayerClient player in PlayerClient.list.Values)
+            Destroy(player.gameObject);
     }
+   /*  public void EstimateClientServerStartTick(int serverTick)
+    {
+        serverEstimatedTick = Mathf.RoundToInt(serverTick + ((Client.RTT / 2) / 20));
+        clientPredictedTick = Mathf.RoundToInt(serverTick + ((Client.RTT / 2) / 20) * 2);
+        receivedServerStartTick = true;
+    }
+     public int EstimateServerTick(int serverTick)
+    {
+        if (serverEstimatedTick > serverTick)
+            return serverTick;
+
+        int serverCalculatedTick = Mathf.RoundToInt(serverTick + ((Client.RTT / 2) / 20));
+        if (serverEstimatedTick != serverCalculatedTick)
+        {
+            return serverCalculatedTick;
+        } else
+        {
+            return serverTick;
+        }
+    }
+     public void ResetTicks()
+    {
+        receivedServerStartTick = false;
+        clientPredictedTick = 0;
+        serverEstimatedTick = 0;
+        DelayTick = 0;
+    } */
 }

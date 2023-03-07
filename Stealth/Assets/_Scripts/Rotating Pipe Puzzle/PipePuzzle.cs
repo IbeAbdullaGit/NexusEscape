@@ -43,10 +43,20 @@ public class PipePuzzle : MonoBehaviour
     {
         //Allows change the size of possible solutions of each pipe
         PossSolutions = solution.Length;
-        
+        //If Possible solutions are more than 2...checks the array of solutions if they match then the pipe is correctly placed
+        if (PossSolutions > 2)
+        {
+            if (Mathf.Round(transform.eulerAngles.z) == solution[0] || Mathf.Round(transform.eulerAngles.z) == solution[1] || Mathf.Round(transform.eulerAngles.z) == solution[2])
+            {
+                isPlaced = true;
+                pipeManager.correctposition();
 
+
+
+            }
+        }
         //If Possible solutions are more than 1... only 2, checks the array of solutions if they match then the pipe is correctly placed 
-        if (PossSolutions > 1)
+        else if (PossSolutions > 1 && PossSolutions <=3)
         {
             if (Mathf.Round(transform.eulerAngles.z) == solution[0] || Mathf.Round(transform.eulerAngles.z) == solution[1])
             {
@@ -77,7 +87,7 @@ public class PipePuzzle : MonoBehaviour
         transform.Rotate(new Vector3(0, 0, 90)); //When click on a pipe, would rotate it in 90 degrees
 
 
-        //If Possible solutions are more than 1... only 2, checks the array of solutions if they match then the pipe is correctly placed, if not then it will be counted as false
+        //If Possible solutions are more than 2...checks the array of solutions if they match then the pipe is correctly placed, if not then it will be counted as false
         if (PossSolutions > 2)
         {
             if (Mathf.Round(transform.eulerAngles.z) == solution[0] || Mathf.Round(transform.eulerAngles.z) == solution[1] || Mathf.Round(transform.eulerAngles.z) == solution[2])
@@ -96,7 +106,7 @@ public class PipePuzzle : MonoBehaviour
 
             }
         }
-
+        //If Possible solutions are more than 1 but less than = 3...checks the array of solutions if they match then the pipe is correctly placed, if not then it will be counted as false
         else if (PossSolutions > 1 && PossSolutions <= 3)
         {
             if (Mathf.Round(transform.eulerAngles.z) == solution[0] || Mathf.Round(transform.eulerAngles.z) == solution[1])
@@ -135,16 +145,6 @@ public class PipePuzzle : MonoBehaviour
             }
         }
 
-
-
-      
-
-
-        //if (PipeConnected[0].GetComponent<GameObject>isPlaced())
-        //{
-        //    original.sprite = newcolor;
-        //}
-
     }
 
     private void RemoveButtons()
@@ -168,14 +168,21 @@ public class PipePuzzle : MonoBehaviour
         }
 
 
-
-        if (PipeConnected[0].GetComponent<PipePuzzle>().isPlaced == true && isPlaced == true)
+        if (PipeConnected.Length == 3)
         {
-            original.sprite = newcolor;
-        }
-        else
-        {
-            original.sprite = theogsprite;
+            if (PipeConnected[2].GetComponent<PipePuzzle>().isPlaced == true && isPlaced == true)
+            {
+                original.sprite = wrongcolor;
+                
+            }
+            else if (PipeConnected[0].GetComponent<PipePuzzle>().isPlaced == true && PipeConnected[1].GetComponent<PipePuzzle>().isPlaced == true && isPlaced == true)
+            {
+                original.sprite = newcolor;
+            }
+            else
+            {
+                original.sprite = theogsprite;
+            }
         }
 
     }
