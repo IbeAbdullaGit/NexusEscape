@@ -44,12 +44,16 @@ public class PlayerClient : MonoBehaviour
     {
         Spawn(message.GetUShort(), message.GetString(), message.GetVector3());
     }
-    [MessageHandler((ushort)ServerToClientId.playerMovement)]
-    private static void PlayerMovement(Message message)
+    [MessageHandler((ushort)ServerToClientId.input)]
+    private static void Input(Message message) //client side DOES NOT HAVE USHORT
     {
-        //if (list.TryGetValue(message.GetUShort(), out PlayerClient player))
-            //player.Move(message.GetVector3(), message.GetVector3());
+       
+        //get the other player
+        GameObject.FindGameObjectWithTag("Player").GetComponent<OtherPlayerServer>().SetInput(message.GetBools(2), message.GetVector2(), message.GetVector2());
+
     }
+    
+    
      #endregion
   
 }

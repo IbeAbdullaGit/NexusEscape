@@ -46,6 +46,7 @@ public class NetworkManagerClient : MonoBehaviour
 
     private void Start()
     {
+        Application.targetFrameRate = 60; //stops it going too fast
         RiptideLogger.Initialize(Debug.Log, Debug.Log, Debug.LogWarning, Debug.LogError, false);
 
         //subscribe to events
@@ -103,6 +104,7 @@ public class NetworkManagerClient : MonoBehaviour
         foreach (PlayerClient player in PlayerClient.list.Values)
             Destroy(player.gameObject);
     }
+    
    /*  public void EstimateClientServerStartTick(int serverTick)
     {
         serverEstimatedTick = Mathf.RoundToInt(serverTick + ((Client.RTT / 2) / 20));

@@ -56,6 +56,7 @@ public class PlayerControllerClient : MonoBehaviour
 
 
     }
+    
 
     private void SendUpdate()
     {
@@ -65,6 +66,7 @@ public class PlayerControllerClient : MonoBehaviour
         jump = false;
         run = false;
         move.Set(0, 0);
+        look.Set(0,0);
     }
 
     #region Messages

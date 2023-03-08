@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     bool crawl;
     float speed;
     
-    private Vector2 move, look;
+    public Vector2 move, look;
      private Vector3 targetVelocityLerp;
     private float lookRotation;
 
@@ -216,12 +216,15 @@ public class PlayerController : MonoBehaviour
            transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
 
         }
+        //for our network
+        if (state == MovementState.sprinting)
+            speed = runSpeed;
     }
     public void CrawlChange()
         {
             crawl = !crawl;
         }
-    void Jump()
+    public void Jump()
     {
         //Vector3 jumpForces = Vector3.zero;
         if (grounded)
