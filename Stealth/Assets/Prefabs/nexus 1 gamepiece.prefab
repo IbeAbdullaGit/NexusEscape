@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -9182738160512652847}
   - component: {fileID: -4140829200068227058}
   m_Layer: 0
-  m_Name: GamePiece
+  m_Name: nexus 1 gamepiece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d89fb6f8a260e554c8364c8421143238, type: 2}
+  - {fileID: 2100000, guid: 58b0ac9ed6b701644af7ed67d537d09c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
