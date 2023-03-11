@@ -39,8 +39,18 @@ public class EnemyNetworkManager : MonoBehaviour
         int id = message.GetInt(); //should start at 0!
         //get their position
         var pos = message.GetVector3();
-        //then set the AI
-        allEnemies[id].GetComponent<AINetworking>().SetPosition(pos);
+        //find ai with matching id
+        for (int i=0; i<allEnemies.Length; i++)
+        {
+            if (allEnemies[i].GetComponent<AINetworking>().id == id)
+            {
+                //then set the AI
+                allEnemies[id].GetComponent<AINetworking>().SetPosition(pos);
+                //stop loop now
+                break;
+            }
+        }
+        
     }
     #endregion
 }

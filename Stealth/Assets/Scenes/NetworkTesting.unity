@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.17368507, g: 0.21714576, b: 0.29926863, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1196,7 +1196,10 @@ MonoBehaviour:
   solution:
   - 0
   - 180
+  triggerincorrect: []
   isPlaced: 0
+  placedincorrect: 0
+  dontswitch: 0
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
@@ -3725,7 +3728,10 @@ MonoBehaviour:
   PipeManagers: {fileID: 0}
   solution:
   - 90
+  triggerincorrect: []
   isPlaced: 0
+  placedincorrect: 0
+  dontswitch: 0
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
@@ -5816,7 +5822,10 @@ MonoBehaviour:
   PipeManagers: {fileID: 0}
   solution:
   - 0
+  triggerincorrect: []
   isPlaced: 0
+  placedincorrect: 0
+  dontswitch: 0
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
@@ -10435,7 +10444,10 @@ MonoBehaviour:
   PipeManagers: {fileID: 0}
   solution:
   - 270
+  triggerincorrect: []
   isPlaced: 1
+  placedincorrect: 0
+  dontswitch: 0
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
@@ -14267,7 +14279,10 @@ MonoBehaviour:
   solution:
   - 0
   - 180
+  triggerincorrect: []
   isPlaced: 0
+  placedincorrect: 0
+  dontswitch: 0
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
@@ -19023,7 +19038,10 @@ MonoBehaviour:
   PipeManagers: {fileID: 0}
   solution:
   - 90
+  triggerincorrect: []
   isPlaced: 1
+  placedincorrect: 0
+  dontswitch: 0
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
@@ -19890,7 +19908,10 @@ MonoBehaviour:
   solution:
   - 0
   - 180
+  triggerincorrect: []
   isPlaced: 0
+  placedincorrect: 0
+  dontswitch: 0
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
@@ -22226,7 +22247,10 @@ MonoBehaviour:
   PipeManagers: {fileID: 0}
   solution:
   - 90
+  triggerincorrect: []
   isPlaced: 0
+  placedincorrect: 0
+  dontswitch: 0
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
@@ -24556,7 +24580,10 @@ MonoBehaviour:
   PipeManagers: {fileID: 0}
   solution:
   - 90
+  triggerincorrect: []
   isPlaced: 0
+  placedincorrect: 0
+  dontswitch: 0
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
@@ -26463,7 +26490,10 @@ MonoBehaviour:
   PipeManagers: {fileID: 0}
   solution:
   - 180
+  triggerincorrect: []
   isPlaced: 0
+  placedincorrect: 0
+  dontswitch: 0
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
@@ -29963,6 +29993,7 @@ MonoBehaviour:
   totalPipes: 0
   correctPipes: 0
   _otherdoor: {fileID: 187368961}
+  RemovePipes: {fileID: 0}
 --- !u!1 &837229151
 GameObject:
   m_ObjectHideFlags: 0
@@ -38766,7 +38797,10 @@ MonoBehaviour:
   PipeManagers: {fileID: 0}
   solution:
   - 0
+  triggerincorrect: []
   isPlaced: 0
+  placedincorrect: 0
+  dontswitch: 0
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
@@ -42399,7 +42433,10 @@ MonoBehaviour:
   PipeManagers: {fileID: 0}
   solution:
   - 270
+  triggerincorrect: []
   isPlaced: 1
+  placedincorrect: 0
+  dontswitch: 0
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
@@ -45840,6 +45877,7 @@ GameObject:
   - component: {fileID: 1355666078}
   - component: {fileID: 1355666077}
   - component: {fileID: 1355666081}
+  - component: {fileID: 1355666082}
   m_Layer: 0
   m_Name: ClientManager
   m_TagString: NetworkClient
@@ -45920,6 +45958,18 @@ MonoBehaviour:
   baseMat: {fileID: 2100000, guid: cdf82c5e92b9abf4ebd9032e055c5c51, type: 2}
   allcams: []
   cameraView: {fileID: 1767037655}
+--- !u!114 &1355666082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355666076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 445548c5f1de65c4c8c9a5c19ba5d075, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1364215397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53959,6 +54009,7 @@ MonoBehaviour:
   totalPipes: 0
   correctPipes: 0
   _otherdoor: {fileID: 0}
+  RemovePipes: {fileID: 0}
 --- !u!1 &1623941835
 GameObject:
   m_ObjectHideFlags: 0
@@ -61943,7 +61994,10 @@ MonoBehaviour:
   solution:
   - 0
   - 180
+  triggerincorrect: []
   isPlaced: 0
+  placedincorrect: 0
+  dontswitch: 0
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
@@ -62086,7 +62140,10 @@ MonoBehaviour:
   PipeManagers: {fileID: 0}
   solution:
   - 90
+  triggerincorrect: []
   isPlaced: 1
+  placedincorrect: 0
+  dontswitch: 0
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
@@ -63640,7 +63697,10 @@ MonoBehaviour:
   solution:
   - 0
   - 180
+  triggerincorrect: []
   isPlaced: 0
+  placedincorrect: 0
+  dontswitch: 0
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
@@ -63769,7 +63829,10 @@ MonoBehaviour:
   PipeManagers: {fileID: 0}
   solution:
   - 180
+  triggerincorrect: []
   isPlaced: 0
+  placedincorrect: 0
+  dontswitch: 0
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
@@ -66883,7 +66946,10 @@ MonoBehaviour:
   PipeManagers: {fileID: 0}
   solution:
   - 90
+  triggerincorrect: []
   isPlaced: 0
+  placedincorrect: 0
+  dontswitch: 0
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
@@ -68827,7 +68893,10 @@ MonoBehaviour:
   solution:
   - 0
   - 180
+  triggerincorrect: []
   isPlaced: 0
+  placedincorrect: 0
+  dontswitch: 0
   original: {fileID: 0}
   newcolor: {fileID: 0}
   wrongcolor: {fileID: 0}
