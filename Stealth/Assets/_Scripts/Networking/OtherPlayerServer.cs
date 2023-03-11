@@ -17,6 +17,10 @@ public class OtherPlayerServer : MonoBehaviour
         
         inputs = new bool[2];
     }
+    public void Move(Vector3 newPosition)
+    {
+        transform.position = newPosition;
+    }
     private void Update() {
         
         //first face the right direction

@@ -5,15 +5,22 @@ using Riptide.Utils;
 using System;
 using UnityEngine;
 
-/* public enum ServerToClientId : ushort
+public enum ServerToClientId : ushort
 {
     playerSpawned = 1,
+    input,
+    cameras,
+    inputSimple,
+    aiUpdate,
 }
 
 public enum ClientToServerId : ushort
 {
     name = 1,
-} */
+    input,
+    cameras,
+    inputSimple,
+}
 
 public class NetworkManagerClient : MonoBehaviour
 {
@@ -55,6 +62,7 @@ public class NetworkManagerClient : MonoBehaviour
         Client.ConnectionFailed += FailedToConnect;
         Client.ClientDisconnected += PlayerLeft;
         Client.Disconnected += DidDisconnect;
+        
     }
 
     private void FixedUpdate()
@@ -85,6 +93,8 @@ public class NetworkManagerClient : MonoBehaviour
     private void DidConnect(object sender, EventArgs e)
     {
         UIManager.Singleton.SendName();
+        //activae AI
+        EnemyNetworkManager.Singleton.ActivateAIs();
     }
 
     private void FailedToConnect(object sender, EventArgs e)

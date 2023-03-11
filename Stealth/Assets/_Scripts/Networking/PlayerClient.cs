@@ -47,11 +47,40 @@ public class PlayerClient : MonoBehaviour
     [MessageHandler((ushort)ServerToClientId.input)]
     private static void Input(Message message) //client side DOES NOT HAVE USHORT
     {
-       
         //get the other player
         GameObject.FindGameObjectWithTag("Player").GetComponent<OtherPlayerServer>().SetInput(message.GetBools(2), message.GetVector2(), message.GetVector2());
 
     }
+    [MessageHandler((ushort)ServerToClientId.inputSimple)]
+    private static void InputSimple(Message message) //client side DOES NOT HAVE USHORT
+    {
+        //get the other player
+        GameObject.FindGameObjectWithTag("Player").GetComponent<OtherPlayerServer>().Move(message.GetVector3());
+
+    }
+    /*   //handle cameras
+    [MessageHandler((ushort)ServerToClientId.cameras)]
+    private static void GetCameras(Message message) //client side DOES NOT HAVE USHORT
+    {
+        int num = message.GetInt();
+        
+        GameObject.FindGameObjectWithTag("NetworkClient").GetComponent<CamerasNetworking>().SetInitial(num);
+       
+        for (int i=0; i< num; i++) //cams is how many messages we sent
+        {
+            
+            //unwrap the messages
+            var cams = message.GetBytes();
+            Texture2D tex = new Texture2D(2, 2, TextureFormat.RGBA32, false);
+            tex.LoadRawTextureData(cams);
+            tex.Apply();
+            //apply it to the object
+            GameObject.FindGameObjectWithTag("NetworkClient").GetComponent<CamerasNetworking>().SetTexture(i, tex);
+        }
+
+        //for now apply to object?   
+        Debug.Log("Got message!");
+    }  */
     
     
      #endregion

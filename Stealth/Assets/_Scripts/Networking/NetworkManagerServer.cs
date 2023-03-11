@@ -2,7 +2,7 @@ using Riptide;
 using Riptide.Utils;
 using UnityEngine;
 
-public enum ServerToClientId : ushort
+/* public enum ServerToClientId : ushort
 {
     playerSpawned = 1,
     input,
@@ -13,7 +13,7 @@ public enum ClientToServerId : ushort
     name = 1,
     input,
 }
-
+ */
 public class NetworkManagerServer : MonoBehaviour
 {
     private static NetworkManagerServer _singleton;

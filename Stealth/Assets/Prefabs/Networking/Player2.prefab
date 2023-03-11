@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4460447127094269421}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -261,6 +261,7 @@ MonoBehaviour:
   crouchSpeed: 3
   crouchYScale: 0.5
   move: {x: 0, y: 0}
+  look: {x: 0, y: 0}
   grounded: 0
   state: 0
   interactionDistance: 5
@@ -416,13 +417,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df15f9cb8adb9f49bfe87970fc75575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ping: 0
-  clientstate:
-    PlayerDirection: {x: 0, y: 0}
-    Grounded: 0
-    Sprinting: 0
-    PlayerStance: 0
-    ViewAngles: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &-6373837570608780580
 MonoBehaviour:
   m_ObjectHideFlags: 0
