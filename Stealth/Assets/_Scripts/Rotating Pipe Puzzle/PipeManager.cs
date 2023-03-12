@@ -37,7 +37,8 @@ public class PipeManager : MonoBehaviour
           
         }
 
-        correctPipes = correctPipes - removePipes;
+        correctPipes = correctPipes - removePipes ;
+
 
         _doorInvoker = new DoorInvoker();
     }

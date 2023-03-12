@@ -51,12 +51,13 @@ public class PipePuzzle : MonoBehaviour
         //If Possible solutions are more than 2...checks the array of solutions if they match then the pipe is correctly placed
         if (PossSolutions > 2)
         {
-            if (Mathf.Round(transform.eulerAngles.z) == solution[0] && isPlaced == false || Mathf.Round(transform.eulerAngles.z) == solution[1] && isPlaced == false  || Mathf.Round(transform.eulerAngles.z) == solution[2] && isPlaced == false)
+            if (Mathf.Round(transform.eulerAngles.z) == solution[0] || Mathf.Round(transform.eulerAngles.z) == solution[1] || Mathf.Round(transform.eulerAngles.z) == solution[2] || Mathf.Round(transform.eulerAngles.z) == solution[3])
             {
                 isPlaced = true;
-                placedincorrect = false;
-                pipeManager.correctposition();
-
+            
+                 pipeManager.correctposition();
+                 placedincorrect = false;
+                
 
 
             }
@@ -64,12 +65,13 @@ public class PipePuzzle : MonoBehaviour
         //If Possible solutions are more than 1... only 2, checks the array of solutions if they match then the pipe is correctly placed 
         else if (PossSolutions > 1 && PossSolutions <=3)
         {
-            if (Mathf.Round(transform.eulerAngles.z) == solution[0] && isPlaced == false || Mathf.Round(transform.eulerAngles.z) == solution[1] && isPlaced == false)
+            if (Mathf.Round(transform.eulerAngles.z) == solution[0] || Mathf.Round(transform.eulerAngles.z) == solution[1])
             {
                 isPlaced = true;
                 pipeManager.correctposition();
                 placedincorrect = false;
 
+                
             }
         }
         else
@@ -112,12 +114,15 @@ public class PipePuzzle : MonoBehaviour
         //If Possible solutions are more than 2...checks the array of solutions if they match then the pipe is correctly placed, if not then it will be counted as false
         if (PossSolutions > 2)
         {
-            if (Mathf.Round(transform.eulerAngles.z) == solution[0] && isPlaced == false || Mathf.Round(transform.eulerAngles.z) == solution[1] && isPlaced == false || Mathf.Round(transform.eulerAngles.z) == solution[2] && isPlaced == false)
+            if (Mathf.Round(transform.eulerAngles.z) == solution[0]  || Mathf.Round(transform.eulerAngles.z) == solution[1]  || Mathf.Round(transform.eulerAngles.z) == solution[2] || Mathf.Round(transform.eulerAngles.z) == solution[3])
             {
                 isPlaced = true;
-                pipeManager.correctposition();
+                if (isPlaced == false)
+                {
+                    pipeManager.correctposition();
+                    
+                }
                 placedincorrect = false;
-
 
             }
             else if (isPlaced == true)
@@ -131,12 +136,13 @@ public class PipePuzzle : MonoBehaviour
         //If Possible solutions are more than 1 but less than = 3...checks the array of solutions if they match then the pipe is correctly placed, if not then it will be counted as false
         else if (PossSolutions > 1 && PossSolutions <= 3)
         {
-            if (Mathf.Round(transform.eulerAngles.z) == solution[0] && isPlaced == false|| Mathf.Round(transform.eulerAngles.z) == solution[1] && isPlaced == false)
+            if (Mathf.Round(transform.eulerAngles.z) == solution[0] && isPlaced == false || Mathf.Round(transform.eulerAngles.z) == solution[1] && isPlaced == false)
             {
                 isPlaced = true;
-                pipeManager.correctposition();
+                
+                 pipeManager.correctposition();
                 placedincorrect = false;
-
+               
 
             }
             else if (isPlaced == true)
@@ -209,32 +215,75 @@ public class PipePuzzle : MonoBehaviour
 
         }
 
-
+        
         if (PipeConnected.Length == 3)
         {
             if (PipeConnected[1].GetComponent<PipePuzzle>().placedincorrect == true && PipeConnected[2].GetComponent<PipePuzzle>().isPlaced == true && isPlaced == true)
             {
                 original.sprite = wrongcolor;
-                
+                placedincorrect = true;
+              
             }
             else if (PipeConnected[0].GetComponent<PipePuzzle>().isPlaced == true && PipeConnected[1].GetComponent<PipePuzzle>().isPlaced == true && isPlaced == true)
             {
                 original.sprite = newcolor;
+                placedincorrect = false;
+               
             }
+            //else if(placedincorrect == true && PipeConnected
             else
             {
                 original.sprite = theogsprite;
+           
+               
+               
+               
+                
+                
             }
         }
-        else if(PipeConnected.Length < 3 && PipeConnected.Length > 0)
+        else if(PipeConnected.Length == 2)
         {
-            if (PipeConnected[0].GetComponent<PipePuzzle>().isPlaced == true && PipeConnected[1].GetComponent<PipePuzzle>().isPlaced == true && isPlaced == true)
+            if(PipeConnected[0].GetComponent<PipePuzzle>().placedincorrect == true &&  PipeConnected[0].GetComponent<PipePuzzle>().isPlaced == true &&
+               PipeConnected[1].GetComponent<PipePuzzle>().isPlaced == true && PipeConnected[1].GetComponent<PipePuzzle>().placedincorrect == true && isPlaced == true)
+            {
+                original.sprite = wrongcolor;
+                PipeConnected[0].GetComponent<PipePuzzle>().isPlaced = false;
+            }
+             else  if (PipeConnected[0].GetComponent<PipePuzzle>().isPlaced == true && PipeConnected[1].GetComponent<PipePuzzle>().isPlaced == true && isPlaced == true)
             {
                 original.sprite = newcolor;
             }
+            else if (PipeConnected[0].GetComponent<PipePuzzle>().placedincorrect == true && PipeConnected[1].GetComponent<PipePuzzle>().placedincorrect == true && isPlaced == true)
+            {
+                original.sprite = wrongcolor;
+            }
+            else if (PipeConnected[0].GetComponent<PipePuzzle>().placedincorrect == true && PipeConnected[1].GetComponent<PipePuzzle>().isPlaced==true && isPlaced == true)
+            {
+                original.sprite = wrongcolor;
+            }
             else
             {
                 original.sprite = theogsprite;
+            }
+
+        
+        }
+        else if(PipeConnected.Length == 1)
+        {
+            if(PipeConnected[0].GetComponent<PipePuzzle>().isPlaced == false)
+            {
+                placedincorrect = false;
+                original.sprite = wrongcolor;
+            }
+            else if(PipeConnected[0].GetComponent<PipePuzzle>().isPlaced == true && Mathf.Round(transform.eulerAngles.z) ==solution[1])
+            {
+                if (isPlaced)
+                {
+                    pipeManager.wrongposition();
+                }
+                isPlaced = false;
+                
             }
         }
 
