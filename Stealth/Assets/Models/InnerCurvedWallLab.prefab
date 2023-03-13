@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 272612468277414901}
   - component: {fileID: 3776083626287662160}
   - component: {fileID: 1406160218904817818}
+  - component: {fileID: 2648511497010296673}
   m_Layer: 0
   m_Name: InnerCurvedWallLab
   m_TagString: Untagged
@@ -87,6 +88,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2648511497010296673
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613425461077528911}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1196616830613644734, guid: 02bc4b3fdc3f4994faa6fbd374b7d01e, type: 3}
 --- !u!1 &1956430037709524775
 GameObject:
   m_ObjectHideFlags: 0
