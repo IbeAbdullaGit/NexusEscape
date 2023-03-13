@@ -9,6 +9,8 @@ public class AINetworking : MonoBehaviour
     [SerializeField] public Transform target;
     NavMeshAgent NavMeshAgent;
     public float alertness= 5f;
+
+
     private float dirX;
 
     public float moveSpeed;
@@ -47,13 +49,9 @@ public class AINetworking : MonoBehaviour
     //ui
     [SerializeField]private Slider slider;
 
+    //networking
+    bool connected = false;
 
-   public int id;
-
-   public void SetPosition(Vector3 pos)
-   {
-        transform.position = pos;
-   }
 
     void Start()
     {
@@ -62,11 +60,12 @@ public class AINetworking : MonoBehaviour
         localScale = transform.localScale;
         rb = GetComponent<Rigidbody>();
 
-        //target = GameObject.FindGameObjectWithTag("Player").transform;
+       // target = GameObject.FindGameObjectWithTag("Player").transform;
       
         lastPosition = transform.position;
 
         //moveSpeed = 2.5f;
+
        
         dirX = -1f;
 
@@ -79,10 +78,12 @@ public class AINetworking : MonoBehaviour
         hearRadius = (GetComponent<FieldOfView>().radius);
        
     }
-    public void StartEnemys()
+    public void SetTarget()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+         target = GameObject.FindGameObjectWithTag("Player").transform;
+
         UpdateDestination();
+        connected = true;
     }
     void UpdateDestination()
     {
@@ -101,6 +102,10 @@ public class AINetworking : MonoBehaviour
         {
             NavMeshAgent.speed = 0;
         }
+
+        
+
+       
         StartCoroutine(WalkPause());
     }
     void IterateWaypointIndex()
@@ -170,7 +175,9 @@ public class AINetworking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hasdoor)
+        //need to be connected first to activate updates
+        if (connected)
+        {if (hasdoor)
         {
             if (_otherdoor.GetComponent<Door>().isOpen == true)
             {
@@ -185,11 +192,6 @@ public class AINetworking : MonoBehaviour
        }
        
        if (!distracted)
-       {
-            HearingCheck();
-            inSight();
-       }
-       /* if (!distracted)
        {
             //vision test then hearing test
             playerInSight = inSight();
@@ -214,6 +216,7 @@ public class AINetworking : MonoBehaviour
                 IterateWaypointIndex();
                 UpdateDestination();
             }  */
+       }
        /* //check for moving
         if (transform.position != lastPosition)
         {
@@ -231,6 +234,7 @@ public class AINetworking : MonoBehaviour
              Debug.Log("navmesh re enabled");
              // navmesh agent will start moving again
         }    */
+        }
         
     }
  
@@ -311,22 +315,28 @@ public class AINetworking : MonoBehaviour
         {
             //Debug.Log("Enemy AI sees player");
            //stop coroutine, so enemy can move
-           //StopCoroutine(WalkPause());
+           StopCoroutine(WalkPause());
            //make sure enemy can move
-          // NavMeshAgent.isStopped = false; 
+           NavMeshAgent.isStopped = false; 
 
-            //targetMain = target.position;
-            //NavMeshAgent.SetDestination(target.position);
-           // Debug.DrawLine(transform.position, target.position, Color.red);
+            targetMain = target.position;
+            NavMeshAgent.SetDestination(target.position);
+            Debug.DrawLine(transform.position, target.position, Color.red);
 
+            //play sound
+            if (!playSoundOnce)
+            {
+                //soundInstance.PlaySound(SoundManager.Sound.EnemyDetect, transform.position);
+                playSoundOnce = true;
+            }
             return true;
         }
         else{
             //reset sound
             playSoundOnce = false;
         }
-        //targetMain = waypoints[waypointIndex].position;
-        //NavMeshAgent.SetDestination(targetMain);
+        targetMain = waypoints[waypointIndex].position;
+        NavMeshAgent.SetDestination(targetMain);
         return false;
     }
 

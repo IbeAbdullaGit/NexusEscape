@@ -46,6 +46,10 @@ public class EnemyAI : MonoBehaviour
      float hearRadius;
      bool canHear;
 
+    //networking stuff
+    private bool connected = false;
+    public bool networking = false;
+
     //ui
     [SerializeField]private Slider slider;
 
@@ -62,7 +66,11 @@ public class EnemyAI : MonoBehaviour
         localScale = transform.localScale;
         rb = GetComponent<Rigidbody>();
 
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        if (!networking)
+        {
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+            UpdateDestination();
+        }
       
         lastPosition = transform.position;
 
@@ -71,7 +79,7 @@ public class EnemyAI : MonoBehaviour
        
         dirX = -1f;
 
-        UpdateDestination();
+       
 
         //detectionMeter = GameObject.FindGameObjectWithTag("GameController").GetComponent<DetectionMeter>();
         //soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
@@ -79,6 +87,13 @@ public class EnemyAI : MonoBehaviour
         //make hear radius same as view radius?
         hearRadius = (GetComponent<FieldOfView>().radius);
        
+    }
+    public void SetTarget()
+    {
+         target = GameObject.FindGameObjectWithTag("Player").transform;
+
+        UpdateDestination();
+        connected = true;
     }
     void UpdateDestination()
     {
@@ -170,6 +185,8 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (connected || !networking)
+       { 
         if (hasdoor)
         {
             if (_otherdoor.GetComponent<Door>().isOpen == true)
@@ -227,7 +244,7 @@ public class EnemyAI : MonoBehaviour
              Debug.Log("navmesh re enabled");
              // navmesh agent will start moving again
         }    */
-        
+       }
     }
  
     void CheckWhereToFace(){

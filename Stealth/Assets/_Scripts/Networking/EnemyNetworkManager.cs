@@ -5,7 +5,7 @@ using Riptide;
 
 public class EnemyNetworkManager : MonoBehaviour
 {
-   private static GameObject[] allEnemies;
+   public GameObject[] allEnemies;
    private static EnemyNetworkManager _singleton;
 
     public static EnemyNetworkManager Singleton
@@ -22,13 +22,36 @@ public class EnemyNetworkManager : MonoBehaviour
             }
         }
     }
-    public void ActivateAIs()
+    public void Start()
     {
         //activate AI - perhaps do this more precise later
         allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+        
+    }
+    private void Awake()
+    {
+        Singleton = this;
+    }
+    public void ActivateAIs()
+    {
         for (int i=0; i< allEnemies.Length; i++)
         {
-            allEnemies[i].GetComponent<AINetworking>().StartEnemys();
+            //allEnemies[i].GetComponent<AINetworking>().StartEnemys();
+        }
+    }
+    private void UpdateMovement(int id, Vector3 pos)
+    {
+        //find ai with matching id
+        for (int i=0; i<allEnemies.Length; i++)
+        {
+           // if (allEnemies[i].GetComponent<AINetworking>().id == id)
+            {
+                //then set the AI
+                //allEnemies[id].GetComponent<AINetworking>().SetPosition(pos);
+                Debug.Log("Setting position " + pos);
+                //stop loop now
+                break;
+            }
         }
     }
     #region Messages
@@ -39,17 +62,8 @@ public class EnemyNetworkManager : MonoBehaviour
         int id = message.GetInt(); //should start at 0!
         //get their position
         var pos = message.GetVector3();
-        //find ai with matching id
-        for (int i=0; i<allEnemies.Length; i++)
-        {
-            if (allEnemies[i].GetComponent<AINetworking>().id == id)
-            {
-                //then set the AI
-                allEnemies[id].GetComponent<AINetworking>().SetPosition(pos);
-                //stop loop now
-                break;
-            }
-        }
+        EnemyNetworkManager.Singleton.UpdateMovement(id, pos);
+        Debug.Log("Getting message");
         
     }
     #endregion

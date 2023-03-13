@@ -26,6 +26,8 @@ public class NetworkManagerClient : MonoBehaviour
 {
     private static NetworkManagerClient _singleton;
 
+    bool serverConnected = false;
+
     public static NetworkManagerClient Singleton
     {
         get => _singleton;
@@ -64,6 +66,14 @@ public class NetworkManagerClient : MonoBehaviour
         Client.Disconnected += DidDisconnect;
         
     }
+    private void SetupAI()
+    {
+        var ais = GameObject.FindGameObjectsWithTag("Enemy");
+        for (int i=0; i< ais.Length; i++)
+        {
+            ais[i].GetComponent<AINetworking>().SetTarget();
+        }
+    }
 
     private void FixedUpdate()
     {
@@ -78,6 +88,14 @@ public class NetworkManagerClient : MonoBehaviour
                 DelayTick = 0;
             }
         } */
+    }
+    private void Update()
+    {
+        if (GameObject.FindGameObjectWithTag("Player") != null && !serverConnected)
+        {
+            serverConnected = true;
+            SetupAI();
+        }
     }
 
     private void OnApplicationQuit()
@@ -94,7 +112,8 @@ public class NetworkManagerClient : MonoBehaviour
     {
         UIManager.Singleton.SendName();
         //activae AI
-        EnemyNetworkManager.Singleton.ActivateAIs();
+        //EnemyNetworkManager.Singleton.ActivateAIs();
+
     }
 
     private void FailedToConnect(object sender, EventArgs e)
