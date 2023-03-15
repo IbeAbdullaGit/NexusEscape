@@ -1,0 +1,259 @@
+fileFormatVersion: 2
+guid: 805d3d15340247049817103e4a899c61
+ModelImporter:
+  serializedVersion: 22103
+  internalIDToNameTable:
+  - first:
+      74: 2422232993473071261
+    second: Seeking
+  - first:
+      74: -1610863427237328480
+    second: Walking
+  - first:
+      74: -2978804170942965232
+    second: Seeking.001
+  - first:
+      74: 6351197130306418869
+    second: Looking
+  - first:
+      74: 5750213669650853856
+    second: Armature|Looking.001
+  - first:
+      74: -5790197676611705096
+    second: Armature|LookingR
+  - first:
+      74: 3883155493392930285
+    second: Armature|Rest
+  - first:
+      74: -4246034678782790809
+    second: Armature|Seeking
+  - first:
+      74: 8623888000231239925
+    second: Armature|SeekingR
+  - first:
+      74: 1123232562542821138
+    second: Armature|SeekingVariation
+  - first:
+      74: -4274770991410265338
+    second: Armature|Walking
+  - first:
+      74: 5353019975128442215
+    second: Armature|WalkingR
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Armor Cloth
+    second: {fileID: 2100000, guid: 778479efc0259b146aa8f47e55413d3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Back Armor
+    second: {fileID: 2100000, guid: aa46c2366d9cc364bbd1c82a3464c0fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elbow Pad
+    second: {fileID: 2100000, guid: 5d6a517348ed74143a9958db536b6f2d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Front plating
+    second: {fileID: 2100000, guid: 1930350ebfbb6824b951f5d15102f83b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gem
+    second: {fileID: 2100000, guid: f60d9cbdc46e29a4e83138aadf429541, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glow2.002
+    second: {fileID: 2100000, guid: 248d5e36c7a13774a8ad738e655e7f50, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GunGLow.002
+    second: {fileID: 2100000, guid: 569f6b2ae3efce34abf3e19c15099e13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GunMetal1.002
+    second: {fileID: 2100000, guid: fadec84e52058d64899f3ac7d64776f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GunMetal2.002
+    second: {fileID: 2100000, guid: dfa96387aa8975c4fb3fb225bac85f99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Maskframe
+    second: {fileID: 2100000, guid: 3c4a28ca5b04b414d8d6cd172e84110d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Maskfront
+    second: {fileID: 2100000, guid: 3e11edc256831254f9f754eb676a4e8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Maskside1
+    second: {fileID: 2100000, guid: dff8fa04f345bf54f9bce49efba254c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Maskside2
+    second: {fileID: 2100000, guid: f5780278a3d94b045ad6eb07dab6f7e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Maskvisor
+    second: {fileID: 2100000, guid: 04f11e807c4aa5748b4a872d2bbcf418, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: 881b4267723351d479c2d6b41ab596b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.007
+    second: {fileID: 2100000, guid: edc82cb0f04426e4dad8618f70845dff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.008
+    second: {fileID: 2100000, guid: 64142d818d937d84385d94da75f2b86f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Polymer.002
+    second: {fileID: 2100000, guid: dda17063d9d26804486b32a01381ff0d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shoe
+    second: {fileID: 2100000, guid: d639fcc1b0c5b3842b40d2baede74445, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shoe Sole
+    second: {fileID: 2100000, guid: 8ece1f6c5b7732c488e460f0a6c0c9e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Underarmor
+    second: {fileID: 2100000, guid: 1a58e2dd7ec257a448ce8b64f0eaeb29, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Undersuit
+    second: {fileID: 2100000, guid: 9a938f786a82bc349a42c6d33147adb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sILVER
+    second: {fileID: 2100000, guid: bb310dc9e499e3440b807f6d6565ca1d, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
