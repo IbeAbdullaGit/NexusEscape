@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Riptide;
 public class PipePuzzle : MonoBehaviour
 {
     float[] rotations = {0, 90, 180, 270 }; //The random rotations the pipes can start off
@@ -202,6 +203,7 @@ public class PipePuzzle : MonoBehaviour
         
     }
 
+
     private void Update()
     {
         if (pipeManager.totalPipes == pipeManager.correctPipes && !solved)
@@ -211,7 +213,17 @@ public class PipePuzzle : MonoBehaviour
             pipeManager.TriggerDoor();
             pipeManager._otherdoor.GetComponent<Door>().isOpen = false;
             pipeManager._otherdoor.GetComponent<Door>().OpenDoor();
+
+            //send network message, to open the door
+            Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.pipePuzzleFinish);
+            //add an id so we know what we're talking about
+            message.AddInt(1); //1 - for this case
+            //send message
+            NetworkManagerClient.Singleton.Client.Send(message);
+            
             Destroy(transform.gameObject.GetComponentInParent<Canvas>().gameObject);
+
+            
 
         }
 
