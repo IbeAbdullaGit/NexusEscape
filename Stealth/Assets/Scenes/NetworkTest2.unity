@@ -75558,7 +75558,6 @@ GameObject:
   - component: {fileID: 2086139453}
   - component: {fileID: 2086139458}
   - component: {fileID: 2086139457}
-  - component: {fileID: 2086139459}
   m_Layer: 0
   m_Name: ClientManager
   m_TagString: NetworkClient
@@ -75648,22 +75647,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2086139459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2086139452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e33f5376e7494848a613cdea1fed291, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keySwiper1: {fileID: 98957741}
-  button1: {fileID: 0}
-  button2: {fileID: 0}
-  buttonMeters: []
 --- !u!1001 &2086484808
 PrefabInstance:
   m_ObjectHideFlags: 0
