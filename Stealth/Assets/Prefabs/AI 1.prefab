@@ -138,7 +138,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4452fa472494cbf4382199031de83f18, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -730,6 +730,7 @@ MonoBehaviour:
   hasdoor: 0
   _otherdoor: {fileID: 0}
   distracted: 0
+  networking: 0
   slider: {fileID: 1960461894055425207}
 --- !u!114 &1960461894658266116
 MonoBehaviour:
@@ -801,6 +802,18 @@ PrefabInstance:
     - target: {fileID: 926029950195752324, guid: 7bf7f59f0cde74645873f3e8ec276e9e, type: 3}
       propertyPath: m_Name
       value: Guard NUKE
+      objectReference: {fileID: 0}
+    - target: {fileID: 2036476419564599184, guid: 7bf7f59f0cde74645873f3e8ec276e9e, type: 3}
+      propertyPath: m_Color.b
+      value: 0.14159843
+      objectReference: {fileID: 0}
+    - target: {fileID: 2036476419564599184, guid: 7bf7f59f0cde74645873f3e8ec276e9e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5367689
+      objectReference: {fileID: 0}
+    - target: {fileID: 2036476419564599184, guid: 7bf7f59f0cde74645873f3e8ec276e9e, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8113208
       objectReference: {fileID: 0}
     - target: {fileID: 8592464987959794377, guid: 7bf7f59f0cde74645873f3e8ec276e9e, type: 3}
       propertyPath: m_RootOrder

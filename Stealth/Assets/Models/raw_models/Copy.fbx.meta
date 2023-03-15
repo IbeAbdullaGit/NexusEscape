@@ -3,7 +3,17 @@ guid: 9b0fa6b7fb899bf4395b360ab6c22096
 ModelImporter:
   serializedVersion: 22103
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightGlow
+    second: {fileID: 2100000, guid: f988e892101c94b4689c3474862e7e87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightHolderMetal
+    second: {fileID: 2100000, guid: baa86240f7c8ee1499d3a57767b99eac, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
