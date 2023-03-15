@@ -7494,8 +7494,16 @@ PrefabInstance:
       value: 0.0006
       objectReference: {fileID: 0}
     - target: {fileID: 5655465043963996493, guid: b83ae464fb386e84fb3ba2eb8714ae4d, type: 3}
+      propertyPath: m_Name
+      value: door1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5655465043963996493, guid: b83ae464fb386e84fb3ba2eb8714ae4d, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5655465043963996493, guid: b83ae464fb386e84fb3ba2eb8714ae4d, type: 3}
+      propertyPath: m_TagString
+      value: Door
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -18299,7 +18307,11 @@ MonoBehaviour:
   target: {fileID: 0}
   alertness: 5
   moveSpeed: 0
-  waypoints: []
+  waypoints:
+  - {fileID: 729095181}
+  - {fileID: 881424813}
+  - {fileID: 2118319853}
+  - {fileID: 1037913982}
   opendoor: 1
   hasdoor: 0
   _otherdoor: {fileID: 0}
@@ -59983,7 +59995,13 @@ MonoBehaviour:
   target: {fileID: 0}
   alertness: 5
   moveSpeed: 0
-  waypoints: []
+  waypoints:
+  - {fileID: 416426574}
+  - {fileID: 308849615}
+  - {fileID: 1738216705}
+  - {fileID: 1675416967}
+  - {fileID: 1416350574}
+  - {fileID: 403044044}
   opendoor: 1
   hasdoor: 0
   _otherdoor: {fileID: 0}
@@ -66815,7 +66833,11 @@ MonoBehaviour:
   target: {fileID: 0}
   alertness: 5
   moveSpeed: 0
-  waypoints: []
+  waypoints:
+  - {fileID: 1022861570}
+  - {fileID: 1665672284}
+  - {fileID: 713257389}
+  - {fileID: 589491968}
   opendoor: 1
   hasdoor: 0
   _otherdoor: {fileID: 0}
@@ -75536,6 +75558,7 @@ GameObject:
   - component: {fileID: 2086139453}
   - component: {fileID: 2086139458}
   - component: {fileID: 2086139457}
+  - component: {fileID: 2086139459}
   m_Layer: 0
   m_Name: ClientManager
   m_TagString: NetworkClient
@@ -75625,6 +75648,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2086139459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086139452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e33f5376e7494848a613cdea1fed291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keySwiper1: {fileID: 0}
+  button1: {fileID: 0}
+  button2: {fileID: 0}
+  buttonMeters: []
 --- !u!1001 &2086484808
 PrefabInstance:
   m_ObjectHideFlags: 0

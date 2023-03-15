@@ -12,6 +12,7 @@ public enum ServerToClientId : ushort
     cameras,
     inputSimple,
     aiUpdate,
+    puzzleInteraction,
 }
 
 public enum ClientToServerId : ushort
@@ -20,6 +21,8 @@ public enum ClientToServerId : ushort
     input,
     cameras,
     inputSimple,
+    pipePuzzleFinish,
+    typingPuzzleFinish,
 }
 
 public class NetworkManagerClient : MonoBehaviour

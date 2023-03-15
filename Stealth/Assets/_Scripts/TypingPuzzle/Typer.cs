@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Riptide;
 
 public class Typer : MonoBehaviour
 {
@@ -67,10 +68,25 @@ public class Typer : MonoBehaviour
                     if (i==0) //first one
                     {
                         GetComponent<LinkedPuzzle>().ActivateText();
+                        //send message
+                         //send network message, to open the door
+                        Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.typingPuzzleFinish);
+                        //add an id so we know what we're talking about
+                        message.AddInt(0); //0 - for this case, means activate text
+                        //send message
+                        NetworkManagerClient.Singleton.Client.Send(message);
                     }
                     else if (i ==1) //second one
                     {
                         GetComponent<LinkedPuzzle>().ActivateDoor();
+                        //send message
+                        //send network message, to open the door
+                        Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.typingPuzzleFinish);
+                        //add an id so we know what we're talking about
+                        message.AddInt(1); //1 - for this case, means activate door
+                        //send message
+                        NetworkManagerClient.Singleton.Client.Send(message);
+
                     }
 
                     break;

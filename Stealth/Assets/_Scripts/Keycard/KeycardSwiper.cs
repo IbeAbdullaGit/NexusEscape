@@ -31,6 +31,21 @@ public class KeycardSwiper : Interactable
         _doorInvoker.AddCommand(openDoor);
     }
 
+    public void OnInteractNoCheck()
+    {
+        //Inventory.instance.DestroyKeycard(); //Delete the Keycard on usage.
+        //this is what will happen when we want keycard being inserted to effect something on hacker screen
+        {
+            if (!revealed)
+            {
+                revealed = true;
+                pipepuzzle.enabled = true;
+
+            }
+
+        }
+    }
+
     public override void OnInteract()
     {
         //make sure we have a key we're holding
