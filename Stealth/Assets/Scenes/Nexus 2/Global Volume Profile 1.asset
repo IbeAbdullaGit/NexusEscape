@@ -12,22 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f335fb1ffd8684294ad653bf1c7564, type: 3}
   m_Name: ColorAdjustments
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 1.66
+    m_Value: 0.24
   contrast:
     m_OverrideState: 1
-    m_Value: 42.7
+    m_Value: 100
   colorFilter:
-    m_OverrideState: 1
-    m_Value: {r: 0.26415092, g: 0.11587752, b: 0.11587752, a: 1}
+    m_OverrideState: 0
+    m_Value: {r: 0.3773585, g: 0.14773941, b: 0.14773941, a: 1}
   hueShift:
-    m_OverrideState: 1
-    m_Value: 0
+    m_OverrideState: 0
+    m_Value: -96
   saturation:
     m_OverrideState: 1
-    m_Value: -6.5
+    m_Value: -93
 --- !u!114 &-4123204012434068085
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -43,10 +43,10 @@ MonoBehaviour:
   active: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 23.05
+    m_Value: 21.23
   intensity:
     m_OverrideState: 1
-    m_Value: 65.2
+    m_Value: 61.5
   scatter:
     m_OverrideState: 0
     m_Value: 0.7
@@ -55,7 +55,7 @@ MonoBehaviour:
     m_Value: 65472
   tint:
     m_OverrideState: 1
-    m_Value: {r: 0.42070132, g: 0.53281766, b: 0.5471698, a: 1}
+    m_Value: {r: 0.19953722, g: 0.7169812, b: 0.597368, a: 1}
   highQualityFiltering:
     m_OverrideState: 0
     m_Value: 1

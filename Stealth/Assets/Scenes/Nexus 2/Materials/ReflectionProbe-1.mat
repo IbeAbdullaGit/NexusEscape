@@ -12,7 +12,9 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _MAPPING_LATITUDE_LONGITUDE_LAYOUT
+  - _SUNDISK_HIGH_QUALITY
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -23,14 +25,28 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Tex:
         m_Texture: {fileID: 8900000, guid: 7b3edd1c8cc76474c9c53e0ddcba144f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Exposure: 1
-    - _Rotation: 0
+    - _AtmosphereThickness: 0.89
+    - _Exposure: 2.17
+    - _ImageType: 0
+    - _Layout: 0
+    - _Mapping: 1
+    - _MirrorOnBack: 0
+    - _Rotation: 52
+    - _SunDisk: 2
+    - _SunSize: 0.241
+    - _SunSizeConvergence: 1.29
     m_Colors:
-    - _Tint: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+    - _GroundColor: {r: 0.13857244, g: 0.16981131, b: 0.15990567, a: 1}
+    - _SkyTint: {r: 0.19263972, g: 0.33531338, b: 0.3679245, a: 1}
+    - _Tint: {r: 0.2845319, g: 0.4339623, b: 0.42870387, a: 0.5}
   m_BuildTextureStacks: []
