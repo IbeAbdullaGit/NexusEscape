@@ -53,10 +53,21 @@ public class EnemyAI : MonoBehaviour
     //ui
     [SerializeField]private Slider slider;
 
-
-    public void Move()
+    public enum MovementState
     {
-
+        looking,
+        seeking,
+        walking
+    }
+    MovementState currentState;
+    
+    void SetMovementState(MovementState m)
+    {
+        currentState = m;
+    }
+    public MovementState GetState()
+    {
+        return currentState;
     }
 
     void Start()
@@ -131,12 +142,16 @@ public class EnemyAI : MonoBehaviour
     private IEnumerator WalkPause()
     {
         NavMeshAgent.isStopped = true;
+        //play pause
+        SetMovementState(MovementState.looking);
         //wait
         //Debug.Log("Waiting");
         yield return delay;
         //after waiting
         NavMeshAgent.isStopped = false;    
         //Debug.Log("Done waiting");  
+        //move again
+        SetMovementState(MovementState.walking);
           
     }
     public IEnumerator DistractionDelay()
@@ -227,13 +242,20 @@ public class EnemyAI : MonoBehaviour
                 UpdateDestination();
             }  */
        }
-       /* //check for moving
-        if (transform.position != lastPosition)
+       else //distracted
+       {
+            SetMovementState(MovementState.looking);
+       }
+       //check for moving
+        if (transform.position != lastPosition && !playerInSight)
         {
             //dont play for now
             //soundInstance.PlaySound(SoundManager.Sound.EnemyMove, transform.position);
+            SetMovementState(MovementState.walking);
         }
-        else
+        
+       /* 
+       
             
         lastPosition = transform.position; */
         //get unstuck
@@ -337,12 +359,15 @@ public class EnemyAI : MonoBehaviour
             {
                 //soundInstance.PlaySound(SoundManager.Sound.EnemyDetect, transform.position);
                 playSoundOnce = true;
+                //seeking animation
+                SetMovementState(MovementState.seeking);
             }
             return true;
         }
         else{
             //reset sound
             playSoundOnce = false;
+            SetMovementState(MovementState.walking); //walking back
         }
         targetMain = waypoints[waypointIndex].position;
         NavMeshAgent.SetDestination(targetMain);
