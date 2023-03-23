@@ -65,19 +65,19 @@ AnimatorController:
   m_Name: Guard
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: is_walking 0
+  - m_Name: is_walking
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: is_looking 0
+  - m_Name: is_looking
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: is_seeking 0
+  - m_Name: is_seeking
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -105,7 +105,7 @@ AnimatorStateTransition:
   m_Name: StartWalking
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: is_walking 0
+    m_ConditionEvent: is_walking
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 9111441203097809088}
@@ -130,7 +130,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: is_seeking 0
+    m_ConditionEvent: is_seeking
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4389389563962366934}
@@ -183,7 +183,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: is_walking 0
+    m_ConditionEvent: is_walking
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 9111441203097809088}
@@ -208,7 +208,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: is_seeking 0
+    m_ConditionEvent: is_seeking
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4389389563962366934}
@@ -233,7 +233,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: is_looking 0
+    m_ConditionEvent: is_looking
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5577263531893747434}
@@ -286,7 +286,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: is_looking 0
+    m_ConditionEvent: is_looking
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5577263531893747434}

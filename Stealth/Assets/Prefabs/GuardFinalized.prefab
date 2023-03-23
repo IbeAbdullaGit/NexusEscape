@@ -6552,13 +6552,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6036601835861730955}
-  - component: {fileID: 7584748937775645537}
   - component: {fileID: 8426269912630831229}
   - component: {fileID: 2401366660118571393}
   - component: {fileID: 7723606341494419923}
   - component: {fileID: 7683243166774700359}
   - component: {fileID: 5417581889196067481}
   - component: {fileID: -7354869312619401471}
+  - component: {fileID: 2819798811733971605}
   m_Layer: 0
   m_Name: GuardFinalized
   m_TagString: Untagged
@@ -6627,19 +6627,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7584748937775645537
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6380898970825276465}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 40.49379, y: 111.00786, z: 57.948902}
-  m_Center: {x: -3.169479, y: 55.003933, z: 1.8953589}
 --- !u!54 &8426269912630831229
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6665,7 +6652,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 6380898970825276465}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 30.3
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -6674,7 +6661,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 107.1
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -6766,6 +6753,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4216214218054e14992d6345abc69fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &2819798811733971605
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6380898970825276465}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 32.693584, y: 105.85997, z: 49.88697}
+  m_Center: {x: -0.31198192, y: 52.42999, z: 1.5497329}
 --- !u!1 &6387063119995299706
 GameObject:
   m_ObjectHideFlags: 0
