@@ -8,9 +8,13 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2985851103779558713, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_RootOrder
-      value: 34
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalScale.x
@@ -66,8 +70,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441510, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_Name
-      value: WallTile
+      value: WallTile Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6480478535937441531, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8156280941096268905, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7215265155691739422, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
+    - {fileID: 8349762561413014940, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
+    - {fileID: 3667449329228537052, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
+    - {fileID: 6044886543421465204, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
