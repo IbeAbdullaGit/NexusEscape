@@ -126,7 +126,7 @@ public class EnemyAI : MonoBehaviour
 
         
 
-       
+        SetMovementState(MovementState.looking);
         StartCoroutine(WalkPause());
     }
     void IterateWaypointIndex()
@@ -144,6 +144,7 @@ public class EnemyAI : MonoBehaviour
         NavMeshAgent.isStopped = true;
         //play pause
         SetMovementState(MovementState.looking);
+        Debug.Log("Should be looking");
         //wait
         //Debug.Log("Waiting");
         yield return delay;
@@ -251,7 +252,7 @@ public class EnemyAI : MonoBehaviour
         {
             //dont play for now
             //soundInstance.PlaySound(SoundManager.Sound.EnemyMove, transform.position);
-            SetMovementState(MovementState.walking);
+            //SetMovementState(MovementState.walking);
         }
         
        /* 

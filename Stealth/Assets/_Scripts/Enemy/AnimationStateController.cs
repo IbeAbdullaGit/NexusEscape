@@ -17,18 +17,21 @@ public class AnimationStateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (movement.GetState() == EnemyAI.MovementState.walking)
+        switch (movement.GetState())
         {
-            animator.SetTrigger("is_walking");
+            case EnemyAI.MovementState.looking:
+                animator.SetTrigger("is_looking");
+                Debug.Log("Is looking");
+                break;
+            case EnemyAI.MovementState.seeking:
+                animator.SetTrigger("is_seeking");
+                break;
+            case EnemyAI.MovementState.walking:
+                animator.SetTrigger("is_walking");
+                break;
+            default:
+                break;
         }
-        else if (movement.GetState() == EnemyAI.MovementState.looking)
-        {
-            animator.SetTrigger("is_looking");
-
-        }
-        else
-        {
-            animator.SetTrigger("is_seeking");
-        }
+        
     }
 }
