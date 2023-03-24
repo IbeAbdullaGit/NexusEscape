@@ -804,6 +804,10 @@ PrefabInstance:
       value: Guard NUKE
       objectReference: {fileID: 0}
     - target: {fileID: 2036476419564599184, guid: 7bf7f59f0cde74645873f3e8ec276e9e, type: 3}
+      propertyPath: m_Range
+      value: 18.213009
+      objectReference: {fileID: 0}
+    - target: {fileID: 2036476419564599184, guid: 7bf7f59f0cde74645873f3e8ec276e9e, type: 3}
       propertyPath: m_Color.b
       value: 0.14159843
       objectReference: {fileID: 0}
@@ -815,17 +819,41 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.8113208
       objectReference: {fileID: 0}
+    - target: {fileID: 2036476419564599184, guid: 7bf7f59f0cde74645873f3e8ec276e9e, type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 23.084175
+      objectReference: {fileID: 0}
+    - target: {fileID: 2036476419564599184, guid: 7bf7f59f0cde74645873f3e8ec276e9e, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2036476419564599184, guid: 7bf7f59f0cde74645873f3e8ec276e9e, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2036476419564599184, guid: 7bf7f59f0cde74645873f3e8ec276e9e, type: 3}
+      propertyPath: m_Shadows.m_NormalBias
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637405188238373451, guid: 7bf7f59f0cde74645873f3e8ec276e9e, type: 3}
+      propertyPath: m_UsePipelineSettings
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637405188238373451, guid: 7bf7f59f0cde74645873f3e8ec276e9e, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8592464987959794377, guid: 7bf7f59f0cde74645873f3e8ec276e9e, type: 3}
       propertyPath: m_RootOrder
       value: 77
       objectReference: {fileID: 0}
     - target: {fileID: 8592464987959794377, guid: 7bf7f59f0cde74645873f3e8ec276e9e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8592464987959794377, guid: 7bf7f59f0cde74645873f3e8ec276e9e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.29
+      value: -0.27
       objectReference: {fileID: 0}
     - target: {fileID: 8592464987959794377, guid: 7bf7f59f0cde74645873f3e8ec276e9e, type: 3}
       propertyPath: m_LocalPosition.z
