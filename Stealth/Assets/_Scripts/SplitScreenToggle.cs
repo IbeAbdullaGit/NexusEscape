@@ -12,9 +12,10 @@ public class SplitScreenToggle : MonoBehaviour
     void Start()
     {
         inputAction = PlayerInputController.controller.inputAction;
-        inputAction.Player1.ToggleSplitScreen.performed += cntxt => SplitScreen();
+        //inputAction.Player1.ToggleSplitScreen.performed += cntxt => SplitScreen();
 
-        screen = transform.GetChild(0).GetComponent<Camera>();
+        //screen = transform.GetChild(0).GetComponent<Camera>();
+        screen = GetComponent<PlayerController>().cam.GetComponent<Camera>();
         screen2 = GameObject.FindGameObjectWithTag("Player2").transform.GetChild(0).GetComponent<Camera>();
     }
 
@@ -41,6 +42,11 @@ public class SplitScreenToggle : MonoBehaviour
                 screen.orthographicSize =1;
                 screen2.orthographicSize = 1;
             }
+        }
+        //for manually switch
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            SplitScreen();
         }
     }
     void SplitScreen()

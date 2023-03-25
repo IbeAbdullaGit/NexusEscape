@@ -144,7 +144,7 @@ public class EnemyAI : MonoBehaviour
         NavMeshAgent.isStopped = true;
         //play pause
         SetMovementState(MovementState.looking);
-        Debug.Log("Should be looking");
+       // Debug.Log("Should be looking");
         //wait
         //Debug.Log("Waiting");
         yield return delay;
