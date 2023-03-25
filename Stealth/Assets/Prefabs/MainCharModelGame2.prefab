@@ -9987,9 +9987,9 @@ GameObject:
   - component: {fileID: 6411549651789487326}
   - component: {fileID: 1463552783416538814}
   - component: {fileID: 5573177804746838141}
+  - component: {fileID: 3562215867895264795}
   - component: {fileID: 1621828747667859916}
   - component: {fileID: 3713172572590132233}
-  - component: {fileID: 3562215867895264795}
   m_Layer: 0
   m_Name: MainCharModelGame2
   m_TagString: Untagged
@@ -10102,6 +10102,40 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3562215867895264795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8331631458160608622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d6ba26eae1b114baa653b3c2df9efb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 5573177804746838141}
+  cam: {fileID: 6546582449422993742}
+  walkSpeed: 8
+  sensitivity: 0.1
+  maxForce: 1
+  jumpForce: 4
+  snappiness: 1
+  runSpeed: 14
+  crouchSpeed: 3
+  crouchYScale: 0.5
+  move: {x: 0, y: 0}
+  look: {x: 0, y: 0}
+  grounded: 0
+  state: 0
+  interactionDistance: 0
+  interactionLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  canInteract: 1
+  interactKey: 323
+  maxSlopeAngle: 0
+  GameOverScreen: {fileID: 0}
 --- !u!114 &1621828747667859916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10180,15 +10214,51 @@ MonoBehaviour:
     m_ActionId: 66a0745f-95bb-46c5-86bd-52b3dd6bd4b7
     m_ActionName: Player2/Look[/Mouse/delta,/Pen/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3562215867895264795}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 2dd52ca4-aa75-4cde-94ab-0a35ce64c844
     m_ActionName: Player1/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3562215867895264795}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 1e41c776-0892-4b96-8461-c4dd849010c6
     m_ActionName: Player1/Jump[/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3562215867895264795}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnLook
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: f82ed524-373b-442c-a24e-b6f1d7698752
     m_ActionName: Player1/Look[/Mouse/delta,/Pen/delta]
   - m_PersistentCalls:
@@ -10212,40 +10282,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acced2e6672bd6e46a33df57e43dc190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3562215867895264795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8331631458160608622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7d6ba26eae1b114baa653b3c2df9efb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 5573177804746838141}
-  cam: {fileID: 6546582449422993742}
-  walkSpeed: 8
-  sensitivity: 0.1
-  maxForce: 1
-  jumpForce: 4
-  snappiness: 1
-  runSpeed: 14
-  crouchSpeed: 3
-  crouchYScale: 0.5
-  move: {x: 0, y: 0}
-  look: {x: 0, y: 0}
-  grounded: 0
-  state: 0
-  interactionDistance: 0
-  interactionLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  canInteract: 1
-  interactKey: 323
-  maxSlopeAngle: 0
-  GameOverScreen: {fileID: 0}
 --- !u!1 &8345095021301594744
 GameObject:
   m_ObjectHideFlags: 0
