@@ -58,7 +58,7 @@ public class InteractButtons : Interactable
 
         //Don't forget to change to false
         menuUI.enabled = false;
-        LightUpUI.enabled = true;
+        LightUpUI.enabled = false;
         
     }
 
@@ -89,6 +89,7 @@ public class InteractButtons : Interactable
     public void TurnOff()
     {
         menuUI.enabled = false;
+        LightUpUI.enabled = false;
         openMenu = false;
         //turn off cursor
         if (Cursor.lockState == CursorLockMode.None)
