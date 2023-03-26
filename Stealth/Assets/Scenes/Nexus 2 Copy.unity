@@ -8761,6 +8761,8 @@ MonoBehaviour:
   runSpeed: 8
   crouchSpeed: 3
   crouchYScale: 0.5
+  move: {x: 0, y: 0}
+  look: {x: 0, y: 0}
   grounded: 0
   state: 0
   interactionDistance: 5
@@ -9566,6 +9568,7 @@ GameObject:
   - component: {fileID: 297503558}
   - component: {fileID: 297503557}
   - component: {fileID: 297503555}
+  - component: {fileID: 297503566}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: GameController
@@ -9586,7 +9589,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openMenu: 0
-  menuUI: {fileID: 0}
   cameras:
   - {fileID: 2100000, guid: 1bb5498f4ba764d4b8b2b5bd92f8c7ef, type: 2}
   - {fileID: 2100000, guid: 190d2bd191319bb4cbdca4580ad93412, type: 2}
@@ -9645,6 +9647,8 @@ MonoBehaviour:
   correct: 0
   openMenu: 0
   menuUI: {fileID: 0}
+  LightUpUI: {fileID: 0}
+  colors: []
 --- !u!114 &297503558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9743,8 +9747,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f88a84c551c1794d94c851be312ff23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keycard: {fileID: 0}
+  keycardNum: 0
+  ids: 
   currentTile: {fileID: 0}
+  images: []
 --- !u!114 &297503564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9772,6 +9778,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &297503566
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297503554}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &297973152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10011,6 +10030,7 @@ MonoBehaviour:
   distance: 2
   isButton: 1
   render: {fileID: 629509946}
+  cameras: {fileID: 0}
 --- !u!65 &309241931
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12454,7 +12474,15 @@ MonoBehaviour:
   PipeManagers: {fileID: 0}
   solution:
   - 90
+  triggerincorrect: []
   isPlaced: 0
+  placedincorrect: 0
+  dontswitch: 0
+  original: {fileID: 0}
+  newcolor: {fileID: 0}
+  wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
+  PipeConnected: []
 --- !u!114 &363743872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14046,7 +14074,15 @@ MonoBehaviour:
   solution:
   - 0
   - 180
+  triggerincorrect: []
   isPlaced: 0
+  placedincorrect: 0
+  dontswitch: 0
+  original: {fileID: 0}
+  newcolor: {fileID: 0}
+  wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
+  PipeConnected: []
 --- !u!114 &407758793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15427,7 +15463,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openMenu: 0
   menuUI: {fileID: 2067104621}
+  _otherdoor: {fileID: 0}
+  LightUpUI: {fileID: 0}
+  colors: []
   buttonOrder: 0600000003000000010000000700000005000000020000000800000004000000
+--- !u!65 &453190032
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453190030}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &454412491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17276,7 +17328,15 @@ MonoBehaviour:
   PipeManagers: {fileID: 0}
   solution:
   - 90
+  triggerincorrect: []
   isPlaced: 0
+  placedincorrect: 0
+  dontswitch: 0
+  original: {fileID: 0}
+  newcolor: {fileID: 0}
+  wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
+  PipeConnected: []
 --- !u!114 &506655856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21770,7 +21830,15 @@ MonoBehaviour:
   PipeManagers: {fileID: 0}
   solution:
   - 90
+  triggerincorrect: []
   isPlaced: 1
+  placedincorrect: 0
+  dontswitch: 0
+  original: {fileID: 0}
+  newcolor: {fileID: 0}
+  wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
+  PipeConnected: []
 --- !u!114 &638611223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34187,6 +34255,7 @@ MonoBehaviour:
   totalPipes: 0
   correctPipes: 0
   _otherdoor: {fileID: 596321120}
+  RemovePipes: {fileID: 0}
 --- !u!1001 &1060816678
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39500,7 +39569,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openMenu: 0
   menuUI: {fileID: 2067104621}
+  _otherdoor: {fileID: 0}
+  LightUpUI: {fileID: 0}
+  colors: []
   buttonOrder: 0300000006000000020000000700000005000000010000000400000008000000
+--- !u!65 &1258371191
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258371189}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1259856906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41958,7 +42043,15 @@ MonoBehaviour:
   PipeManagers: {fileID: 0}
   solution:
   - 180
+  triggerincorrect: []
   isPlaced: 0
+  placedincorrect: 0
+  dontswitch: 0
+  original: {fileID: 0}
+  newcolor: {fileID: 0}
+  wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
+  PipeConnected: []
 --- !u!114 &1360320832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44654,7 +44747,15 @@ MonoBehaviour:
   PipeManagers: {fileID: 0}
   solution:
   - 0
+  triggerincorrect: []
   isPlaced: 0
+  placedincorrect: 0
+  dontswitch: 0
+  original: {fileID: 0}
+  newcolor: {fileID: 0}
+  wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
+  PipeConnected: []
 --- !u!114 &1466358853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48801,6 +48902,8 @@ MonoBehaviour:
   runSpeed: 8
   crouchSpeed: 3
   crouchYScale: 0.5
+  move: {x: 0, y: 0}
+  look: {x: 0, y: 0}
   grounded: 0
   state: 0
   interactionDistance: 5
@@ -50805,6 +50908,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1658721947}
   - component: {fileID: 1658721946}
+  - component: {fileID: 1658721948}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -50889,6 +50993,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1658721948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658721945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1001 &1664933614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52842,7 +52966,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openMenu: 0
   menuUI: {fileID: 2067104621}
-  buttonOrder: 0700000004000000080000000200000006000000030000000100000005000000
+  _otherdoor: {fileID: 1701085523}
+  LightUpUI: {fileID: 0}
+  colors: []
+  buttonOrder: 07000000040000000800000002000000
+--- !u!1 &1701085523 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7029948723529949830, guid: 80c75ec3d74c75f439101c7909003795, type: 3}
+  m_PrefabInstance: {fileID: 1701085519}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1701085524
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701085521}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1702048032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58154,7 +58299,15 @@ MonoBehaviour:
   PipeManagers: {fileID: 0}
   solution:
   - 270
+  triggerincorrect: []
   isPlaced: 1
+  placedincorrect: 0
+  dontswitch: 0
+  original: {fileID: 0}
+  newcolor: {fileID: 0}
+  wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
+  PipeConnected: []
 --- !u!114 &1841680008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61086,7 +61239,15 @@ MonoBehaviour:
   solution:
   - 0
   - 180
+  triggerincorrect: []
   isPlaced: 0
+  placedincorrect: 0
+  dontswitch: 0
+  original: {fileID: 0}
+  newcolor: {fileID: 0}
+  wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
+  PipeConnected: []
 --- !u!114 &1897385940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68620,7 +68781,15 @@ MonoBehaviour:
   solution:
   - 0
   - 180
+  triggerincorrect: []
   isPlaced: 0
+  placedincorrect: 0
+  dontswitch: 0
+  original: {fileID: 0}
+  newcolor: {fileID: 0}
+  wrongcolor: {fileID: 0}
+  theogsprite: {fileID: 0}
+  PipeConnected: []
 --- !u!114 &2136455959
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractButtons : Interactable
 {
@@ -10,6 +11,13 @@ public class InteractButtons : Interactable
      ButtonPressOrder instance;
     public GameObject _otherdoor;
     DoorInvoker _doorInvoker;
+
+    public Canvas LightUpUI;
+    //private float stayLit = 2;
+    public WaitForSeconds stayLit = new WaitForSeconds(5f);
+    public WaitForSeconds changeColor = new WaitForSeconds(1f);
+    public Image[] colors;
+    private bool work = true;
 
 
     //the answer
@@ -47,13 +55,17 @@ public class InteractButtons : Interactable
         //will need to change this eventually as well for multiple instance
         //instance.buttonOrder = this.buttonOrder;
        _doorInvoker = new DoorInvoker();
+
+        //Don't forget to change to false
         menuUI.enabled = false;
+        LightUpUI.enabled = true;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
         //correct answer
         if (instance.correct)
         {
@@ -65,7 +77,15 @@ public class InteractButtons : Interactable
 
             //do something, activate object
         }
+
+        if (work)
+        {
+            StartCoroutine(ButtonLit());
+            work = false;
+        }
     }
+
+       
     public void TurnOff()
     {
         menuUI.enabled = false;
@@ -81,6 +101,7 @@ public class InteractButtons : Interactable
     public void ChangeUI()
     {
         menuUI.enabled = !menuUI.enabled;
+        LightUpUI.enabled = !LightUpUI.enabled;
         openMenu = !openMenu;
         if (Cursor.lockState == CursorLockMode.Locked)
         {
@@ -102,4 +123,35 @@ public class InteractButtons : Interactable
         _doorInvoker.AddCommand(openDoor);
     }
 
-}
+    private IEnumerator ButtonLit()
+    {
+            int colorindex;
+
+            for (int j = 0; j < buttonOrder.Count;)
+            {
+                //Get the value and set it as the index --> change the color to green of that index
+                colorindex = buttonOrder[j] - 1;
+
+
+
+            colors[colorindex].color = Color.green;
+            yield return stayLit;
+
+            colors[colorindex].color = Color.white;
+            j++;
+                
+                //If they user does not get the correct reset the order, and give a longer time so the players realize that this is the start
+                if (j == buttonOrder.Count)
+                {
+                    j = 0;
+                    stayLit = new WaitForSeconds(5f);
+                }
+            else
+            {
+                stayLit = new WaitForSeconds(2f);
+            }
+
+            }
+        }
+    }
+
