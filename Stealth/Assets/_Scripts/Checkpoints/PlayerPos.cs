@@ -13,6 +13,9 @@ public class PlayerPos : MonoBehaviour
         inventory = GameObject.FindGameObjectWithTag("GameController").GetComponent<Inventory>();
         transform.position = manager.lastCheckPointPos;
 
+
+        //also other management of checkpoints
+        //for nexus 2 specifically
          switch (manager.checkpointNum)
         {
             //for the first checkpoint, give keycard back
@@ -21,6 +24,18 @@ public class PlayerPos : MonoBehaviour
                 //keep inventory
                 //inventory.ResetCards();
                 inventory.AddCard(1,1); //for now
+                break;
+            }
+            case 3:
+            {
+                //also open door
+                manager.GetConnectedDoor().OpenDoor();
+                break;
+            }
+            case 4:
+            {
+                //open door that we need opened
+                manager.GetConnectedDoor().OpenDoor();
                 break;
             }
             default:

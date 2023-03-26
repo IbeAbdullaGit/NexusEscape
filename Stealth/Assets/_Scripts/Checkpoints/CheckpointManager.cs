@@ -8,6 +8,8 @@ public class CheckpointManager : MonoBehaviour
    public Vector3 lastCheckPointPos;
 
    public int checkpointNum = 0;
+
+   Door connectDoor;
    private void Awake() {
     
         if (instance ==null)
@@ -17,5 +19,13 @@ public class CheckpointManager : MonoBehaviour
         }
         else
             Destroy(gameObject);
+   }
+   public void SetConnectedDoor(Door d)
+   {
+        connectDoor = d;
+   }
+   public Door GetConnectedDoor()
+   {
+        return connectDoor;
    }
 }
