@@ -39,6 +39,8 @@ public class InteractionMessages : MonoBehaviour
         message.AddString("nexus 2 door 1"); //for nexus 2 specifically
 
         NetworkManagerServer.Singleton.Server.SendToAll(message);
+
+         Debug.Log("Sending to client");
     }
     public void TyperInteract()
     {
@@ -68,8 +70,10 @@ public class InteractionMessages : MonoBehaviour
     //receiving messages
     #region Messages
     [MessageHandler((ushort)ClientToServerId.pipePuzzleFinish)]
-    private static void PipePuzzleAnswer(Message message)
+    private static void PipePuzzleAnswer(ushort fromClientId, Message message)
     {
+       Debug.Log("Opening Door");
+       
        //get int
        var n = message.GetInt(); //this is actually not too important, we don't do anything with this int
        //but now we need to activate the aftermath
@@ -79,7 +83,7 @@ public class InteractionMessages : MonoBehaviour
 
     }
      [MessageHandler((ushort)ClientToServerId.typingPuzzleFinish)]
-    private static void TypingPuzzleAnswer(Message message)
+    private static void TypingPuzzleAnswer(ushort fromClientId, Message message)
     {
        //let us know if this is the answer for 1st or 2nd type
        int type = message.GetInt();

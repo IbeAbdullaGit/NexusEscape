@@ -34,6 +34,23 @@ public class InteractionHandler : MonoBehaviour
         Singleton = this;
     }
 
+    private void Update() {
+        
+        //manually send for testing purposes
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Debug.Log("Completing pipe puzzle?");
+            
+            //send network message, to open the door
+            Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.pipePuzzleFinish);
+            //add an id so we know what we're talking about
+            message.AddInt(1); //1 - for this case
+            //send message
+            NetworkManagerClient.Singleton.Client.Send(message);
+            
+            //Destroy(transform.gameObject.GetComponentInParent<Canvas>().gameObject);
+        }
+    }
      void DoInteractions(int type, string context, int context2 = 0)
      {
         //convert to switch case after
@@ -106,6 +123,8 @@ public class InteractionHandler : MonoBehaviour
     [MessageHandler((ushort)ServerToClientId.puzzleInteraction)]
     private static void PuzzleInteraction(Message message)
     {
+        Debug.Log("Getting interaction");
+        
         int type = message.GetInt();
 
         //1 - swipe keycard
@@ -114,7 +133,7 @@ public class InteractionHandler : MonoBehaviour
 
         string context = message.GetString();
 
-        int context2 = message.GetInt();
+        int context2 = message.GetInt(); //will not always have
         InteractionHandler.Singleton.DoInteractions(type, context, context2);
         
     }

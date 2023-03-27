@@ -24,7 +24,10 @@ public class KeycardPickup : Interactable
          this.transform.position = player.transform.position;
          //give offset, increase float value for further distance
          this.transform.position += player.transform.forward * 2.0f; */
-
+         //also make sure cursor stuff not happening again when interacting
+         //change back to normal
+        CrosshairControl.instance.SetNormal();
+        //delete game object
          Destroy(gameObject);
        }
     }

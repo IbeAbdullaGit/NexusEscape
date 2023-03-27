@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerController2 : MonoBehaviour
 {
     public Rigidbody rb;
-    public GameObject cam;
+    //public GameObject cam;
     public float walkSpeed, sensitivity, maxForce, jumpForce, snappiness;
     public float runSpeed;
     public float crouchSpeed;
@@ -92,54 +92,10 @@ public class PlayerController2 : MonoBehaviour
         grounded = Physics.Raycast(transform.position, -Vector3.up, distanceToGround);
        }
 
-       if (canInteract)
-         {
-            HandleInteractionCheck();
-            HandleInteractionInput();
-         }
+       
     }
-    private void HandleInteractionCheck()
-    {
-        //adjust for not main camera
-        Ray ray = cam.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, interactionDistance))
-        {
-            //Debug.Log("Succesful raycast");
-            //on the right layer for interactables, and theres not currently anything we're interacting with, OR we're looking at a new object that's not currently looked at
-            if (hit.collider.gameObject.layer ==10 && (currentInteractable == null || hit.collider.gameObject.GetInstanceID() != currentInteractable.gameObject.GetInstanceID()))
-            {
-                //will infer we want interactable
-                hit.collider.TryGetComponent<Interactable>(out currentInteractable);
-
-                
-
-                //if we've got an interactable, give it focus
-                if (currentInteractable)
-                    currentInteractable.OnFocus();
-            }
-        }
-        //raycast doesnt have anything but we have something interacted
-        else if (currentInteractable)
-        {
-            //lose the interactable
-            currentInteractable.OnLoseFocus();
-            currentInteractable = null;
-        }
-        
-    }
-    private void HandleInteractionInput()
-    {
-        Ray ray = cam.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Input.GetKeyDown(interactKey) && currentInteractable != null && Physics.Raycast(ray, out hit, interactionDistance, interactionLayer))
-        {
-            //Debug.Log("trying to do interaction");
-            //do the interaction
-            currentInteractable.OnInteract();
-        }
-        
-    }
+    
+    
      private void FixedUpdate() {
         
         {

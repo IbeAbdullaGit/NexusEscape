@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17368507, g: 0.21714576, b: 0.29926863, a: 1}
+  m_IndirectSpecularColor: {r: 0.007125132, g: 0.007965918, b: 0.008431217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2796,6 +2796,8 @@ MonoBehaviour:
   openMenu: 0
   menuUI: {fileID: 1617120797}
   _otherdoor: {fileID: 1115721389}
+  LightUpUI: {fileID: 0}
+  colors: []
   buttonOrder: 0600000003000000010000000700000005000000
 --- !u!1 &67326637
 GameObject:
@@ -5275,6 +5277,7 @@ MonoBehaviour:
   look: {x: 0, y: 0}
   grounded: 0
   state: 0
+  direction: 0
   interactionDistance: 5
   interactionLayer:
     serializedVersion: 2
@@ -7045,7 +7048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1813186261456232526, guid: b83ae464fb386e84fb3ba2eb8714ae4d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -64.01
+      value: -60.12
       objectReference: {fileID: 0}
     - target: {fileID: 1813186261456232526, guid: b83ae464fb386e84fb3ba2eb8714ae4d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -24746,6 +24749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7439598bbddc884f94d6f619fe51256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  connectedDoor: {fileID: 0}
 --- !u!65 &665528100
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37265,7 +37269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.290836
+      value: -2.263
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -37273,7 +37277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.8220453
+      value: -3.0307
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -38198,6 +38202,8 @@ MonoBehaviour:
   openMenu: 0
   menuUI: {fileID: 1617120797}
   _otherdoor: {fileID: 2012994606}
+  LightUpUI: {fileID: 0}
+  colors: []
   buttonOrder: 0700000004000000080000000200000006000000
 --- !u!4 &1055572698 stripped
 Transform:
@@ -44002,6 +44008,8 @@ MonoBehaviour:
   openMenu: 0
   menuUI: {fileID: 1617120797}
   _otherdoor: {fileID: 2102823066}
+  LightUpUI: {fileID: 0}
+  colors: []
   buttonOrder: 0300000006000000020000000700000005000000
 --- !u!1001 &1284585886
 PrefabInstance:
@@ -46892,15 +46900,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355666076}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b75aaafda9cb394fb3759acfbbc09b7, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e33f5376e7494848a613cdea1fed291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberCams: 0
-  baseMat: {fileID: 2100000, guid: cdf82c5e92b9abf4ebd9032e055c5c51, type: 2}
-  allcams: []
-  cameraView: {fileID: 1767037655}
+  keySwiper1: {fileID: 98957741}
+  button1: {fileID: 1590349982}
+  button2: {fileID: 1044476821}
+  buttonMeters:
+  - {fileID: 474803420}
+  - {fileID: 1698882503}
+  - {fileID: 48171634}
+  - {fileID: 424712589}
+  - {fileID: 928913624}
+  - {fileID: 1630751413}
+  - {fileID: 1750678549}
 --- !u!1001 &1364215397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58567,11 +58582,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4873863284610506982, guid: c887f73026cf6034ea2f13a6ed11211e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 59.42
+      value: 59.78
       objectReference: {fileID: 0}
     - target: {fileID: 4873863284610506982, guid: c887f73026cf6034ea2f13a6ed11211e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -57.998787
+      value: -52.81
       objectReference: {fileID: 0}
     - target: {fileID: 4873863284610506982, guid: c887f73026cf6034ea2f13a6ed11211e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -60803,7 +60818,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1783290762
 RectTransform:
   m_ObjectHideFlags: 0
@@ -60825,7 +60840,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 4.3, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 4.1836, y: -7.9126}
+  m_AnchoredPosition: {x: 4.1836, y: -7.738}
   m_SizeDelta: {x: 987.6, y: 410}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1783290763
@@ -64483,7 +64498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.1540508
+      value: -2.731
       objectReference: {fileID: 0}
     - target: {fileID: 6480478535937441509, guid: aa96c115d9bdc15488640ade3b9d88a4, type: 3}
       propertyPath: m_LocalRotation.w

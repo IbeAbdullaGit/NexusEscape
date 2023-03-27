@@ -12,6 +12,7 @@ public abstract class Interactable : MonoBehaviour
   }
   
    public abstract void OnInteract();
+   
    public virtual void OnFocus()
    {
       //can interact, change cursor

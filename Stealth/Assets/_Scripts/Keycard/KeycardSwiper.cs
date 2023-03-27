@@ -21,7 +21,7 @@ public class KeycardSwiper : Interactable
     {
         //inventory = GameObject.FindGameObjectWithTag("GameController").GetComponent<Inventory>();
         _doorInvoker = new DoorInvoker();
-        pipepuzzle = GetComponentInChildren<Canvas>();
+        //pipepuzzle = GetComponentInChildren<Canvas>();
         pipepuzzle.enabled = false;
 
     }

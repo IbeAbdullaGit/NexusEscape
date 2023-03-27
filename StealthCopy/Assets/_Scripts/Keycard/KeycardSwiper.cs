@@ -57,6 +57,7 @@ public class KeycardSwiper : Interactable
                         pipepuzzle.enabled = true;
                         //only happens once so, now send signal to client
                         InteractionMessages.Singleton.KeycardInteract();
+                       Debug.Log("Should be sending");
 
                     }
                     //turn on pipe puzzle

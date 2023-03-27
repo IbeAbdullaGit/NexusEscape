@@ -19,8 +19,6 @@ public enum ClientToServerId : ushort
 {
     name = 1,
     input,
-    cameras,
-    inputSimple,
     pipePuzzleFinish,
     typingPuzzleFinish,
 }

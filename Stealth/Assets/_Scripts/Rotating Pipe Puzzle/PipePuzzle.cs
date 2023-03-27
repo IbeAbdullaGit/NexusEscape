@@ -245,13 +245,7 @@ public class PipePuzzle : MonoBehaviour
             //else if(placedincorrect == true && PipeConnected
             else
             {
-                original.sprite = theogsprite;
-           
-               
-               
-               
-                
-                
+                original.sprite = theogsprite;                         
             }
         }
         else if(PipeConnected.Length == 2)
