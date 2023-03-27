@@ -67,7 +67,7 @@ public class Typer : MonoBehaviour
                 {
                     if (i==0) //first one
                     {
-                        GetComponent<LinkedPuzzle>().ActivateText();
+                        GetComponent<LinkedPuzzle>().ActivateText(); //activates the text
                         //send message
                          //send network message, to open the door
                         Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.typingPuzzleFinish);
@@ -78,7 +78,7 @@ public class Typer : MonoBehaviour
                     }
                     else if (i ==1) //second one
                     {
-                        GetComponent<LinkedPuzzle>().ActivateDoor();
+                        GetComponent<LinkedPuzzle>().ActivateDoor(); //activates the door
                         //send message
                         //send network message, to open the door
                         Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.typingPuzzleFinish);
