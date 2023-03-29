@@ -14,7 +14,7 @@ public class ActivateTyper : Interactable
     
     public override void OnInteract()
     {
-        typer.GetComponent<Typer>().ResetTyping();
+        //typer.GetComponent<Typer>().ResetTyping();
 
         if (isButton)
         {
@@ -30,6 +30,9 @@ public class ActivateTyper : Interactable
         typer.GetComponent<LinkedPuzzle>().ZeroEverything();
         //now set specific answer
         typer.GetComponent<LinkedPuzzle>().amount_linked[puzzle_type] = true;
+
+        typer.GetComponent<Typer>().typerActive = true; //set flag
+
         //activate typer
         typer.GetComponent<Typer>().ResetTyping();
     }

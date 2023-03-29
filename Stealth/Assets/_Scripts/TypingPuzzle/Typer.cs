@@ -19,7 +19,9 @@ public class Typer : MonoBehaviour
     //int wrongCount = 0;
     int rightCount = 0;
 
-    
+    public bool typerActive = false;
+
+    public FMODUnity.EventReference typingSound;
 
     Timer currentTimer;
     
@@ -95,7 +97,7 @@ public class Typer : MonoBehaviour
             }
         }
         //losing condition
-        if (currentTimer.hitLimit)
+        if (currentTimer.hitLimit && typerActive == true)
         {
             //reset
             //typingCanvas.enabled = false;
@@ -117,7 +119,10 @@ public class Typer : MonoBehaviour
         wordBank.ResetBank();
         SetCurrentWord();
         currentTimer.ResetTimer();
-        typingCanvas.enabled = true;
+        if (typerActive)
+        {
+            typingCanvas.enabled = true;
+        }
     }
     private void CheckInput()
     {
@@ -133,6 +138,8 @@ public class Typer : MonoBehaviour
     {
         if (IsCorrectLetter(typedLetter))
         {
+            FMODUnity.RuntimeManager.PlayOneShot(typingSound); //Play the typing sound where the Typing canvas is
+
             RemoveLetter();
 
             if (IsWordComplete())
