@@ -10131,7 +10131,7 @@ MonoBehaviour:
   grounded: 0
   state: 0
   direction: 0
-  interactionDistance: 0
+  interactionDistance: 5
   interactionLayer:
     serializedVersion: 2
     m_Bits: 1024
