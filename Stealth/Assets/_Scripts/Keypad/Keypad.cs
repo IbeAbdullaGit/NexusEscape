@@ -18,15 +18,21 @@ public class Keypad : MonoBehaviour
 
    public bool correct = false;
 
-   public void Number(int number)
-   {
-    if (counter ==0)
+    public FMODUnity.EventReference correctSound;
+
+    public FMODUnity.EventReference incorrectSound;
+
+    public FMODUnity.EventReference buttonPress;
+    public void Number(int number)
     {
-        Ans.text = "";
-        counter +=1;
+        FMODUnity.RuntimeManager.PlayOneShot(buttonPress);
+        if (counter ==0)
+        {
+            Ans.text = "";
+            counter +=1;
+        }
+        Ans.text += number.ToString();
     }
-    Ans.text += number.ToString();
-   }
    
    public void Execute()
    {
@@ -36,6 +42,8 @@ public class Keypad : MonoBehaviour
              counter = 0;
             //do something
             currentInstance.correct = true;
+            FMODUnity.RuntimeManager.PlayOneShot(correctSound);
+
         }
         else
         {
@@ -43,6 +51,7 @@ public class Keypad : MonoBehaviour
             counter = 0;
             //do something else, penalty
             currentInstance.correct = false;
+            FMODUnity.RuntimeManager.PlayOneShot(incorrectSound);
         }
    }
 }
