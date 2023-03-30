@@ -12,6 +12,11 @@ public class MenuPopUp : MonoBehaviour
 
     public void ChangeMenu()
     {
-        subMenu.enabled = !subMenu.enabled;
+        subMenu.enabled = true;
+    }
+
+    public void CloseOptions()
+    {
+        subMenu.enabled = false;
     }
 }

@@ -19,7 +19,7 @@ public class InteractKeypad : Interactable
     DoorInvoker _doorInvoker;
 
     public bool correct=false;
-     SoundManager soundInstance;
+    //SoundManager soundInstance;
 
     public override void OnFocus()
     {
@@ -40,7 +40,7 @@ public class InteractKeypad : Interactable
         //let manager know this is the current instance
         instance.currentInstance = this;
         //play sound
-        soundInstance.PlaySound(SoundManager.Sound.InteractPress);
+        //soundInstance.PlaySound(SoundManager.Sound.InteractPress);
         
     }
     public override void OnLoseFocus()
@@ -71,7 +71,7 @@ public class InteractKeypad : Interactable
         
         menuUI.enabled = false;
         _doorInvoker = new DoorInvoker();
-         soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
+        //soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
     }
 
     // Update is called once per frame
