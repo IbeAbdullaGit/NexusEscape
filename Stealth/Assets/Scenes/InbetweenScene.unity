@@ -846,6 +846,7 @@ GameObject:
   - component: {fileID: 1416483477}
   - component: {fileID: 1416483476}
   - component: {fileID: 1416483479}
+  - component: {fileID: 1416483480}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -906,6 +907,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a031bcf15bc8d4c4aa1eaf34d32d50b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1416483480
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416483475}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1511587417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,6 +1275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1784289477}
   - component: {fileID: 1784289476}
+  - component: {fileID: 1784289478}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1345,6 +1360,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1784289478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784289475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &1815713922
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,7 +1428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}

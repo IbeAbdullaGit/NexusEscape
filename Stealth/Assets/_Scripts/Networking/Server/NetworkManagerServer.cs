@@ -25,6 +25,8 @@ public enum ClientToServerId : ushort
 public class NetworkManagerServer : MonoBehaviour
 {
     private static NetworkManagerServer _singleton;
+
+    bool connected = false;
     public static NetworkManagerServer Singleton
     {
         get => _singleton;
@@ -52,7 +54,9 @@ public class NetworkManagerServer : MonoBehaviour
 
     private void Start()
     {
-        Application.targetFrameRate = 60; //stops it going too fast
+        //we dont need in start
+        
+        /* Application.targetFrameRate = 60; //stops it going too fast
 
         RiptideLogger.Initialize(Debug.Log, Debug.Log, Debug.LogWarning, Debug.LogError, false);
 
@@ -60,17 +64,38 @@ public class NetworkManagerServer : MonoBehaviour
         Server.Start(port, maxClientCount);
         Server.ClientDisconnected += PlayerLeft;
         Server.ClientConnected += PlayerJoin;
+
+        Debug.Log("Started server"); */
         
+    }
+
+    public void StartServer()
+    {
+        Application.targetFrameRate = 60; //stops it going too fast
+
+        RiptideLogger.Initialize(Debug.Log, Debug.Log, Debug.LogWarning, Debug.LogError, false);
+
+        Server = new Server();
+        Server.Start(port, maxClientCount);
+        Server.ClientDisconnected += PlayerLeft;
+       // Server.ClientConnected += PlayerJoin;
+       Server.ClientConnected += CanStartGame;
+
+        Debug.Log("Started server");
+
+        connected = true;
     }
 
     private void FixedUpdate()
     {
-        Server.Update();
+        if (connected)
+            Server.Update();
     }
 
     private void OnApplicationQuit()
     {
-        Server.Stop();
+        if (connected)
+            Server.Stop();
     }
 
     private void PlayerJoin(object sender, ServerConnectedEventArgs e)
@@ -82,6 +107,7 @@ public class NetworkManagerServer : MonoBehaviour
         player.Id = 2;
         player.Username = "hacker";
 
+        
         player.SendSpawned();
         //PlayerServer.list.Add(2, player);
 
@@ -90,6 +116,13 @@ public class NetworkManagerServer : MonoBehaviour
 
         SetupAI();
         
+    }
+    private void CanStartGame(object sender, ServerConnectedEventArgs e)
+    {
+        //assume we will only see this at the start of the game when we connect and have the lobby component
+        //the rest will be handled by lobby script, all we need is this button to be available
+        if (GetComponent<Lobby>())
+            GetComponent<Lobby>().startButton.interactable = true;
     }
     private void SetupAI()
     {

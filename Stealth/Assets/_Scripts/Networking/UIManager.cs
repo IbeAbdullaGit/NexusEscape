@@ -47,6 +47,8 @@ public class UIManager : MonoBehaviour
         connectUI.SetActive(false);
         GameObject.Destroy(connectUI);
 
+        //switch scene first before connecting
+
         NetworkManagerClient.Singleton.Connect();
 
         //mouse stuff

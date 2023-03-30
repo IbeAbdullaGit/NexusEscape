@@ -73,7 +73,9 @@ public class PlayerServer : MonoBehaviour
     [MessageHandler((ushort)ClientToServerId.name)]
     private static void Name(ushort fromClientId, Message message)
     {
-        Spawn(fromClientId, message.GetString());
+        //Spawn(fromClientId, message.GetString());
+
+        //we don't need to spawn
     }
 
     [MessageHandler((ushort)ClientToServerId.input)]

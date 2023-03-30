@@ -30,6 +30,8 @@ public class NetworkManagerClient : MonoBehaviour
 
     bool serverConnected = false;
 
+    bool connected = false;
+
     public static NetworkManagerClient Singleton
     {
         get => _singleton;
@@ -57,6 +59,19 @@ public class NetworkManagerClient : MonoBehaviour
 
     private void Start()
     {
+        /* Application.targetFrameRate = 60; //stops it going too fast
+        RiptideLogger.Initialize(Debug.Log, Debug.Log, Debug.LogWarning, Debug.LogError, false);
+
+        //subscribe to events
+        Client = new Client();
+        Client.Connected += DidConnect;
+        Client.ConnectionFailed += FailedToConnect;
+        Client.ClientDisconnected += PlayerLeft;
+        Client.Disconnected += DidDisconnect; */
+        
+    }
+    public void StartClient()
+    {
         Application.targetFrameRate = 60; //stops it going too fast
         RiptideLogger.Initialize(Debug.Log, Debug.Log, Debug.LogWarning, Debug.LogError, false);
 
@@ -66,7 +81,8 @@ public class NetworkManagerClient : MonoBehaviour
         Client.ConnectionFailed += FailedToConnect;
         Client.ClientDisconnected += PlayerLeft;
         Client.Disconnected += DidDisconnect;
-        
+
+        connected = true;
     }
     private void SetupAI()
     {
@@ -79,7 +95,8 @@ public class NetworkManagerClient : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Client.Update();
+        if (connected)
+            Client.Update();
        /*  if (receivedServerStartTick)
         {
             serverEstimatedTick++;
@@ -93,10 +110,10 @@ public class NetworkManagerClient : MonoBehaviour
     }
     private void Update()
     {
-        if (GameObject.FindGameObjectWithTag("Player") != null && !serverConnected)
+        if (GameObject.FindGameObjectWithTag("Player") != null && !serverConnected && connected)
         {
             serverConnected = true;
-            SetupAI();
+            //SetupAI();
         }
     }
 

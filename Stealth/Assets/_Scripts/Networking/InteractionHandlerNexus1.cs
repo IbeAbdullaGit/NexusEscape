@@ -42,6 +42,22 @@ public class InteractionHandlerNexus1 : MonoBehaviour
             //activate typer
             buttonPress.GetComponent<ActivateTyper>().OnInteract();
         }
+        else if (type ==4)
+        {
+            //switch level
+            Debug.Log("Switching Scene");
+            //save
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<SavePlugin>().SaveProgress();
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("InbetweenScene");
+        }
+        else if (type ==5) //go to nexus 2
+        {
+            //switch level
+            Debug.Log("Switching Scene");
+            //save
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<SavePlugin>().SaveProgress();
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Nexus2Client");
+        }
        
      }
 }

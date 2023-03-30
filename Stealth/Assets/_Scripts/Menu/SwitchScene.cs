@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Riptide;
 
 public class SwitchScene : MonoBehaviour
 {
@@ -21,11 +22,26 @@ public class SwitchScene : MonoBehaviour
    {
       //plus 1 for next scene
       //WE ALREADY SAVED PLUS 1 PREVIOUSLY
-      int id = GetComponent<SavePlugin>().GetCurrentID();
+      /* int id = GetComponent<SavePlugin>().GetCurrentID();
       //dont load what we dont have
       //scene count starts at 1, id starts at 0, scene count should always be bigger
       if (SceneManager.sceneCountInBuildSettings > id)
-         ChangeScene(id);
+         ChangeScene(id); */
+
+      //change for networking
+      //realistically we are only going to go to nexus 2 because theres no other inbetweens
+      if (NetworkManagerServer.Singleton != null) //only if this is the server
+      {
+         Message message = Message.Create(MessageSendMode.Reliable, ServerToClientId.puzzleInteraction);
+         message.AddInt(5); //button meter puzzle
+         NetworkManagerServer.Singleton.Server.SendToAll(message);
+
+         ChangeScene("Nexus2Server");
+      }
+      else //not the server, so the client
+      {
+         ChangeScene("Nexus2Client");
+      }
    }
 
    public void ChangeScene(string title)
