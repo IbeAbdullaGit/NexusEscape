@@ -138,7 +138,7 @@ public class Typer : MonoBehaviour
     {
         if (IsCorrectLetter(typedLetter))
         {
-            FMODUnity.RuntimeManager.PlayOneShot(typingSound); //Play the typing sound where the Typing canvas is
+            FMODUnity.RuntimeManager.PlayOneShot(typingSound, gameObject.transform.position); //Play the typing sound where the Typing canvas is
 
             RemoveLetter();
 
