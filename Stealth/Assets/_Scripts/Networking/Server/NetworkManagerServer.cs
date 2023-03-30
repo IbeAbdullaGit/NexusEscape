@@ -3,7 +3,7 @@ using Riptide.Utils;
 using UnityEngine;
 
 
-public enum ServerToClientId : ushort
+/* public enum ServerToClientId : ushort
 {
     playerSpawned = 1,
     input,
@@ -20,7 +20,7 @@ public enum ClientToServerId : ushort
     pipePuzzleFinish,
     typingPuzzleFinish,
     distraction,
-}
+} */
 
 public class NetworkManagerServer : MonoBehaviour
 {

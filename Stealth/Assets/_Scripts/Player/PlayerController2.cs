@@ -189,7 +189,7 @@ public class PlayerController2 : MonoBehaviour
         {
             crawl = !crawl;
         }
-    void Jump()
+    public void Jump()
     {
         //Vector3 jumpForces = Vector3.zero;
         if (grounded)
