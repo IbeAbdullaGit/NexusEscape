@@ -51,7 +51,7 @@ public class InteractionHandler : MonoBehaviour
             //Destroy(transform.gameObject.GetComponentInParent<Canvas>().gameObject);
         }
     }
-     void DoInteractions(int type, string context, int context2 = 0)
+    public void DoInteractions(int type, string context, int context2 = 0)
      {
         //convert to switch case after
         if (type == 1)
@@ -86,56 +86,54 @@ public class InteractionHandler : MonoBehaviour
             switch (context)
             {
                 case "1":
-                    //take the value for this button
+                 {   //take the value for this button
                     buttonMeters[0].value = context2;
                     break;
+                 }
                 case "2":
-                    //take the value for this button
+                 {   //take the value for this button
                     buttonMeters[1].value = context2;
                     break;
+                 }
                 case "3":
-                    //take the value for this button
+                 {   //take the value for this button
                     buttonMeters[2].value = context2;
                     break;
+                 }
                 case "4":
-                    //take the value for this button
+                  {  //take the value for this button
                     buttonMeters[3].value = context2;
                     break;
+                  }
                 case "5":
-                    //take the value for this button
+                  {  //take the value for this button
                     buttonMeters[4].value = context2;
                     break;
+                  }
                 case "6":
-                    //take the value for this button
+                   { //take the value for this button
                     buttonMeters[5].value = context2;
                     break;
+                   }
                 case "7":
-                    //take the value for this button
+                 {   //take the value for this button
                     buttonMeters[6].value = context2;
                     break;
+                 }
                 default:
+                    Debug.Log("Nothing worked");
                     break;
             }
         }
+        else if (type ==4)
+        {
+            //switch level
+            Debug.Log("Switching Scene");
+            //save
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<SavePlugin>().SaveProgress();
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("InbetweenScene");
+        }
      }
      
-     #region Messages    
-    [MessageHandler((ushort)ServerToClientId.puzzleInteraction)]
-    private static void PuzzleInteraction(Message message)
-    {
-        Debug.Log("Getting interaction");
-        
-        int type = message.GetInt();
-
-        //1 - swipe keycard
-        //2 - button press
-        //3 - button meter puzzle
-
-        string context = message.GetString();
-
-        int context2 = message.GetInt(); //will not always have
-        InteractionHandler.Singleton.DoInteractions(type, context, context2);
-        
-    }
-    #endregion
+    
 }

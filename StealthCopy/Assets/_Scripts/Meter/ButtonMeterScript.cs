@@ -25,6 +25,7 @@ public class ButtonMeterScript : MonoBehaviour
         if (buttonHeldDown && power <= maxPower)
         {
             power +=Time.deltaTime * chargeSpeed;
+            
             if (power >=maxPower)
             {
                 power = maxPower;
@@ -38,7 +39,14 @@ public class ButtonMeterScript : MonoBehaviour
     {
         buttonHeldDown = true;
         //send message
-        InteractionMessages.Singleton.ButtonMeterInteract(id, (int)power);
+        InteractionMessages.Singleton.ButtonMeterInteract(meter.GetComponent<SliderChange>().objectNumber, (int)power);
+        
+    }
+    public void ResetPower()
+    {
+        power = 0;
+        //send message
+        InteractionMessages.Singleton.ButtonMeterInteract(meter.GetComponent<SliderChange>().objectNumber, (int)power);
     }
     public void ReleaseButton()
     {
@@ -47,6 +55,6 @@ public class ButtonMeterScript : MonoBehaviour
         //ad some way to reset
 
         //send message
-        InteractionMessages.Singleton.ButtonMeterInteract(id, (int)power);
+        InteractionMessages.Singleton.ButtonMeterInteract(meter.GetComponent<SliderChange>().objectNumber, (int)power);
     }
 }

@@ -10,6 +10,9 @@ public class InteractionHandlerNexus1 : MonoBehaviour
    
      private static InteractionHandlerNexus1 _singleton;
 
+    public GameObject buttonPress;
+
+
 
     public static InteractionHandlerNexus1 Singleton
     {
@@ -30,29 +33,15 @@ public class InteractionHandlerNexus1 : MonoBehaviour
         Singleton = this;
     }
 
-     void DoInteractions(int type, string context, int context2 = 0)
+     public void DoInteractions(int type)
      {
-        
+        //receive button press
+        if (type ==1)
+        {
+            //rest of the info doesnt matter
+            //activate typer
+            buttonPress.GetComponent<ActivateTyper>().OnInteract();
+        }
        
      }
-     
-     #region Messages    
-    [MessageHandler((ushort)ServerToClientId.puzzleInteraction)]
-    private static void PuzzleInteraction(Message message)
-    {
-        Debug.Log("Getting interaction");
-        
-        int type = message.GetInt();
-
-        //1 - swipe keycard
-        //2 - button press
-        //3 - button meter puzzle
-
-        string context = message.GetString();
-
-        int context2 = message.GetInt(); //will not always have
-        InteractionHandlerNexus1.Singleton.DoInteractions(type, context, context2);
-        
-    }
-    #endregion
 }

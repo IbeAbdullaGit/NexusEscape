@@ -21,6 +21,7 @@ public enum ClientToServerId : ushort
     input,
     pipePuzzleFinish,
     typingPuzzleFinish,
+    distraction,
 }
 
 public class NetworkManagerClient : MonoBehaviour

@@ -13,6 +13,8 @@ public class InteractionMessages : MonoBehaviour
 
     public GameObject pipeManager;
 
+    public GameObject distractionButton;
+
        public static InteractionMessages Singleton
     {
         get => _singleton;
@@ -62,7 +64,7 @@ public class InteractionMessages : MonoBehaviour
     {
          Message message = Message.Create(MessageSendMode.Reliable, ServerToClientId.puzzleInteraction);
          message.AddInt(3); //button meter puzzle
-         message.AddString(id.ToString());
+         message.AddString((id+1).ToString());
          message.AddInt(power);
 
          NetworkManagerServer.Singleton.Server.SendToAll(message);
@@ -99,6 +101,16 @@ public class InteractionMessages : MonoBehaviour
             InteractionMessages.Singleton.typer.GetComponent<LinkedPuzzle>().ActivateDoor();
             //InteractionMessages.Singleton.GetComponent<LinkedPuzzle>().ActivateDoor();
        }
+    }
+    [MessageHandler((ushort)ClientToServerId.distraction)]
+    private static void SpawnDistraction(ushort fromClientId, Message message)
+    {
+       //simulate button press for the camera distraction, need to know which camera we're looknig at
+       int cam = message.GetInt();
+       Debug.Log(cam);
+       //just spawn distraction where needed, calling button
+       InteractionMessages.Singleton.distractionButton.GetComponent<SpawnDistraction>().RemoteInteract(cam);
+       Debug.Log("Distracting");
     }
      #endregion
 }

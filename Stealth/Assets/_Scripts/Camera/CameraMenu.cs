@@ -48,6 +48,14 @@ public class CameraMenu : MonoBehaviour
     {
         return cams[cameraIndex];
     }
+    public Camera GetCameraFromIndex(int n)
+    {
+        return cams[n];
+    }
+    public int GetCameraIndex()
+    {
+        return cameraIndex;
+    }
     void OpenMenu()
     {
        

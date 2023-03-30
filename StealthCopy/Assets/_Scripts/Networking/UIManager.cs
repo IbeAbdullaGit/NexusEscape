@@ -39,7 +39,7 @@ public class UIManager : MonoBehaviour
         usernameField.interactable = false;
         connectUI.SetActive(false);
 
-        NetworkManagerClient.Singleton.Connect();
+        //NetworkManagerClient.Singleton.Connect();
     }
 
     public void BackToMain()
@@ -52,6 +52,6 @@ public class UIManager : MonoBehaviour
     {
         Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.name);
         message.AddString(usernameField.text);
-        NetworkManagerClient.Singleton.Client.Send(message);
+        //NetworkManagerClient.Singleton.Client.Send(message);
     }
 }

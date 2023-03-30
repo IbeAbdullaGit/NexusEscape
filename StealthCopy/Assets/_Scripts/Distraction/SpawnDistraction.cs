@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Riptide;
 
 public class SpawnDistraction : Interactable
 {
@@ -42,7 +43,18 @@ public class SpawnDistraction : Interactable
                 anim.SetTrigger("press");
             }
             StartCoroutine(Spawn());
+            //also start on server side
+            //we need to send current camera
+            Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.distraction);
+            //send index of which camera this is
+            message.AddInt(cameras.GetCameraIndex());
+            //send message
+            NetworkManagerClient.Singleton.Client.Send(message);
         }
+    }
+    public void RemoteInteract(int n)
+    {
+        StartCoroutine(Spawn2(n));
     }
     IEnumerator Spawn()
     {
@@ -56,6 +68,29 @@ public class SpawnDistraction : Interactable
             if (!currentDistraction.gameObject.activeSelf)
                 
                 currentDistraction.gameObject.SetActive(true);
+
+            //now, start the cooldown
+            yield return cooldown;
+        }
+        //otherwise do nothing
+        //after cooldown, allow spawning again
+        spawning = false;
+    }
+    IEnumerator Spawn2(int n)
+    {
+        //we are spawning rn
+        spawning = true;
+        Debug.Log("Distraction function ran");
+        //we dont need to check on server side, we should already know
+        //if (hasDistraction)
+        {
+            Debug.Log("Trying interaction");
+            currentDistraction = cameras.GetCameraFromIndex(n).GetComponent<CameraSettings>().distraction;
+            //check if the distraction is enabled
+            if (!currentDistraction.gameObject.activeSelf)
+                
+                currentDistraction.gameObject.SetActive(true);
+                Debug.Log("Distracting");
 
             //now, start the cooldown
             yield return cooldown;

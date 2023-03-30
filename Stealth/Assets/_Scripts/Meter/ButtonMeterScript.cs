@@ -34,15 +34,18 @@ public class ButtonMeterScript : MonoBehaviour
         }
         
         //use an int to make calculating target ranges easier
-        meter.value = (int)power;
+        //disable here for now for client side
+        //meter.value = (int)power;
     }
     public void HoldButton()
     {
         buttonHeldDown = true;
+        meter.value = (int)power;
     }
     public void ReleaseButton()
     {
         buttonHeldDown = false;
+        meter.value = (int)power;
         //power = 0;
         //ad some way to reset
     }
