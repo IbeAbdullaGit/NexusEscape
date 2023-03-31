@@ -14,12 +14,24 @@ public class Lobby : MonoBehaviour
     public Button serverButton;
     public Button startButton;
 
+    public GameObject clientManager;
+    public GameObject serverManager;
    
     public void ConnectClient()
     {
+        //turn on client manager
+        clientManager.gameObject.SetActive(true);
+        //we will keep this manager throughout the whole time
+        DontDestroyOnLoad(clientManager);
+        
         //make client
-        client = gameObject.AddComponent<NetworkManagerClient>();
+        client = clientManager.GetComponent<NetworkManagerClient>();
+        //client = GetComponent<NetworkManagerClient>();
+        //client settings
+        //client.ip = "127.0.0.1";
+        //client.port = 8888;
 
+        //start client
         client.StartClient();
         
         serverButton.interactable = false;
@@ -29,9 +41,13 @@ public class Lobby : MonoBehaviour
 
     public void ConnectServer()
     {
+        serverManager.gameObject.SetActive(true); //turn on server
+        DontDestroyOnLoad(serverManager);
         //make server
-        server = gameObject.AddComponent<NetworkManagerServer>();
-
+        server = serverManager.GetComponent<NetworkManagerServer>();
+        //set server settings
+        //server.port = 8888;
+        //server.maxClientCount = 2;
         //cant interact as client now
         clientButton.interactable = false;
         
@@ -49,13 +65,15 @@ public class Lobby : MonoBehaviour
         //send both client and server to their respective scenes
         if (server != null)
         {
+            //the server is the one starting the game
+            //send message to client to switch scene
+            Message message = Message.Create(MessageSendMode.Reliable, ServerToClientId.startGame);
+            NetworkManagerServer.Singleton.Server.SendToAll(message);
+
+            Debug.Log("Starting Game");
             GetComponent<SwitchScene>().ChangeScene("Nexus1Server");
-            //when loading scene, just load normal as we would expect
-            //but we will have to figure out who is who
+            
         }
-        if (client != null)
-        {
-            GetComponent<SwitchScene>().ChangeScene("Nexus1Client");
-        }
+        
     }
 }

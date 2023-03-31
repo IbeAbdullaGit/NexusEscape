@@ -53,6 +53,7 @@ public class InteractionHandler : MonoBehaviour
     }
     public void DoInteractions(int type, string context, int context2 = 0)
      {
+        Debug.Log("Nexus 2 interaction");
         //convert to switch case after
         if (type == 1)
         {

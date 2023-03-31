@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nexus 2.unity
     guid: 321793f65e6fe5546979df03d6d84c7d
+  - enabled: 1
+    path: Assets/Scenes/Nexus1Client.unity
+    guid: 015259bd18e950d44955fdea58279ffa
+  - enabled: 1
+    path: Assets/Scenes/Nexus1Server.unity
+    guid: 7b40a39d000a81d46bdb24b9c82603ef
   m_configObjects: {}

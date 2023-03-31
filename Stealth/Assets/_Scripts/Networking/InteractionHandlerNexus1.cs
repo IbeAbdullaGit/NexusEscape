@@ -35,6 +35,8 @@ public class InteractionHandlerNexus1 : MonoBehaviour
 
      public void DoInteractions(int type)
      {
+        Debug.Log("Nexus 1 interaction");
+        
         //receive button press
         if (type ==1)
         {

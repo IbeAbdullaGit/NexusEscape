@@ -25,6 +25,7 @@ public class InteractionServerNexus1 : MonoBehaviour
             }
         }
     }
+   //for this, we dont actually need it to be on the same manager as the main client stuff
      private void Awake()
     {
         Singleton = this;

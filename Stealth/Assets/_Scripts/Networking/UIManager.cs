@@ -44,16 +44,16 @@ public class UIManager : MonoBehaviour
     public void ConnectClicked()
     {
         usernameField.interactable = false;
-        connectUI.SetActive(false);
-        GameObject.Destroy(connectUI);
+       // connectUI.SetActive(false);
+        //GameObject.Destroy(connectUI);
 
         //switch scene first before connecting
 
         NetworkManagerClient.Singleton.Connect();
 
         //mouse stuff
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+       // Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
 
         
     }
