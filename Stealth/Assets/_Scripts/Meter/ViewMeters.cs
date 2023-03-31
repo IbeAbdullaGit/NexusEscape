@@ -9,8 +9,10 @@ public class ViewMeters : Interactable
 
     public Canvas menuUI;
 
-    SoundManager soundInstance;
-     public override void OnInteract()
+
+    private FMODUnity.EventReference buttonEvent;
+    //SoundManager soundInstance;
+    public override void OnInteract()
     {
         //Debug.Log("Changing UI");
         ChangeUI();
@@ -18,7 +20,8 @@ public class ViewMeters : Interactable
         anim.Play("Armature|Press");
         anim.SetTrigger("press");
         //play sound
-        soundInstance.PlaySound(SoundManager.Sound.ButtonPress);
+        //soundInstance.PlaySound(SoundManager.Sound.ButtonPress);
+        FMODUnity.RuntimeManager.PlayOneShotAttached(buttonEvent, gameObject);
 
     }
     public void ChangeUI()
@@ -43,7 +46,11 @@ public class ViewMeters : Interactable
         //disable at start
         menuUI.enabled = false;
         anim = GetComponent<Animator>();
-        soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
+        //soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
+
+        //SOUND STUFF
+        buttonEvent.Path = "event:/Sound Effects/Interactions/ButtonPress";
+        buttonEvent.Guid = new FMOD.GUID(new System.Guid("{cddf1de5-b51e-4239-8159-157ec49145d7}"));
     }
 
     // Update is called once per frame

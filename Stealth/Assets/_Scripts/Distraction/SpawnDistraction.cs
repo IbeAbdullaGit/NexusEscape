@@ -33,14 +33,25 @@ public class SpawnDistraction : Interactable
 
     public CameraMenu cameras;
 
+    private FMODUnity.EventReference buttonEvent;
+    private FMODUnity.EventReference buttonpositiveEvent;
+
     public override void OnInteract()
-    { 
+    {
         if (!spawning)
         {     //play animation
             if (isButton)
             {
                 anim.Play("Armature|Press");
                 anim.SetTrigger("press");
+                if (hasDistraction)
+                {
+                    FMODUnity.RuntimeManager.PlayOneShotAttached(buttonpositiveEvent, gameObject);
+                }
+                else
+                {
+                    FMODUnity.RuntimeManager.PlayOneShotAttached(buttonEvent, gameObject);
+                }
             }
             
             StartCoroutine(Spawn());
@@ -110,6 +121,13 @@ public class SpawnDistraction : Interactable
             original = render.material.color;
         }
         //Debug.Log("Camera menu: " + cameras.name);
+
+        //SOUND STUFF
+        buttonEvent.Path = "event:/Sound Effects/Interactions/ButtonPress";
+        buttonEvent.Guid = new FMOD.GUID(new System.Guid("{cddf1de5-b51e-4239-8159-157ec49145d7}"));
+
+        buttonpositiveEvent.Path = "event:/Sound Effects/Interactions/ButtonPressPos";
+        buttonpositiveEvent.Guid = new FMOD.GUID(new System.Guid("{ec62b5c4-693e-4fc8-aa36-5bf61805a2e1}"));
     }
     private void Update() {
         

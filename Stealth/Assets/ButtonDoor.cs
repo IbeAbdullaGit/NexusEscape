@@ -11,6 +11,8 @@ public class ButtonDoor : Interactable
     public Renderer render;
     Color original;
     public Door activateDoor;
+
+    private FMODUnity.EventReference buttonEvent;
     public override void OnInteract()
     {
         if (isButton)
@@ -18,6 +20,8 @@ public class ButtonDoor : Interactable
             anim.Play("Armature|Press");
             anim.SetTrigger("press");
             activateDoor.OpenDoor();
+            FMODUnity.RuntimeManager.PlayOneShotAttached(buttonEvent, gameObject);
+
         }
     }
 
@@ -28,6 +32,9 @@ public class ButtonDoor : Interactable
         {
             anim = GetComponent<Animator>();
             original = render.material.color;
+            //SOUND STUFF
+            buttonEvent.Path = "event:/Sound Effects/Interactions/ButtonPress";
+            buttonEvent.Guid = new FMOD.GUID(new System.Guid("{cddf1de5-b51e-4239-8159-157ec49145d7}"));
         }
     }
 
