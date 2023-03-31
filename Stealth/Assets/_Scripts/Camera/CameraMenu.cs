@@ -21,6 +21,9 @@ public class CameraMenu : MonoBehaviour
 
     PopUpSystem pop;
 
+    public Vector3 soundLocation = new Vector3(-0.21f, 5.8f, 208.75f);
+    private FMODUnity.EventReference cameraSound;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,10 +36,14 @@ public class CameraMenu : MonoBehaviour
         inputAction = PlayerInputController.controller.inputAction;
         inputAction.Player2.Menu.performed += cntxt => OpenMenu();
         //inputAction.Player2.NextCamera.performed += cntxt => SwitchCameras();
-       
+
         //menuUI.enabled = false;
 
         //pop = GameObject.FindGameObjectWithTag("GameController").GetComponent<PopUpSystem>();
+
+        //SOUND STUFF
+        cameraSound.Path = "event:/Sound Effects/Interactions/ChangeCamera";
+        cameraSound.Guid = new FMOD.GUID(new System.Guid("{f7c06c79-dd65-4764-9b10-d63191ce3772}"));
 
         cameraIndex = 0;
         //let first camera change colour
@@ -96,9 +103,11 @@ public class CameraMenu : MonoBehaviour
             cameraIndex = 0;
         }
         //cameraView.material = cameras[cameraIndex];
-       
-       //swap new camera plane texture
-       GetCurrentCamera().GetComponentInChildren<ChangeMinimapColour>().ChangeColour();
+
+        FMODUnity.RuntimeManager.PlayOneShot(cameraSound, soundLocation);
+
+        //swap new camera plane texture
+        GetCurrentCamera().GetComponentInChildren<ChangeMinimapColour>().ChangeColour();
 
         var materialsCopy = cameraView.GetComponent<MeshRenderer>().materials;
         materialsCopy[1] = cameras[cameraIndex]; //2ND MATERIAL FOR THIS CONTEXT
@@ -113,6 +122,8 @@ public class CameraMenu : MonoBehaviour
             cameraIndex = cameras.Length - 1;
         }
         //cameraView.material = cameras[cameraIndex];
+
+        FMODUnity.RuntimeManager.PlayOneShot(cameraSound, soundLocation);
 
         var materialsCopy = cameraView.GetComponent<MeshRenderer>().materials;
         materialsCopy[1] = cameras[cameraIndex]; //2ND MATERIAL FOR THIS CONTEXT

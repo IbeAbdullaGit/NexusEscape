@@ -7,8 +7,8 @@ public class FlexibleClick : Interactable
 {
     public UnityEvent eventToTrigger;
     Animator anim;
-    SoundManager soundInstance;
-
+    //SoundManager soundInstance;
+    private FMODUnity.EventReference buttonEvent;
 
     public override void OnInteract()
     {
@@ -21,10 +21,15 @@ public class FlexibleClick : Interactable
         anim.SetTrigger("press");
         //play sound
         //soundInstance.PlaySound(SoundManager.Sound.ButtonPress);
+        FMODUnity.RuntimeManager.PlayOneShotAttached(buttonEvent, gameObject);
 
     }
     private void Start() {
         anim = GetComponent<Animator>();
-        soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
+        //soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
+
+        //SOUND STUFF
+        buttonEvent.Path = "event:/Sound Effects/Interactions/ButtonPress";
+        buttonEvent.Guid = new FMOD.GUID(new System.Guid("{cddf1de5-b51e-4239-8159-157ec49145d7}"));
     }
 }
