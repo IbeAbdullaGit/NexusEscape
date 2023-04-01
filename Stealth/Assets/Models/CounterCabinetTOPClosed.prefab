@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &9152862841597612482
 Transform:
@@ -84,13 +84,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6437035327310173299, guid: 3dde681182af4704db62e4d53db0dc57, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1496313504814872767, guid: 3dde681182af4704db62e4d53db0dc57, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -1120989108687609925, guid: 3dde681182af4704db62e4d53db0dc57, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: cbcb1279614e753438e895b6db3ece8b, type: 2}
+    - target: {fileID: -208595431880416365, guid: 3dde681182af4704db62e4d53db0dc57, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 210151302587313682, guid: 3dde681182af4704db62e4d53db0dc57, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3dde681182af4704db62e4d53db0dc57, type: 3}
       propertyPath: m_Name
       value: CounterCabinetTOPClosed
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3dde681182af4704db62e4d53db0dc57, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9149507189245197418, guid: 3dde681182af4704db62e4d53db0dc57, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
