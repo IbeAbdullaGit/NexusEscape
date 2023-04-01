@@ -13,6 +13,7 @@ public enum ServerToClientId : ushort
     inputSimple,
     aiUpdate,
     puzzleInteraction,
+    startGame,
 }
 
 public enum ClientToServerId : ushort
@@ -49,8 +50,8 @@ public class NetworkManagerClient : MonoBehaviour
 
     public Client Client { get; private set; }
 
-    [SerializeField] private string ip;
-    [SerializeField] private ushort port;
+    [SerializeField] public string ip;
+    [SerializeField] public ushort port;
 
     private void Awake()
     {
@@ -153,31 +154,18 @@ public class NetworkManagerClient : MonoBehaviour
             Destroy(player.gameObject);
     }
     
-   /*  public void EstimateClientServerStartTick(int serverTick)
-    {
-        serverEstimatedTick = Mathf.RoundToInt(serverTick + ((Client.RTT / 2) / 20));
-        clientPredictedTick = Mathf.RoundToInt(serverTick + ((Client.RTT / 2) / 20) * 2);
-        receivedServerStartTick = true;
-    }
-     public int EstimateServerTick(int serverTick)
-    {
-        if (serverEstimatedTick > serverTick)
-            return serverTick;
+   #region Messages
+   [MessageHandler((ushort)ServerToClientId.startGame)]
+   private static void StartGame(Message message)
+   {
+        //the contents of the message don't really matter, just this signal to start
+        //we should also have thhe UIManager and such attached at this point
+        //we are connecting specifically to nexus 1 client, there are no other cases
 
-        int serverCalculatedTick = Mathf.RoundToInt(serverTick + ((Client.RTT / 2) / 20));
-        if (serverEstimatedTick != serverCalculatedTick)
-        {
-            return serverCalculatedTick;
-        } else
-        {
-            return serverTick;
-        }
-    }
-     public void ResetTicks()
-    {
-        receivedServerStartTick = false;
-        clientPredictedTick = 0;
-        serverEstimatedTick = 0;
-        DelayTick = 0;
-    } */
+        Debug.Log("Starting Game");
+        //get game manager
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Nexus1Client");
+        //NetworkManagerClient.Singleton.GetComponent<SwitchScene>().ChangeScene("Nexus1Client");
+   }
+   #endregion
 }

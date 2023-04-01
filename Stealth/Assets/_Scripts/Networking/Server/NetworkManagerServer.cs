@@ -44,8 +44,8 @@ public class NetworkManagerServer : MonoBehaviour
 
     public Server Server { get; private set; }
 
-    [SerializeField] private ushort port;
-    [SerializeField] private ushort maxClientCount;
+    [SerializeField] public ushort port;
+    [SerializeField] public ushort maxClientCount;
 
     private void Awake()
     {
@@ -123,6 +123,9 @@ public class NetworkManagerServer : MonoBehaviour
         //the rest will be handled by lobby script, all we need is this button to be available
         if (GetComponent<Lobby>())
             GetComponent<Lobby>().startButton.interactable = true;
+
+        if (GameObject.FindGameObjectWithTag("GameController").GetComponent<Lobby>())
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<Lobby>().startButton.interactable = true;
     }
     private void SetupAI()
     {
