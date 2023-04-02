@@ -28,6 +28,7 @@ public class EnemyAI : MonoBehaviour
 
     DetectionMeter detectionMeter;
 
+    public float delayDuration = 1f;
     public WaitForSeconds delay = new WaitForSeconds(1f);
     public WaitForSeconds distract = new WaitForSeconds(5f);
 
@@ -72,6 +73,8 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
+        delay = new WaitForSeconds(delayDuration); //Custom wait duration
+
         NavMeshAgent = GetComponent<NavMeshAgent>();
         FOV = GetComponent<FieldOfView>();
         localScale = transform.localScale;
