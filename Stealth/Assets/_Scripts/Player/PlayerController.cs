@@ -57,7 +57,9 @@ public class PlayerController : MonoBehaviour
 
     public Canvas GameOverScreen;
 
-    SoundManager soundInstance;
+    //SoundManager soundInstance;
+    [SerializeField]
+    private OperatorPlayerSounds playerSounds;
 
     Vector3 lastPosition;   
 
@@ -116,7 +118,7 @@ public class PlayerController : MonoBehaviour
          //ASSIGN LATER
          //GameOverScreen.enabled = false;
 
-         soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
+         //soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
          lastPosition = transform.position;
          
     }
@@ -338,5 +340,11 @@ public class PlayerController : MonoBehaviour
            //soundInstance.PlaySound(SoundManager.Sound.PlayerDie, transform.position);
         
         }
+    }
+
+    private void PlayFootstep()
+    {
+        playerSounds.PlayFootsteps();
+        Debug.Log("playing footstep");
     }
 }
