@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody rb;
     public GameObject cam;
+
+    [SerializeField]
+    private GameObject head;
+
     public float walkSpeed, sensitivity, maxForce, jumpForce, snappiness;
     public float runSpeed;
     public float crouchSpeed;
@@ -289,12 +293,25 @@ public class PlayerController : MonoBehaviour
     void Look()
     {
         //turn
-        transform.Rotate(Vector3.up * look.x * sensitivity);
+        //transform.Rotate(Vector3.up * look.x * sensitivity);
 
         //look
-        lookRotation += (-look.y*sensitivity);
+        //lookRotation += (-look.y*sensitivity);
+        //lookRotation = Mathf.Clamp(lookRotation, -90f, 90f);
+        //cam.transform.eulerAngles = new Vector3(lookRotation, cam.transform.eulerAngles.y,cam.transform.eulerAngles.z);
+
+        //"look.x and y" were really buggy
+
+        lookRotation -= Input.GetAxis("Mouse Y") * sensitivity;
         lookRotation = Mathf.Clamp(lookRotation, -90f, 90f);
-        cam.transform.eulerAngles = new Vector3(lookRotation, cam.transform.eulerAngles.y,cam.transform.eulerAngles.z);
+
+        cam.transform.localRotation = Quaternion.Euler(lookRotation, 0f, 0f);
+        if (head != null)
+        {
+            cam.transform.position = new Vector3(cam.transform.position.x, head.transform.position.y, cam.transform.position.z); //Move Y axis to head
+        }
+        transform.Rotate(Vector3.up * (Input.GetAxis("Mouse X") * sensitivity));
+
     }
     // Start is called before the first frame update
    
