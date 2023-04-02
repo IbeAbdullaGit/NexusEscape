@@ -214,6 +214,7 @@ public class PlayerController : MonoBehaviour
     }
     private void StateHandler()
     {
+
         //mode - sprinting
         if (grounded && Input.GetKey(KeyCode.LeftShift))
         {
@@ -223,7 +224,7 @@ public class PlayerController : MonoBehaviour
             //play running sound
         }
         //moving
-        else if (grounded && lastPosition != transform.position)
+        else if (grounded && lastPosition != transform.position && state != MovementState.crouching)
         {
             state = MovementState.walking;
             speed = walkSpeed;
@@ -234,23 +235,27 @@ public class PlayerController : MonoBehaviour
         {
             state = MovementState.idle;
         }
-        //crouching
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-           state = MovementState.crouching;
-           speed = crouchSpeed;
-           
-           transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
-           rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
 
-           //play crouching sound
-                
+        //crouching
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            state = MovementState.crouching;
+            speed = crouchSpeed;
+            Debug.Log("crouching");
+
+            //transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
+            //rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+
+            //play crouching sound
+
         }
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
-           transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
-
+            //transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+            speed = walkSpeed;
+            state = MovementState.walking;
         }
+
         //for our network
         if (state == MovementState.sprinting)
             speed = runSpeed;
