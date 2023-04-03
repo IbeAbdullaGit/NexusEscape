@@ -70,6 +70,8 @@ public class SpawnDistraction : Interactable
         if (hasDistraction)
         {
             currentDistraction = cameras.GetCurrentCamera().GetComponent<CameraSettings>().distraction;
+            if (!currentDistraction.gameObject.activeSelf)
+                currentDistraction.gameObject.SetActive(true);
             //also start on server side
             //we need to send current camera
             Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.distraction);
@@ -79,9 +81,6 @@ public class SpawnDistraction : Interactable
             NetworkManagerClient.Singleton.Client.Send(message);
             Debug.Log("Sending message");
             //check if the distraction is enabled
-            if (!currentDistraction.gameObject.activeSelf)
-                
-                currentDistraction.gameObject.SetActive(true);
 
             //now, start the cooldown
             yield return cooldown;

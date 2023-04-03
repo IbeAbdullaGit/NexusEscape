@@ -6572,7 +6572,7 @@ GameObject:
   - component: {fileID: 5417581889196067481}
   - component: {fileID: -7354869312619401471}
   - component: {fileID: 2819798811733971605}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GuardFinalized
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6639,7 +6639,7 @@ Transform:
   - {fileID: 2857588789098097779}
   - {fileID: 7554387818094836181}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &8426269912630831229
 Rigidbody:
@@ -6707,6 +6707,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  delayDuration: 1
   opendoor: 1
   hasdoor: 0
   _otherdoor: {fileID: 0}
