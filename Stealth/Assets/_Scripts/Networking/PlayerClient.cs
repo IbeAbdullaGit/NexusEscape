@@ -28,6 +28,7 @@ public class PlayerClient : MonoBehaviour
         }
         else
         {
+            //THIS PART IS STILL IMPORTANT
             player = Instantiate(GameLogicClient.Singleton.Player1Prefab, position, Quaternion.identity).GetComponent<PlayerClient>();
             player.IsLocal = false;
         }
@@ -42,20 +43,23 @@ public class PlayerClient : MonoBehaviour
     [MessageHandler((ushort)ServerToClientId.playerSpawned)]
     private static void SpawnPlayer(Message message)
     {
+        Debug.Log("Got message");
         Spawn(message.GetUShort(), message.GetString(), message.GetVector3());
+        Debug.Log("Receiving spawn");
     }
     [MessageHandler((ushort)ServerToClientId.input)]
     private static void Input(Message message) //client side DOES NOT HAVE USHORT
     {
         //get the other player
         GameObject.FindGameObjectWithTag("Player").GetComponent<OtherPlayerServer>().SetInput(message.GetBools(2), message.GetVector2(), message.GetVector2());
-
+        Debug.Log("Receiving movement");
     }
     [MessageHandler((ushort)ServerToClientId.inputSimple)]
     private static void InputSimple(Message message) //client side DOES NOT HAVE USHORT
     {
         //get the other player
         GameObject.FindGameObjectWithTag("Player").GetComponent<OtherPlayerServer>().Move(message.GetVector3());
+        Debug.Log("Receiving move message");
 
     }
     /*   //handle cameras

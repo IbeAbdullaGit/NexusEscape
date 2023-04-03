@@ -13,7 +13,7 @@ public class PlayerServer : MonoBehaviour
 
     private void OnDestroy()
     {
-        list.Remove(Id);
+        //list.Remove(Id);
     }
 
     public static void Spawn(ushort id, string username)
@@ -55,6 +55,7 @@ public class PlayerServer : MonoBehaviour
     public void SendSpawned()
     {
         NetworkManagerServer.Singleton.Server.SendToAll(AddSpawnData(Message.Create(MessageSendMode.Reliable, ServerToClientId.playerSpawned)));
+        Debug.Log("Sent message");
     }
 
     private void SendSpawned(ushort toClientId)

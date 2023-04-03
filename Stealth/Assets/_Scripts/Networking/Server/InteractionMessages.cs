@@ -15,7 +15,7 @@ public class InteractionMessages : MonoBehaviour
 
     public GameObject distractionButton;
 
-       public static InteractionMessages Singleton
+    public static InteractionMessages Singleton
     {
         get => _singleton;
         private set

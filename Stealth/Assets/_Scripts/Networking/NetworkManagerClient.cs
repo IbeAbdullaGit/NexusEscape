@@ -56,6 +56,9 @@ public class NetworkManagerClient : MonoBehaviour
     private void Awake()
     {
         Singleton = this;
+        DontDestroyOnLoad(gameObject);
+        
+
     }
 
     private void Start()
@@ -82,8 +85,12 @@ public class NetworkManagerClient : MonoBehaviour
         Client.ConnectionFailed += FailedToConnect;
         Client.ClientDisconnected += PlayerLeft;
         Client.Disconnected += DidDisconnect;
-
+        
+       
+        
         connected = true;
+
+               
     }
     private void SetupAI()
     {
@@ -97,7 +104,7 @@ public class NetworkManagerClient : MonoBehaviour
     private void FixedUpdate()
     {
         if (connected)
-            Client.Update();
+           Client.Update();
        /*  if (receivedServerStartTick)
         {
             serverEstimatedTick++;
@@ -116,6 +123,7 @@ public class NetworkManagerClient : MonoBehaviour
             serverConnected = true;
             //SetupAI();
         }
+       
     }
 
     private void OnApplicationQuit()
@@ -126,11 +134,16 @@ public class NetworkManagerClient : MonoBehaviour
     public void Connect()
     {
         Client.Connect($"{ip}:{port}");
+       // Client.Connection.CanTimeout = false;
     }
 
     private void DidConnect(object sender, EventArgs e)
     {
-        UIManager.Singleton.SendName();
+        //UIManager.Singleton.SendName();
+        //disable timeouts
+        Client.Connection.CanTimeout = false;
+        Debug.Log("Connected");
+        
         //activae AI
         //EnemyNetworkManager.Singleton.ActivateAIs();
 
@@ -149,9 +162,13 @@ public class NetworkManagerClient : MonoBehaviour
 
     private void DidDisconnect(object sender, EventArgs e)
     {
-        UIManager.Singleton.BackToMain();
-        foreach (PlayerClient player in PlayerClient.list.Values)
-            Destroy(player.gameObject);
+        //UIManager.Singleton.BackToMain();
+        //foreach (PlayerClient player in PlayerClient.list.Values)
+            //Destroy(player.gameObject);
+
+        Debug.Log("Disconnected");
+        //try connecting again
+        //Connect();
     }
     
    #region Messages
@@ -165,6 +182,7 @@ public class NetworkManagerClient : MonoBehaviour
         Debug.Log("Starting Game");
         //get game manager
         GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Nexus1Client");
+        //Client.Connection.ResetTimeout();
         //NetworkManagerClient.Singleton.GetComponent<SwitchScene>().ChangeScene("Nexus1Client");
    }
    #endregion

@@ -28,7 +28,7 @@ public class MessageHandler : MonoBehaviour
         if (InteractionHandler.Singleton != null)
             InteractionHandler.Singleton.DoInteractions(type, context, context2);
         if (InteractionHandlerNexus1.Singleton != null)
-            InteractionHandlerNexus1.Singleton.DoInteractions(type);
+            InteractionHandlerNexus1.Singleton.DoInteractions(type, context, context2);
         
     }
     #endregion

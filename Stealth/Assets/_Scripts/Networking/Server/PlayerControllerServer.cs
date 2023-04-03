@@ -71,6 +71,8 @@ public class PlayerControllerServer : MonoBehaviour
         //send message
        
         NetworkManagerServer.Singleton.Server.SendToAll(message);
+
+        Debug.Log("Sending player movement");
     }
     #endregion
 }

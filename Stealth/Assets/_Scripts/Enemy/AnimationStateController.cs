@@ -21,7 +21,7 @@ public class AnimationStateController : MonoBehaviour
         {
             case EnemyAI.MovementState.looking:
                 animator.SetTrigger("is_looking");
-                Debug.Log("Is looking");
+                //Debug.Log("Is looking");
                 break;
             case EnemyAI.MovementState.seeking:
                 animator.SetTrigger("is_seeking");

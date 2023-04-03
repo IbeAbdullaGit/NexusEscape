@@ -22,7 +22,7 @@ public class Lobby : MonoBehaviour
         //turn on client manager
         clientManager.gameObject.SetActive(true);
         //we will keep this manager throughout the whole time
-        DontDestroyOnLoad(clientManager);
+       // DontDestroyOnLoad(clientManager);
         
         //make client
         client = clientManager.GetComponent<NetworkManagerClient>();
@@ -42,7 +42,7 @@ public class Lobby : MonoBehaviour
     public void ConnectServer()
     {
         serverManager.gameObject.SetActive(true); //turn on server
-        DontDestroyOnLoad(serverManager);
+        //DontDestroyOnLoad(serverManager);
         //make server
         server = serverManager.GetComponent<NetworkManagerServer>();
         //set server settings
@@ -71,6 +71,8 @@ public class Lobby : MonoBehaviour
             NetworkManagerServer.Singleton.Server.SendToAll(message);
 
             Debug.Log("Starting Game");
+            // NetworkManagerClient.Singleton.Client.Connection.CanTimeout = false;
+           // NetworkManagerClient.Singleton.Client.Connection.ResetTimeout();
             GetComponent<SwitchScene>().ChangeScene("Nexus1Server");
             
         }

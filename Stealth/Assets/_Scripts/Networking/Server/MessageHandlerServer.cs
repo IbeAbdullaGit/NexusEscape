@@ -53,7 +53,12 @@ public class MessageHandlerServer : MonoBehaviour
        int cam = message.GetInt();
        Debug.Log(cam);
        //just spawn distraction where needed, calling button
-       InteractionMessages.Singleton.distractionButton.GetComponent<SpawnDistraction>().RemoteInteract(cam);
+       //check ccase
+       if (InteractionMessages.Singleton != null)
+            InteractionMessages.Singleton.distractionButton.GetComponent<SpawnDistraction>().RemoteInteract(cam);
+        if (InteractionServerNexus1.Singleton!= null)
+            InteractionServerNexus1.Singleton.distractionButton.GetComponent<SpawnDistraction>().RemoteInteract(cam);
+
        Debug.Log("Distracting");
        }
     }

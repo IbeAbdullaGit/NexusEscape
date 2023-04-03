@@ -50,6 +50,7 @@ public class NetworkManagerServer : MonoBehaviour
     private void Awake()
     {
         Singleton = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -81,6 +82,8 @@ public class NetworkManagerServer : MonoBehaviour
        // Server.ClientConnected += PlayerJoin;
        Server.ClientConnected += CanStartGame;
 
+      
+
         Debug.Log("Started server");
 
         connected = true;
@@ -88,13 +91,16 @@ public class NetworkManagerServer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (connected)
+        //if (connected)
             Server.Update();
+    }
+    private void Update() {
+        //Server.Update();
     }
 
     private void OnApplicationQuit()
     {
-        if (connected)
+        //if (connected)
             Server.Stop();
     }
 
@@ -170,6 +176,8 @@ public class NetworkManagerServer : MonoBehaviour
     }
     private void PlayerLeft(object sender, ServerDisconnectedEventArgs e)
     {
-       Destroy(PlayerServer.list[e.Client.Id].gameObject);
+       //Destroy(PlayerServer.list[e.Client.Id].gameObject);
+       //try to connect again
+       NetworkManagerClient.Singleton.Connect();
     }
 }

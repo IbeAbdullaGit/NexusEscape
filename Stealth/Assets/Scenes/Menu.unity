@@ -3994,7 +3994,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1301546775}
   - component: {fileID: 1301546774}
-  - component: {fileID: 1301546773}
   - component: {fileID: 1301546772}
   m_Layer: 0
   m_Name: ClientManager
@@ -4015,20 +4014,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf8f52c59f02c3f479682995e83727cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1301546773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1301546771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08835c72037801042af9b7654fe41515, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player2Prefab: {fileID: 4460447127191851584, guid: 9f12e275ab615664c94cb5b38e73920b, type: 3}
-  player1Prefab: {fileID: 6501135915804894281, guid: 78ea37d1333d3344bb7e4f1659a00f42, type: 3}
 --- !u!114 &1301546774
 MonoBehaviour:
   m_ObjectHideFlags: 0

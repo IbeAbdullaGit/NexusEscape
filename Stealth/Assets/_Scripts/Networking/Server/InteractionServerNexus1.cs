@@ -11,6 +11,8 @@ public class InteractionServerNexus1 : MonoBehaviour
 
     public GameObject typer; 
 
+      public GameObject distractionButton;
+
     public static InteractionServerNexus1 Singleton
     {
         get => _singleton;
@@ -30,6 +32,24 @@ public class InteractionServerNexus1 : MonoBehaviour
     {
         Singleton = this;
     }
+
+    private void Start() {
+        //at the start of this script, send spawn message to hacker
+        //so that our player can be in
+        //spawn our player
+        //our player should have the player server script
+        PlayerServer player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerServer>();
+
+        player.name = "Player ground";
+        player.Id = 2;
+        player.Username = "ground";
+
+        //send spawn to other player, and this should send movement messages
+        
+        player.SendSpawned();
+
+        Debug.Log("Sending spawn message");
+    }
     //functions for sending messages
     //we only need button press
     public void TyperInteract()
@@ -38,6 +58,15 @@ public class InteractionServerNexus1 : MonoBehaviour
         message.AddInt(1); //swiper
         
         NetworkManagerServer.Singleton.Server.SendToAll(message);
+    }
+    public void ButtonMeterInteract(int id, int power)
+    {
+         Message message = Message.Create(MessageSendMode.Reliable, ServerToClientId.puzzleInteraction);
+         message.AddInt(2); //button meter puzzle for nexus 1
+         message.AddString((id+1).ToString());
+         message.AddInt(power);
+
+         NetworkManagerServer.Singleton.Server.SendToAll(message);
     }
 }
    
