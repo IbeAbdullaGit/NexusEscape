@@ -46,6 +46,7 @@ public class ViewMeters : Interactable
         //disable at start
         menuUI.enabled = false;
         anim = GetComponent<Animator>();
+       
         //soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
 
         //SOUND STUFF
@@ -53,9 +54,5 @@ public class ViewMeters : Interactable
         buttonEvent.Guid = new FMOD.GUID(new System.Guid("{cddf1de5-b51e-4239-8159-157ec49145d7}"));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

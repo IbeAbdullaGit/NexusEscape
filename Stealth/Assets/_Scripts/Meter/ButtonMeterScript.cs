@@ -14,12 +14,10 @@ public class ButtonMeterScript : MonoBehaviour
     bool buttonHeldDown;
 
     public Slider meter;
+    //easy way to have id, may change
+    public int id;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   
 
     // Update is called once per frame
     void Update()
@@ -27,6 +25,7 @@ public class ButtonMeterScript : MonoBehaviour
         if (buttonHeldDown && power <= maxPower)
         {
             power +=Time.deltaTime * chargeSpeed;
+            
             if (power >=maxPower)
             {
                 power = maxPower;
@@ -34,19 +33,38 @@ public class ButtonMeterScript : MonoBehaviour
         }
         
         //use an int to make calculating target ranges easier
-        //disable here for now for client side
-        //meter.value = (int)power;
+        meter.value = (int)power;
     }
     public void HoldButton()
     {
         buttonHeldDown = true;
-        meter.value = (int)power;
+        //send message
+        if (InteractionMessages.Singleton != null)
+            InteractionMessages.Singleton.ButtonMeterInteract(meter.GetComponent<SliderChange>().objectNumber, (int)power);
+        if (InteractionServerNexus1.Singleton !=null)
+            InteractionServerNexus1.Singleton.ButtonMeterInteract(meter.GetComponent<SliderChange>().objectNumber, (int)power);
+        
+    }
+    public void ResetPower()
+    {
+        power = 0;
+        //send message
+        if (InteractionMessages.Singleton != null)
+            InteractionMessages.Singleton.ButtonMeterInteract(meter.GetComponent<SliderChange>().objectNumber, (int)power);
+        if (InteractionServerNexus1.Singleton !=null)
+            InteractionServerNexus1.Singleton.ButtonMeterInteract(meter.GetComponent<SliderChange>().objectNumber, (int)power);
     }
     public void ReleaseButton()
     {
         buttonHeldDown = false;
-        meter.value = (int)power;
         //power = 0;
         //ad some way to reset
+
+        //send message
+        if (InteractionMessages.Singleton != null)
+            InteractionMessages.Singleton.ButtonMeterInteract(meter.GetComponent<SliderChange>().objectNumber, (int)power);
+        if (InteractionServerNexus1.Singleton !=null)
+            InteractionServerNexus1.Singleton.ButtonMeterInteract(meter.GetComponent<SliderChange>().objectNumber, (int)power);
+       
     }
 }

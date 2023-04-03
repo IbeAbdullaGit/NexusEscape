@@ -6,7 +6,7 @@ using Riptide;
 
 public class EndTrigger : MonoBehaviour
 {
-    public bool nexus1, nexus2 = false;
+   
    private void OnTriggerEnter(Collider other) {
     
     if (other.tag == "Player") //if the player comes in
@@ -20,7 +20,7 @@ public class EndTrigger : MonoBehaviour
         //also are we in nexus 1 or nexus 2
         if (NetworkManagerServer.Singleton != null)
         { 
-             if (nexus1)
+             if (InteractionHandlerNexus1.Singleton !=null) //nexus 1
              {
                 //networking, send
                 Message message = Message.Create(MessageSendMode.Reliable, ServerToClientId.puzzleInteraction);
@@ -29,7 +29,7 @@ public class EndTrigger : MonoBehaviour
           
                 GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("InbetweenScene");
              }
-             else if (nexus2)
+             else if (InteractionHandler.Singleton !=null) //nexus 2
              {
                 //networking, send
                 Message message = Message.Create(MessageSendMode.Reliable, ServerToClientId.puzzleInteraction);

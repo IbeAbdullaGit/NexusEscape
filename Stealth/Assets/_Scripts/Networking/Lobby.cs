@@ -67,13 +67,17 @@ public class Lobby : MonoBehaviour
         {
             //the server is the one starting the game
             //send message to client to switch scene
+             GetComponent<SwitchScene>().ChangeScene("Nexus1Server");
+
             Message message = Message.Create(MessageSendMode.Reliable, ServerToClientId.startGame);
             NetworkManagerServer.Singleton.Server.SendToAll(message);
+
+            NetworkManagerServer.Singleton.Server.Stop();
 
             Debug.Log("Starting Game");
             // NetworkManagerClient.Singleton.Client.Connection.CanTimeout = false;
            // NetworkManagerClient.Singleton.Client.Connection.ResetTimeout();
-            GetComponent<SwitchScene>().ChangeScene("Nexus1Server");
+           
             
         }
         
