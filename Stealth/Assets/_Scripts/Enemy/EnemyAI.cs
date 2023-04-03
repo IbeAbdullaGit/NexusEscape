@@ -28,8 +28,8 @@ public class EnemyAI : MonoBehaviour
 
     DetectionMeter detectionMeter;
 
-    public float delayDuration = 1f;
-    public WaitForSeconds delay = new WaitForSeconds(1f);
+    public float delayDuration = 3f;
+    public WaitForSeconds delay = new WaitForSeconds(3f);
     public WaitForSeconds distract = new WaitForSeconds(5f);
 
     public bool opendoor = true;
