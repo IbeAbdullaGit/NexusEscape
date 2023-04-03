@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody rb;
     public GameObject cam;
+
+    [SerializeField]
+    private GameObject head;
+
     public float walkSpeed, sensitivity, maxForce, jumpForce, snappiness;
     public float runSpeed;
     public float crouchSpeed;
@@ -57,7 +61,9 @@ public class PlayerController : MonoBehaviour
 
     public Canvas GameOverScreen;
 
-    SoundManager soundInstance;
+    //SoundManager soundInstance;
+    [SerializeField]
+    private OperatorPlayerSounds playerSounds;
 
     Vector3 lastPosition;   
 
@@ -116,7 +122,7 @@ public class PlayerController : MonoBehaviour
          //ASSIGN LATER
          //GameOverScreen.enabled = false;
 
-         soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
+         //soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
          lastPosition = transform.position;
          
     }
@@ -208,6 +214,7 @@ public class PlayerController : MonoBehaviour
     }
     private void StateHandler()
     {
+
         //mode - sprinting
         if (grounded && Input.GetKey(KeyCode.LeftShift))
         {
@@ -217,7 +224,7 @@ public class PlayerController : MonoBehaviour
             //play running sound
         }
         //moving
-        else if (grounded && lastPosition != transform.position)
+        else if (grounded && lastPosition != transform.position && state != MovementState.crouching)
         {
             state = MovementState.walking;
             speed = walkSpeed;
@@ -228,23 +235,27 @@ public class PlayerController : MonoBehaviour
         {
             state = MovementState.idle;
         }
-        //crouching
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-           state = MovementState.crouching;
-           speed = crouchSpeed;
-           
-           transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
-           rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
 
-           //play crouching sound
-                
+        //crouching
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            state = MovementState.crouching;
+            speed = crouchSpeed;
+            Debug.Log("crouching");
+
+            //transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
+            //rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+
+            //play crouching sound
+
         }
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
-           transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
-
+            //transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+            speed = walkSpeed;
+            state = MovementState.walking;
         }
+
         //for our network
         if (state == MovementState.sprinting)
             speed = runSpeed;
@@ -287,12 +298,25 @@ public class PlayerController : MonoBehaviour
     void Look()
     {
         //turn
-        transform.Rotate(Vector3.up * look.x * sensitivity);
+        //transform.Rotate(Vector3.up * look.x * sensitivity);
 
         //look
-        lookRotation += (-look.y*sensitivity);
+        //lookRotation += (-look.y*sensitivity);
+        //lookRotation = Mathf.Clamp(lookRotation, -90f, 90f);
+        //cam.transform.eulerAngles = new Vector3(lookRotation, cam.transform.eulerAngles.y,cam.transform.eulerAngles.z);
+
+        //"look.x and y" were really buggy
+
+        lookRotation -= Input.GetAxis("Mouse Y") * sensitivity;
         lookRotation = Mathf.Clamp(lookRotation, -90f, 90f);
-        cam.transform.eulerAngles = new Vector3(lookRotation, cam.transform.eulerAngles.y,cam.transform.eulerAngles.z);
+
+        cam.transform.localRotation = Quaternion.Euler(lookRotation, 0f, 0f);
+        if (head != null)
+        {
+            cam.transform.position = new Vector3(cam.transform.position.x, head.transform.position.y, cam.transform.position.z); //Move Y axis to head
+        }
+        transform.Rotate(Vector3.up * (Input.GetAxis("Mouse X") * sensitivity));
+
     }
     // Start is called before the first frame update
    
@@ -338,5 +362,11 @@ public class PlayerController : MonoBehaviour
            //soundInstance.PlaySound(SoundManager.Sound.PlayerDie, transform.position);
         
         }
+    }
+
+    private void PlayFootstep()
+    {
+        playerSounds.PlayFootsteps();
+        Debug.Log("playing footstep");
     }
 }

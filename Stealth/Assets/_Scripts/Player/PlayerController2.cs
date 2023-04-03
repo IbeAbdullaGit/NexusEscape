@@ -225,13 +225,19 @@ public class PlayerController2 : MonoBehaviour
     }
     void Look()
     {
-        //turn
-        transform.Rotate(Vector3.up * look.x * sensitivity);
+        ////turn
+        //transform.Rotate(Vector3.up * look.x * sensitivity);
 
-        //look
-        lookRotation += (-look.y*sensitivity);
+        ////look
+        //lookRotation += (-look.y*sensitivity);
+        //lookRotation = Mathf.Clamp(lookRotation, -90f, 90f);
+        //cam.transform.eulerAngles = new Vector3(lookRotation, cam.transform.eulerAngles.y,cam.transform.eulerAngles.z);
+
+        lookRotation -= Input.GetAxis("Mouse Y") * sensitivity;
         lookRotation = Mathf.Clamp(lookRotation, -90f, 90f);
-        cam.transform.eulerAngles = new Vector3(lookRotation, cam.transform.eulerAngles.y,cam.transform.eulerAngles.z);
+
+        cam.transform.localRotation = Quaternion.Euler(lookRotation, 0f, 0f);
+        transform.Rotate(Vector3.up * (Input.GetAxis("Mouse X") * sensitivity));
     }
     // Start is called before the first frame update
    

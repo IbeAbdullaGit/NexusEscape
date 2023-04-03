@@ -28,7 +28,7 @@ TagManager:
   - MinimapTile
   - PostProcessing
   - Ground
-  - 
+  - OperatorCameraIgnore
   - 
   - 
   - 

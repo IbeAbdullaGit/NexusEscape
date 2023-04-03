@@ -72,21 +72,21 @@ private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)
                 else{
                     canSeePlayer = false;
                     //change light color
-                    spotlight.color = Color.white;
+                    spotlight.color = new Color(0.8113f, 0.5367f, 0.1415f, 1);
                 }
             }
             
             else{
                 canSeePlayer = false;
                 //change light color
-                spotlight.color = Color.white;
+                spotlight.color = new Color(0.8113f, 0.5367f, 0.1415f, 1);
             }
         }
         else if (canSeePlayer) //if previously in view of enemy, but not anymore
         {
             canSeePlayer = false;
             //change light color
-            spotlight.color = Color.white;
+            spotlight.color = new Color(0.8113f, 0.5367f, 0.1415f, 1);
         }
     }
   
