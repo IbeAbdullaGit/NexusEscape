@@ -367,6 +367,6 @@ public class PlayerController : MonoBehaviour
     private void PlayFootstep()
     {
         playerSounds.PlayFootsteps();
-        Debug.Log("playing footstep");
+        //Debug.Log("playing footstep");
     }
 }

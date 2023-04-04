@@ -92,10 +92,11 @@ public class NetworkManagerServer : MonoBehaviour
     private void FixedUpdate()
     {
         //if (connected)
-            Server.Update();
+            //Server.Update();
     }
     private void Update() {
-        //Server.Update();
+        if (connected)
+            Server.Update();
     }
 
     private void OnApplicationQuit()
@@ -178,6 +179,6 @@ public class NetworkManagerServer : MonoBehaviour
     {
        //Destroy(PlayerServer.list[e.Client.Id].gameObject);
        //try to connect again
-       NetworkManagerClient.Singleton.Connect();
+      // NetworkManagerClient.Singleton.Connect();
     }
 }

@@ -48,19 +48,33 @@ public class MessageHandlerServer : MonoBehaviour
     [MessageHandler((ushort)ClientToServerId.distraction)]
     private static void SpawnDistraction(ushort fromClientId, Message message)
     {
-        if (InteractionMessages.Singleton != null)
+       if (InteractionMessages.Singleton != null)
        {//simulate button press for the camera distraction, need to know which camera we're looknig at
        int cam = message.GetInt();
        Debug.Log(cam);
        //just spawn distraction where needed, calling button
-       //check ccase
-       if (InteractionMessages.Singleton != null)
-            InteractionMessages.Singleton.distractionButton.GetComponent<SpawnDistraction>().RemoteInteract(cam);
-        if (InteractionServerNexus1.Singleton!= null)
-            InteractionServerNexus1.Singleton.distractionButton.GetComponent<SpawnDistraction>().RemoteInteract(cam);
+        InteractionMessages.Singleton.distractionButton.GetComponent<SpawnDistraction>().RemoteInteract(cam);
+       
 
        Debug.Log("Distracting");
        }
+       if (InteractionServerNexus1.Singleton != null)
+       {//simulate button press for the camera distraction, need to know which camera we're looknig at
+            int cam = message.GetInt();
+             Debug.Log(cam);
+            //just spawn distraction where needed, calling button
+       
+            InteractionServerNexus1.Singleton.distractionButton.GetComponent<SpawnDistraction>().RemoteInteract(cam);
+       
+
+        Debug.Log("Distracting");
+       }
+       
+    }
+    [MessageHandler((ushort)ClientToServerId.testMessage)]
+    private static void TestConnection(ushort fromClientId, Message message)
+    {
+        Debug.Log("Got message");
     }
      #endregion
 }

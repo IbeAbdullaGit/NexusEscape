@@ -23,6 +23,7 @@ public enum ClientToServerId : ushort
     pipePuzzleFinish,
     typingPuzzleFinish,
     distraction,
+    testMessage,
 }
 
 public class NetworkManagerClient : MonoBehaviour
@@ -57,8 +58,6 @@ public class NetworkManagerClient : MonoBehaviour
     {
         Singleton = this;
         DontDestroyOnLoad(gameObject);
-        
-
     }
 
     private void Start()
@@ -72,6 +71,8 @@ public class NetworkManagerClient : MonoBehaviour
         Client.ConnectionFailed += FailedToConnect;
         Client.ClientDisconnected += PlayerLeft;
         Client.Disconnected += DidDisconnect; */
+
+
         
     }
     public void StartClient()
@@ -86,7 +87,7 @@ public class NetworkManagerClient : MonoBehaviour
         Client.ClientDisconnected += PlayerLeft;
         Client.Disconnected += DidDisconnect;
         
-       
+        Singleton = this;
         
         connected = true;
 
@@ -103,8 +104,8 @@ public class NetworkManagerClient : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (connected)
-           Client.Update();
+        //if (connected)
+          // Client.Update();
        /*  if (receivedServerStartTick)
         {
             serverEstimatedTick++;
@@ -123,6 +124,8 @@ public class NetworkManagerClient : MonoBehaviour
             serverConnected = true;
             //SetupAI();
         }
+        if (connected)
+           Client.Update();
        
     }
 
@@ -158,6 +161,8 @@ public class NetworkManagerClient : MonoBehaviour
     {
         if (PlayerClient.list.TryGetValue(e.Id, out PlayerClient player))
             Destroy(player.gameObject);
+
+        Connect();
     }
 
     private void DidDisconnect(object sender, EventArgs e)
@@ -168,7 +173,7 @@ public class NetworkManagerClient : MonoBehaviour
 
         Debug.Log("Disconnected");
         //try connecting again
-        //Connect();
+        Connect();
     }
     
    #region Messages
@@ -180,6 +185,7 @@ public class NetworkManagerClient : MonoBehaviour
         //we are connecting specifically to nexus 1 client, there are no other cases
 
         Debug.Log("Starting Game");
+        NetworkManagerClient.Singleton.Client.Disconnect();
         //get game manager
         GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Nexus1Client");
         //Client.Connection.ResetTimeout();

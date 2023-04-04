@@ -58,8 +58,9 @@ public class PlayerClient : MonoBehaviour
     private static void InputSimple(Message message) //client side DOES NOT HAVE USHORT
     {
         //get the other player
-        GameObject.FindGameObjectWithTag("Player").GetComponent<OtherPlayerServer>().Move(message.GetVector3());
-        Debug.Log("Receiving move message");
+        if (GameObject.FindGameObjectWithTag("Player"))
+            GameObject.FindGameObjectWithTag("Player").GetComponent<OtherPlayerServer>().Move(message.GetVector3());
+       // Debug.Log("Receiving move message");
 
     }
     /*   //handle cameras
