@@ -18,6 +18,17 @@ public class ViewMeters : Interactable
         ChangeUI();
         //play animation
         anim.Play("Armature|Press");
+        //try manual
+        //if (openMenu)
+        //{
+        //    menuUI.gameObject.SetActive(false);
+        //    openMenu = false;
+        //}
+        //else
+        {
+            menuUI.gameObject.SetActive(true);
+            openMenu = true;
+        }
         anim.SetTrigger("press");
         //play sound
         //soundInstance.PlaySound(SoundManager.Sound.ButtonPress);
@@ -26,8 +37,13 @@ public class ViewMeters : Interactable
     }
     public void ChangeUI()
     {
-        menuUI.enabled = !menuUI.enabled;
+        //menuUI.enabled = !menuUI.enabled;
         openMenu = !openMenu;
+        if (openMenu)
+            menuUI.gameObject.SetActive(true);
+        else
+            menuUI.gameObject.SetActive(false);
+        
         //for this one, we don't need to see the cursor
         /* if (Cursor.lockState == CursorLockMode.Locked)
         {
@@ -44,9 +60,18 @@ public class ViewMeters : Interactable
     void Start()
     {
         //disable at start
-        menuUI.enabled = false;
+        //menuUI.enabled = false;
+        menuUI.gameObject.SetActive(false);
+        if (NetworkManagerServer.Singleton !=null)
+        {
+            menuUI.gameObject.SetActive(true); //we want it to be enabled
+            //but inivislbe
+            menuUI.GetComponent<CanvasRenderer>().cull = false;
+            menuUI.GetComponent<Renderer>().enabled = false;
+            menuUI.scaleFactor = 0;
+        }
         anim = GetComponent<Animator>();
-       
+        openMenu = false;
         //soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
 
         //SOUND STUFF

@@ -27,6 +27,7 @@ public class NetworkManagerServer : MonoBehaviour
     private static NetworkManagerServer _singleton;
 
     bool connected = false;
+    bool spawned = false;
     public static NetworkManagerServer Singleton
     {
         get => _singleton;
@@ -133,6 +134,24 @@ public class NetworkManagerServer : MonoBehaviour
 
         if (GameObject.FindGameObjectWithTag("GameController").GetComponent<Lobby>())
             GameObject.FindGameObjectWithTag("GameController").GetComponent<Lobby>().startButton.interactable = true;
+
+        //nexus 1
+        if (InteractionServerNexus1.Singleton!= null && !spawned)
+        {
+            //do spawn
+            PlayerServer player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerServer>();
+
+            player.name = "Player ground";
+            player.Id = 2;
+            player.Username = "ground";
+
+            //send spawn to other player, and this should send movement messages
+
+            player.SendSpawned();
+
+            Debug.Log("Sending spawn message");
+            spawned = true;
+        }
     }
     private void SetupAI()
     {

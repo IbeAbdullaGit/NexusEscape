@@ -11,7 +11,7 @@ public class ActivateTyper : Interactable
     public int puzzle_type; //0 = text, 1 = door, FOR NOW
 
      Animator anim;
-
+    public Renderer render;
     private FMODUnity.EventReference buttonEvent;
 
 
@@ -30,7 +30,7 @@ public class ActivateTyper : Interactable
             FMODUnity.RuntimeManager.PlayOneShotAttached(buttonEvent, gameObject);
 
         }
-
+        render.material.color = Color.red;
         //makes all the "answers" false
         typer.GetComponent<LinkedPuzzle>().ZeroEverything();
         //now set specific answer
@@ -50,6 +50,7 @@ public class ActivateTyper : Interactable
             anim = GetComponent<Animator>();
             buttonEvent.Path = "event:/Sound Effects/Interactions/ButtonPress";
             buttonEvent.Guid = new FMOD.GUID(new System.Guid("{cddf1de5-b51e-4239-8159-157ec49145d7}"));
+            render.material.color = Color.green;
         }
 
     }

@@ -36,29 +36,29 @@ public class InteractionHandlerNexus1 : MonoBehaviour
     }
     private void Start() {
         //try connecting client again?
-        NetworkManagerClient.Singleton.Connect();
+        //NetworkManagerClient.Singleton.Connect();
         //Debug.Log("Connect again");
     }
      private void Update() {
         
-        //manually send for testing purposes
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
+        ////manually send for testing purposes
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
            
             
-            //send network message, to open the door
-            Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.testMessage);
-            //add an id so we know what we're talking about
-            //send message
-            NetworkManagerClient.Singleton.Client.Send(message);
-             Debug.Log("Send test message");
-            //Destroy(transform.gameObject.GetComponentInParent<Canvas>().gameObject);
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            NetworkManagerClient.Singleton.Connect();
-            Debug.Log("Connecting again");
-        }
+        //    //send network message, to open the door
+        //    Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.testMessage);
+        //    //add an id so we know what we're talking about
+        //    //send message
+        //    NetworkManagerClient.Singleton.Client.Send(message);
+        //     Debug.Log("Send test message");
+        //    //Destroy(transform.gameObject.GetComponentInParent<Canvas>().gameObject);
+        //}
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+        //    NetworkManagerClient.Singleton.Connect();
+        //    Debug.Log("Connecting again");
+        //}
     }
      public void DoInteractions(int type, string context, int context2 =0)
      {
@@ -75,22 +75,22 @@ public class InteractionHandlerNexus1 : MonoBehaviour
         {
             switch (context)
             {
-                case "1":
+                case "0":
                  {   //take the value for this button
                     buttonMeters[0].value = context2;
                     break;
                  }
-                case "2":
+                case "1":
                  {   //take the value for this button
                     buttonMeters[1].value = context2;
                     break;
                  }
-                case "3":
+                case "2":
                  {   //take the value for this button
                     buttonMeters[2].value = context2;
                     break;
                  }
-                case "4":
+                case "3":
                   {  //take the value for this button
                     buttonMeters[3].value = context2;
                     break;
@@ -105,16 +105,18 @@ public class InteractionHandlerNexus1 : MonoBehaviour
             //switch level
             Debug.Log("Switching Scene");
             //save
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<SavePlugin>().SaveProgress();
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("InbetweenScene");
+            //GameObject.FindGameObjectWithTag("GameController").GetComponent<SavePlugin>().SaveProgress();
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Nexus2");
+            //Time.timeScale = 0;
         }
         else if (type ==5) //go to nexus 2
         {
             //switch level
             Debug.Log("Switching Scene");
             //save
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<SavePlugin>().SaveProgress();
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Nexus2Client");
+            //GameObject.FindGameObjectWithTag("GameController").GetComponent<SavePlugin>().SaveProgress();
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("EndScene");
+            //Time.timeScale = 0;
         }
        
      }

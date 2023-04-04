@@ -21,6 +21,8 @@ public class SliderChange : MonoBehaviour
 
         //set current value
         slider = GetComponent<Slider>();
+
+        Debug.Log("SLider: " + objectNumber);
     }
 
     // Update is called once per frame
@@ -34,10 +36,21 @@ public class SliderChange : MonoBehaviour
         if (slider.value == instance.targetValues[objectNumber])
         {
             slider.fillRect.GetComponent<Image>().color = Color.green;
+            //send message here
+            if (InteractionMessages.Singleton != null)
+                InteractionMessages.Singleton.ButtonMeterInteract(objectNumber, (int)slider.value);
+            if (InteractionServerNexus1.Singleton != null)
+                InteractionServerNexus1.Singleton.ButtonMeterInteract(objectNumber, (int)slider.value);
         }
         else //if we aren't matching the value
         {
             slider.fillRect.GetComponent<Image>().color = Color.red;
+            //send message here
+            //send message here
+            if (InteractionMessages.Singleton != null)
+                InteractionMessages.Singleton.ButtonMeterInteract(objectNumber, (int)slider.value);
+            if (InteractionServerNexus1.Singleton != null)
+                InteractionServerNexus1.Singleton.ButtonMeterInteract(objectNumber, (int)slider.value);
         }
     }
 }

@@ -72,10 +72,10 @@ public class Lobby : MonoBehaviour
             Message message = Message.Create(MessageSendMode.Reliable, ServerToClientId.startGame);
             NetworkManagerServer.Singleton.Server.SendToAll(message);
 
-            NetworkManagerServer.Singleton.Server.Stop();
+            //NetworkManagerServer.Singleton.Server.Stop();
 
             Debug.Log("Starting Game");
-            // NetworkManagerClient.Singleton.Client.Connection.CanTimeout = false;
+            NetworkManagerClient.Singleton.Client.Connection.CanTimeout = false;
            // NetworkManagerClient.Singleton.Client.Connection.ResetTimeout();
            
             

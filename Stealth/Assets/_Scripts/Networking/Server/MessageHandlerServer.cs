@@ -36,6 +36,7 @@ public class MessageHandlerServer : MonoBehaviour
        }
        else //must equal 1, its the door
        {
+            Debug.Log("Got typer message");
             //this is for both nexus 1 and nexus 2
             if (InteractionMessages.Singleton != null)
                 InteractionMessages.Singleton.typer.GetComponent<LinkedPuzzle>().ActivateDoor();

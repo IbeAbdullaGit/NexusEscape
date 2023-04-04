@@ -137,7 +137,7 @@ public class NetworkManagerClient : MonoBehaviour
     public void Connect()
     {
         Client.Connect($"{ip}:{port}");
-       // Client.Connection.CanTimeout = false;
+       //Client.Connection.CanTimeout = false;
     }
 
     private void DidConnect(object sender, EventArgs e)
@@ -185,7 +185,7 @@ public class NetworkManagerClient : MonoBehaviour
         //we are connecting specifically to nexus 1 client, there are no other cases
 
         Debug.Log("Starting Game");
-        NetworkManagerClient.Singleton.Client.Disconnect();
+        //NetworkManagerClient.Singleton.Client.Disconnect();
         //get game manager
         GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Nexus1Client");
         //Client.Connection.ResetTimeout();
