@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Riptide;
 
 public class Typer : MonoBehaviour
 {
@@ -18,7 +19,9 @@ public class Typer : MonoBehaviour
     //int wrongCount = 0;
     int rightCount = 0;
 
-    
+    public bool typerActive = false;
+
+    public FMODUnity.EventReference typingSound;
 
     Timer currentTimer;
     
@@ -66,11 +69,26 @@ public class Typer : MonoBehaviour
                 {
                     if (i==0) //first one
                     {
-                        GetComponent<LinkedPuzzle>().ActivateText();
+                        GetComponent<LinkedPuzzle>().ActivateText(); //activates the text
+                        //send message
+                         //send network message, to open the door
+                        Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.typingPuzzleFinish);
+                        //add an id so we know what we're talking about
+                        message.AddInt(0); //0 - for this case, means activate text
+                        //send message
+                        NetworkManagerClient.Singleton.Client.Send(message);
                     }
                     else if (i ==1) //second one
                     {
-                        GetComponent<LinkedPuzzle>().ActivateDoor();
+                        GetComponent<LinkedPuzzle>().ActivateDoor(); //activates the door
+                        //send message
+                        //send network message, to open the door
+                        Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.typingPuzzleFinish);
+                        //add an id so we know what we're talking about
+                        message.AddInt(1); //1 - for this case, means activate door
+                        //send message
+                        NetworkManagerClient.Singleton.Client.Send(message);
+
                     }
 
                     break;
@@ -79,7 +97,7 @@ public class Typer : MonoBehaviour
             }
         }
         //losing condition
-        if (currentTimer.hitLimit)
+        if (currentTimer.hitLimit && typerActive == true)
         {
             //reset
             //typingCanvas.enabled = false;
@@ -101,7 +119,10 @@ public class Typer : MonoBehaviour
         wordBank.ResetBank();
         SetCurrentWord();
         currentTimer.ResetTimer();
-        typingCanvas.enabled = true;
+        if (typerActive)
+        {
+            typingCanvas.enabled = true;
+        }
     }
     private void CheckInput()
     {
@@ -117,6 +138,8 @@ public class Typer : MonoBehaviour
     {
         if (IsCorrectLetter(typedLetter))
         {
+            FMODUnity.RuntimeManager.PlayOneShot(typingSound, gameObject.transform.position); //Play the typing sound where the Typing canvas is
+
             RemoveLetter();
 
             if (IsWordComplete())
