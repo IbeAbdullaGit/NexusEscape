@@ -40,7 +40,7 @@ public class Door : Observer
 
     private void Update()
     {
-
+        OpenDoor();
         if (lerping == true)
         {
             lerpDoor();
@@ -80,6 +80,7 @@ public class Door : Observer
             lerping = true;
             elapsedTime = 0;
         }
+        isOpen = true;
     }
 
     public void CloseDoor()
@@ -93,12 +94,13 @@ public class Door : Observer
             lerping = true;
             elapsedTime = duration;
         }
+        isOpen = false;
     }
 
 
     public void lerpDoor()
     {
-        if (!isOpen) //If the door is open go the opposite way
+        if (isOpen) //If the door is open go the opposite way
         {
             elapsedTime += Time.deltaTime;
         }
@@ -115,7 +117,6 @@ public class Door : Observer
         {
             doorsoundInstance.setParameterByName("EndLoop", 1f);
             lerping = false;
-            isOpen = !isOpen;
         }
     }
 
