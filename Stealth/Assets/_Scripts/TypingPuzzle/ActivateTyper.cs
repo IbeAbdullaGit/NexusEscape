@@ -30,7 +30,7 @@ public class ActivateTyper : Interactable
             FMODUnity.RuntimeManager.PlayOneShotAttached(buttonEvent, gameObject);
 
         }
-        render.material.color = Color.red;
+        //render.material.color = Color.red;
         //makes all the "answers" false
         typer.GetComponent<LinkedPuzzle>().ZeroEverything();
         //now set specific answer
@@ -57,6 +57,7 @@ public class ActivateTyper : Interactable
                 InteractionMessages.Singleton.TyperInteract2();
             if (InteractionServerNexus1.Singleton != null)
                 InteractionServerNexus1.Singleton.TyperInteract2();
+            Debug.Log("sent typer message");
         }
 
     }
@@ -67,7 +68,7 @@ public class ActivateTyper : Interactable
             anim = GetComponent<Animator>();
             buttonEvent.Path = "event:/Sound Effects/Interactions/ButtonPress";
             buttonEvent.Guid = new FMOD.GUID(new System.Guid("{cddf1de5-b51e-4239-8159-157ec49145d7}"));
-            render.material.color = Color.green;
+            //render.material.color = Color.green;
         }
 
     }

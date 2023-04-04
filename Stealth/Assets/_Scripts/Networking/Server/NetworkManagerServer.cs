@@ -92,12 +92,12 @@ public class NetworkManagerServer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //if (connected)
-            //Server.Update();
-    }
-    private void Update() {
         if (connected)
             Server.Update();
+    }
+    private void Update() {
+        //if (connected)
+            //Server.Update();
     }
 
     private void OnApplicationQuit()

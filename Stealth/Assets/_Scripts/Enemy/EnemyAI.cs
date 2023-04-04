@@ -61,6 +61,8 @@ public class EnemyAI : MonoBehaviour
         walking
     }
     MovementState currentState;
+
+    
     
     void SetMovementState(MovementState m)
     {
@@ -104,7 +106,7 @@ public class EnemyAI : MonoBehaviour
     }
     public void SetTarget()
     {
-         target = GameObject.FindGameObjectWithTag("Player").transform;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
 
         UpdateDestination();
         connected = true;

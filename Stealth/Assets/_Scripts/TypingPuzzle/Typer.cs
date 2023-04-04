@@ -95,6 +95,7 @@ public class Typer : MonoBehaviour
                 }
                 
             }
+            rightCount = 0; //reset so its not spammed
         }
         //losing condition
         if (currentTimer.hitLimit && typerActive == true)

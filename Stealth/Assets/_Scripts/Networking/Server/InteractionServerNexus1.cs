@@ -11,7 +11,7 @@ public class InteractionServerNexus1 : MonoBehaviour
 
     public GameObject typer; 
 
-      public GameObject distractionButton;
+     public GameObject distractionButton;
 
     public static InteractionServerNexus1 Singleton
     {

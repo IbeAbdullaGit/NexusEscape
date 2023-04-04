@@ -98,14 +98,15 @@ public class NetworkManagerClient : MonoBehaviour
         var ais = GameObject.FindGameObjectsWithTag("Enemy");
         for (int i=0; i< ais.Length; i++)
         {
-            ais[i].GetComponent<AINetworking>().SetTarget();
+            ais[i].GetComponent<EnemyAI>().SetTarget();
         }
+        Debug.Log("Setup AI");
     }
 
     private void FixedUpdate()
     {
-        //if (connected)
-          // Client.Update();
+        if (connected)
+          Client.Update();
        /*  if (receivedServerStartTick)
         {
             serverEstimatedTick++;
@@ -122,10 +123,10 @@ public class NetworkManagerClient : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Player") != null && !serverConnected && connected)
         {
             serverConnected = true;
-            //SetupAI();
+            SetupAI();
         }
-        if (connected)
-           Client.Update();
+        //if (connected)
+          // Client.Update();
        
     }
 
