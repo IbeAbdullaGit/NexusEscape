@@ -41,6 +41,23 @@ public class ActivateTyper : Interactable
         //activate typer
         typer.GetComponent<Typer>().ResetTyping();
 
+        //send message
+        if (puzzle_type == 0)
+        {
+            //text
+            if (InteractionMessages.Singleton != null)
+                InteractionMessages.Singleton.TyperInteract();
+            if (InteractionServerNexus1.Singleton != null)
+                InteractionServerNexus1.Singleton.TyperInteract();
+        }
+        else //should equal 1
+        {
+            //door
+            if (InteractionMessages.Singleton != null)
+                InteractionMessages.Singleton.TyperInteract2();
+            if (InteractionServerNexus1.Singleton != null)
+                InteractionServerNexus1.Singleton.TyperInteract2();
+        }
 
     }
 
