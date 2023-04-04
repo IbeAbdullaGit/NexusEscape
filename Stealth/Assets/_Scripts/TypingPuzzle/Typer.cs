@@ -19,7 +19,9 @@ public class Typer : MonoBehaviour
     //int wrongCount = 0;
     int rightCount = 0;
 
-    
+    public bool typerActive = false;
+
+    public FMODUnity.EventReference typingSound;
 
     Timer currentTimer;
     
@@ -60,46 +62,42 @@ public class Typer : MonoBehaviour
 
             var possibles = GetComponent<LinkedPuzzle>().amount_linked;
 
-            //Debug.Log("Finished typer");
-
             //DO SOMETHING HERE
             for (int i=0; i< possibles.Length; i++)
             {
-                Debug.Log("Checking...");
-                if (possibles[i]) //if its true
+                if (possibles[i])
                 {
-                    Debug.Log("Checking typers");
                     if (i==0) //first one
                     {
-                        GetComponent<LinkedPuzzle>().ActivateText();
+                        GetComponent<LinkedPuzzle>().ActivateText(); //activates the text
                         //send message
+                         //send network message, to open the door
                         Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.typingPuzzleFinish);
                         //add an id so we know what we're talking about
-                        message.AddInt(0);
+                        message.AddInt(0); //0 - for this case, means activate text
                         //send message
                         NetworkManagerClient.Singleton.Client.Send(message);
                     }
                     else if (i ==1) //second one
                     {
-                        Debug.Log("Trying");
-                        GetComponent<LinkedPuzzle>().ActivateDoor();
+                        GetComponent<LinkedPuzzle>().ActivateDoor(); //activates the door
                         //send message
+                        //send network message, to open the door
                         Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.typingPuzzleFinish);
                         //add an id so we know what we're talking about
-                        message.AddInt(1);
+                        message.AddInt(1); //1 - for this case, means activate door
                         //send message
                         NetworkManagerClient.Singleton.Client.Send(message);
-                        Debug.Log("Sent typer message");
+
                     }
 
                     break;
                 }
                 
             }
-            rightCount = 0;
         }
         //losing condition
-        if (currentTimer.hitLimit)
+        if (currentTimer.hitLimit && typerActive == true)
         {
             //reset
             //typingCanvas.enabled = false;
@@ -121,7 +119,10 @@ public class Typer : MonoBehaviour
         wordBank.ResetBank();
         SetCurrentWord();
         currentTimer.ResetTimer();
-        typingCanvas.enabled = true;
+        if (typerActive)
+        {
+            typingCanvas.enabled = true;
+        }
     }
     private void CheckInput()
     {
@@ -137,6 +138,8 @@ public class Typer : MonoBehaviour
     {
         if (IsCorrectLetter(typedLetter))
         {
+            FMODUnity.RuntimeManager.PlayOneShot(typingSound, gameObject.transform.position); //Play the typing sound where the Typing canvas is
+
             RemoveLetter();
 
             if (IsWordComplete())
