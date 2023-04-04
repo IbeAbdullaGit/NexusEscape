@@ -70,7 +70,8 @@ public class InteractionServerNexus1 : MonoBehaviour
      public void TyperInteract2()
     {
         Message message = Message.Create(MessageSendMode.Reliable, ServerToClientId.puzzleInteraction);
-        message.AddInt(2); //swiper
+        
+        message.AddInt(1); //swiper
         message.AddString("nexus 2 activate typer 2"); //for nexus 2 specifically
 
         NetworkManagerServer.Singleton.Server.SendToAll(message);
@@ -79,7 +80,7 @@ public class InteractionServerNexus1 : MonoBehaviour
     {
          Message message = Message.Create(MessageSendMode.Reliable, ServerToClientId.puzzleInteraction);
          message.AddInt(2); //button meter puzzle for nexus 1
-         message.AddString((id+1).ToString());
+         message.AddString(((id)).ToString());
          message.AddInt(power);
 
          NetworkManagerServer.Singleton.Server.SendToAll(message);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Riptide;
 
 public class Typer : MonoBehaviour
 {
@@ -59,24 +60,43 @@ public class Typer : MonoBehaviour
 
             var possibles = GetComponent<LinkedPuzzle>().amount_linked;
 
+            //Debug.Log("Finished typer");
+
             //DO SOMETHING HERE
             for (int i=0; i< possibles.Length; i++)
             {
-                if (possibles[i])
+                Debug.Log("Checking...");
+                if (possibles[i]) //if its true
                 {
+                    Debug.Log("Checking typers");
                     if (i==0) //first one
                     {
                         GetComponent<LinkedPuzzle>().ActivateText();
+                        //send message
+                        Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.typingPuzzleFinish);
+                        //add an id so we know what we're talking about
+                        message.AddInt(0);
+                        //send message
+                        NetworkManagerClient.Singleton.Client.Send(message);
                     }
                     else if (i ==1) //second one
                     {
+                        Debug.Log("Trying");
                         GetComponent<LinkedPuzzle>().ActivateDoor();
+                        //send message
+                        Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.typingPuzzleFinish);
+                        //add an id so we know what we're talking about
+                        message.AddInt(1);
+                        //send message
+                        NetworkManagerClient.Singleton.Client.Send(message);
+                        Debug.Log("Sent typer message");
                     }
 
                     break;
                 }
                 
             }
+            rightCount = 0;
         }
         //losing condition
         if (currentTimer.hitLimit)

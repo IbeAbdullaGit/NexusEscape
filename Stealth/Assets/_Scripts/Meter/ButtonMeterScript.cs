@@ -32,39 +32,44 @@ public class ButtonMeterScript : MonoBehaviour
             }
         }
         
-        //use an int to make calculating target ranges easier
-        meter.value = (int)power;
+        
     }
     public void HoldButton()
     {
         buttonHeldDown = true;
+        //use an int to make calculating target ranges easier
+        meter.value = (int)power;
         //send message
-        if (InteractionMessages.Singleton != null)
-            InteractionMessages.Singleton.ButtonMeterInteract(meter.GetComponent<SliderChange>().objectNumber, (int)power);
-        if (InteractionServerNexus1.Singleton !=null)
-            InteractionServerNexus1.Singleton.ButtonMeterInteract(meter.GetComponent<SliderChange>().objectNumber, (int)power);
+        //if (InteractionMessages.Singleton != null)
+        //    InteractionMessages.Singleton.ButtonMeterInteract(id, (int)power);
+        //if (InteractionServerNexus1.Singleton !=null)
+        //    InteractionServerNexus1.Singleton.ButtonMeterInteract(id, (int)power);
         
     }
     public void ResetPower()
     {
         power = 0;
+        //use an int to make calculating target ranges easier
+        meter.value = (int)power;
         //send message
-        if (InteractionMessages.Singleton != null)
-            InteractionMessages.Singleton.ButtonMeterInteract(meter.GetComponent<SliderChange>().objectNumber, (int)power);
-        if (InteractionServerNexus1.Singleton !=null)
-            InteractionServerNexus1.Singleton.ButtonMeterInteract(meter.GetComponent<SliderChange>().objectNumber, (int)power);
+        //if (InteractionMessages.Singleton != null)
+        //    InteractionMessages.Singleton.ButtonMeterInteract(id, (int)power);
+        //if (InteractionServerNexus1.Singleton !=null)
+        //    InteractionServerNexus1.Singleton.ButtonMeterInteract(id, (int)power);
     }
     public void ReleaseButton()
     {
         buttonHeldDown = false;
+        //use an int to make calculating target ranges easier
+        meter.value = (int)power;
         //power = 0;
         //ad some way to reset
 
         //send message
-        if (InteractionMessages.Singleton != null)
-            InteractionMessages.Singleton.ButtonMeterInteract(meter.GetComponent<SliderChange>().objectNumber, (int)power);
-        if (InteractionServerNexus1.Singleton !=null)
-            InteractionServerNexus1.Singleton.ButtonMeterInteract(meter.GetComponent<SliderChange>().objectNumber, (int)power);
+        //if (InteractionMessages.Singleton != null)
+        //    InteractionMessages.Singleton.ButtonMeterInteract(id, (int)power);
+        //if (InteractionServerNexus1.Singleton !=null)
+        //    InteractionServerNexus1.Singleton.ButtonMeterInteract(id, (int)power);
        
     }
 }
