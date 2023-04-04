@@ -813,7 +813,7 @@ GameObject:
   - component: {fileID: 281933332}
   m_Layer: 0
   m_Name: ServerManager
-  m_TagString: Untagged
+  m_TagString: NetworkServer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4026,6 +4026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaffb3aa21a7f82498fec197df915c7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serverConnected: 0
   ip: 127.0.0.1
   port: 8888
 --- !u!4 &1301546775
@@ -4240,7 +4241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1478006495
 RectTransform:
   m_ObjectHideFlags: 0

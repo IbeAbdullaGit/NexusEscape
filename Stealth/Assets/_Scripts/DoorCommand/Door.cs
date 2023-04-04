@@ -9,6 +9,8 @@ public class Door : Observer
     public bool isOpen = false;
     bool lerping = false;
 
+    private static bool willSpawn = false;
+
     [Tooltip("The Y positional distance between the current position and the end position.")]
     public float openOffset = 14f; //The offset on the Y axis to have the door open
 
@@ -36,6 +38,19 @@ public class Door : Observer
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(doorsoundInstance, gameObject.transform);
 
         //OpenDoor(); //debug
+    }
+    public void SetSpawnAgain()
+    {
+        willSpawn = true;
+    }
+    private void Awake()
+    {
+        
+        if (willSpawn)
+        {
+            //will spawn again
+            DestroyImmediate(gameObject); //dont need second game copy
+        }
     }
 
     private void Update()

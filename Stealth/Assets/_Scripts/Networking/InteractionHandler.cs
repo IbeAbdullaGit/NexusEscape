@@ -32,6 +32,8 @@ public class InteractionHandler : MonoBehaviour
      private void Awake()
     {
         Singleton = this;
+        //reset server state of manager
+        NetworkManagerClient.Singleton.serverConnected = false;
     }
 
     private void Update() {
@@ -131,7 +133,7 @@ public class InteractionHandler : MonoBehaviour
             //switch level
             Debug.Log("Switching Scene");
             //save
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<SavePlugin>().SaveProgress();
+            //GameObject.FindGameObjectWithTag("GameController").GetComponent<SavePlugin>().SaveProgress();
             GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("InbetweenScene");
         }
         else if (type ==5) //go to nexus 2
@@ -139,7 +141,7 @@ public class InteractionHandler : MonoBehaviour
             //switch level
             Debug.Log("Switching Scene");
             //save
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<SavePlugin>().SaveProgress();
+            //GameObject.FindGameObjectWithTag("GameController").GetComponent<SavePlugin>().SaveProgress();
             GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("EndScene"); //ending scene
         }
      }

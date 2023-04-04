@@ -106,7 +106,7 @@ public class InteractionHandlerNexus1 : MonoBehaviour
             Debug.Log("Switching Scene");
             //save
             //GameObject.FindGameObjectWithTag("GameController").GetComponent<SavePlugin>().SaveProgress();
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Nexus2");
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Nexus2Client");
             //Time.timeScale = 0;
         }
         else if (type ==5) //go to nexus 2

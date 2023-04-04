@@ -25,7 +25,9 @@ public class Checkpoints : MonoBehaviour
                 
                 {
                     //now save
-                    manager.checkpointNum = 1; 
+                    manager.checkpointNum = 1;
+                    manager.SetConnectedDoor(connectedDoor);
+                    
                     
                 }
 

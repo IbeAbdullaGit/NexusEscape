@@ -31,6 +31,7 @@ public class Inventory : MonoBehaviour
         for (int i=0; i< images.Count; i++)
         {
             images[i].enabled = false;
+            
         }
     }
     public void AddKey(KeyPickUp key)

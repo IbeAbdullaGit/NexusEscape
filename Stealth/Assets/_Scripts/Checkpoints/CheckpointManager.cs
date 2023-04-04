@@ -9,7 +9,7 @@ public class CheckpointManager : MonoBehaviour
 
    public int checkpointNum = 0;
 
-   Door connectDoor;
+   [SerializeField] Door connectDoor;
    private void Awake() {
     
         if (instance ==null)
@@ -23,6 +23,8 @@ public class CheckpointManager : MonoBehaviour
    public void SetConnectedDoor(Door d)
    {
         connectDoor = d;
+        DontDestroyOnLoad(connectDoor.gameObject);
+        connectDoor.SetSpawnAgain();
    }
    public Door GetConnectedDoor()
    {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Riptide;
+using UnityEngine.SceneManagement;
 
 public class MessageHandler : MonoBehaviour
 {
@@ -30,6 +31,28 @@ public class MessageHandler : MonoBehaviour
         if (InteractionHandlerNexus1.Singleton != null)
             InteractionHandlerNexus1.Singleton.DoInteractions(type, context, context2);
         
+    }
+    [MessageHandler((ushort)ServerToClientId.resetGame)]
+    private static void RestartGame(Message message)
+    {
+        Debug.Log("Getting interaction");
+        int type = message.GetInt();
+
+        if (type == 1)
+        {//simply reload game
+         //send in current scene name to scene switcher, so the level restarts
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene(SceneManager.GetActiveScene().name);
+        }
+        else if (type ==2)
+        {
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Menu");
+            //also disconnect - by destroying game object
+            Destroy(GameObject.FindGameObjectWithTag("NetworkClient"));
+            
+        }
+        //set back the time scale just in case
+        Time.timeScale = 1;
+
     }
     #endregion
 }

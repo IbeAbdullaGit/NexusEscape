@@ -23,21 +23,36 @@ public class PlayerClient : MonoBehaviour
         {
             //position needs to be predetermined
             //position = GameLogicClient.Singleton.Player2Prefab.transform.position;
-            player = Instantiate(GameLogicClient.Singleton.Player2Prefab, position, Quaternion.identity).GetComponent<PlayerClient>();
-            player.IsLocal = true;
+            //first check if we already have a player
+            
+            {
+                player = Instantiate(GameLogicClient.Singleton.Player2Prefab, position, Quaternion.identity).GetComponent<PlayerClient>();
+                player.IsLocal = true;
+
+                player.name = $"Player {id} (username)";
+                player.Id = id;
+                player.username = username;
+
+                list.Add(id, player);
+
+                //setup ai
+                NetworkManagerClient.Singleton.SetupAI();
+            }
         }
         else
         {
             //THIS PART IS STILL IMPORTANT
             player = Instantiate(GameLogicClient.Singleton.Player1Prefab, position, Quaternion.identity).GetComponent<PlayerClient>();
             player.IsLocal = false;
+
+            player.name = $"Player {id} (username)";
+            player.Id = id;
+            player.username = username;
+
+            list.Add(id, player);
         }
 
-        player.name = $"Player {id} (username)";
-        player.Id = id;
-        player.username = username;
-
-        list.Add(id, player);
+       
     }
     #region Messages    
     [MessageHandler((ushort)ServerToClientId.playerSpawned)]

@@ -23,8 +23,11 @@ public class PlayerPos : MonoBehaviour
             {
                 //keep inventory
                 //inventory.ResetCards();
-                inventory.AddCard(1,1); //for now
-                break;
+                //inventory.AddCard(1,1); //for now
+                                        //open door
+                manager.GetConnectedDoor().ToggleDoor();
+                    Debug.Log("Loading in checkpoint 1");
+                    break;
             }
             case 3:
             {

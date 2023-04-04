@@ -14,6 +14,7 @@ public enum ServerToClientId : ushort
     aiUpdate,
     puzzleInteraction,
     startGame,
+    resetGame,
 }
 
 public enum ClientToServerId : ushort
@@ -30,7 +31,7 @@ public class NetworkManagerClient : MonoBehaviour
 {
     private static NetworkManagerClient _singleton;
 
-    bool serverConnected = false;
+    public bool serverConnected = false;
 
     bool connected = false;
 
@@ -93,7 +94,7 @@ public class NetworkManagerClient : MonoBehaviour
 
                
     }
-    private void SetupAI()
+    public void SetupAI()
     {
         var ais = GameObject.FindGameObjectsWithTag("Enemy");
         for (int i=0; i< ais.Length; i++)
@@ -120,11 +121,11 @@ public class NetworkManagerClient : MonoBehaviour
     }
     private void Update()
     {
-        if (GameObject.FindGameObjectWithTag("Player") != null && !serverConnected && connected)
-        {
-            serverConnected = true;
-            SetupAI();
-        }
+        //if (GameObject.FindGameObjectWithTag("Player") != null && !serverConnected && connected)
+        //{
+        //    serverConnected = true;
+        //    SetupAI();
+        //}
         //if (connected)
           // Client.Update();
        

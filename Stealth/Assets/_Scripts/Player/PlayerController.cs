@@ -345,7 +345,8 @@ public class PlayerController : MonoBehaviour
     }
  */
     private void OnCollisionEnter(Collision other) {
-        
+
+        //Debug.Log("Colliding");
         if (other.collider.tag =="Enemy")
         {
             //this is the end

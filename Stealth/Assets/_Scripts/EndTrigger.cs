@@ -35,7 +35,7 @@ public class EndTrigger : MonoBehaviour
                 //GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("InbetweenScene");
 
                 /// send message to client to switch scene
-               GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Nexus2");
+               GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Nexus2Server");
 
                    Message message = Message.Create(MessageSendMode.Reliable, ServerToClientId.puzzleInteraction);
                     message.AddInt(4);

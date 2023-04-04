@@ -22,7 +22,7 @@ public class SliderChange : MonoBehaviour
         //set current value
         slider = GetComponent<Slider>();
 
-        Debug.Log("SLider: " + objectNumber);
+        //Debug.Log("SLider: " + objectNumber);
     }
 
     // Update is called once per frame

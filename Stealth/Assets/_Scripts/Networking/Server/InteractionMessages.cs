@@ -33,6 +33,24 @@ public class InteractionMessages : MonoBehaviour
     {
         Singleton = this;
     }
+    private void Start()
+    {
+        //at the start of this script, send spawn message to hacker
+        //so that our player can be in
+        //spawn our player
+        //our player should have the player server script
+        PlayerServer player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerServer>();
+
+        player.name = "Player ground";
+        player.Id = 2;
+        player.Username = "ground";
+
+        //send spawn to other player, and this should send movement messages
+
+        player.SendSpawned();
+
+        Debug.Log("Sending spawn message");
+    }
     //functions for sending messages
     public void KeycardInteract()
     {
@@ -64,7 +82,7 @@ public class InteractionMessages : MonoBehaviour
     {
          Message message = Message.Create(MessageSendMode.Reliable, ServerToClientId.puzzleInteraction);
          message.AddInt(3); //button meter puzzle
-         message.AddString((id+1).ToString());
+         message.AddString((id).ToString());
          message.AddInt(power);
 
          NetworkManagerServer.Singleton.Server.SendToAll(message);
