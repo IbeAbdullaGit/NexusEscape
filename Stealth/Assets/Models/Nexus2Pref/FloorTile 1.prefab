@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4636059768641763949}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: FloorTile 1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +31,7 @@ Transform:
   - {fileID: 9120440373418850511}
   - {fileID: 5761109238308797308}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8911097521986394070
 GameObject:
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 9120440373418850511}
   - component: {fileID: 6444651560100386767}
   - component: {fileID: 6916771052737840258}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Cube.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,9 +128,9 @@ GameObject:
   - component: {fileID: 1883092868522509406}
   - component: {fileID: 6723338020874368651}
   - component: {fileID: 3377442671614381741}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Cube.019
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
