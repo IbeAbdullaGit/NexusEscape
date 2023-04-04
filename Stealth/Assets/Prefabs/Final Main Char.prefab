@@ -2926,7 +2926,7 @@ MonoBehaviour:
     m_ActionName: Player2/Look[/Mouse/delta,/Pen/delta]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3375757489065117039}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -2942,7 +2942,7 @@ MonoBehaviour:
     m_ActionName: Player1/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3375757489065117039}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnJump
         m_Mode: 0
@@ -2958,7 +2958,7 @@ MonoBehaviour:
     m_ActionName: Player1/Jump[/Keyboard/space]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3375757489065117039}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnLook
         m_Mode: 0
@@ -10293,8 +10293,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.2017775, y: 0.10934842, z: 8.9646}
-  m_Center: {x: 0.7576642, y: 0.4453257, z: -0.61369324}
+  m_Size: {x: 7.2017775, y: 1.431769, z: 8.964601}
+  m_Center: {x: 0.75766426, y: 1.106536, z: -0.61369324}
 --- !u!114 &4041701981755158084
 MonoBehaviour:
   m_ObjectHideFlags: 0

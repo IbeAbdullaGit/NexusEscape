@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 951092410065740030}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: FloorTile
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,9 +45,9 @@ GameObject:
   - component: {fileID: 6288842251792408269}
   - component: {fileID: 1164877624494713880}
   - component: {fileID: 7186465718454752318}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Cube.019
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,7 +60,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3557602884787029276}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.5807619, y: 1.0599403, z: 0.32160568}
+  m_LocalPosition: {x: -0.5807619, y: 1.2, z: 0.32160568}
   m_LocalScale: {x: 1471.6497, y: 1453.4036, z: 10.013372}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 3744235646165983836}
   - component: {fileID: 1446889386592800092}
   - component: {fileID: 1340151746696191505}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Cube.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
