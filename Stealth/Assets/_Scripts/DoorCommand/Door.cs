@@ -40,7 +40,7 @@ public class Door : Observer
 
     private void Update()
     {
-        OpenDoor();
+        //OpenDoor();
         if (lerping == true)
         {
             lerpDoor();
