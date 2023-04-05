@@ -162,7 +162,7 @@ public class NetworkManagerClient : MonoBehaviour
     public void Connect()
     {
         Client.Connect($"{ip}:{port}");
-       //Client.Connection.CanTimeout = false;
+       Client.Connection.CanTimeout = false;
     }
 
     private void DidConnect(object sender, EventArgs e)
@@ -188,6 +188,7 @@ public class NetworkManagerClient : MonoBehaviour
             Destroy(player.gameObject);
 
         Connect();
+        Client.Connection.CanTimeout = false;
     }
 
     private void DidDisconnect(object sender, EventArgs e)
