@@ -77,7 +77,7 @@ public class NetworkManagerClient : MonoBehaviour
             IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
             localIP = endPoint.Address.ToString();
         }
-        ip = localIP;
+        //ip = localIP;
         Debug.Log("Ip address: " + ip);
     }
  
