@@ -12,9 +12,6 @@ public class PlayerPos : MonoBehaviour
         manager = GameObject.FindGameObjectWithTag("CheckpointManager").GetComponent<CheckpointManager>();
         inventory = GameObject.FindGameObjectWithTag("GameController").GetComponent<Inventory>();
         transform.position = manager.lastCheckPointPos;
-
-
-       
                 {
                     //open door
                     if (manager.GetConnectedDoor() != null)

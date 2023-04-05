@@ -53,6 +53,10 @@ public class InteractionHandler : MonoBehaviour
             //Destroy(transform.gameObject.GetComponentInParent<Canvas>().gameObject);
         }
     }
+    public void LightUpButtons(int type)
+    {
+
+    }
     public void DoInteractions(int type, string context, int context2 = 0)
      {
         Debug.Log("Nexus 2 interaction");

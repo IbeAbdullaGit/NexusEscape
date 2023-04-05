@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class MessageHandler : MonoBehaviour
 {
-     #region Messages    
+    #region Messages    
     [MessageHandler((ushort)ServerToClientId.puzzleInteraction)]
     private static void PuzzleInteraction(Message message)
     {
         Debug.Log("Getting interaction");
-        
+
         int type = message.GetInt();
 
         //1 - swipe keycard
@@ -30,7 +30,14 @@ public class MessageHandler : MonoBehaviour
             InteractionHandler.Singleton.DoInteractions(type, context, context2);
         if (InteractionHandlerNexus1.Singleton != null)
             InteractionHandlerNexus1.Singleton.DoInteractions(type, context, context2);
-        
+
+    }
+    [MessageHandler((ushort)ServerToClientId.buttonMessage)]
+    private static void LightUpButtons(Message message)
+    {
+        //for nexus 2 specifically
+        int type = message.GetInt();
+        InteractionHandler.
     }
     [MessageHandler((ushort)ServerToClientId.resetGame)]
     private static void RestartGame(Message message)

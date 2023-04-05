@@ -23,17 +23,18 @@ public enum ServerToClientId : ushort
     startGame,
     resetGame,
     chatMessage,
+    buttonMessage,
 }
 
 public enum ClientToServerId : ushort
 {
-    name = 1,
     input,
     pipePuzzleFinish,
     typingPuzzleFinish,
     distraction,
     testMessage,
     chatMessage,
+    
 }
 
 public class NetworkManagerClient : MonoBehaviour

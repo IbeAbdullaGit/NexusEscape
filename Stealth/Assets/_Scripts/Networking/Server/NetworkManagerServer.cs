@@ -172,6 +172,23 @@ public class NetworkManagerServer : MonoBehaviour
             Debug.Log("Sending spawn message");
             spawned = true;
         }
+        //nexus 2
+        if (InteractionMessages.Singleton != null && !spawned)
+        {
+            //do spawn
+            PlayerServer player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerServer>();
+
+            player.name = "Player ground";
+            player.Id = 2;
+            player.Username = "ground";
+
+            //send spawn to other player, and this should send movement messages
+
+            player.SendSpawned();
+
+            Debug.Log("Sending spawn message");
+            spawned = true;
+        }
     }
     private void SetupAI()
     {

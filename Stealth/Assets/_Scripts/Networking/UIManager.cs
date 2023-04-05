@@ -64,10 +64,4 @@ public class UIManager : MonoBehaviour
         connectUI.SetActive(true);
     }
 
-    public void SendName()
-    {
-        Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.name);
-        message.AddString(usernameField.text);
-        NetworkManagerClient.Singleton.Client.Send(message);
-    }
 }
