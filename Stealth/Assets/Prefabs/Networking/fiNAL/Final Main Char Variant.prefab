@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3307120a63cf17942a0dcabe83f4b272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 4280137914677516093}
+  rb: {fileID: 0}
   cam: {fileID: 0}
   head: {fileID: 0}
   walkSpeed: 0
@@ -178,11 +178,6 @@ MonoBehaviour:
   maxSlopeAngle: 0
   GameOverScreen: {fileID: 0}
   playerSounds: {fileID: 0}
---- !u!54 &4280137914677516093 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 3375757489065117038, guid: e116fd26f34ee2c4381f83fea5478818, type: 3}
-  m_PrefabInstance: {fileID: 1566974826300543571}
-  m_PrefabAsset: {fileID: 0}
 --- !u!20 &4280137914778460394 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 3375757488091738809, guid: e116fd26f34ee2c4381f83fea5478818, type: 3}
