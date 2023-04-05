@@ -1051,7 +1051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3307120a63cf17942a0dcabe83f4b272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 2153553880128679511}
+  rb: {fileID: 0}
   cam: {fileID: 0}
   head: {fileID: 0}
   walkSpeed: 0
@@ -1085,10 +1085,5 @@ MonoBehaviour:
 --- !u!4 &1902855116047157686 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2977900737736614543, guid: e116fd26f34ee2c4381f83fea5478818, type: 3}
-  m_PrefabInstance: {fileID: 3691804169144675129}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &2153553880128679511 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 3375757489065117038, guid: e116fd26f34ee2c4381f83fea5478818, type: 3}
   m_PrefabInstance: {fileID: 3691804169144675129}
   m_PrefabAsset: {fileID: 0}
