@@ -13,6 +13,8 @@ public class EnemyAI : MonoBehaviour
 
     private float dirX;
 
+
+
     public float moveSpeed;
     private Rigidbody rb;
     private bool facingRight = false;
@@ -85,7 +87,7 @@ public class EnemyAI : MonoBehaviour
         if (!networking)
         {
             target = GameObject.FindGameObjectWithTag("Player").transform;
-            UpdateDestination();
+           // UpdateDestination();
         }
       
         lastPosition = transform.position;
@@ -131,7 +133,7 @@ public class EnemyAI : MonoBehaviour
 
         
 
-        SetMovementState(MovementState.looking);
+        //SetMovementState(MovementState.looking);
         StartCoroutine(WalkPause());
     }
     void IterateWaypointIndex()
@@ -148,7 +150,7 @@ public class EnemyAI : MonoBehaviour
     {
         NavMeshAgent.isStopped = true;
         //play pause
-        SetMovementState(MovementState.looking);
+       SetMovementState(MovementState.looking);
        // Debug.Log("Should be looking");
         //wait
         //Debug.Log("Waiting");
@@ -373,7 +375,7 @@ public class EnemyAI : MonoBehaviour
         else{
             //reset sound
             playSoundOnce = false;
-            SetMovementState(MovementState.walking); //walking back
+           // SetMovementState(MovementState.walking); //walking back
         }
         targetMain = waypoints[waypointIndex].position;
         NavMeshAgent.SetDestination(targetMain);
