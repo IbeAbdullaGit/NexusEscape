@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Riptide;
 
 public class InteractButtons : Interactable
 {
@@ -18,6 +19,8 @@ public class InteractButtons : Interactable
     public WaitForSeconds changeColor = new WaitForSeconds(1f);
     public Image[] colors;
     private bool work = true;
+
+    public int id;
 
 
     //the answer
@@ -39,7 +42,27 @@ public class InteractButtons : Interactable
         instance.buttonOrder = buttonOrder;
         instance.text.text = "";
        
+          //server side
+          if (InteractionMessages.Singleton!=null)
+        {
+            //send message
+            Message message = Message.Create(MessageSendMode.Reliable, ServerToClientId.buttonMessage);
+            //add an id so we know what we're talking about
+            message.AddInt(id); //send id so we know which one
+            //send message
+            NetworkManagerServer.Singleton.Server.SendToAll(message);
+        }
        
+    }
+    public void ManuallyTurnOn()
+    {
+        ChangeUI();
+
+
+        //will need to change when having multiple instances (all answers will be set at once instead of individually)
+        //set the answer for when this is opened, more elegant solution later
+        instance.buttonOrder = buttonOrder;
+        instance.text.text = "";
     }
     public override void OnLoseFocus()
     {
