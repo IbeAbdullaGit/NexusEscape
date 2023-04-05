@@ -98,7 +98,7 @@ public class Lobby : MonoBehaviour
             //NetworkManagerServer.Singleton.Server.Stop();
 
             Debug.Log("Starting Game");
-            NetworkManagerClient.Singleton.Client.Connection.CanTimeout = false;
+            //NetworkManagerClient.Singleton.Client.Connection.CanTimeout = false;
            // NetworkManagerClient.Singleton.Client.Connection.ResetTimeout();
            
             
