@@ -18,17 +18,7 @@ public class ViewMeters : Interactable
         ChangeUI();
         //play animation
         anim.Play("Armature|Press");
-        //try manual
-        //if (openMenu)
-        //{
-        //    menuUI.gameObject.SetActive(false);
-        //    openMenu = false;
-        //}
-        //else
-        {
-            menuUI.gameObject.SetActive(true);
-            openMenu = true;
-        }
+       
         anim.SetTrigger("press");
         //play sound
         //soundInstance.PlaySound(SoundManager.Sound.ButtonPress);
@@ -44,17 +34,7 @@ public class ViewMeters : Interactable
         else
             menuUI.gameObject.SetActive(false);
         
-        //for this one, we don't need to see the cursor
-        /* if (Cursor.lockState == CursorLockMode.Locked)
-        {
-             Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true; 
-        }  
-        else
-        {
-             Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false; 
-        } */
+        Debug.Log("Changing UI");
     }
     // Start is called before the first frame update
     void Start()
