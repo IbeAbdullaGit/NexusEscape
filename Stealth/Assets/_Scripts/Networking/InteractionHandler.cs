@@ -13,7 +13,7 @@ public class InteractionHandler : MonoBehaviour
     public GameObject button1;
     public GameObject button2;
     public List<Slider> buttonMeters;
- 
+    public List<GameObject> lockers;
 
     public static InteractionHandler Singleton
     {
@@ -55,7 +55,7 @@ public class InteractionHandler : MonoBehaviour
     }
     public void LightUpButtons(int type)
     {
-
+        lockers[type].GetComponent<InteractButtons>().ManuallyTurnOn();
     }
     public void DoInteractions(int type, string context, int context2 = 0)
      {

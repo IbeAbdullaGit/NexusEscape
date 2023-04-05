@@ -37,7 +37,7 @@ public class MessageHandler : MonoBehaviour
     {
         //for nexus 2 specifically
         int type = message.GetInt();
-        InteractionHandler.
+        InteractionHandler.Singleton.LightUpButtons(type);
     }
     [MessageHandler((ushort)ServerToClientId.resetGame)]
     private static void RestartGame(Message message)
