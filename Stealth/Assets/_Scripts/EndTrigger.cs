@@ -52,10 +52,12 @@ public class EndTrigger : MonoBehaviour
                 Message message = Message.Create(MessageSendMode.Reliable, ServerToClientId.puzzleInteraction);
                 message.AddInt(5); //button meter puzzle
                 NetworkManagerServer.Singleton.Server.SendToAll(message);
-          
-                GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Cutscene");
-             }
+
+                    GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Cutscene");
+                }
         }
-    }
+        //For testing purposes
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Cutscene");
+        }
    }
 }
