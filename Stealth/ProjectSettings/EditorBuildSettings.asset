@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 51b7e9c291e63cd4aa73cf679b4a97a4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/InbetweenScene.unity
     guid: 3d9634606c3babd43915c817bc1e1ad5
   - enabled: 0
@@ -17,22 +17,22 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Section1.unity
     guid: dd6d6c855fb55d8469d51a6aceb30dd3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Nexus 1.unity
     guid: ad4709963e7b8da4c82f929de0323eff
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Nexus 2.unity
     guid: 321793f65e6fe5546979df03d6d84c7d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Nexus1ClientTEST.unity
     guid: 015259bd18e950d44955fdea58279ffa
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Nexus1ServerTEST.unity
     guid: 7b40a39d000a81d46bdb24b9c82603ef
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Nexus2ClientTEST.unity
     guid: 9ebad744c16bdfa4fa4a531a067a2785
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Nexus2ServeTESTr.unity
     guid: c7842ba6629788c42be1bdb2880a5e39
   - enabled: 1
