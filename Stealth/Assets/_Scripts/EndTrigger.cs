@@ -57,7 +57,7 @@ public class EndTrigger : MonoBehaviour
                 }
         }
         //For testing purposes
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Cutscene");
+           // GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Cutscene");
         }
    }
 }
