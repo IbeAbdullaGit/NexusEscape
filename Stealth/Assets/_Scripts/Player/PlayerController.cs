@@ -45,7 +45,8 @@ public class PlayerController : MonoBehaviour
         forward,
         backward,
         left,
-        right
+        right,
+        none
     }
     [Header("Interaction")]
     [SerializeField]private float interactionDistance = default;
@@ -73,7 +74,7 @@ public class PlayerController : MonoBehaviour
         {
             move = context.ReadValue<Vector2>();
             //set default direction
-            direction = MovementDirection.forward;
+            direction = MovementDirection.none;
            
             //determine direction
             if (move == Vector2.up) //forward
@@ -368,6 +369,12 @@ public class PlayerController : MonoBehaviour
     private void PlayFootstep()
     {
         playerSounds.PlayFootsteps();
+        //Debug.Log("playing footstep");
+    }
+
+    private void PlaySilentFootstep()
+    {
+        playerSounds.PlaySilentFootstep();
         //Debug.Log("playing footstep");
     }
 }

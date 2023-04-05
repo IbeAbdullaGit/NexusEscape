@@ -69,7 +69,7 @@ public class PlayerAnimation : MonoBehaviour
             case PlayerController.MovementState.idle:
                 animator.SetTrigger("crouchIdle");
                 break;
-            case PlayerController.MovementState.walking:
+            case PlayerController.MovementState.crouching:
                 //nested switch, check which direction
                 switch (player.direction)
                 {
@@ -84,6 +84,9 @@ public class PlayerAnimation : MonoBehaviour
                         break;
                     case PlayerController.MovementDirection.right:
                         animator.SetTrigger("crouchRight");
+                        break;
+                    case PlayerController.MovementDirection.none:
+                        animator.SetTrigger("crouchIdle");
                         break;
                     default:
                         break;
