@@ -53,7 +53,7 @@ public class EndTrigger : MonoBehaviour
                 message.AddInt(5); //button meter puzzle
                 NetworkManagerServer.Singleton.Server.SendToAll(message);
           
-                GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("EndScene");
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Cutscene");
              }
         }
     }
