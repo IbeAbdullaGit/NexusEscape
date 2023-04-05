@@ -4,6 +4,13 @@ using Riptide;
 using Riptide.Utils;
 using System;
 using UnityEngine;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+using System.Net.Sockets;
+using System.Net;
 
 public enum ServerToClientId : ushort
 {
@@ -61,7 +68,19 @@ public class NetworkManagerClient : MonoBehaviour
     {
         Singleton = this;
         DontDestroyOnLoad(gameObject);
+
+        //get ip
+        string localIP;
+        using (Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
+        {
+            socket.Connect("8.8.8.8", 65530);
+            IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
+            localIP = endPoint.Address.ToString();
+        }
+        ip = localIP;
+        Debug.Log("Ip address: " + ip);
     }
+ 
 
     private void Start()
     {
