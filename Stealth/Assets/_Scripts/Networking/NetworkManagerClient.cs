@@ -15,6 +15,7 @@ public enum ServerToClientId : ushort
     puzzleInteraction,
     startGame,
     resetGame,
+    chatMessage,
 }
 
 public enum ClientToServerId : ushort
@@ -25,6 +26,7 @@ public enum ClientToServerId : ushort
     typingPuzzleFinish,
     distraction,
     testMessage,
+    chatMessage,
 }
 
 public class NetworkManagerClient : MonoBehaviour

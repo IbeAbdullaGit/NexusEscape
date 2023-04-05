@@ -79,6 +79,7 @@ public class NetworkManagerServer : MonoBehaviour
 
         Server = new Server();
         Server.Start(port, maxClientCount);
+        
         Server.ClientDisconnected += PlayerLeft;
        // Server.ClientConnected += PlayerJoin;
        Server.ClientConnected += CanStartGame;

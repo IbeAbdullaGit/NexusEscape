@@ -13,7 +13,7 @@ public class MinimapCamera : MonoBehaviour
 
 
     /**/
-
+    bool connected = false;
 
     private void Update()
     {
@@ -21,6 +21,13 @@ public class MinimapCamera : MonoBehaviour
         {
             transform.position = new Vector3(playerReference.position.x, playerReference.position.y + playerOffset, playerReference.position.z + playerOffsetX);
             transform.rotation = Quaternion.Euler(90f, playerReference.eulerAngles.y, 0f);
+        }
+        //Debug.Log("checking");
+        if (GameObject.FindGameObjectWithTag("Player") != null && !connected) //first connection
+        {
+            connected = true;
+            playerReference = GameObject.FindGameObjectWithTag("Player").transform;
+            Debug.Log("Set minimap camera");
         }
     }
 }
