@@ -16,9 +16,15 @@ public class KeycardSwiper : Interactable
     bool revealed = false;
    public Canvas pipepuzzle;
 
+    private FMODUnity.EventReference keycardAccept;
+
     // Start is called before the first frame update
     void Start()
     {
+
+        keycardAccept.Path = "event:/Sound Effects/Interactions/Keypad/KeypadCorrect";
+        keycardAccept.Guid = new FMOD.GUID(new System.Guid("{{ab51eecc-eaf6-4e3f-b576-c5e2f97118b2}}"));
+
         //inventory = GameObject.FindGameObjectWithTag("GameController").GetComponent<Inventory>();
         _doorInvoker = new DoorInvoker();
         //pipepuzzle = GetComponentInChildren<Canvas>();
@@ -54,6 +60,8 @@ public class KeycardSwiper : Interactable
             if (Inventory.instance.ids[0] == needed_id)
             {
                 //Inventory.instance.DestroyKeycard(); //Delete the Keycard on usage.
+
+                FMODUnity.RuntimeManager.PlayOneShotAttached(keycardAccept, gameObject);
 
                 Inventory.instance.RemoveKeyCard(); //keycard is already deleted, so just remove from UI
 

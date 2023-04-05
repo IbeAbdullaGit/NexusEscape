@@ -40,9 +40,12 @@ public class EnemyAI : MonoBehaviour
 
     public bool distracted = false;
 
-    SoundManager soundInstance;
+    //SoundManager soundInstance;
     bool playSoundOnce = false;
- 
+    bool playHeardSoundOnce = false;
+    [SerializeField]
+    private GuardSounds enemySounds;
+
     //hearing
     Vector3 lastPosition;
 
@@ -174,6 +177,7 @@ public class EnemyAI : MonoBehaviour
     public IEnumerator Distracted(GameObject distraction)
     {
         Debug.Log("Starting Distraction");
+        enemySounds.PlayDistracted(); //play the distraction sfx
         //stop current coroutines
         StopCoroutine(WalkPause());
 
@@ -335,6 +339,11 @@ public class EnemyAI : MonoBehaviour
                 if (!Physics.Raycast(transform.position, directionToTarget, hearDistance, GetComponent<FieldOfView>().obstructionMask) && ((target.GetComponent<PlayerController>().state != PlayerController.MovementState.idle)))
                 {
                      Debug.Log("Can hear you");
+                    //if (!playHeardSoundOnce)
+                    //{
+                    //    enemySounds.PlayHeard();
+                    //    playHeardSoundOnce = true;
+                    //}
                     //use this for now, can hear
                     canHear = true;
                 }
@@ -366,6 +375,7 @@ public class EnemyAI : MonoBehaviour
             if (!playSoundOnce)
             {
                 //soundInstance.PlaySound(SoundManager.Sound.EnemyDetect, transform.position);
+                enemySounds.PlaySpotted();
                 playSoundOnce = true;
                 //seeking animation
                 SetMovementState(MovementState.seeking);
@@ -405,5 +415,9 @@ public class EnemyAI : MonoBehaviour
         //Debug.Log(sliderValue);
     }
 
+    private void PlayFootstep()
+    {
+        enemySounds.PlayFootsteps();
+    }
    
 }

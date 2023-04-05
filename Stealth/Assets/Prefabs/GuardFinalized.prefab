@@ -6383,6 +6383,71 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00852702, y: -0.05430293, z: 0.016507879}
     m_Extent: {x: 0.0045233974, y: 0.0023894496, z: 0.0045454614}
   m_DirtyAABB: 0
+--- !u!1 &6337329633402738960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7976395527182048057}
+  - component: {fileID: 7151293762844583143}
+  m_Layer: 11
+  m_Name: EnemySound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7976395527182048057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6337329633402738960}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6036601835861730955}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7151293762844583143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6337329633402738960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abcfa725d4243d84aab0aa86b578277a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distracted:
+    Guid:
+      Data1: 1747795811
+      Data2: 1313351515
+      Data3: 554967992
+      Data4: -713495412
+    Path: event:/Sound Effects/Character/N1GuardDistracted
+  heard:
+    Guid:
+      Data1: -184930018
+      Data2: 1266632398
+      Data3: 1386999970
+      Data4: -1873038607
+    Path: event:/Sound Effects/Character/N1GuardHear
+  spotted:
+    Guid:
+      Data1: -1417662729
+      Data2: 1098307941
+      Data3: -461300853
+      Data4: -1641860433
+    Path: event:/Sound Effects/Character/N1GuardSpot
 --- !u!1 &6348057675188577501
 GameObject:
   m_ObjectHideFlags: 0
@@ -6638,6 +6703,7 @@ Transform:
   - {fileID: 5913494722582798583}
   - {fileID: 2857588789098097779}
   - {fileID: 7554387818094836181}
+  - {fileID: 7976395527182048057}
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6712,6 +6778,7 @@ MonoBehaviour:
   hasdoor: 0
   _otherdoor: {fileID: 0}
   distracted: 0
+  enemySounds: {fileID: 7151293762844583143}
   networking: 0
   slider: {fileID: 1791653129043335028}
 --- !u!114 &7683243166774700359

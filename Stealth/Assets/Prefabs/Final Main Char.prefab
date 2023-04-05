@@ -2695,9 +2695,9 @@ GameObject:
   - component: {fileID: 3375757489065117032}
   - component: {fileID: 3375757489065117033}
   - component: {fileID: 5656603861946775187}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Final Main Char
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4218,7 +4218,7 @@ GameObject:
   - component: {fileID: 2753014590069738338}
   m_Layer: 0
   m_Name: Operator Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

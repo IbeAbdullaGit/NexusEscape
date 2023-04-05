@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckpointManager : MonoBehaviour
 {
-   private static CheckpointManager instance;
+   public static CheckpointManager instance;
    public Vector3 lastCheckPointPos;
 
    public int checkpointNum = 0;
@@ -12,7 +12,7 @@ public class CheckpointManager : MonoBehaviour
    [SerializeField] Door connectDoor;
    private void Awake() {
     
-        if (instance ==null)
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(instance);
