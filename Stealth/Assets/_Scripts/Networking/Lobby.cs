@@ -19,6 +19,7 @@ public class Lobby : MonoBehaviour
     public GameObject clientManager;
     public GameObject serverManager;
     public GameObject serverIPDisplay;
+    public GameObject inputIP;
    
     public void ConnectClient()
     {
@@ -33,6 +34,9 @@ public class Lobby : MonoBehaviour
         //client settings
         //client.ip = "127.0.0.1";
         //client.port = 8888;
+
+        //set client IP
+        client.ip = inputIP.GetComponent<TMP_InputField>().text;
 
         //start client
         client.StartClient();
