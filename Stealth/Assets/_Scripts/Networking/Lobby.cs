@@ -4,6 +4,8 @@ using UnityEngine;
 using Riptide;
 using UnityEngine.UI;
 using TMPro;
+using System.Net.Sockets;
+using System.Net;
 
 public class Lobby : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class Lobby : MonoBehaviour
 
     public GameObject clientManager;
     public GameObject serverManager;
+    public GameObject serverIPDisplay;
    
     public void ConnectClient()
     {
@@ -62,6 +65,18 @@ public class Lobby : MonoBehaviour
         //wait until player connects, then make start button interactable
         //start button changes scene for server and also changes scene for client
         //we also can change the managers so that we don't spawn anything because we don't need it
+
+        //get ip
+        string localIP;
+        using (Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
+        {
+            socket.Connect("8.8.8.8", 8888);
+            IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
+            localIP = endPoint.Address.ToString();
+        }
+
+        Debug.Log("Ip address: " + localIP);
+        serverIPDisplay.GetComponent<TMP_Text>().text = "IP address: " + localIP;
 
     }
     public void StartGame()
