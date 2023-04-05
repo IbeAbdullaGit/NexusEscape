@@ -99,6 +99,7 @@ public class NetworkManagerServer : MonoBehaviour
         Server.ClientDisconnected += PlayerLeft;
        // Server.ClientConnected += PlayerJoin;
        Server.ClientConnected += CanStartGame;
+        
 
         
 

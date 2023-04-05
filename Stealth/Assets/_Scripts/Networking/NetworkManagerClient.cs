@@ -109,6 +109,7 @@ public class NetworkManagerClient : MonoBehaviour
         Client.ClientDisconnected += PlayerLeft;
         Client.Disconnected += DidDisconnect;
         
+        
         Singleton = this;
         
         connected = true;
@@ -196,7 +197,8 @@ public class NetworkManagerClient : MonoBehaviour
 
         Debug.Log("Disconnected");
         //try connecting again
-        Connect();
+        //Connect();
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Menu");
     }
     
    #region Messages

@@ -40,20 +40,20 @@ public class InteractionHandlerNexus1 : MonoBehaviour
         //Debug.Log("Connect again");
     }
      private void Update() {
-        
-        ////manually send for testing purposes
-        //if (Input.GetKeyDown(KeyCode.Q))
-        //{
-           
-            
-        //    //send network message, to open the door
-        //    Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.testMessage);
-        //    //add an id so we know what we're talking about
-        //    //send message
-        //    NetworkManagerClient.Singleton.Client.Send(message);
-        //     Debug.Log("Send test message");
-        //    //Destroy(transform.gameObject.GetComponentInParent<Canvas>().gameObject);
-        //}
+
+        //manually send for testing purposes
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+
+
+            //send network message, to open the door
+            Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.testMessage);
+            //add an id so we know what we're talking about
+            //send message
+            NetworkManagerClient.Singleton.Client.Send(message);
+            Debug.Log("Send test message");
+            //Destroy(transform.gameObject.GetComponentInParent<Canvas>().gameObject);
+        }
         //if (Input.GetKeyDown(KeyCode.R))
         //{
         //    NetworkManagerClient.Singleton.Connect();
