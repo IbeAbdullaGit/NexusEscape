@@ -79,7 +79,7 @@ public class ChatManager : MonoBehaviour
 
         GameObject newText = Instantiate(textObject, chatPanel.transform); //create text object so we can display it
 
-        newMessage.textObject = newText.GetComponent<Text>();
+        newMessage.textObject = newText.GetComponent<TMP_Text>();
         newMessage.textObject.text = newMessage.text;
         //newMessage.textObject.color = MessageTypeColor(mType);
 
@@ -99,7 +99,7 @@ public class ChatManager : MonoBehaviour
              Message message = Message.Create(MessageSendMode.Reliable, ServerToClientId.chatMessage);
             message.AddString(text);
         
-            NetworkManagerClient.Singleton.Client.Send(message);
+            NetworkManagerServer.Singleton.Server.SendToAll(message);
         }
     }
     //basically an add that doesnt send to server
@@ -119,7 +119,7 @@ public class ChatManager : MonoBehaviour
 
         GameObject newText = Instantiate(textObject, chatPanel.transform); //create text object so we can display it
 
-        newMessage.textObject = newText.GetComponent<Text>();
+        newMessage.textObject = newText.GetComponent<TMP_Text>();
         newMessage.textObject.text = newMessage.text;
         //newMessage.textObject.color = MessageTypeColor(mType);
 
@@ -164,7 +164,7 @@ public class ChatManager : MonoBehaviour
 public class Message2
 {
     public string text;
-    public Text textObject;
+    public TMP_Text textObject;
     public MessageType mesasgeType;
 
     public enum MessageType
