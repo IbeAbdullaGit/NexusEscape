@@ -142,7 +142,7 @@ public class InteractionHandler : MonoBehaviour
             Debug.Log("Switching Scene");
             //save
             //GameObject.FindGameObjectWithTag("GameController").GetComponent<SavePlugin>().SaveProgress();
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("EndScene"); //ending scene
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Cutscene"); //ending scene
         }
      }
      
