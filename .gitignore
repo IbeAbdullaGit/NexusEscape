@@ -7,3 +7,6 @@ Stealth/Assets/Scenes/Nexus 2/LightingData 1 - Copy.asset
 Stealth/Assets/Scenes/Nexus 2/LightingData 1 - Copy.asset.meta
 Stealth/Assets/Scenes/Nexus 2/LightingData 1.asset
 Stealth/Assets/Scenes/Nexus 2/LightingData 1.asset.meta
+*.lighting
+Stealth/Assets/Scenes/Nexus2Server.lighting.meta
+Stealth/Assets/Scenes/Nexus2Client.lighting.meta
