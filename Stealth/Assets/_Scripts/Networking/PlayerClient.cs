@@ -19,28 +19,10 @@ public class PlayerClient : MonoBehaviour
     public static void Spawn(ushort id, string username, Vector3 position)
     {
         PlayerClient player;
-        if (id == NetworkManagerClient.Singleton.Client.Id) //"client" is player 2
+        
+       
         {
-            //position needs to be predetermined
-            //position = GameLogicClient.Singleton.Player2Prefab.transform.position;
-            //first check if we already have a player
-            
-            {
-                player = Instantiate(GameLogicClient.Singleton.Player2Prefab, position, Quaternion.identity).GetComponent<PlayerClient>();
-                player.IsLocal = true;
-
-                player.name = $"Player {id} (username)";
-                player.Id = id;
-                player.username = username;
-
-                list.Add(id, player);
-
-                //setup ai
-                NetworkManagerClient.Singleton.SetupAI();
-            }
-        }
-        else
-        {
+            Debug.Log("Did we get here?");
             //THIS PART IS STILL IMPORTANT
             player = Instantiate(GameLogicClient.Singleton.Player1Prefab, position, Quaternion.identity).GetComponent<PlayerClient>();
             player.IsLocal = false;
@@ -50,6 +32,7 @@ public class PlayerClient : MonoBehaviour
             player.username = username;
 
             list.Add(id, player);
+            Debug.Log("Spawning in player");
         }
 
        
