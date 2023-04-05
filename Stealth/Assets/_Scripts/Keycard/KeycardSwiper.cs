@@ -46,8 +46,12 @@ public class KeycardSwiper : Interactable
             if (!revealed)
             {
                 revealed = true;
-                pipepuzzle.enabled = true;
+                
 
+            }
+            else
+            {
+                pipepuzzle.enabled = true;
             }
 
         }
