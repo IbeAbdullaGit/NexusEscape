@@ -35,6 +35,7 @@ public class KeycardSwiper : Interactable
     {
         ICommand openDoor = new ToggleDoorCommand(_otherdoor.GetComponent<Door>());
         _doorInvoker.AddCommand(openDoor);
+        
     }
 
     public void OnInteractNoCheck()
@@ -68,9 +69,9 @@ public class KeycardSwiper : Interactable
                 //this is what will normally happen
                 if (!for_hacker)
                 {//open door/do something, command
-                TriggerDoor();
-                _otherdoor.GetComponent<Door>().isOpen = false;
-                _otherdoor.GetComponent<Door>().OpenDoor();
+                //TriggerDoor();
+                
+                _otherdoor.GetComponent<Door>().ToggleDoor();
                 }
                 else //this is what will happen when we want keycard being inserted to effect something on hacker screen
                 {
