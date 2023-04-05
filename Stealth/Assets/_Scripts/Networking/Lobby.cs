@@ -59,7 +59,7 @@ public class Lobby : MonoBehaviour
         //server.port = 8888;
         //server.maxClientCount = 2;
         //cant interact as client now
-        clientButton.interactable = false;
+        //clientButton.interactable = false;
         serverButton.interactable = false;
         
         //we just want to start the server

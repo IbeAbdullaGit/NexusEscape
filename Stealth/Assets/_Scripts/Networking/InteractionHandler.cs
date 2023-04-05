@@ -92,37 +92,37 @@ public class InteractionHandler : MonoBehaviour
             //of the button from the server
             switch (context)
             {
-                case "1":
+                case "0":
                  {   //take the value for this button
                     buttonMeters[0].value = context2;
                     break;
                  }
-                case "2":
+                case "1":
                  {   //take the value for this button
                     buttonMeters[1].value = context2;
                     break;
                  }
-                case "3":
+                case "2":
                  {   //take the value for this button
                     buttonMeters[2].value = context2;
                     break;
                  }
-                case "4":
+                case "3":
                   {  //take the value for this button
                     buttonMeters[3].value = context2;
                     break;
                   }
-                case "5":
+                case "4":
                   {  //take the value for this button
                     buttonMeters[4].value = context2;
                     break;
                   }
-                case "6":
+                case "5":
                    { //take the value for this button
                     buttonMeters[5].value = context2;
                     break;
                    }
-                case "7":
+                case "6":
                  {   //take the value for this button
                     buttonMeters[6].value = context2;
                     break;
