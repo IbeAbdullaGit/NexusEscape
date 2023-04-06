@@ -33,6 +33,9 @@ public class PlayerClient : MonoBehaviour
 
             list.Add(id, player);
             Debug.Log("Spawning in player");
+
+            //setup AI
+            NetworkManagerClient.Singleton.SetupAI();
         }
 
        

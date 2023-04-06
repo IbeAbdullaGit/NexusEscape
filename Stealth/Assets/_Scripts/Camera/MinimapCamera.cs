@@ -28,6 +28,9 @@ public class MinimapCamera : MonoBehaviour
             connected = true;
             playerReference = GameObject.FindGameObjectWithTag("Player").transform;
             Debug.Log("Set minimap camera");
+            //setup AI
+            if (NetworkManagerClient.Singleton !=null)
+                NetworkManagerClient.Singleton.SetupAI();
         }
     }
 }
