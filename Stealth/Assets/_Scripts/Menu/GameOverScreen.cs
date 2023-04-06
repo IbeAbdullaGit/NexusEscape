@@ -11,8 +11,7 @@ public class GameOverScreen : MonoBehaviour
     }
     public void Restart()
     {
-        //send in current scene name to scene switcher, so the level restarts
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene(SceneManager.GetActiveScene().name);
+        
         //send message
         if (NetworkManagerServer.Singleton !=null)
         {
@@ -25,6 +24,8 @@ public class GameOverScreen : MonoBehaviour
         Time.timeScale = 1;
         //hide screen
         GetComponent<Canvas>().enabled = false;
+        //send in current scene name to scene switcher, so the level restarts
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene(SceneManager.GetActiveScene().name);
     }
     public void GoToMenu()
     {

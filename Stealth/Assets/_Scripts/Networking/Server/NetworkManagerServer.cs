@@ -233,8 +233,14 @@ public class NetworkManagerServer : MonoBehaviour
     }
     private void PlayerLeft(object sender, ServerDisconnectedEventArgs e)
     {
-       //Destroy(PlayerServer.list[e.Client.Id].gameObject);
-       //try to connect again
-      // NetworkManagerClient.Singleton.Connect();
+        //Destroy(PlayerServer.list[e.Client.Id].gameObject);
+        //try to connect again
+        // NetworkManagerClient.Singleton.Connect();
+
+        //back to menu
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Menu");
+        
+        //now destroy server so we dont need it
+        Destroy(GameObject.FindGameObjectWithTag("NetworkServer"));
     }
 }

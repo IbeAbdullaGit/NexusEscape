@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Riptide;
 public class KeycardSwiper : Interactable 
 {
     //Inventory inventory;
@@ -86,7 +87,11 @@ public class KeycardSwiper : Interactable
 
                     }
                     //turn on pipe puzzle
-
+                    //send message!
+                    Message message = Message.Create(MessageSendMode.Reliable, ServerToClientId.puzzleInteraction);
+                    message.AddInt(1);
+                    message.AddString("nexus 2 door 1");
+                    NetworkManagerServer.Singleton.Server.SendToAll(message);
                 }
             }
             else

@@ -42,7 +42,7 @@ public class MessageHandler : MonoBehaviour
     [MessageHandler((ushort)ServerToClientId.resetGame)]
     private static void RestartGame(Message message)
     {
-        Debug.Log("Getting interaction");
+        Debug.Log("Getting restart");
         int type = message.GetInt();
 
         if (type == 1)
