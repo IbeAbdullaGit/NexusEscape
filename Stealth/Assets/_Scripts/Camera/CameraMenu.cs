@@ -42,8 +42,9 @@ public class CameraMenu : MonoBehaviour
         //pop = GameObject.FindGameObjectWithTag("GameController").GetComponent<PopUpSystem>();
 
         //SOUND STUFF
-        cameraSound.Path = "event:/Sound Effects/Interactions/ChangeCamera";
-        cameraSound.Guid = new FMOD.GUID(new System.Guid("{f7c06c79-dd65-4764-9b10-d63191ce3772}"));
+        //cameraSound.Path = "event:/Sound Effects/Interactions/ChangeCamera";
+        //cameraSound.Guid = new FMOD.GUID(new System.Guid("{f7c06c79-dd65-4764-9b10-d63191ce3772}"));
+        cameraSound = FMODUnity.RuntimeManager.PathToEventReference("event:/Sound Effects/Interactions/ChangeCamera");
 
         cameraIndex = 0;
         //let first camera change colour

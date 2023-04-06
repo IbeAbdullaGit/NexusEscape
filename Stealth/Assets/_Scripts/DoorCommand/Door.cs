@@ -32,8 +32,9 @@ public class Door : Observer
         //soundObject = gameObject.transform.Find("DoorSound").gameObject; //Get the sound gameobject -- DEPRECATED BY NATE
 
         //SOUND STUFF
-        doorEvent.Path = "event:/Sound Effects/Interactions/DoorMove";
-        doorEvent.Guid = new FMOD.GUID(new System.Guid("{97cda655-00e4-4cfb-a183-076ee2849f8f}")); //set GUID, all of this hard work is so abdu doesn't gotta redo anything <3
+        //doorEvent.Path = "event:/Sound Effects/Interactions/DoorMove";
+        //doorEvent.Guid = new FMOD.GUID(new System.Guid("{97cda655-00e4-4cfb-a183-076ee2849f8f}")); //set GUID, all of this hard work is so abdu doesn't gotta redo anything <3
+        doorEvent = FMODUnity.RuntimeManager.PathToEventReference("event:/Sound Effects/Interactions/DoorMove");
         doorsoundInstance = FMODUnity.RuntimeManager.CreateInstance(doorEvent);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(doorsoundInstance, gameObject.transform);
 

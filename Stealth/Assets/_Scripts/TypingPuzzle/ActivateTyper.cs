@@ -66,8 +66,9 @@ public class ActivateTyper : Interactable
         if (isButton)
         {
             anim = GetComponent<Animator>();
-            buttonEvent.Path = "event:/Sound Effects/Interactions/ButtonPress";
-            buttonEvent.Guid = new FMOD.GUID(new System.Guid("{cddf1de5-b51e-4239-8159-157ec49145d7}"));
+            //buttonEvent.Path = "event:/Sound Effects/Interactions/ButtonPress";
+            //buttonEvent.Guid = new FMOD.GUID(new System.Guid("{cddf1de5-b51e-4239-8159-157ec49145d7}"));
+            buttonEvent = FMODUnity.RuntimeManager.PathToEventReference("event:/Sound Effects/Interactions/ButtonPress");
             //render.material.color = Color.green;
         }
 
