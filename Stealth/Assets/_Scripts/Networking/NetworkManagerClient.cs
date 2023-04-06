@@ -184,9 +184,6 @@ public class NetworkManagerClient : MonoBehaviour
 
     private void PlayerLeft(object sender, ClientDisconnectedEventArgs e)
     {
-        if (PlayerClient.list.TryGetValue(e.Id, out PlayerClient player))
-            Destroy(player.gameObject);
-
         Connect();
         Client.Connection.CanTimeout = false;
     }
@@ -201,10 +198,14 @@ public class NetworkManagerClient : MonoBehaviour
         //try connecting again
         //Connect();
         GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Menu");
+        //disconnect
+        //Client.Disconnect();
+        //now destroy server so we dont need it
+        Destroy(GameObject.FindGameObjectWithTag("NetworkClient"));
     }
-    
-   #region Messages
-   [MessageHandler((ushort)ServerToClientId.startGame)]
+
+    #region Messages
+    [MessageHandler((ushort)ServerToClientId.startGame)]
    private static void StartGame(Message message)
    {
         //the contents of the message don't really matter, just this signal to start
@@ -217,6 +218,7 @@ public class NetworkManagerClient : MonoBehaviour
         GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Nexus1Client");
         //Client.Connection.ResetTimeout();
         //NetworkManagerClient.Singleton.GetComponent<SwitchScene>().ChangeScene("Nexus1Client");
+       
    }
    #endregion
 }
