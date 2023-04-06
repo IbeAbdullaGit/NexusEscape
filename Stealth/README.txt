@@ -1,0 +1,6 @@
+- DISABLE FIREWALL ON BOTH MACHINES (Exceptions may work; however, best success by disabling)
+- Both parties must be on the same network
+- The host must press "Connect As Server" Button if they want to host session. Following this, the IP will be displayed, and the client must recieve this information from the host, input it, and press the connect button.
+- Chat will only work if both parties are connected.
+- Chat usernames can be customized by inputting a name into the username text box before connecting.
+- When  both parties are connected, the host can start the game by pressing the start button.
