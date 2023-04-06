@@ -38,19 +38,24 @@ public class InteractionHandler : MonoBehaviour
 
     private void Update() {
         
-        //manually send for testing purposes
-        if (Input.GetKeyDown(KeyCode.Q))
+        ////manually send for testing purposes
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    Debug.Log("Completing pipe puzzle?");
+            
+        //    //send network message, to open the door
+        //    Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.pipePuzzleFinish);
+        //    //add an id so we know what we're talking about
+        //    message.AddInt(1); //1 - for this case
+        //    //send message
+        //    NetworkManagerClient.Singleton.Client.Send(message);
+            
+        //    //Destroy(transform.gameObject.GetComponentInParent<Canvas>().gameObject);
+        //}
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            Debug.Log("Completing pipe puzzle?");
-            
-            //send network message, to open the door
-            Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.pipePuzzleFinish);
-            //add an id so we know what we're talking about
-            message.AddInt(1); //1 - for this case
-            //send message
-            NetworkManagerClient.Singleton.Client.Send(message);
-            
-            //Destroy(transform.gameObject.GetComponentInParent<Canvas>().gameObject);
+            //activates pipe puzzle on this need
+            keySwiper1.GetComponent<KeycardSwiper>().OnInteractNoCheck();
         }
     }
     public void LightUpButtons(int type)

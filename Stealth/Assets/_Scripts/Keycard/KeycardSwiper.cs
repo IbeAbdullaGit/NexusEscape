@@ -29,7 +29,7 @@ public class KeycardSwiper : Interactable
         //inventory = GameObject.FindGameObjectWithTag("GameController").GetComponent<Inventory>();
         _doorInvoker = new DoorInvoker();
         //pipepuzzle = GetComponentInChildren<Canvas>();
-        pipepuzzle.enabled = false;
+        pipepuzzle.gameObject.SetActive(false);
 
     }
     void TriggerDoor()
@@ -43,19 +43,10 @@ public class KeycardSwiper : Interactable
     {
         //Inventory.instance.DestroyKeycard(); //Delete the Keycard on usage.
         //this is what will happen when we want keycard being inserted to effect something on hacker screen
-        {
-            if (!revealed)
-            {
-                revealed = true;
-                
 
-            }
-            else
-            {
-                pipepuzzle.enabled = true;
-            }
-
-        }
+        pipepuzzle.gameObject.SetActive(true);
+        Debug.Log("Activate pipe puzzle");
+ 
     }
 
     public override void OnInteract()
@@ -83,7 +74,7 @@ public class KeycardSwiper : Interactable
                     if (!revealed)
                     {
                         revealed = true;
-                        pipepuzzle.enabled = true;
+                        pipepuzzle.gameObject.SetActive(true);
 
                     }
                     //turn on pipe puzzle
