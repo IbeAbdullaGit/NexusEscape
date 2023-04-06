@@ -23,8 +23,9 @@ public class KeycardSwiper : Interactable
     void Start()
     {
 
-        keycardAccept.Path = "event:/Sound Effects/Interactions/Keypad/KeypadCorrect";
-        keycardAccept.Guid = new FMOD.GUID(new System.Guid("{ab51eecc-eaf6-4e3f-b576-c5e2f97118b2}"));
+        //keycardAccept.Path = "event:/Sound Effects/Interactions/Keypad/KeypadCorrect";
+        //keycardAccept.Guid = new FMOD.GUID(new System.Guid("{ab51eecc-eaf6-4e3f-b576-c5e2f97118b2}"));
+        keycardAccept = FMODUnity.RuntimeManager.PathToEventReference("event:/Sound Effects/Interactions/Keypad/KeypadCorrect");
 
         //inventory = GameObject.FindGameObjectWithTag("GameController").GetComponent<Inventory>();
         _doorInvoker = new DoorInvoker();

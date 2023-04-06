@@ -122,11 +122,13 @@ public class SpawnDistraction : Interactable
         //Debug.Log("Camera menu: " + cameras.name);
 
         //SOUND STUFF
-        buttonEvent.Path = "event:/Sound Effects/Interactions/ButtonPress";
-        buttonEvent.Guid = new FMOD.GUID(new System.Guid("{cddf1de5-b51e-4239-8159-157ec49145d7}"));
+        //buttonEvent.Path = "event:/Sound Effects/Interactions/ButtonPress";
+        //buttonEvent.Guid = new FMOD.GUID(new System.Guid("{cddf1de5-b51e-4239-8159-157ec49145d7}"));
+        buttonEvent = FMODUnity.RuntimeManager.PathToEventReference("event:/Sound Effects/Interactions/ButtonPress");
 
-        buttonpositiveEvent.Path = "event:/Sound Effects/Interactions/ButtonPressPos";
-        buttonpositiveEvent.Guid = new FMOD.GUID(new System.Guid("{ec62b5c4-693e-4fc8-aa36-5bf61805a2e1}"));
+        //buttonpositiveEvent.Path = "event:/Sound Effects/Interactions/ButtonPressPos";
+        //buttonpositiveEvent.Guid = new FMOD.GUID(new System.Guid("{ec62b5c4-693e-4fc8-aa36-5bf61805a2e1}"));
+        buttonpositiveEvent = FMODUnity.RuntimeManager.PathToEventReference("event:/Sound Effects/Interactions/ButtonPressPos");
     }
     private void Update() {
         

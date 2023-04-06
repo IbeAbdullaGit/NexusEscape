@@ -33,8 +33,9 @@ public class ButtonDoor : Interactable
             anim = GetComponent<Animator>();
             original = render.material.color;
             //SOUND STUFF
-            buttonEvent.Path = "event:/Sound Effects/Interactions/ButtonPress";
-            buttonEvent.Guid = new FMOD.GUID(new System.Guid("{cddf1de5-b51e-4239-8159-157ec49145d7}"));
+            //buttonEvent.Path = "event:/Sound Effects/Interactions/ButtonPress";
+            //buttonEvent.Guid = new FMOD.GUID(new System.Guid("{cddf1de5-b51e-4239-8159-157ec49145d7}"));
+            buttonEvent = FMODUnity.RuntimeManager.PathToEventReference("event:/Sound Effects/Interactions/ButtonPress");
         }
     }
 

@@ -19,8 +19,9 @@ public class GuardSounds : MonoBehaviour
     private void Start()
     {
         //footsteps
-        _footsteps.Path = "event:/Sound Effects/Character/GuardFootstep";
-        _footsteps.Guid = new FMOD.GUID(new System.Guid("{20a12824-4999-4b96-b7b5-be5195076850}"));
+        //_footsteps.Path = "event:/Sound Effects/Character/GuardFootstep";
+        //_footsteps.Guid = new FMOD.GUID(new System.Guid("{20a12824-4999-4b96-b7b5-be5195076850}"));
+        _footsteps = FMODUnity.RuntimeManager.PathToEventReference("event:/Sound Effects/Character/GuardFootstep");
         footsteps = FMODUnity.RuntimeManager.CreateInstance(_footsteps);
         footsteps.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(transform.position));
     }
@@ -37,7 +38,7 @@ public class GuardSounds : MonoBehaviour
 
     public void PlayDistracted()
     {
-        FMODUnity.RuntimeManager.PlayOneShotAttached(distracted, gameObject);
+        //FMODUnity.RuntimeManager.PlayOneShotAttached(distracted, gameObject);
     }
 
     public void PlayHeard()
