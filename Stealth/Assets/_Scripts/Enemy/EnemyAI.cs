@@ -212,7 +212,7 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (connected || !networking)
+        //if (connected || !networking)
        { 
         if (hasdoor)
         {
@@ -304,14 +304,24 @@ public class EnemyAI : MonoBehaviour
     {
         float hearDistance = Vector3.Distance(transform.position, target.position);
         float currentHearRadius;
-        //check if player is crouching first; the hearing should be reduced if this is the case
-        if (target.GetComponent<PlayerController>().state != PlayerController.MovementState.crouching)
+        currentHearRadius = hearRadius;
+        if (!networking)
+        {//check if player is crouching first; the hearing should be reduced if this is the case
+            if (target.GetComponent<PlayerController>().state != PlayerController.MovementState.crouching)
+            {
+                currentHearRadius = hearRadius;
+            }
+        }
+        else if (networking)
         {
-            currentHearRadius = hearRadius;
+            if (target.GetComponent<PlayerControllerClient1>().state != PlayerControllerClient1.MovementState.crouching)
+            {
+                currentHearRadius = hearRadius;
+            }
         }
         else //is crouching
         {
-            currentHearRadius = hearRadius/3; //decrease the radius, making enemy "hear less"
+            currentHearRadius = hearRadius / 3; //decrease the radius, making enemy "hear less"
         }
       /*   //check if player is moving
         if (target.GetComponent<PlayerController>().state != PlayerController.MovementState.idle && hearDistance <= currentHearRadius)
@@ -335,20 +345,40 @@ public class EnemyAI : MonoBehaviour
 
             if (Vector3.Angle(transform.forward, directionToTarget) < 360) //hearing is 360 degrees
             {
-                //could be heard?
-                if (!Physics.Raycast(transform.position, directionToTarget, hearDistance, GetComponent<FieldOfView>().obstructionMask) && ((target.GetComponent<PlayerController>().state != PlayerController.MovementState.idle)))
-                {
-                     Debug.Log("Can hear you");
-                    //if (!playHeardSoundOnce)
-                    //{
-                    //    enemySounds.PlayHeard();
-                    //    playHeardSoundOnce = true;
-                    //}
-                    //use this for now, can hear
-                    canHear = true;
+                if (!networking)
+                {//could be heard?
+                    if (!Physics.Raycast(transform.position, directionToTarget, hearDistance, GetComponent<FieldOfView>().obstructionMask) && ((target.GetComponent<PlayerController>().state != PlayerController.MovementState.idle)))
+                    {
+                        Debug.Log("Can hear you");
+                        //if (!playHeardSoundOnce)
+                        //{
+                        //    enemySounds.PlayHeard();
+                        //    playHeardSoundOnce = true;
+                        //}
+                        //use this for now, can hear
+                        canHear = true;
+                    }
+
+                    else
+                        canHear = false;
                 }
                 else
-                    canHear = false;
+                {
+                    if (!Physics.Raycast(transform.position, directionToTarget, hearDistance, GetComponent<FieldOfView>().obstructionMask) && ((target.GetComponent<PlayerControllerClient1>().state != PlayerControllerClient1.MovementState.idle)))
+                    {
+                        Debug.Log("Can hear you");
+                        //if (!playHeardSoundOnce)
+                        //{
+                        //    enemySounds.PlayHeard();
+                        //    playHeardSoundOnce = true;
+                        //}
+                        //use this for now, can hear
+                        canHear = true;
+                    }
+
+                    else
+                        canHear = false;
+                }
             }
             else
                 canHear = false;
