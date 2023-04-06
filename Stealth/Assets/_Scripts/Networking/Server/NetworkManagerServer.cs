@@ -235,12 +235,12 @@ public class NetworkManagerServer : MonoBehaviour
     {
         //Destroy(PlayerServer.list[e.Client.Id].gameObject);
         //try to connect again
-        // NetworkManagerClient.Singleton.Connect();
+        NetworkManagerClient.Singleton.Connect();
 
         //back to menu
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Menu");
+        //GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Menu");
         
         //now destroy server so we dont need it
-        Destroy(GameObject.FindGameObjectWithTag("NetworkServer"));
+        //Destroy(GameObject.FindGameObjectWithTag("NetworkServer"));
     }
 }
