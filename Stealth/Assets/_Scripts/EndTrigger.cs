@@ -42,7 +42,7 @@ public class EndTrigger : MonoBehaviour
                     Message message = Message.Create(MessageSendMode.Reliable, ServerToClientId.puzzleInteraction);
                     message.AddInt(4);
                     NetworkManagerServer.Singleton.Server.SendToAll(message);
-
+                    Destroy(GameObject.FindGameObjectWithTag("CheckpointManager"));
                     /// send message to client to switch scene
                     GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Nexus2Server");
 
