@@ -26,21 +26,21 @@ public class InteractButtons : Interactable
     //the answer
     [Range(1,8)]
     public List<int> buttonOrder;
-     public override void OnFocus()
-    {
-        Debug.Log("looking at");
-         //perhaps highlight it
-    }
+    
+     public FMODUnity.EventReference buttonPress;
     public override void OnInteract()
     {
         Debug.Log("Changing UI");
         ChangeUI();
-       
+       CrosshairControl.instance.SetNormal();
        
         //will need to change when having multiple instances (all answers will be set at once instead of individually)
         //set the answer for when this is opened, more elegant solution later
         instance.buttonOrder = buttonOrder;
         instance.text.text = "";
+        instance.id = id;
+
+        FMODUnity.RuntimeManager.PlayOneShot(buttonPress);
        
           //server side
           if (InteractionMessages.Singleton!=null)
@@ -64,11 +64,7 @@ public class InteractButtons : Interactable
         instance.buttonOrder = buttonOrder;
         instance.text.text = "";
     }
-    public override void OnLoseFocus()
-    {
-        Debug.Log("looking away");
-        
-    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -90,15 +86,19 @@ public class InteractButtons : Interactable
     {
 
         //correct answer
-        if (instance.correct)
+        if (instance.correct && instance.id == id)
         {
-            instance.correct = false;
+            //instance.correct = false;
             instance.buttonOrder = null;
-            TriggerDoor();
-            _otherdoor.GetComponent<Door>().isOpen = false;
-            _otherdoor.GetComponent<Door>().OpenDoor();
+            //TriggerDoor();
+            //_otherdoor.GetComponent<Door>().isOpen = false;
+            _otherdoor.GetComponent<Door>().ToggleDoor();
 
             //do something, activate object
+            _otherdoor.GetComponent<Door>().puzzle_complete = true;
+
+            //reset
+            instance.correct = false;
         }
 
         if (work)

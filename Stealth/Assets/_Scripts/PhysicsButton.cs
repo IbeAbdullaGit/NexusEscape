@@ -21,11 +21,6 @@ public class PhysicsButton : Interactable
     public UnityEvent onPressed;
     public UnityEvent onReleased;
 
-     public override void OnFocus()
-    {
-        //throw new System.NotImplementedException();
-        //perhaps highlight it
-    }
     public override void OnInteract()
     {
        isPressed = true;

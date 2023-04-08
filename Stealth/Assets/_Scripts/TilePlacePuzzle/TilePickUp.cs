@@ -31,9 +31,10 @@ public class TilePickUp : Interactable
          this.transform.parent = player.transform;
          //move it to the player
          //this.transform.position = player.transform.position + offset;
-         this.transform.position = player.transform.position;
+         this.transform.position = player.GetComponentInChildren<Camera>().transform.position;
          //give offset, increase float value for further distance
-         this.transform.position += player.transform.forward * 2.0f;
+         this.transform.position += player.GetComponentInChildren<Camera>().transform.forward * 2.0f;
+         this.transform.position += Vector3.down; //move down
          //it is not in place anywhere
          inPlace = false;
 
@@ -71,9 +72,5 @@ public class TilePickUp : Interactable
          soundInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundManager>().instance;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
 }

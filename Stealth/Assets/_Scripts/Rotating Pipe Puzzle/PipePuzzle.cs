@@ -211,8 +211,8 @@ public class PipePuzzle : MonoBehaviour
             solved = true;
             RemoveButtons();
             pipeManager.TriggerDoor();
-            pipeManager._otherdoor.GetComponent<Door>().isOpen = false;
-            pipeManager._otherdoor.GetComponent<Door>().OpenDoor();
+            //pipeManager._otherdoor.GetComponent<Door>().isOpen = false;
+            pipeManager._otherdoor.GetComponent<Door>().ToggleDoor();
 
             //send network message, to open the door
             Message message = Message.Create(MessageSendMode.Reliable, ClientToServerId.pipePuzzleFinish);

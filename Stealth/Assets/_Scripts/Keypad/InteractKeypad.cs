@@ -21,13 +21,6 @@ public class InteractKeypad : Interactable
     public bool correct=false;
     //SoundManager soundInstance;
 
-    public override void OnFocus()
-    {
-        //Debug.Log("looking at");
-        
-       
-        //perhaps highlight it
-    }
     public override void OnInteract()
     {
         //Debug.Log("Changing UI");
@@ -41,14 +34,6 @@ public class InteractKeypad : Interactable
         instance.currentInstance = this;
         //play sound
         //soundInstance.PlaySound(SoundManager.Sound.InteractPress);
-        
-    }
-    public override void OnLoseFocus()
-    {
-        //Debug.Log("looking away");
-        //disable ui so it doesnt just stay there
-        
-       
         
     }
     public void TurnOff()

@@ -9,26 +9,34 @@ public class KeycardPickup : Interactable
    Vector3 offset = new Vector3(1, 0, 1);
 
    public int id;
-
+   public bool need_door = false;
+public Door linked_Door;
     public override void OnInteract()
     {
          //only add if we don't already have a keycard we're holding, and not holding anything else
        //if (Inventory.instance.keycard == null && Inventory.instance.currentTile == null)
        {
         //add to inventory
-        Inventory.instance.AddCard(1, id);
-        /*  //add to player "hand"
-         this.transform.parent = player.transform;
-         //move it to the player
-         //this.transform.position = player.transform.position + offset;
-         this.transform.position = player.transform.position;
-         //give offset, increase float value for further distance
-         this.transform.position += player.transform.forward * 2.0f; */
-         //also make sure cursor stuff not happening again when interacting
-         //change back to normal
-        CrosshairControl.instance.SetNormal();
-        //delete game object
-         Destroy(gameObject);
+        if (need_door)
+        {
+          if (linked_Door.puzzle_complete)
+          {
+            Inventory.instance.AddCard(1, id);
+       
+            CrosshairControl.instance.SetNormal();
+            //delete game object
+            Destroy(gameObject);
+          }
+        }
+        else
+        {
+          Inventory.instance.AddCard(1, id);
+        
+          CrosshairControl.instance.SetNormal();
+          //delete game object
+           Destroy(gameObject);
+        }
+        
        }
     }
 

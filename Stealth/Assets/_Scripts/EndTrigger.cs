@@ -35,14 +35,14 @@ public class EndTrigger : MonoBehaviour
                     //GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("InbetweenScene");
 
                     //change checkpoint
-                    GameObject.FindGameObjectWithTag("CheckpointManager").GetComponent<CheckpointManager>().lastCheckPointPos = new Vector3(-170.21f, 4.55f, -29.59f);
+                    //GameObject.FindGameObjectWithTag("CheckpointManager").GetComponent<CheckpointManager>().lastCheckPointPos = new Vector3(-170.21f, 4.55f, -29.59f);
 
                     
 
                     Message message = Message.Create(MessageSendMode.Reliable, ServerToClientId.puzzleInteraction);
                     message.AddInt(4);
                     NetworkManagerServer.Singleton.Server.SendToAll(message);
-                    Destroy(GameObject.FindGameObjectWithTag("CheckpointManager"));
+                   // Destroy(GameObject.FindGameObjectWithTag("CheckpointManager"));
                     /// send message to client to switch scene
                     GameObject.FindGameObjectWithTag("GameController").GetComponent<SwitchScene>().ChangeScene("Nexus2Server");
 

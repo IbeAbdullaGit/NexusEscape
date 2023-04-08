@@ -21,6 +21,10 @@ public class ButtonPressOrder : MonoBehaviour
 
     public bool openMenu = false;
      public Canvas menuUI;
+
+     public GameObject[] lockers;
+
+     public int id;
     // Start is called before the first frame update
     void Start()
     {

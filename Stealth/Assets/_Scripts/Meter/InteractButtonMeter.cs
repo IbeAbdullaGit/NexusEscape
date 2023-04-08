@@ -66,13 +66,7 @@ public class InteractButtonMeter : Interactable
             //instance.correct[number-1] = false;
         }
     }
-   public override void OnFocus()
-    {
-        //Debug.Log("looking at");
-        
-       
-        //perhaps highlight it
-    }
+ 
     public override void OnInteract()
     {
         //Debug.Log("Changing UI");
@@ -81,11 +75,6 @@ public class InteractButtonMeter : Interactable
         anim.SetTrigger("press");
         //play sound
         soundInstance.PlaySound(SoundManager.Sound.ButtonPress);
-    }
-    public override void OnLoseFocus()
-    {
-        //Debug.Log("looking away");
-        
     }
      public void ChangeUI()
     {

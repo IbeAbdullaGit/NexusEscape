@@ -21,7 +21,7 @@ public class Door : Observer
     private float percentComplete;
 
     //public GameObject soundObject;
-
+    public bool puzzle_complete = false;
 
     private FMOD.Studio.EventInstance doorsoundInstance;
     private FMODUnity.EventReference doorEvent;
@@ -66,6 +66,7 @@ public class Door : Observer
             //soundObject.SetActive(false);
             
         }
+        //Debug.Log(isOpen);
     }
 
     public override void OnNotify()

@@ -45,6 +45,8 @@ public class Inventory : MonoBehaviour
         keycardNum +=1;
         ids.Add(id);
         images[keycardNum-1].enabled = true;
+
+        Debug.Log(keycardNum);
     }
 
     public void AddTile(TilePickUp tile)
