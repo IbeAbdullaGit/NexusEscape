@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class FieldOfView : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class FieldOfView : MonoBehaviour
     public bool canSeePlayer;
 
     Light spotlight;
+
+    float visibility = 0;
 
 private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)  
    {
@@ -62,17 +65,26 @@ private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)
             {
                 //could be seen
                 float distanceToTagret = Vector3.Distance(transform.position, target.position);
+
+
                 if (!Physics.Raycast(transform.position, directionToTarget, distanceToTagret, obstructionMask))
                 {
                     canSeePlayer = true;
                     //Debug.Log("Can see player!");   
                     //change light color
                     spotlight.color = Color.red;
+
+                    visibility = 100;
                 }
                 else{
                     canSeePlayer = false;
                     //change light color
                     spotlight.color = new Color(0.8113f, 0.5367f, 0.1415f, 1);
+
+                    if (distanceToTagret - spotlight.range < spotlight.range)
+                        visibility = 55;
+                    else
+                        visibility = 1;
                 }
             }
             
@@ -80,6 +92,7 @@ private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)
                 canSeePlayer = false;
                 //change light color
                 spotlight.color = new Color(0.8113f, 0.5367f, 0.1415f, 1);
+                visibility = 1;
             }
         }
         else if (canSeePlayer) //if previously in view of enemy, but not anymore
@@ -87,7 +100,12 @@ private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)
             canSeePlayer = false;
             //change light color
             spotlight.color = new Color(0.8113f, 0.5367f, 0.1415f, 1);
+            visibility = 1;
         }
+    }
+    public float GetVisibility()
+    {
+        return visibility;
     }
   
 }

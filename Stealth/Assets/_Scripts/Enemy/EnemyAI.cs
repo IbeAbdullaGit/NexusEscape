@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using System;
+using Accord;
+using Accord.Fuzzy;
+using Accord.Statistics.Kernels;
+using Mono.Cecil.Cil;
+
 public class EnemyAI : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -67,7 +73,14 @@ public class EnemyAI : MonoBehaviour
     }
     MovementState currentState;
 
-    
+    //fuzzy logic
+    Database LinguisticVariables = new Database();
+    LinguisticVariable distanceFuzzy = new LinguisticVariable("distanceFuzzy", 0, 100);
+    LinguisticVariable visibilityFuzzy = new LinguisticVariable("visibilityFuzzy", 0, 100);
+    LinguisticVariable hearingFuzzy = new LinguisticVariable("hearingFuzzy", 0, 100);
+    LinguisticVariable priority = new LinguisticVariable("priority", 0, 100);
+    InferenceSystem FIS;
+    float hearing= 0;
     
     void SetMovementState(MovementState m)
     {
@@ -107,6 +120,46 @@ public class EnemyAI : MonoBehaviour
 
         //make hear radius same as view radius?
         hearRadius = (GetComponent<FieldOfView>().radius);
+
+        //define stuff for fuzzy logic
+        LinguisticVariables.AddVariable(distanceFuzzy);
+        distanceFuzzy.AddLabel(new FuzzySet("Near", new SingletonFunction(1)));
+        distanceFuzzy.AddLabel(new FuzzySet("Medium", new SingletonFunction(40)));    
+        distanceFuzzy.AddLabel(new FuzzySet ("Far", new SingletonFunction(100)));
+
+        LinguisticVariables.AddVariable(visibilityFuzzy);
+        visibilityFuzzy.AddLabel(new FuzzySet("Low", new SingletonFunction(1)));
+        visibilityFuzzy.AddLabel(new FuzzySet("Medium", new SingletonFunction(55)));
+        visibilityFuzzy.AddLabel(new FuzzySet("High", new SingletonFunction(100)));
+
+        LinguisticVariables.AddVariable(hearingFuzzy);
+        hearingFuzzy.AddLabel(new FuzzySet("Low", new SingletonFunction(1)));
+        hearingFuzzy.AddLabel(new FuzzySet("Medium", new SingletonFunction(50)));
+        hearingFuzzy.AddLabel(new FuzzySet("High", new SingletonFunction(100)));
+
+        LinguisticVariables.AddVariable(priority);
+        priority.AddLabel(new FuzzySet("Notchasing", new SingletonFunction(1)));
+        priority.AddLabel(new FuzzySet("Chasing", new SingletonFunction(100)));
+
+        FIS = new InferenceSystem(LinguisticVariables, new CentroidDefuzzifier(1000));
+
+        //define fuzzy rules
+        //if our hearing is high then start chasing
+        FIS.NewRule("rule1", "IF hearingFuzzy IS High OR visibilityFuzzy IS High THEN priority IS Chasing");
+        //if we are far then no chasing
+        FIS.NewRule("rule2", "IF distanceFuzzy IS Far THEN priority IS Notchasing");
+        //if our visibility is low, hearing is low, and we are not near then we do not want to chase
+       // FIS.NewRule("rule3", "IF visibilityFuzzy IS Low AND visibilityFuzzy IS Low AND distanceFuzzy IS Far THEN priority IS Notchasing");
+        //if we are near, and already chasing, then keep chasing
+        FIS.NewRule("rule4", "IF distanceFuzzy IS Near AND priority IS Chasing THEN priority IS Chasing");
+        
+        //if we are far then stop chasing
+        //FIS.NewRule("rule4", "IF priority IS Chasing AND distanceFuzzy IS Far THEN priority IS Notchasing");
+        //if our hearing and our visibility is medium then start chasing
+       FIS.NewRule("rule5", "IF distanceFuzzy IS Near AND (hearingFuzzy IS Medium OR visibilityFuzzy IS Medium) THEN priority IS Chasing");
+
+  
+
        
     }
     public void SetTarget()
@@ -253,6 +306,9 @@ public class EnemyAI : MonoBehaviour
                 IterateWaypointIndex();
                 UpdateDestination();
             }  */
+
+            //run fuzzy logic
+            FuzzyLogic();
        }
        else //distracted
        {
@@ -311,6 +367,10 @@ public class EnemyAI : MonoBehaviour
             {
                 currentHearRadius = hearRadius;
             }
+            else //is crouching
+            {
+                currentHearRadius = hearRadius / 3; //decrease the radius, making enemy "hear less"
+            }
         }
         else if (networking)
         {
@@ -318,11 +378,12 @@ public class EnemyAI : MonoBehaviour
             {
                 currentHearRadius = hearRadius;
             }
+            else //is crouching
+            {
+                currentHearRadius = hearRadius / 3; //decrease the radius, making enemy "hear less"
+            }
         }
-        else //is crouching
-        {
-            currentHearRadius = hearRadius / 3; //decrease the radius, making enemy "hear less"
-        }
+        
       /*   //check if player is moving
         if (target.GetComponent<PlayerController>().state != PlayerController.MovementState.idle && hearDistance <= currentHearRadius)
         {
@@ -335,6 +396,17 @@ public class EnemyAI : MonoBehaviour
             //dont want to get stuck "hearing"
             canHear = false;
         } */
+
+        //SET FOR FUZZY LOGIC
+        if (hearDistance - currentHearRadius <=0)
+            hearing= 100; //inside the radius, can hear
+        else if (hearDistance - currentHearRadius < currentHearRadius) //define w.e medium is
+            hearing = 50; //medium
+        else
+        {
+            hearing = 1;
+        }
+        
 
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, currentHearRadius, GetComponent<FieldOfView>().targetMask);
 
@@ -385,6 +457,9 @@ public class EnemyAI : MonoBehaviour
         }
         else if (canHear)
              canHear = false; //this is so it doesn't get stuck hearing
+
+        
+        
     }
     bool inSight()
     {
@@ -420,6 +495,82 @@ public class EnemyAI : MonoBehaviour
         targetMain = waypoints[waypointIndex].position;
         NavMeshAgent.SetDestination(targetMain);
         return false;
+    }
+    void ChasePlayer()
+    {
+        //Debug.Log("Enemy AI sees player");
+           //stop coroutine, so enemy can move
+           StopCoroutine(WalkPause());
+           //make sure enemy can move
+           NavMeshAgent.isStopped = false; 
+
+            targetMain = target.position;
+            NavMeshAgent.SetDestination(target.position);
+            Debug.DrawLine(transform.position, target.position, Color.red);
+
+            //play sound
+            if (!playSoundOnce)
+            {
+                //soundInstance.PlaySound(SoundManager.Sound.EnemyDetect, transform.position);
+                enemySounds.PlaySpotted();
+                playSoundOnce = true;
+                //seeking animation
+                SetMovementState(MovementState.seeking);
+            }
+           
+        //targetMain = waypoints[waypointIndex].position;
+        //NavMeshAgent.SetDestination(targetMain);
+    }
+    void FuzzyLogic()
+    {
+        FIS.SetInput("visibilityFuzzy", FOV.GetVisibility());
+       // Debug.Log("Visibility: " + FOV.GetVisibility());
+
+
+        FIS.SetInput("hearingFuzzy", hearing);
+       // Debug.Log("Hearing: " + hearing);
+        var distance = Vector3.Distance(transform.position, target.position);
+        //Debug.Log(distance);
+        var fuzzydistance = 0;
+
+        if (distance >= 50) //far
+        {
+            fuzzydistance = 100;
+        }
+        else if (distance >= 15) //medium
+            fuzzydistance = 40;
+        else //near
+            fuzzydistance = 1;
+
+        FIS.SetInput("distanceFuzzy", fuzzydistance);
+       //Debug.Log("distance: " + fuzzydistance);
+        
+        Debug.Log("priority: " + FIS.Evaluate("priority"));
+        if (FIS.Evaluate("priority") >= 40) //what we set for chasing
+            ChasePlayer(); 
+
+
+      /*   try
+        {
+            FuzzyOutput fuzzyOutput = FIS.ExecuteInference("priority");
+            // showing the fuzzy output
+            foreach ( FuzzyOutput.OutputConstraint oc in fuzzyOutput.OutputList )
+            {
+                Debug.Log( oc.Label + " - " + oc.FiringStrength.ToString( ) );
+            }
+            Debug.Log("Finished");
+        }
+        catch (Exception)
+        {
+            Debug.Log("exception");
+        } */
+        /* else //not chasing
+        {
+             //reset
+             targetMain = waypoints[waypointIndex].position;
+            NavMeshAgent.SetDestination(targetMain);
+        } */
+
     }
 
     void DetectionMeterUpdate()
